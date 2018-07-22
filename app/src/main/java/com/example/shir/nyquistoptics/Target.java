@@ -9,10 +9,10 @@ public class Target {
     private	double identify;
 
 
-    public Target(double detection, double recognition, double identify) {
-        this.detection = detection;
-        this.recognition = recognition;
-        this.identify = identify;
+    public Target(){//double detection, double recognition, double identify) {
+ //       this.detection = detection;
+  //      this.recognition = recognition;
+   //     this.identify = identify;
     }
 
     public double getDetection() {
@@ -40,6 +40,11 @@ public class Target {
     }
 
 
+    public void setTarget (TargetSize targetSize) {
+        setDetection(targetSize);
+        setRecognition(targetSize);
+        setIdentify(targetSize);
+    }
 
 
     private double calcTarget (double sensorPitch, double focalLength, TargetSize targetSize, double line) {
@@ -94,7 +99,6 @@ public class Target {
         return identify;
 
     }
-
 
 
 

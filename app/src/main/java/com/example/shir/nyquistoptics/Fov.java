@@ -32,6 +32,12 @@ public class Fov {
     }
 
 
+    public static void setFov() {
+        setIfov();
+        setHfov();
+        setVfov();
+    }
+
     private static double calcIfov () {
         double ifov;
         ifov = Properties.getSensorPitch() / (Properties.getFocalLength() * 1000);
