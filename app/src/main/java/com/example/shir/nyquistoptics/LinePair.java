@@ -1,12 +1,12 @@
 package com.example.shir.nyquistoptics;
 
-public  class LinePair {
+public class LinePair {
 
 
-    private	static double lpDetObj = 1.2;
-    private	static double lpDet = 2;
-    private	static double lpRec = 6;
-    private	static double lpIdent = 10;
+    private static double lpDetObj = 1.2;
+    private static double lpDet = 2;
+    private static double lpRec = 6;
+    private static double lpIdent = 10;
 
 
     public static double getLpDetObj() {
@@ -40,13 +40,6 @@ public  class LinePair {
     public static void setLpIdent(double lpIdent) {
         LinePair.lpIdent = lpIdent;
     }
-
-
-
-
-
-
-
 
 
 }

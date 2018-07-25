@@ -2,9 +2,9 @@ package com.example.shir.nyquistoptics;
 
 public class Fov {
 
-    private	static double ifov;
-    private	static double hfov;
-    private	static double vfov;
+    private static double ifov;
+    private static double hfov;
+    private static double vfov;
 
 
     public static double getIfov() {
@@ -38,30 +38,23 @@ public class Fov {
         setVfov();
     }
 
-    private static double calcIfov () {
+    private static double calcIfov() {
         double ifov;
         ifov = Properties.getSensorPitch() / (Properties.getFocalLength() * 1000);
         return ifov;
     }
 
-    private static double calcHfov () {
+    private static double calcHfov() {
         double hfov;
-        hfov = 2 * Math.atan((Properties.getSensorPitch()*SensorSize.getWidth()) / (2 * 1000 * Properties.getFocalLength())) * 180 / Math.PI;
+        hfov = 2 * Math.atan((Properties.getSensorPitch() * SensorSize.getWidth()) / (2 * 1000 * Properties.getFocalLength())) * 180 / Math.PI;
         return hfov;
     }
 
-    private static double calcVfov () {
+    private static double calcVfov() {
         double vfov;
-        vfov = hfov * 0.75;
+        vfov = hfov * (SensorSize.getHeight() / SensorSize.getWidth());
         return vfov;
     }
-
-
-
-
-
-
-
 
 
 }

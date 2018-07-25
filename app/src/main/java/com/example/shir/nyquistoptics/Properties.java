@@ -2,8 +2,8 @@ package com.example.shir.nyquistoptics;
 
 public class Properties {
 
-    private	static double sensorPitch;
-    private	static double focalLength;
+    private static double sensorPitch;
+    private static double focalLength;
     //private	double	fNumber; //never used
 
 
@@ -22,9 +22,6 @@ public class Properties {
     public static void setFocalLength(double focalLength) {
         Properties.focalLength = focalLength;
     }
-
-
-
 
 
 }

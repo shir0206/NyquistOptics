@@ -1,3 +1,58 @@
 <resources>
     <string name="app_name">NyquistOptics</string>
+
+    <string name="tv_comment">Please fill in the following fields:</string>
+
+    <string name="tv_txtSensorPitch">Sensor Pitch:</string>
+    <string name="tv_txtFocalLength">Focal Length (mm):</string>
+    <string name="tv_txtSensorSize">Sensor Size:</string>
+    <string name="tv_txtSensorSizeW">Width</string>
+    <string name="tv_txtSensorSizeH">Height</string>
+    <string name="tv_txtSensorSizeX">x</string>
+
+    <string name="btn_calculate">Calculate</string>
+
+    <string name="tv_txtFov">Field of view:</string>
+    <string name="tv_txtIfov">IFOV (rad):</string>
+    <string name="tv_txtHfov">HFOV (deg):</string>
+    <string name="tv_txtVfov">VFOV (deg):</string>
+
+
+    <string name="tv_resIfov"></string>
+    <string name="tv_resHfov"></string>
+    <string name="tv_resVfov"></string>
+
+    <string name="tv_txtNatoTarget">Nato Target:</string>
+    <string name="tv_txtHumanTarget">Human Target:</string>
+    <string name="tv_txtObjTarget">Object Target:</string>
+
+    <string name="tv_txtNatoDet">Detection (meter):</string>
+    <string name="tv_txtNatoRec">Recognition (meter):</string>
+    <string name="tv_txtNatoIdent">Identify (meter):</string>
+
+    <string name="tv_txtHumanDet">Detection (meter):</string>
+    <string name="tv_txtHumanRec">Recognition (meter):</string>
+    <string name="tv_txtHumanIdent">Identify (meter):</string>
+
+    <string name="tv_txtObjDet">Detection (meter):</string>
+    <string name="tv_txtObjRec">Recognition (meter):</string>
+
+    <string name="tv_resNatoDet"></string>
+    <string name="tv_resNatoRec"></string>
+    <string name="tv_resNatoIdent"></string>
+
+    <string name="tv_resHumanDet"></string>
+    <string name="tv_resHumanRec"></string>
+    <string name="tv_resHumanIdent"></string>
+
+    <string name="tv_resObjDet"></string>
+    <string name="tv_resObjRec"></string>
+
+    <string name="tv_natoSize"></string>
+    <string name="tv_humanSize"></string>
+    <string name="tv_objSize"></string>
+
+
+
+
 </resources>

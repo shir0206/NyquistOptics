@@ -1,6 +1,6 @@
 package com.example.shir.nyquistoptics;
 
-public  class SensorSize {
+public class SensorSize {
 
     private static double width = 640;
     private static double height = 480;
@@ -20,12 +20,6 @@ public  class SensorSize {
     public static void setHeight(double height) {
         SensorSize.height = height;
     }
-
-
-
-
-
-
 
 
 }

@@ -2,15 +2,15 @@ package com.example.shir.nyquistoptics;
 
 public class TargetSize {
 
-    private	double	width;
-    private	double	height;
+    private double width;
+    private double height;
 
     public TargetSize(double width, double height) {
         this.width = width;
         this.height = height;
     }
 
-     public double getWidth() {
+    public double getWidth() {
         return width;
     }
 
