@@ -1,18 +1,28 @@
 package com.example.shir.nyquistoptics;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+
+public class MainActivity extends AppCompatActivity implements Serializable {
 
     TextView tv_comment; // initialize comment
 
@@ -40,14 +50,21 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<TextView> output = new ArrayList<>();
 
-    DecimalFormat formatOneDig = new DecimalFormat("#.0");
-    DecimalFormat formatSixDig= new DecimalFormat("#.000000");
+    DecimalFormat formatOneDig = new DecimalFormat("0.0");
+    DecimalFormat formatSixDig = new DecimalFormat("0.000000");
+
+    SharedPreferences targetSizeDefaultSettings;
+    SharedPreferences linePairDefaultSettings;
+
+    TargetSizeHolder targetSizeHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        hideKeyboardOnStartUp(); //Hide keyboard on start up app
+        isEmptyDefaultSettings(); //Create SharedPreferences files if haven't created yet, and set default settings to the files
+        SetDefaultSettings(); //Set default settings derived from SharedPreferences files to the objects
         setupUI();
 
         btn_calculate.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 //If all fields are filled, continue
                 else {
 
+                    hideKeyboardOnceBtnPressed();  //hide keyboard once button pressed
+
                     //Convert the user input from String to double
                     double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
                     double focalLength = Double.parseDouble(et_focalLength.getText().toString());
@@ -74,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                     SensorSize.setWidth(sensorSizeW);
                     SensorSize.setHeight(sensorSizeH);
 
-                    //PART 1
+                    //PART 1 - Calculate FOV
 
                     //Calculate the output
                     Fov.setFov();
@@ -89,27 +108,17 @@ public class MainActivity extends AppCompatActivity {
                     tv_resHfov.setText(hfov);
                     tv_resVfov.setText(vfov);
 
-                    //PART 2
+                    //PART 2 - Calculate Targets
+
+                    //Create local TargetSize instances, that contains data derived from targetSizeHolder class (in hashmap targetSizeCollection)
+                    TargetSize natoTargetSize = targetSizeHolder.getTargetSize("natoTargetSize");
+                    TargetSize humanTargetSize = targetSizeHolder.getTargetSize("humanTargetSize");
+                    TargetSize objTargetSize = targetSizeHolder.getTargetSize("objTargetSize");
 
                     //Initialize Target class instances
-                    TargetSize natoTargetSize = new TargetSize(2.3, 2.3);
                     Target natoTarget = new Target();
-
-                    TargetSize humanTargetSize = new TargetSize(0.5, 1.7);
                     Target humanTarget = new Target();
-
-                    TargetSize objTargetSize = new TargetSize(0.5, 0.5);
                     Target objTarget = new Target();
-
-                    //Convert the target size from double to String
-                    String natoSize = "(" + Double.toString(natoTargetSize.getWidth()) + "x" + Double.toString(natoTargetSize.getHeight()) + ")";
-                    String humanSize = "(" + Double.toString(humanTargetSize.getWidth()) + "x" + Double.toString(humanTargetSize.getHeight()) + ")";
-                    String objSize = "(" + Double.toString(objTargetSize.getWidth()) + "x" + Double.toString(objTargetSize.getHeight()) + ")";
-
-                    //Set the target size to TextView
-                    tv_natoSize.setText(natoSize);
-                    tv_humanSize.setText(humanSize);
-                    tv_objSize.setText(objSize);
 
                     //Calculate the output
                     natoTarget.setTarget(natoTargetSize);
@@ -140,6 +149,16 @@ public class MainActivity extends AppCompatActivity {
                     tv_resObjDet.setText(objTargetDet);
                     tv_resObjRec.setText(objTargetRec);
 
+                    //Convert the target size from double to String
+                    String natoSize = "(" + Double.toString(natoTargetSize.getWidth()) + "x" + Double.toString(natoTargetSize.getHeight()) + ")";
+                    String humanSize = "(" + Double.toString(humanTargetSize.getWidth()) + "x" + Double.toString(humanTargetSize.getHeight()) + ")";
+                    String objSize = "(" + Double.toString(objTargetSize.getWidth()) + "x" + Double.toString(objTargetSize.getHeight()) + ")";
+
+                    //Set the target size to TextView
+                    tv_natoSize.setText(natoSize);
+                    tv_humanSize.setText(humanSize);
+                    tv_objSize.setText(objSize);
+
                     //Turn the output TextView to visible
                     visibleOutputTextView();
                 }
@@ -149,7 +168,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupUI() {
+    private void hideKeyboardOnStartUp() { //Hide keyboard on start up app
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    }
+
+    private void setupUI() { //Initialize all TextViews, EditViews & Button
 
         tv_comment = findViewById(R.id.tv_comment);
 
@@ -200,12 +223,12 @@ public class MainActivity extends AppCompatActivity {
         tv_humanSize = findViewById(R.id.tv_humanSize);
         tv_objSize = findViewById(R.id.tv_objSize);
 
-        createOutputArrayList(); //Add the output TextView to the ArrayList
-        invisibleOutputTextView(); //Turn the output TextView in the ArrayList to invisible
+        createOutputArrayList(); //Add the output TextViews to the ArrayList
+        invisibleOutputTextView(); //Turn the output TextViews in the ArrayList to invisible
 
     }
 
-    private void createOutputArrayList() { //Add the output TextView to the ArrayList
+    private void createOutputArrayList() { //Add the output TextViews to the ArrayList
 
         output.add(tv_txtFov);
         output.add(tv_txtIfov);
@@ -243,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void invisibleOutputTextView() { //Turn the output TextView in the ArrayList to invisible
+    private void invisibleOutputTextView() { //Turn the output TextViews in the ArrayList to invisible
 
         for (TextView tv : output) {
             tv.setVisibility(View.INVISIBLE);
@@ -251,12 +274,143 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void visibleOutputTextView() { //Turn the output TextView in the ArrayList to visible
+    private void visibleOutputTextView() { //Turn the output TextViews in the ArrayList to visible
 
         for (TextView tv : output) {
             tv.setVisibility(View.VISIBLE);
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) { //Inflate the menu
+        getMenuInflater().inflate(R.menu.mainactivity, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //Open Settings menu above
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                startActivity(new Intent(this, SettingsActivity.class)); //Move from this activity (MainActivity) to SettingActivity
+                //finish(); //Closes MainActivity
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void isEmptyDefaultSettings() { //Create SharedPreferences files if haven't created yet, and set default settings to the files
+        isEmptyLinePairDefaultSettings();
+        isEmptyTargetSizeDefaultSettings();
+    }
+
+    private void isEmptyLinePairDefaultSettings() {
+        linePairDefaultSettings = getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE); //Create a file named "defaultSettings", private
+
+        //Check if SharedPreferences file is empty (linePairDefaultSettings file).
+        // If it's empty (first app usage), put default settings.
+        if (linePairDefaultSettings.getString("defaultSettings_lpDet", "").isEmpty()) {
+
+            SharedPreferences.Editor editor = linePairDefaultSettings.edit(); //Create an editor to edit the file
+
+            //Put default settings
+            editor.putString("defaultSettings_lpDet", "2");
+            editor.putString("defaultSettings_lpRec", "6");
+            editor.putString("defaultSettings_lpIdent", "10");
+            editor.putString("defaultSettings_lpDetObj", "1.2");
+
+            editor.apply(); //Saves the changes
+
+        }
+    }
+
+    private void isEmptyTargetSizeDefaultSettings() {
+        targetSizeDefaultSettings = getSharedPreferences("targetSizeDefaultSettings", Context.MODE_PRIVATE); //Create a file named "defaultSettings", private
+
+        //Check if SharedPreferences file is empty (targetSizeDefaultSettings file).
+        // If it's empty (first app usage), put default settings.
+        if (targetSizeDefaultSettings.getString("defaultSettings_natoTargetW", "").isEmpty()) {
+
+            SharedPreferences.Editor editor = targetSizeDefaultSettings.edit(); //Create an editor to edit the file
+
+            //Put default settings
+            editor.putString("defaultSettings_natoTargetW", "2.3");
+            editor.putString("defaultSettings_natoTargetH", "2.3");
+
+            editor.putString("defaultSettings_humanTargetW", "0.5");
+            editor.putString("defaultSettings_humanTargetH", "1.7");
+
+            editor.putString("defaultSettings_objTargetW", "0.5");
+            editor.putString("defaultSettings_objTargetH", "0.5");
+
+            editor.apply(); //Saves the changes
+
+        }
+    }
+
+    private void SetDefaultSettings() { //Set default settings derived from SharedPreferences files to the objects
+        SetLinePairDefaultSettingsToClass();
+        SetTargetSizeDefaultSettingsToObjects();
+    }
+
+    private void SetLinePairDefaultSettingsToClass() { //Print the saved settings
+        linePairDefaultSettings = getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE);
+
+        //Convert the user input from String to double
+        double lpDet = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpDet", ""));
+        double lpRec = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpRec", ""));
+        double lpIdent = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpIdent", ""));
+        double lpDetObj = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpDetObj", ""));
+
+        //Set the parameters in LinePair classes according to the user input
+        LinePair.setLpDet(lpDet);
+        LinePair.setLpRec(lpRec);
+        LinePair.setLpIdent(lpIdent);
+        LinePair.setLpDetObj(lpDetObj);
+
+    }
+
+    private void SetTargetSizeDefaultSettingsToObjects() {
+        //get the values from targetSizeDefaultSettings Shared Preferences and convert from String to double
+        double natoTargetW = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_natoTargetW", ""));
+        double natoTargetH = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_natoTargetH", ""));
+
+        double humanTargetW = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_humanTargetW", ""));
+        double humanTargetH = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_humanTargetH", ""));
+
+        double objTargetW = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_objTargetW", ""));
+        double objTargetH = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_objTargetH", ""));
+
+
+        //Initialize TargetSize class instances (using singleton - TargetSizeHolder class)
+
+        targetSizeHolder = TargetSizeHolder.getInstance();
+
+        //Check if a specific TargetSize instance exists in TargetSizeHolder class (in hashmap targetSizeCollection).
+        //If not, add the instance.
+        //Every instance initialized with his own unique W*H, as described in SharedPreferences (targetSizeDefaultSettings file)
+
+        if (!targetSizeHolder.hasTargetSize("natoTargetSize")) {
+            targetSizeHolder.addTargetSize("natoTargetSize", new TargetSize(natoTargetW, natoTargetH));
+        }
+
+        if (!targetSizeHolder.hasTargetSize("humanTargetSize")) {
+            targetSizeHolder.addTargetSize("humanTargetSize", new TargetSize(humanTargetW, humanTargetH));
+        }
+
+        if (!targetSizeHolder.hasTargetSize("objTargetSize")) {
+            targetSizeHolder.addTargetSize("objTargetSize", new TargetSize(objTargetW, objTargetH));
+        }
+
+    }
+
+
+    private void hideKeyboardOnceBtnPressed() {    //hide keyboard once btn pressed
+
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        assert imm != null;
+        imm.hideSoftInputFromWindow(btn_calculate.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
     }
 
 }

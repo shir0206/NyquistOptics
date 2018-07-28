@@ -8,10 +8,7 @@ public class Target {
     private double identify;
 
 
-    public Target() {//double detection, double recognition, double identify) {
-        //       this.detection = detection;
-        //      this.recognition = recognition;
-        //     this.identify = identify;
+    public Target() {
     }
 
     public double getDetection() {

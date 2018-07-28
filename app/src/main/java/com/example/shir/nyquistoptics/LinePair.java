@@ -3,17 +3,17 @@ package com.example.shir.nyquistoptics;
 public class LinePair {
 
 
-    private static double lpDetObj = 1.2;
-    private static double lpDet = 2;
-    private static double lpRec = 6;
-    private static double lpIdent = 10;
 
 
-    public static double getLpDetObj() {
-        return lpDetObj;
-    }
+    private static double lpDet;
+    private static double lpRec;
+    private static double lpIdent;
+    private static double lpDetObj;
 
-    public static void setLpDetObj(double lpDetObj) {
+    public LinePair(double lpDet, double lpRec, double lpIdent, double lpDetObj) {
+        LinePair.lpDet = lpDet;
+        LinePair.lpRec = lpRec;
+        LinePair.lpIdent = lpIdent;
         LinePair.lpDetObj = lpDetObj;
     }
 
@@ -41,5 +41,12 @@ public class LinePair {
         LinePair.lpIdent = lpIdent;
     }
 
+    public static double getLpDetObj() {
+        return lpDetObj;
+    }
+
+    public static void setLpDetObj(double lpDetObj) {
+        LinePair.lpDetObj = lpDetObj;
+    }
 
 }

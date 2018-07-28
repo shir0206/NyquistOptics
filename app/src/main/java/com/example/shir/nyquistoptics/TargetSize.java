@@ -1,9 +1,13 @@
 package com.example.shir.nyquistoptics;
 
-public class TargetSize {
+
+public class TargetSize  {
 
     private double width;
     private double height;
+
+
+  //  public TargetSize() {} //empty constructor
 
     public TargetSize(double width, double height) {
         this.width = width;
