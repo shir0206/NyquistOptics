@@ -3,6 +3,7 @@ package com.example.shir.nyquistoptics;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -58,10 +59,12 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     TargetSizeHolder targetSizeHolder;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         hideKeyboardOnStartUp(); //Hide keyboard on start up app
         isEmptyDefaultSettings(); //Create SharedPreferences files if haven't created yet, and set default settings to the files
         SetDefaultSettings(); //Set default settings derived from SharedPreferences files to the objects

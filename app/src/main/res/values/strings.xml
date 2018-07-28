@@ -3,9 +3,9 @@
 
     <string name="tv_comment">Please fill in the following fields:</string>
 
-    <string name="tv_txtSensorPitch">Sensor Pitch:</string>
+    <string name="tv_txtSensorPitch">Sensor Pitch (mic):</string>
     <string name="tv_txtFocalLength">Focal Length (mm):</string>
-    <string name="tv_txtSensorSize">Sensor Size:</string>
+    <string name="tv_txtSensorSize">Sensor Size (pxl):</string>
     <string name="tv_txtSensorSizeW">Width</string>
     <string name="tv_txtSensorSizeH">Height</string>
     <string name="tv_txtSensorSizeX">x</string>
@@ -80,17 +80,12 @@
     <string name="tv_objTargetSizeX">X</string>
 
 
-
-
     <string name="btn_save">Save</string>
-
-
 
 
     tv_NatoTargetW
     tv_natoTargetSizeX
     tv_NatoTargetH
-
 
 
     TextView tv_settingsComment; // initialize comment
@@ -99,10 +94,6 @@
     EditText et_lpDetObj, et_lpDet, et_lpRec, et_lpIdent; //initialize inputs values
 
     Button btn_edit; // initialize calculate button
-
-
-
-
 
 
 </resources>
