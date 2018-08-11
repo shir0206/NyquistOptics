@@ -22,9 +22,20 @@
     <string name="tv_resHfov"></string>
     <string name="tv_resVfov"></string>
 
-    <string name="tv_txtNatoTarget">Nato Target:</string>
-    <string name="tv_txtHumanTarget">Human Target:</string>
-    <string name="tv_txtObjTarget">Object Target:</string>
+
+
+    <string name="tv_txtTargetDri">Target DRI:</string>
+
+    <string name="tv_txtNatoTarget">Nato\nTarget</string>
+    <string name="tv_txtHumanTarget">Human\nTarget</string>
+    <string name="tv_txtObjTarget">Object\nTarget</string>
+
+
+    <string name="tv_txtDet">Detection (m):</string>
+    <string name="tv_txtRec">Recognition (m):</string>
+    <string name="tv_txtIdent">Identify (m):</string>
+
+
 
     <string name="tv_txtNatoDet">Detection (meter):</string>
     <string name="tv_txtNatoRec">Recognition (meter):</string>

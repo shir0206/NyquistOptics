@@ -23,7 +23,6 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="88" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -37,10 +36,10 @@
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="ffffff" />
                                       <entry key="backgroundLayerName" value="ic_launcher_background0" />
-                                      <entry key="foregroundImage" value="C:\Users\Shir\Desktop\logo0.png" />
-                                      <entry key="foregroundLayerName" value="nyquist_optic" />
+                                      <entry key="foregroundImage" value="C:\Users\Shir\Desktop\n_o_logo.png" />
+                                      <entry key="foregroundLayerName" value="nyquist_optics01" />
                                       <entry key="legacyIconShape" value="CIRCLE" />
-                                      <entry key="outputName" value="nyquist_optic_logo" />
+                                      <entry key="outputName" value="nyquist_optics_01" />
                                       <entry key="webIconShape" value="CIRCLE" />
                                     </map>
                                   </option>

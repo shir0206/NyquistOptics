@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,19 +36,25 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     TextView tv_txtFov, tv_txtIfov, tv_txtHfov, tv_txtVfov; //initialize outputs titles
     TextView tv_resIfov, tv_resHfov, tv_resVfov; //initialize outputs results
 
+    TextView tv_txtTargetDri;
     TextView tv_txtNatoTarget; //initialize title
-    TextView tv_txtNatoDet, tv_txtNatoRec, tv_txtNatoIdent; //initialize outputs titles
+//    TextView tv_txtNatoDet, tv_txtNatoRec, tv_txtNatoIdent; //initialize outputs titles
     TextView tv_resNatoDet, tv_resNatoRec, tv_resNatoIdent; //initialize outputs results
 
     TextView tv_txtHumanTarget; //initialize title
-    TextView tv_txtHumanDet, tv_txtHumanRec, tv_txtHumanIdent; //initialize outputs titles
+ //   TextView tv_txtHumanDet, tv_txtHumanRec, tv_txtHumanIdent; //initialize outputs titles
     TextView tv_resHumanDet, tv_resHumanRec, tv_resHumanIdent; //initialize outputs results
 
     TextView tv_txtObjTarget; //initialize title
-    TextView tv_txtObjDet, tv_txtObjRec; //initialize outputs titles
+ //   TextView tv_txtObjDet, tv_txtObjRec; //initialize outputs titles
     TextView tv_resObjDet, tv_resObjRec; //initialize outputs results
 
     TextView tv_natoSize, tv_humanSize, tv_objSize;
+
+    TextView tv_txtDet, tv_txtRec,tv_txtIdent;
+
+    ImageView iv_sensorPitch, iv_focalLength, iv_sensorSize;
+ //   ImageView iv_sensorPitchBackground, iv_focalLengthBackground, iv_sensorSizeBackground;
 
     ArrayList<TextView> output = new ArrayList<>();
 
@@ -63,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_t);
 
         hideKeyboardOnStartUp(); //Hide keyboard on start up app
         isEmptyDefaultSettings(); //Create SharedPreferences files if haven't created yet, and set default settings to the files
@@ -177,6 +184,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     private void setupUI() { //Initialize all TextViews, EditViews & Button
 
+
+
         tv_comment = findViewById(R.id.tv_comment);
 
         tv_txtSensorPitch = findViewById(R.id.tv_txtSensorPitch);
@@ -189,6 +198,15 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         et_sensorSizeW = findViewById(R.id.et_sensorSizeW);
         et_sensorSizeH = findViewById(R.id.et_sensorSizeH);
 
+        iv_sensorPitch = findViewById(R.id.iv_sensorPitch);
+        iv_focalLength = findViewById(R.id.iv_focalLength);
+        iv_sensorSize = findViewById(R.id.iv_sensorSize);
+
+     //   iv_sensorPitchBackground = findViewById(R.id.iv_sensorPitchBackground);
+     //   iv_focalLengthBackground = findViewById(R.id.iv_focalLengthBackground);
+      //  iv_sensorSizeBackground = findViewById(R.id.iv_sensorSizeBackground);
+
+
         btn_calculate = findViewById(R.id.btn_calculate);
 
         //From here and out TextViews are added to the output ArrayList (should be invisible)
@@ -200,31 +218,29 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         tv_resHfov = findViewById(R.id.tv_resHfov);
         tv_resVfov = findViewById(R.id.tv_resVfov);
 
+        tv_txtTargetDri = findViewById(R.id.tv_txtTargetDri);
+        tv_txtDet = findViewById(R.id.tv_txtDet);
+        tv_txtRec = findViewById(R.id.tv_txtRec);
+        tv_txtIdent = findViewById(R.id.tv_txtIdent);
+
         tv_txtNatoTarget = findViewById(R.id.tv_txtNatoTarget);
-        tv_txtNatoDet = findViewById(R.id.tv_txtNatoDet);
-        tv_txtNatoRec = findViewById(R.id.tv_txtNatoRec);
-        tv_txtNatoIdent = findViewById(R.id.tv_txtNatoIdent);
         tv_resNatoDet = findViewById(R.id.tv_resNatoDet);
         tv_resNatoRec = findViewById(R.id.tv_resNatoRec);
         tv_resNatoIdent = findViewById(R.id.tv_resNatoIdent);
 
         tv_txtHumanTarget = findViewById(R.id.tv_txtHumanTarget);
-        tv_txtHumanDet = findViewById(R.id.tv_txtHumanDet);
-        tv_txtHumanRec = findViewById(R.id.tv_txtHumanRec);
-        tv_txtHumanIdent = findViewById(R.id.tv_txtHumanIdent);
         tv_resHumanDet = findViewById(R.id.tv_resHumanDet);
         tv_resHumanRec = findViewById(R.id.tv_resHumanRec);
         tv_resHumanIdent = findViewById(R.id.tv_resHumanIdent);
 
         tv_txtObjTarget = findViewById(R.id.tv_txtObjTarget);
-        tv_txtObjDet = findViewById(R.id.tv_txtObjDet);
-        tv_txtObjRec = findViewById(R.id.tv_txtObjRec);
         tv_resObjDet = findViewById(R.id.tv_resObjDet);
         tv_resObjRec = findViewById(R.id.tv_resObjRec);
 
         tv_natoSize = findViewById(R.id.tv_natoSize);
         tv_humanSize = findViewById(R.id.tv_humanSize);
         tv_objSize = findViewById(R.id.tv_objSize);
+
 
         createOutputArrayList(); //Add the output TextViews to the ArrayList
         invisibleOutputTextView(); //Turn the output TextViews in the ArrayList to invisible
@@ -241,25 +257,22 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         output.add(tv_resHfov);
         output.add(tv_resVfov);
 
+        output.add(tv_txtTargetDri);
+        output.add(tv_txtDet);
+        output.add(tv_txtRec);
+        output.add(tv_txtIdent);
+
         output.add(tv_txtNatoTarget);
-        output.add(tv_txtNatoDet);
-        output.add(tv_txtNatoRec);
-        output.add(tv_txtNatoIdent);
         output.add(tv_resNatoDet);
         output.add(tv_resNatoRec);
         output.add(tv_resNatoIdent);
 
         output.add(tv_txtHumanTarget);
-        output.add(tv_txtHumanDet);
-        output.add(tv_txtHumanRec);
-        output.add(tv_txtHumanIdent);
         output.add(tv_resHumanDet);
         output.add(tv_resHumanRec);
         output.add(tv_resHumanIdent);
 
         output.add(tv_txtObjTarget);
-        output.add(tv_txtObjDet);
-        output.add(tv_txtObjRec);
         output.add(tv_resObjDet);
         output.add(tv_resObjRec);
 
