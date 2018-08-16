@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ddf5d5">
-
+    >
 
 
     <ScrollView
@@ -13,53 +13,86 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
 
-            <TableLayout
-                android:id="@+id/tableInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <View
+                android:id="@+id/v_rectangleBackgroundUp"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:background="@drawable/rectangle_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                android:id="@+id/v_rectangleLineUp"
+                android:layout_width="300dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:gravity="center"
-                >
+                android:background="@drawable/rectangle_line"
+                app:layout_constraintBottom_toBottomOf="@+id/v_rectangleBackgroundUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.138" />
+
+
+            <TableLayout
+                android:id="@+id/t_tableInput"
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/v_rectangleBackgroundUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.511"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/v_rectangleLineUp"
+                app:layout_constraintVertical_bias="0.0">
 
 
                 <TableRow
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="wrap_content">
 
 
                     <ImageView
                         android:id="@+id/iv_sensorPitch"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="60dp"
-                        android:layout_marginLeft="30dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
                         app:layout_constraintEnd_toStartOf="@+id/tv_txtSensorPitch"
                         app:layout_constraintHorizontal_bias="0.854"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/logo_sensor_pitch"
-                        />
+                        app:srcCompat="@drawable/logo_sensor_pitch" />
 
                     <TextView
                         android:id="@+id/tv_txtSensorPitch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:text="@string/tv_txtSensorPitch"
                         android:textColor="#000000"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="50dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,12 +100,11 @@
                         android:id="@+id/et_sensorPitch"
                         android:layout_width="55dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:ems="10"
                         android:inputType="numberDecimal"
-                        android:layout_marginLeft="10dp"
                         android:textColor="#000000"
                         android:textSize="15sp"
-                        android:layout_marginTop="50dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@+id/tv_txtSensorPitch"
@@ -87,11 +119,10 @@
                         android:id="@+id/iv_focalLength"
 
 
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="30dp"
-
 
 
                         app:layout_constraintEnd_toStartOf="@+id/tv_txtFocalLength"
@@ -104,9 +135,9 @@
                         android:id="@+id/tv_txtFocalLength"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:text="@string/tv_txtFocalLength"
                         android:textColor="#000000"
-                        android:layout_marginLeft="10dp"
 
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_txtSensorPitch" />
@@ -115,8 +146,8 @@
                         android:id="@+id/et_focalLength"
                         android:layout_width="55dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
                         android:layout_marginLeft="10dp"
+                        android:ems="10"
 
                         android:inputType="numberDecimal"
                         android:textColor="#000000"
@@ -131,21 +162,20 @@
 
                 <TableRow
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="42dp">
+
 
                     <ImageView
                         android:id="@+id/iv_sensorSize"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
                         app:layout_constraintEnd_toStartOf="@+id/tv_txtSensorSize"
                         app:layout_constraintHorizontal_bias="0.854"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/iv_focalLength"
                         app:layout_constraintVertical_bias="0.2"
-                        android:layout_marginLeft="30dp"
-
                         app:srcCompat="@drawable/logo_sensor_size" />
 
                     <TextView
@@ -156,7 +186,6 @@
 
                         android:text="@string/tv_txtSensorSize"
                         android:textColor="#000000"
-                        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
                         app:layout_constraintEnd_toStartOf="@+id/et_sensorSizeW"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
@@ -166,15 +195,14 @@
                         android:id="@+id/et_sensorSizeW"
                         android:layout_width="55dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:ems="10"
                         android:hint="@string/tv_txtSensorSizeW"
                         android:inputType="numberDecimal"
                         android:textColor="#000000"
-                        android:textColorHint="#c3c3c3"
+                        android:textColorHint="#a6a6a6"
                         android:textSize="15sp"
-                        android:layout_marginLeft="10dp"
 
-                        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
                         app:layout_constraintEnd_toStartOf="@+id/et_sensorSizeH"
                         app:layout_constraintHorizontal_bias="0.926"
                         app:layout_constraintStart_toStartOf="parent"
@@ -188,7 +216,6 @@
 
                         android:text="@string/tv_txtSensorSizeX"
                         android:textColor="#000000"
-                        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
                         app:layout_constraintEnd_toStartOf="@+id/et_sensorSizeH"
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toEndOf="@+id/et_sensorSizeW"
@@ -199,14 +226,13 @@
                         android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
+
                         android:hint="@string/tv_txtSensorSizeH"
                         android:inputType="numberDecimal"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-
                         android:textColor="#000000"
-                        android:textColorHint="#c3c3c3"
+                        android:textColorHint="#a6a6a6"
                         android:textSize="15sp"
-                        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.958"
                         app:layout_constraintStart_toStartOf="parent"
@@ -219,70 +245,94 @@
 
             <Button
                 android:id="@+id/btn_calculate"
-                android:layout_width="243dp"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/btn_calculate"
-                android:bottomRightRadius="70dp"
-                android:bottomLeftRadius="70dp"
-                android:topLeftRadius="70dp"
-                android:topRightRadius="70dp"
-                android:background="@drawable/btn_shape_round"
+                android:background="@drawable/logo_ok"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:backgroundTint="#f94954"
-                app:layout_constraintTop_toBottomOf="@+id/tableInput" />
+                app:layout_constraintTop_toBottomOf="@+id/t_tableInput"
+
+                />
+
+
+
+
+
+
+            <View
+                android:id="@+id/v_rectangleLineFov"
+                android:layout_width="300dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rectangle_line"
+                app:layout_constraintBottom_toTopOf="@+id/t_tableFov"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_calculate"
+                app:layout_constraintVertical_bias="0.0" />
+
 
             <TextView
                 android:id="@+id/tv_txtFov"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_calculate"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="32dp"
                 android:text="@string/tv_txtFov"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ff0000"
+                android:textColor="#4bacc6"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_calculate" />
+                app:layout_constraintTop_toBottomOf="@+id/v_rectangleLineFov" />
 
 
             <TableLayout
-                android:id="@+id/tableFov"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/t_tableFov"
+                android:layout_width="250dp"
+                android:layout_height="152dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+
+
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+
+
+                android:layout_marginTop="132dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_txtFov"
-                android:background="#9fffffff">
+                app:layout_constraintTop_toBottomOf="@+id/btn_calculate"
+                app:layout_constraintVertical_weight="1">
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
+                    android:layout_height="wrap_content"
+                    android:background="#d0e3ea">
 
                     <TextView
                         android:id="@+id/tv_txtIfov"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
                         android:text="@string/tv_txtIfov"
-                        android:layout_marginLeft="10dp"
-
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000" />
 
@@ -292,9 +342,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/tv_txtIfov"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
                         android:layout_toEndOf="@+id/tv_txtIfov"
                         android:layout_toRightOf="@+id/tv_txtIfov"
                         android:text="@string/tv_resIfov"
@@ -306,18 +356,22 @@
                         app:layout_constraintTop_toBottomOf="@+id/tv_txtFov" />
                 </TableRow>
 
+
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#e9f1f5">
 
                     <TextView
                         android:id="@+id/tv_txtHfov"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_txtIfov"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="20dp"
+
+                        android:layout_marginTop="15dp"
                         android:text="@string/tv_txtHfov"
-                        android:layout_marginLeft="10dp"
 
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000" />
@@ -327,11 +381,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/tv_txtHfov"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
                         android:layout_toEndOf="@+id/tv_txtHfov"
                         android:layout_toRightOf="@+id/tv_txtHfov"
                         android:text="@string/tv_resHfov"
-                        android:layout_marginLeft="20dp"
 
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000" />
@@ -340,20 +395,23 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#d0e3ea">
+
 
                     <TextView
                         android:id="@+id/tv_txtVfov"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_txtHfov"
-                        android:layout_marginTop="30dp"
-                        android:text="@string/tv_txtVfov"
-                        android:layout_marginLeft="10dp"
 
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="@string/tv_txtVfov"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="#000000"
-                        android:paddingBottom="30dp"/>
+                        android:textColor="#000000" />
 
 
                     <TextView
@@ -361,11 +419,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/tv_txtVfov"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
                         android:layout_toEndOf="@+id/tv_txtVfov"
                         android:layout_toRightOf="@+id/tv_txtVfov"
                         android:text="@string/tv_resVfov"
-                        android:layout_marginLeft="20dp"
 
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000" />
@@ -374,36 +433,53 @@
             </TableLayout>
 
 
+            <View
+                android:id="@+id/v_rectangleLineDri"
+                android:layout_width="300dp"
+                android:layout_height="4dp"
+
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/rectangle_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t_tableFov" />
+
+
             <TextView
                 android:id="@+id/tv_txtTargetDri"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_calculate"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="32dp"
                 android:text="@string/tv_txtTargetDri"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ff0000"
+                android:textColor="#4bacc6"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintHorizontal_bias="0.498"
+
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tableFov"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/v_rectangleLineDri" />
 
 
             <TableLayout
-                android:id="@+id/tableTargetDri"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:background="#78ffffff"
+                android:id="@+id/t_tableTargetDri"
+                android:layout_width="385dp"
 
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="20sp"
+
+                android:background="#78ffffff"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -414,111 +490,140 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:background="#4bacc6">
 
 
                     <Space
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent" />
 
 
                     <TextView
                         android:id="@+id/tv_txtNatoTarget"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
                         android:gravity="center"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
                         android:text="@string/tv_txtNatoTarget"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="#000000" />
+
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
 
 
                     <TextView
                         android:id="@+id/tv_txtHumanTarget"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
                         android:gravity="center"
                         android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"
                         android:text="@string/tv_txtHumanTarget"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="#000000" />
+
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
 
 
                     <TextView
                         android:id="@+id/tv_txtObjTarget"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
                         android:gravity="center"
+
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
                         android:text="@string/tv_txtObjTarget"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="#000000" />
+
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
 
 
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#4bacc6">
+
 
                     <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent" />
 
                     <TextView
                         android:id="@+id/tv_natoSize"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tv_natoSize"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:textColor="#000000" />
+                        android:text="@string/tv_natoSize"
+
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+
+                        android:textColor="#ffffff" />
 
 
                     <TextView
                         android:id="@+id/tv_humanSize"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tv_humanSize"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:textColor="#000000" />
+
+                        android:text="@string/tv_humanSize"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ffffff"
+
+                        />
 
 
                     <TextView
                         android:id="@+id/tv_objSize"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tv_objSize"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:textColor="#000000" />
+
+                        android:text="@string/tv_objSize"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:textColor="#ffffff" />
 
 
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#d0e3ea">
 
                     <TextView
                         android:id="@+id/tv_txtDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="15dp"
                         android:text="@string/tv_txtDet"
+
                         android:textAppearance="?android:attr/textAppearanceSmall"
 
                         android:textColor="#000000" />
@@ -527,8 +632,10 @@
                         android:id="@+id/tv_resNatoDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
 
+                        android:gravity="center"
 
                         android:text="@string/tv_resNatoDet"
 
@@ -539,7 +646,9 @@
                         android:id="@+id/tv_resHumanDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
                         android:text="@string/tv_resHumanDet"
 
                         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -550,7 +659,9 @@
                         android:id="@+id/tv_resObjDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
                         android:text="@string/tv_resObjDet"
 
                         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -560,13 +671,16 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#e9f1f5">
 
                     <TextView
                         android:id="@+id/tv_txtRec"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="15dp"
                         android:text="@string/tv_txtRec"
                         android:textAppearance="?android:attr/textAppearanceSmall"
 
@@ -577,7 +691,9 @@
                         android:id="@+id/tv_resNatoRec"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
                         android:text="@string/tv_resNatoRec"
                         android:textAppearance="?android:attr/textAppearanceSmall"
 
@@ -587,7 +703,9 @@
                         android:id="@+id/tv_resHumanRec"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
                         android:text="@string/tv_resHumanRec"
                         android:textAppearance="?android:attr/textAppearanceSmall"
 
@@ -598,34 +716,42 @@
                         android:id="@+id/tv_resObjRec"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
                         android:text="@string/tv_resObjRec"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-
                         android:textColor="#000000" />
 
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="201dp">
+                    android:layout_height="201dp"
+                    android:layout_marginBottom="30dp"
+
+                    android:background="#d0e3ea">
 
                     <TextView
                         android:id="@+id/tv_txtIdent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="15dp"
                         android:text="@string/tv_txtIdent"
                         android:textAppearance="?android:attr/textAppearanceSmall"
 
-                        android:textColor="#000000"
-                        android:paddingBottom="50dp"/>
+                        android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/tv_resNatoIdent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+
                         android:text="@string/tv_resNatoIdent"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000" />
@@ -635,7 +761,9 @@
                         android:id="@+id/tv_resHumanIdent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
                         android:text="@string/tv_resHumanIdent"
                         android:textAppearance="?android:attr/textAppearanceSmall"
 
@@ -645,6 +773,10 @@
                 </TableRow>
 
             </TableLayout>
+
+
+
+
 
 
         </android.support.constraint.ConstraintLayout>

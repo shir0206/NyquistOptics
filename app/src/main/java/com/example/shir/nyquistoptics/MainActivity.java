@@ -26,7 +26,7 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class MainActivity extends AppCompatActivity implements Serializable {
 
-    TextView tv_comment; // initialize comment
+  //  TextView tv_comment; // initialize comment
 
     TextView tv_txtSensorPitch, tv_txtFocalLength, tv_txtSensorSize, tv_txtSensorSizeX; //initialize inputs titles
     EditText et_sensorPitch, et_focalLength, et_sensorSizeW, et_sensorSizeH; //initialize inputs values
@@ -54,7 +54,13 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     TextView tv_txtDet, tv_txtRec,tv_txtIdent;
 
     ImageView iv_sensorPitch, iv_focalLength, iv_sensorSize;
+
  //   ImageView iv_sensorPitchBackground, iv_focalLengthBackground, iv_sensorSizeBackground;
+
+
+   // Table t_tableInput, t_tableFov,     t_tableTargetDri; ///////////////
+    View v_rectangleBackgroundUp, v_rectangleLineUp, v_rectangleLineFov,  v_rectangleLineDri; /////////
+
 
     ArrayList<TextView> output = new ArrayList<>();
 
@@ -70,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_t);
+        setContentView(R.layout.activity_main_t2);
 
         hideKeyboardOnStartUp(); //Hide keyboard on start up app
         isEmptyDefaultSettings(); //Create SharedPreferences files if haven't created yet, and set default settings to the files
@@ -186,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
 
 
-        tv_comment = findViewById(R.id.tv_comment);
+       // tv_comment = findViewById(R.id.tv_comment);
 
         tv_txtSensorPitch = findViewById(R.id.tv_txtSensorPitch);
         tv_txtFocalLength = findViewById(R.id.tv_txtFocalLength);
@@ -206,6 +212,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
      //   iv_focalLengthBackground = findViewById(R.id.iv_focalLengthBackground);
       //  iv_sensorSizeBackground = findViewById(R.id.iv_sensorSizeBackground);
 
+        v_rectangleBackgroundUp = findViewById(R.id.v_rectangleBackgroundUp);
+        v_rectangleLineUp = findViewById(R.id.v_rectangleLineUp);
 
         btn_calculate = findViewById(R.id.btn_calculate);
 
@@ -241,6 +249,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         tv_humanSize = findViewById(R.id.tv_humanSize);
         tv_objSize = findViewById(R.id.tv_objSize);
 
+        v_rectangleLineFov = findViewById(R.id.v_rectangleLineFov);
+        v_rectangleLineDri = findViewById(R.id.v_rectangleLineDri);
 
         createOutputArrayList(); //Add the output TextViews to the ArrayList
         invisibleOutputTextView(); //Turn the output TextViews in the ArrayList to invisible
@@ -279,6 +289,9 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         output.add(tv_natoSize);
         output.add(tv_humanSize);
         output.add(tv_objSize);
+
+
+
 
     }
 
