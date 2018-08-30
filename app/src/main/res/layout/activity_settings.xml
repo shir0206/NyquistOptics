@@ -1,280 +1,491 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <!--Change each tv_txtNatoDet, tv_txtHumanDet, tv_txtObjDet to tv_Det-->
+    android:layout_height="match_parent">
 
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="35dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/v_rectangleBackgroundUp"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/rectangle_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-            <TextView
-                android:id="@+id/tv_settingsComment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="228dp"
 
-                android:layout_centerHorizontal="false"
-                android:layout_marginTop="30dp"
-                android:text="@string/tv_settingsComment"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="italic" />
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="228dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/logo_save"
+                app:layout_constraintBottom_toBottomOf="@+id/v_rectangleBackgroundUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_refresh"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/logo_refresh"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.221"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
 
             <TextView
                 android:id="@+id/tv_lp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_settingsComment"
-                android:layout_marginTop="30dp"
-
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="40dp"
                 android:text="@string/tv_lp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ff0000" />
+                android:textColor="#4bacc6"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_refresh" />
 
-            <TextView
-                android:id="@+id/tv_lpDet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
 
-                android:layout_below="@+id/tv_lp"
+            <TableLayout
+                android:id="@+id/t_tableLp"
+                android:layout_width="320dp"
+                android:layout_height="165dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/tv_lpDet"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lp"
+                app:layout_constraintVertical_weight="1">
 
-            <EditText
-                android:id="@+id/et_lpDet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d0e3ea">
 
-                android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/tv_lpDet"
-                android:layout_toRightOf="@+id/tv_lpDet"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/tv_lpDet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/tv_lpDet"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000" />
 
 
-            <TextView
-                android:id="@+id/tv_lpRec"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_lpDet"
+                    <EditText
+                        android:id="@+id/et_lpDet"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lpDet"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#e9f1f5">
+
+
+                    <TextView
+                        android:id="@+id/tv_lpRec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/tv_lpRec"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000" />
+
+
+                    <EditText
+                        android:id="@+id/et_lpRec"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lpRec"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d0e3ea">
+
+                    <TextView
+                        android:id="@+id/tv_lpIdent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/tv_lpIdent"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000" />
+
+
+                    <EditText
+                        android:id="@+id/et_lpIdent"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lpIdent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#e9f1f5">
+
+
+                    <TextView
+                        android:id="@+id/tv_lpDetObj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/tv_lpDetObj"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000" />
+
+
+                    <EditText
+                        android:id="@+id/et_lpDetObj"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lpDetObj"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </TableRow>
+
+            </TableLayout>
+
+
+            <View
+                android:id="@+id/v_rectangleLineLp"
+                android:layout_width="300dp"
+                android:layout_height="4dp"
+
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/tv_lpRec"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <EditText
-                android:id="@+id/et_lpRec"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/tv_lpRec"
-                android:layout_toRightOf="@+id/tv_lpRec"
-                android:inputType="numberDecimal" />
-
-
-            <TextView
-                android:id="@+id/tv_lpIdent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_lpRec"
-                android:layout_marginTop="30dp"
-
-                android:text="@string/tv_lpIdent"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <EditText
-                android:id="@+id/et_lpIdent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/tv_lpIdent"
-                android:layout_toRightOf="@+id/tv_lpIdent"
-                android:inputType="numberDecimal" />
-
-            <TextView
-                android:id="@+id/tv_lpDetObj"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_lpIdent"
-
-                android:layout_marginTop="30dp"
-                android:text="@string/tv_lpDetObj"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <EditText
-                android:id="@+id/et_lpDetObj"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/tv_lpDetObj"
-                android:layout_toRightOf="@+id/tv_lpDetObj"
-
-                android:inputType="numberDecimal" />
+                android:background="@drawable/rectangle_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t_tableLp" />
 
 
             <TextView
                 android:id="@+id/tv_targetSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/et_lpDetObj"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/tv_targetSize"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ff0000" />
+                android:textColor="#4bacc6"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/v_rectangleLineLp" />
 
 
-            <TextView
-                android:id="@+id/tv_txtNatoTarget"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_targetSize"
+            <TableLayout
+                android:id="@+id/t_tableTargetSize"
+                android:layout_width="290dp"
+                android:layout_height="125dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/tv_txtNatoTarget"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ff0000" />
-
-            <EditText
-                android:id="@+id/et_natoTargetW"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tv_txtNatoTarget"
-                android:layout_toRightOf="@+id/tv_txtNatoTarget"
-                android:hint="@string/et_natoTargetW"
-                android:inputType="numberDecimal" />
-
-            <TextView
-                android:id="@+id/tv_natoTargetSizeX"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/tv_txtNatoTarget"
-                android:layout_marginEnd="161dp"
-                android:text="@string/tv_natoTargetSizeX"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_targetSize"
+                app:layout_constraintVertical_weight="1">
 
 
-            <EditText
-                android:id="@+id/et_natoTargetH"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/tv_txtNatoTarget"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:hint="@string/et_natoTargetH"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#d0e3ea">
+
+                    <TextView
+                        android:id="@+id/tv_txtNatoTargetSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/tv_txtNatoTargetSize"
+                        android:textColor="#000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/et_natoTargetW"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:ems="10"
+                        android:hint="@string/et_natoTargetW"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000000"
+                        android:textColorHint="#a6a6a6"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_natoTargetSizeX"
+                        android:layout_width="22dp"
+                        android:layout_height="15dp"
+                        android:gravity="center"
+                        android:text="@string/tv_natoTargetSizeX"
+                        android:textColor="#000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/et_natoTargetH"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/et_natoTargetH"
+                        android:inputType="numberDecimal"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"
+                        android:textColorHint="#a6a6a6"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#e9f1f5">
+
+                    <TextView
+                        android:id="@+id/tv_txtHumanTargetSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/tv_txtHumanTargetSize"
+                        android:textColor="#000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/et_humanTargetW"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:ems="10"
+                        android:hint="@string/et_humanTargetW"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000000"
+                        android:textColorHint="#a6a6a6"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_humanTargetSizeX"
+                        android:layout_width="22dp"
+                        android:layout_height="15dp"
+                        android:gravity="center"
+                        android:text="@string/tv_humanTargetSizeX"
+                        android:textColor="#000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/et_humanTargetH"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/et_humanTargetH"
+                        android:inputType="numberDecimal"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"
+                        android:textColorHint="#a6a6a6"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#d0e3ea">
+
+                    <TextView
+                        android:id="@+id/tv_txtObjTargetSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/tv_txtObjTargetSize"
+                        android:textColor="#000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/et_objTargetW"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:ems="10"
+                        android:hint="@string/et_objTargetW"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000000"
+                        android:textColorHint="#a6a6a6"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_objTargetSizeX"
+                        android:layout_width="22dp"
+                        android:layout_height="15dp"
+                        android:gravity="center"
+                        android:text="@string/tv_objTargetSizeX"
+                        android:textColor="#000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/et_objTargetH"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/et_objTargetH"
+                        android:inputType="numberDecimal"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"
+                        android:textColorHint="#a6a6a6"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </TableRow>
+
+            </TableLayout>
 
 
-            <TextView
-                android:id="@+id/tv_txtHumanTarget"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_txtNatoTarget"
-                android:layout_marginTop="30dp"
-                android:text="@string/tv_txtHumanTarget"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ff0000" />
-
-            <EditText
-                android:id="@+id/et_humanTargetW"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tv_txtHumanTarget"
-                android:layout_toRightOf="@+id/tv_txtHumanTarget"
-                android:hint="@string/et_humanTargetW"
-                android:inputType="numberDecimal" />
-
-            <TextView
-                android:id="@+id/tv_humanTargetSizeX"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/tv_txtHumanTarget"
-                android:layout_marginEnd="161dp"
-                android:text="@string/tv_humanTargetSizeX"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <View
+                android:id="@+id/v_rectangleBackgroundDown"
+                android:layout_width="400dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="184dp"
+                android:background="@drawable/rectangle_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/t_tableTargetSize" />
 
 
-            <EditText
-                android:id="@+id/et_humanTargetH"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/tv_txtHumanTarget"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:hint="@string/et_humanTargetH"
-                android:inputType="numberDecimal" />
+            <View
+                android:id="@+id/v_rectangleLineDown"
+                android:layout_width="300dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rectangle_line"
+                app:layout_constraintBottom_toBottomOf="@+id/v_rectangleBackgroundDown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.352"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/v_rectangleBackgroundDown" />
 
 
-            <TextView
-                android:id="@+id/tv_txtObjTarget"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_txtHumanTarget"
-                android:layout_marginTop="30dp"
-                android:text="@string/tv_txtObjTarget"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ff0000" />
 
-            <EditText
-                android:id="@+id/et_objTargetW"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tv_txtObjTarget"
-                android:layout_toRightOf="@+id/tv_txtObjTarget"
-                android:hint="@string/et_objTargetW"
-                android:inputType="numberDecimal" />
+        </android.support.constraint.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/tv_objTargetSizeX"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/tv_txtObjTarget"
-                android:layout_marginEnd="161dp"
-                android:text="@string/tv_objTargetSizeX"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-
-            <EditText
-                android:id="@+id/et_objTargetH"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/tv_txtObjTarget"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:hint="@string/et_objTargetH"
-                android:inputType="numberDecimal" />
-
-
-            <Button
-                android:id="@+id/btn_save"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/et_objTargetH"
-                android:layout_centerInParent="true"
-                android:text="@string/btn_save" />
-
-
-        </RelativeLayout>
     </ScrollView>
-</RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">NyquistOptics</string>
-
-    <string name="tv_comment">Please fill in the following fields:</string>
+    <string name="app_name">Nyquist Optics</string>
 
     <string name="tv_txtSensorPitch">Sensor Pitch (mic):</string>
     <string name="tv_txtFocalLength">Focal Length (mm):</string>
@@ -10,43 +8,24 @@
     <string name="tv_txtSensorSizeH">Height</string>
     <string name="tv_txtSensorSizeX">x</string>
 
-    <string name="btn_calculate">Calculate</string>
-
-    <string name="tv_txtFov">Field of view:</string>
+    <string name="tv_txtFov">Field of View</string>
     <string name="tv_txtIfov">IFOV (rad):</string>
     <string name="tv_txtHfov">HFOV (deg):</string>
     <string name="tv_txtVfov">VFOV (deg):</string>
-
 
     <string name="tv_resIfov"></string>
     <string name="tv_resHfov"></string>
     <string name="tv_resVfov"></string>
 
-
-
-    <string name="tv_txtTargetDri">Target DRI:</string>
+    <string name="tv_txtTargetDri">Target DRI</string>
 
     <string name="tv_txtNatoTarget">Nato\nTarget</string>
     <string name="tv_txtHumanTarget">Human\nTarget</string>
     <string name="tv_txtObjTarget">Object\nTarget</string>
 
-
     <string name="tv_txtDet">Detection (m):</string>
     <string name="tv_txtRec">Recognition (m):</string>
     <string name="tv_txtIdent">Identify (m):</string>
-
-
-
-    <string name="tv_txtNatoDet">Detection (meter):</string>
-    <string name="tv_txtNatoRec">Recognition (meter):</string>
-    <string name="tv_txtNatoIdent">Identify (meter):</string>
-
-    <string name="tv_txtHumanDet">Detection (meter):</string>
-    <string name="tv_txtHumanRec">Recognition (meter):</string>
-    <string name="tv_txtHumanIdent">Identify (meter):</string>
-
-    <string name="tv_txtObjDet">Detection (meter):</string>
-    <string name="tv_txtObjRec">Recognition (meter):</string>
 
     <string name="tv_resNatoDet"></string>
     <string name="tv_resNatoRec"></string>
@@ -65,17 +44,19 @@
 
     <string name="action_settings">Settings</string>
 
-
     <string name="tv_settingsComment">Please fill in the following fields:</string>
 
-    <string name="tv_lp">Lines Pairs:</string>
-    <string name="tv_lpDetObj">Lines Pairs for Det-Obj</string>
-    <string name="tv_lpDet">Lines Pairs for Det</string>
-    <string name="tv_lpRec">Lines Pairs for Rec</string>
-    <string name="tv_lpIdent">Lines Pairs for Ident</string>
-
+    <string name="tv_lp">Line Pairs</string>
+    <string name="tv_lpDetObj">Line pairs for Detection (Object)</string>
+    <string name="tv_lpDet">Line pairs for Detection</string>
+    <string name="tv_lpRec">Lines pairs for Recognition</string>
+    <string name="tv_lpIdent">Lines pairs for Identify</string>
 
     <string name="tv_targetSize">Target Size</string>
+
+    <string name="tv_txtNatoTargetSize">Nato Target</string>
+    <string name="tv_txtHumanTargetSize">Human Target</string>
+    <string name="tv_txtObjTargetSize">Object Target</string>
 
 
     <string name="et_natoTargetW">Width</string>
@@ -90,21 +71,6 @@
     <string name="et_objTargetH">Height</string>
     <string name="tv_objTargetSizeX">X</string>
 
-
-    <string name="btn_save">Save</string>
-
-
-    tv_NatoTargetW
-    tv_natoTargetSizeX
-    tv_NatoTargetH
-
-
-    TextView tv_settingsComment; // initialize comment
-
-    TextView , , , ; //initialize inputs titles
-    EditText et_lpDetObj, et_lpDet, et_lpRec, et_lpIdent; //initialize inputs values
-
-    Button btn_edit; // initialize calculate button
-
+    <string name="btn_save">SAVE</string>
 
 </resources>

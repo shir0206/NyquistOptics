@@ -36,10 +36,10 @@
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="ffffff" />
                                       <entry key="backgroundLayerName" value="ic_launcher_background0" />
-                                      <entry key="foregroundImage" value="C:\Users\Shir\Desktop\n_o_logo.png" />
-                                      <entry key="foregroundLayerName" value="nyquist_optics01" />
+                                      <entry key="foregroundImage" value="C:\Users\Shir\Documents\AND\app\src\main\res\drawable\nyquist_optics_logo.png" />
+                                      <entry key="foregroundLayerName" value="logo" />
                                       <entry key="legacyIconShape" value="CIRCLE" />
-                                      <entry key="outputName" value="nyquist_optics_01" />
+                                      <entry key="outputName" value="nyquist_optics_logo" />
                                       <entry key="webIconShape" value="CIRCLE" />
                                     </map>
                                   </option>
