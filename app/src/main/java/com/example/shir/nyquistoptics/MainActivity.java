@@ -3,6 +3,7 @@ package com.example.shir.nyquistoptics;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -62,76 +63,96 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     TargetSizeHolder targetSizeHolder; // Initialize target size Singleton
 
+    Vibrator vibrator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        hideKeyboardOnStartUp(); //Hide keyboard on start up app
-        isEmptyDefaultSettings(); //Create SharedPreferences files if haven't created yet, and set default settings to the files
-        SetDefaultSettings(); //Set default settings derived from SharedPreferences files to the objects
+        // Hide keyboard on start up app
+        hideKeyboardOnStartUp();
+
+        // Create SharedPreferences files if haven't created yet, and set default settings to the files
+        isEmptyDefaultSettings();
+
+        // Set default settings derived from SharedPreferences files to the objects
+        SetDefaultSettings();
+
+        // Set up UI
         setupUI();
+
+        // Get the vibrator
+        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         btn_calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //If all fields are not filled, toast a massage to fill all fields
-                if (et_focalLength.getText().toString().isEmpty() || et_sensorPitch.getText().toString().isEmpty() || et_sensorSizeW.getText().toString().isEmpty() || et_sensorSizeH.getText().toString().isEmpty()) {
+                // Vibrate
+                vibrator.vibrate(50);
+
+                // If all fields are not filled, toast a massage to fill all fields
+                if (et_focalLength.getText().toString().isEmpty()
+                        || et_sensorPitch.getText().toString().isEmpty()
+                        || et_sensorSizeW.getText().toString().isEmpty()
+                        || et_sensorSizeH.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                 }
 
-                //If all fields are filled, continue
+                // If all fields are filled, continue
                 else {
 
-                    hideKeyboardOnceBtnPressed();  //hide keyboard once button pressed
+                    // Hide keyboard once button pressed
+                    hideKeyboardOnceBtnPressed();
 
-                    //Convert the user input from String to double
+
+
+                    // Convert the user input from String to double
                     double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
                     double focalLength = Double.parseDouble(et_focalLength.getText().toString());
                     double sensorSizeW = Double.parseDouble(et_sensorSizeW.getText().toString());
                     double sensorSizeH = Double.parseDouble(et_sensorSizeH.getText().toString());
 
-                    //Set the parameters in Properties & SensorSize classes according to the user input
+                    // Set the parameters in Properties & SensorSize classes according to the user input
                     Properties.setSensorPitch(sensorPitch);
                     Properties.setFocalLength(focalLength);
                     SensorSize.setWidth(sensorSizeW);
                     SensorSize.setHeight(sensorSizeH);
 
-                    //PART 1 - Calculate FOV
+                    // PART 1 - Calculate FOV
 
-                    //Calculate the output
+                    // Calculate the output
                     Fov.setFov();
 
-                    //Convert the output from double to String and formatting the decimal digits
+                    // Convert the output from double to String and formatting the decimal digits
                     String ifov = formatSixDig.format(Fov.getIfov());
                     String hfov = formatOneDig.format(Fov.getHfov());
                     String vfov = formatOneDig.format(Fov.getVfov());
 
-                    //Set the String output to TextView
+                    // Set the String output to TextView
                     tv_resIfov.setText(ifov);
                     tv_resHfov.setText(hfov);
                     tv_resVfov.setText(vfov);
 
-                    //PART 2 - Calculate Targets
+                    // PART 2 - Calculate Targets
 
-                    //Create local TargetSize instances, that contains data derived from targetSizeHolder class (in hashmap targetSizeCollection)
+                    // Create local TargetSize instances, that contains data derived from targetSizeHolder class (in hashmap targetSizeCollection)
                     TargetSize natoTargetSize = targetSizeHolder.getTargetSize("natoTargetSize");
                     TargetSize humanTargetSize = targetSizeHolder.getTargetSize("humanTargetSize");
                     TargetSize objTargetSize = targetSizeHolder.getTargetSize("objTargetSize");
 
-                    //Initialize Target class instances
+                    // Initialize Target class instances
                     Target natoTarget = new Target();
                     Target humanTarget = new Target();
                     Target objTarget = new Target();
 
-                    //Calculate the output
+                    // Calculate the output
                     natoTarget.setTarget(natoTargetSize);
                     humanTarget.setTarget(humanTargetSize);
                     objTarget.setTarget(objTargetSize);
 
-                    //Convert the output from double to String
+                    // Convert the output from double to String
                     String natoTargetDet = formatOneDig.format(natoTarget.getDetection());
                     String natoTargetRec = formatOneDig.format(natoTarget.getRecognition());
                     String natoTargetIdent = formatOneDig.format(natoTarget.getIdentify());
@@ -143,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                     String objTargetDet = formatOneDig.format(objTarget.getDetection());
                     String objTargetRec = formatOneDig.format(objTarget.getRecognition());
 
-                    //Set the String output to TextView
+                    // Set the String output to TextView
                     tv_resNatoDet.setText(natoTargetDet);
                     tv_resNatoRec.setText(natoTargetRec);
                     tv_resNatoIdent.setText(natoTargetIdent);
@@ -155,19 +176,20 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                     tv_resObjDet.setText(objTargetDet);
                     tv_resObjRec.setText(objTargetRec);
 
-                    //Convert the target size from double to String
+                    // Convert the target size from double to String
                     String natoSize = "(" + Double.toString(natoTargetSize.getWidth()) + "x" + Double.toString(natoTargetSize.getHeight()) + ")";
                     String humanSize = "(" + Double.toString(humanTargetSize.getWidth()) + "x" + Double.toString(humanTargetSize.getHeight()) + ")";
                     String objSize = "(" + Double.toString(objTargetSize.getWidth()) + "x" + Double.toString(objTargetSize.getHeight()) + ")";
 
-                    //Set the target size to TextView
+                    // Set the target size to TextView
                     tv_natoSize.setText(natoSize);
                     tv_humanSize.setText(humanSize);
                     tv_objSize.setText(objSize);
 
-                    //Turn the output  visible
+                    // Turn the output  visible
                     turnVisible();
 
+                    // Create a toast message calculated successfully
                     Toast.makeText(MainActivity.this, "Calculated successfully", Toast.LENGTH_SHORT).show();
 
                 }
@@ -177,12 +199,13 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     }
 
-    private void hideKeyboardOnStartUp() { //Hide keyboard on start up app
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-    }
 
+    //------------------------------------- Setup Methods -------------------------------------
 
-    private void setupUI() { //Initialize all TextViews, EditViews & Button
+    /**
+     * Initialize all Views, TextViews, EditViews & Button
+     */
+    private void setupUI() {
 
         v_rectangleBackgroundUp = findViewById(R.id.v_rectangleBackgroundUp);
         v_rectangleLineUp = findViewById(R.id.v_rectangleLineUp);
@@ -245,87 +268,89 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     }
 
-
+    /**
+     * Create array lists for all output Views, all output Tables & all output TextViews
+     */
     private void createArrays() {
-
         createLineOutputArrayList();
         createTableOutputArrayList();
         createOutputArrayList();
-
-
     }
 
-
+    /**
+     * Turn invisible all array lists of all output Views, all output Tables & all output TextViews
+     */
     private void turnInvisible() {
-
         invisibleLineOutput();
         invisibleTableOutput();
         invisibleTextViewOutput();
     }
 
-
-
+    /**
+     * Turn visible all array lists of all output Views, all output Tables & all output TextViews
+     */
     private void turnVisible() {
-
         visibleLineOutput();
         visibleTableOutput();
         visibleTextViewOutput();
-
-
     }
 
-
-
+    /**
+     * Create an array list out of all output Views
+     */
     private void createLineOutputArrayList () {
         lineOutput.add(v_rectangleLineFov);
         lineOutput.add(v_rectangleLineDri);
     }
 
-
-
-    private void invisibleLineOutput() { //Turn the output TextViews in the ArrayList to invisible
-
-        for (View vw : lineOutput) {
-            vw.setVisibility(View.INVISIBLE);
+    /**
+     * Turn all the objects in the array list of all output Views to invisible
+     */
+    private void invisibleLineOutput() {
+        for (View currentLineOutput : lineOutput) {
+            currentLineOutput.setVisibility(View.INVISIBLE);
         }
-
     }
 
-    private void visibleLineOutput() { //Turn the output TextViews in the ArrayList to visible
-
-        for (View vw : lineOutput) {
-            vw.setVisibility(View.VISIBLE);
+    /**
+     * Turn all the objects in the array list of all output Views to visible
+     */
+    private void visibleLineOutput() {
+        for (View currentLineOutput : lineOutput) {
+            currentLineOutput.setVisibility(View.VISIBLE);
         }
-
     }
 
+    /**
+     * Create an array list out of all output Tables
+     */
     private void createTableOutputArrayList () {
-
         tableOutput.add(t_tableFov);
         tableOutput.add(t_tableTargetDri);
-
     }
 
-
-
-    private void invisibleTableOutput() { //Turn the output TextViews in the ArrayList to invisible
-
-        for (TableLayout tl : tableOutput) {
-            tl.setVisibility(View.INVISIBLE);
+    /**
+     * Turn all the objects in the array list of all output Tables to invisible
+     */
+    private void invisibleTableOutput() {
+        for (TableLayout currentTableOutput : tableOutput) {
+            currentTableOutput.setVisibility(View.GONE);
         }
-
     }
 
-    private void visibleTableOutput() { //Turn the output TextViews in the ArrayList to visible
-
-        for (TableLayout tl : tableOutput) {
-            tl.setVisibility(View.VISIBLE);
+    /**
+     * Turn all the objects in the array list of all output Tables to invisible
+     */
+    private void visibleTableOutput() {
+        for (TableLayout currentTableOutput : tableOutput) {
+            currentTableOutput.setVisibility(View.VISIBLE);
         }
-
     }
 
-
-    private void createOutputArrayList() { //Add the output TextViews to the ArrayList
+    /**
+     * Create an array list out of all output TextViews
+     */
+    private void createOutputArrayList() {
 
         textViewOutput.add(tv_txtFov);
 
@@ -362,78 +387,79 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         textViewOutput.add(tv_resObjDet);
         textViewOutput.add(tv_resObjRec);
 
-
     }
 
-    private void invisibleTextViewOutput() { //Turn the output TextViews in the ArrayList to invisible
-
-        for (TextView tv : textViewOutput) {
-            tv.setVisibility(View.INVISIBLE);
+    /**
+     * Turn all the objects in the array list of all output TextViews to invisible
+     */
+    private void invisibleTextViewOutput() {
+        for (TextView currentTextViewOutput : textViewOutput) {
+            currentTextViewOutput.setVisibility(View.INVISIBLE);
         }
-
     }
 
-    private void visibleTextViewOutput() { //Turn the output TextViews in the ArrayList to visible
-
-        for (TextView tv : textViewOutput) {
-            tv.setVisibility(View.VISIBLE);
+    /**
+     * Turn all the objects in the array list of all output TextViews to visible
+     */
+    private void visibleTextViewOutput() {
+        for (TextView currentTextViewOutput : textViewOutput) {
+            currentTextViewOutput.setVisibility(View.VISIBLE);
         }
-
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) { //Inflate the menu
-        getMenuInflater().inflate(R.menu.mainactivity, menu);
-        return true;
-    }
+    //------------------------------------- Shared Preference Methods -------------------------------------
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) { //Open Settings menu above
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                startActivity(new Intent(this, SettingsActivity.class)); //Move from this activity (MainActivity) to SettingActivity
-                //finish(); //Closes MainActivity
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void isEmptyDefaultSettings() { //Create SharedPreferences files if haven't created yet, and set default settings to the files
+    /**
+     * Create SharedPreferences files and set default settings to the files
+     */
+    private void isEmptyDefaultSettings() {
         isEmptyLinePairDefaultSettings();
         isEmptyTargetSizeDefaultSettings();
     }
 
+    /**
+     * Create SharedPreferences file for Line pairs settings, and set default settings
+     */
     private void isEmptyLinePairDefaultSettings() {
-        linePairDefaultSettings = getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE); //Create a file named "defaultSettings", private
+
+        // Get the file named "linePairDefaultSettings", private
+        linePairDefaultSettings = getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE);
 
         // Check if SharedPreferences file is empty (linePairDefaultSettings file).
         // If it's empty (first app usage), put default settings.
         if (linePairDefaultSettings.getString("defaultSettings_lpDet", "").isEmpty()) {
 
-            SharedPreferences.Editor editor = linePairDefaultSettings.edit(); //Create an editor to edit the file
+            // Get the editor to edit the file
+            SharedPreferences.Editor editor = linePairDefaultSettings.edit();
 
-            //Put default settings
+            // Put default settings
             editor.putString("defaultSettings_lpDet", "2");
             editor.putString("defaultSettings_lpRec", "6");
             editor.putString("defaultSettings_lpIdent", "10");
             editor.putString("defaultSettings_lpDetObj", "1.2");
 
-            editor.apply(); //Saves the changes
+            // Save the changes
+            editor.apply();
 
         }
     }
 
+    /**
+     * Create SharedPreferences file for Target Size settings, and set default settings
+     */
     private void isEmptyTargetSizeDefaultSettings() {
-        targetSizeDefaultSettings = getSharedPreferences("targetSizeDefaultSettings", Context.MODE_PRIVATE); //Create a file named "defaultSettings", private
 
-        //Check if SharedPreferences file is empty (targetSizeDefaultSettings file).
+        // Get the file named "targetSizeDefaultSettings", private
+        targetSizeDefaultSettings = getSharedPreferences("targetSizeDefaultSettings", Context.MODE_PRIVATE);
+
+        // Check if SharedPreferences file is empty (targetSizeDefaultSettings file).
         // If it's empty (first app usage), put default settings.
         if (targetSizeDefaultSettings.getString("defaultSettings_natoTargetW", "").isEmpty()) {
 
-            SharedPreferences.Editor editor = targetSizeDefaultSettings.edit(); //Create an editor to edit the file
+            // Get the editor to edit the file
+            SharedPreferences.Editor editor = targetSizeDefaultSettings.edit();
 
-            //Put default settings
+            // Put default settings
             editor.putString("defaultSettings_natoTargetW", "2.3");
             editor.putString("defaultSettings_natoTargetH", "2.3");
 
@@ -443,35 +469,47 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             editor.putString("defaultSettings_objTargetW", "0.5");
             editor.putString("defaultSettings_objTargetH", "0.5");
 
-            editor.apply(); //Saves the changes
+            //Save the changes
+            editor.apply();
 
         }
     }
 
-    private void SetDefaultSettings() { //Set default settings derived from SharedPreferences files to the objects
+    /**
+     * Set default settings derived from SharedPreferences files to the objects
+     */
+    private void SetDefaultSettings() {
         SetLinePairDefaultSettingsToClass();
         SetTargetSizeDefaultSettingsToObjects();
     }
 
-    private void SetLinePairDefaultSettingsToClass() { //Print the saved settings
+    /**
+     * Set default settings derived from SharedPreferences file to the Line Pair class
+     */
+    private void SetLinePairDefaultSettingsToClass() {
+
+        // Get the file named "linePairDefaultSettings", private
         linePairDefaultSettings = getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE);
 
-        //Convert the user input from String to double
+        // Convert the user input from String to double
         double lpDet = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpDet", ""));
         double lpRec = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpRec", ""));
         double lpIdent = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpIdent", ""));
         double lpDetObj = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpDetObj", ""));
 
-        //Set the parameters in LinePair classes according to the user input
+        // Set the parameters in LinePair classes according to the user input
         LinePair.setLpDet(lpDet);
         LinePair.setLpRec(lpRec);
         LinePair.setLpIdent(lpIdent);
         LinePair.setLpDetObj(lpDetObj);
-
     }
 
+    /**
+     * Set default settings derived from SharedPreferences file to the Target Size Holder (Singleton) class
+     */
     private void SetTargetSizeDefaultSettingsToObjects() {
-        //get the values from targetSizeDefaultSettings Shared Preferences and convert from String to double
+
+        // Get the values from targetSizeDefaultSettings Shared Preferences and convert from String to double
         double natoTargetW = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_natoTargetW", ""));
         double natoTargetH = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_natoTargetH", ""));
 
@@ -481,14 +519,11 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         double objTargetW = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_objTargetW", ""));
         double objTargetH = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_objTargetH", ""));
 
-
-        //Initialize TargetSize class instances (using singleton - TargetSizeHolder class)
-
+        // Initialize TargetSize class instances (using singleton - TargetSizeHolder class)
         targetSizeHolder = TargetSizeHolder.getInstance();
 
-        //Check if a specific TargetSize instance exists in TargetSizeHolder class (in hashmap targetSizeCollection).
-        //If not, add the instance.
-        //Every instance initialized with his own unique W*H, as described in SharedPreferences (targetSizeDefaultSettings file)
+        // Check if a specific TargetSize instance exists in TargetSizeHolder class (in hashmap targetSizeCollection).
+        // If not, add the instance.
 
         if (!targetSizeHolder.hasTargetSize("natoTargetSize")) {
             targetSizeHolder.addTargetSize("natoTargetSize", new TargetSize(natoTargetW, natoTargetH));
@@ -504,8 +539,47 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     }
 
+    //------------------------------------- Android Methods -------------------------------------
 
-    private void hideKeyboardOnceBtnPressed() {    //hide keyboard once btn pressed
+    /**
+     * Hide keyboard on start up app
+     */
+    private void hideKeyboardOnStartUp() {
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    }
+
+    /**
+     * Create options menu above and inflate it
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mainactivity, menu);
+        return true;
+    }
+
+    /**
+     * Open options menu above
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                // Move from this activity (MainActivity) to SettingActivity
+                startActivity(new Intent(this, SettingsActivity.class));
+                //finish(); //Closes MainActivity
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Hide keyboard once btn pressed
+     */
+    private void hideKeyboardOnceBtnPressed() {
 
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         assert imm != null;

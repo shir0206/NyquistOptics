@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
 
     <ScrollView
@@ -34,11 +35,10 @@
 
             <Button
                 android:id="@+id/btn_save"
-                android:layout_width="78dp"
-                android:layout_height="78dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="228dp"
-
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="228dp"
                 android:layout_marginTop="28dp"
@@ -52,8 +52,8 @@
 
             <Button
                 android:id="@+id/btn_refresh"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
@@ -86,7 +86,6 @@
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_refresh" />
-
 
             <TableLayout
                 android:id="@+id/t_tableLp"
@@ -132,12 +131,10 @@
                         app:layout_constraintTop_toTopOf="parent" />
                 </TableRow>
 
-
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#e9f1f5">
-
 
                     <TextView
                         android:id="@+id/tv_lpRec"
@@ -148,7 +145,6 @@
                         android:text="@string/tv_lpRec"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000" />
-
 
                     <EditText
                         android:id="@+id/et_lpRec"
@@ -180,7 +176,6 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000" />
 
-
                     <EditText
                         android:id="@+id/et_lpIdent"
                         android:layout_width="55dp"
@@ -195,12 +190,10 @@
                         app:layout_constraintTop_toTopOf="parent" />
                 </TableRow>
 
-
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#e9f1f5">
-
 
                     <TextView
                         android:id="@+id/tv_lpDetObj"
@@ -211,7 +204,6 @@
                         android:text="@string/tv_lpDetObj"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000" />
-
 
                     <EditText
                         android:id="@+id/et_lpDetObj"
@@ -230,13 +222,10 @@
 
             </TableLayout>
 
-
             <View
                 android:id="@+id/v_rectangleLineLp"
                 android:layout_width="300dp"
                 android:layout_height="4dp"
-
-
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
@@ -247,7 +236,6 @@
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/t_tableLp" />
-
 
             <TextView
                 android:id="@+id/tv_targetSize"
@@ -267,7 +255,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/v_rectangleLineLp" />
 
-
             <TableLayout
                 android:id="@+id/t_tableTargetSize"
                 android:layout_width="290dp"
@@ -281,7 +268,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_targetSize"
                 app:layout_constraintVertical_weight="1">
-
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -450,7 +436,6 @@
 
             </TableLayout>
 
-
             <View
                 android:id="@+id/v_rectangleBackgroundDown"
                 android:layout_width="400dp"
@@ -462,7 +447,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/t_tableTargetSize" />
-
 
             <View
                 android:id="@+id/v_rectangleLineDown"
@@ -481,11 +465,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/v_rectangleBackgroundDown" />
 
-
-
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>
-
 
 </android.support.constraint.ConstraintLayout>

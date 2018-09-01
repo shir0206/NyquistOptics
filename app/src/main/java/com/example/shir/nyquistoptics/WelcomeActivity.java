@@ -8,14 +8,18 @@ import android.view.WindowManager;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    private int SLEEP_TIMER = 2; //Seconds of Appearance welcome logo
+    /**
+     *  Seconds of Appearance welcome logo
+     */
+    private int SLEEP_TIMER = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //Full screen
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); //Full screen
+        // Full screen
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_welcome);
 
@@ -27,7 +31,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Display the logo
+     */
     private class LogoLauncher extends Thread {
         public void run() {
             try {

@@ -1,11 +1,23 @@
 package com.example.shir.nyquistoptics;
 
+/**
+ * This class contains the user input properties (static class).
+ */
 public class Properties {
 
-    private static double sensorPitch;
-    private static double focalLength;
-    //private	double	fNumber; //never used
+    //------------------------------------- Parameters -------------------------------------
 
+    /**
+     * The user input value of sensor pitch.
+     */
+    private static double sensorPitch;
+
+    /**
+     * The user input value of focal length.
+     */
+    private static double focalLength;
+
+    //------------------------------------- Getters & Setters -------------------------------------
 
     public static double getSensorPitch() {
         return sensorPitch;

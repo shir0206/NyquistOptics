@@ -1,18 +1,30 @@
 package com.example.shir.nyquistoptics;
 
-
+/**
+ * This class contains the target size (height & width) for a certain target type.
+ */
 public class TargetSize  {
 
+    //------------------------------------- Parameters -------------------------------------
+
+    /**
+     * The value of target size - width.
+     */
     private double width;
+
+    /**
+     * The value of target size - height.
+     */
     private double height;
 
-
-  //  public TargetSize() {} //empty constructor
+    //------------------------------------- Constructor -------------------------------------
 
     public TargetSize(double width, double height) {
         this.width = width;
         this.height = height;
     }
+
+    //------------------------------------- Getters & Setters -------------------------------------
 
     public double getWidth() {
         return width;
@@ -29,6 +41,5 @@ public class TargetSize  {
     public void setHeight(double height) {
         this.height = height;
     }
-
 
 }

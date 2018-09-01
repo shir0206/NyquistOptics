@@ -1,10 +1,29 @@
 package com.example.shir.nyquistoptics;
 
+/**
+ * This class contains the user input sensor size (static class).
+ */
 public class SensorSize {
 
-    private static double width = 640;
-    private static double height = 480;
+    //------------------------------------- Parameters -------------------------------------
 
+    /**
+     * The user input value of sensor size - width.
+     */
+    private static double width;
+
+    /**
+     * The user input value of sensor size - height.
+     */
+    private static double height;
+
+
+    //------------------------------------- Getters & Setters -------------------------------------
+
+    /**
+     * Setter for width.
+     * @return = The user input value of sensor size - width.
+     */
     public static double getWidth() {
         return width;
     }
