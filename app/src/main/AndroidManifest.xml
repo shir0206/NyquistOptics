@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.shir.nyquistoptics">
-
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    package="com.shirzabolotnyklein.nyquistoptics">
 
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/nyquist_optics_logo"
@@ -24,8 +23,5 @@
             </intent-filter>
         </activity>
     </application>
-
-
-
 
 </manifest>
