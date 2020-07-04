@@ -5,4 +5,10 @@
     <color name="colorAccent">#4bacc6</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+
+
+    <color name="orange">#F47D20</color>
+    <color name="grey">#EFF2F4</color>
+
+
 </resources>

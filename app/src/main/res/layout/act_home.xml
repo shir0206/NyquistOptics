@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/optarget" />
+
+    <Button
+        android:id="@+id/btn_dimension"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/ic_frame"
+        android:drawableTop="@drawable/ic_dimension"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:text="@string/btn_txtDimension"
+        app:layout_constraintBottom_toTopOf="@+id/btn_focalLength"
+        app:layout_constraintEnd_toStartOf="@+id/btn_targetSize"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+    <Button
+        android:id="@+id/btn_targetSize"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/ic_frame"
+        android:drawableTop="@drawable/ic_target_size"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:text="@string/btn_txtTargetSize"
+        app:layout_constraintBottom_toTopOf="@+id/btn_fov"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_dimension"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+    <Button
+        android:id="@+id/btn_focalLength"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/ic_frame"
+        android:drawableTop="@drawable/ic_focal_length"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:text="@string/btn_txtFocalLength"
+        app:layout_constraintBottom_toTopOf="@+id/btn_dri"
+        app:layout_constraintEnd_toStartOf="@+id/btn_fov"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_dimension" />
+
+
+    <Button
+        android:id="@+id/btn_fov"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/ic_frame"
+        android:drawableTop="@drawable/ic_ifov"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:text="@string/btn_txtFOV"
+        app:layout_constraintBottom_toTopOf="@+id/btn_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_focalLength"
+        app:layout_constraintTop_toBottomOf="@+id/btn_targetSize" />
+
+    <Button
+        android:id="@+id/btn_dri"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/ic_frame"
+        android:drawableTop="@drawable/ic_dri"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:text="@string/btn_txtDRI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_settings"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_focalLength" />
+
+    <Button
+        android:id="@+id/btn_settings"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/ic_frame"
+        android:drawableTop="@drawable/ic_settings"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:text="@string/btn_txtSettings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_dri"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fov" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>

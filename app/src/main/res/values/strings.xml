@@ -71,4 +71,17 @@
     <string name="tv_objTargetSizeX">x</string>
 
 
+
+<!--====================================-->
+
+    <string name="btn_txtDimension">Dimension</string>
+    <string name="btn_txtTargetSize">Target Size</string>
+    <string name="btn_txtFocalLength">Focal Length</string>
+    <string name="btn_txtFOV">Feild of View</string>
+    <string name="btn_txtDRI">DRI</string>
+    <string name="btn_txtSettings">Settings</string>
+
+
+
+
 </resources>
