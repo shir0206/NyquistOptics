@@ -20,17 +20,17 @@ import com.shirzabolotnyklein.nyquistoptics.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    Button  btn_refresh, btn_save;
-    View  v_rectangleBackgroundDown, v_rectangleBackgroundUp, v_rectangleLineDown, v_rectangleLineLp;
-    TextView  tv_lp;
-    TextView  tv_lpDet, tv_lpDetObj, tv_lpIdent, tv_lpRec;
-    EditText  et_lpDet, et_lpDetObj, et_lpIdent, et_lpRec;
-    TextView  tv_targetSize;
-    TextView  tv_txtHumanTargetSize, tv_txtNatoTargetSize, tv_txtObjTargetSize;
-    TextView  tv_natoTargetSizeX, tv_humanTargetSizeX, tv_objTargetSizeX;
-    EditText  et_natoTargetW, et_natoTargetH;
-    EditText  et_humanTargetW, et_humanTargetH;
-    EditText  et_objTargetW, et_objTargetH;
+    Button btn_refresh, btn_save;
+    View v_rectangleBackgroundDown, v_rectangleBackgroundUp, v_rectangleLineDown, v_rectangleLineLp;
+    TextView tv_lp;
+    TextView tv_lpDet, tv_lpDetObj, tv_lpIdent, tv_lpRec;
+    EditText et_lpDet, et_lpDetObj, et_lpIdent, et_lpRec;
+    TextView tv_targetSize;
+    TextView tv_txtHumanTargetSize, tv_txtNatoTargetSize, tv_txtObjTargetSize;
+    TextView tv_natoTargetSizeX, tv_humanTargetSizeX, tv_objTargetSizeX;
+    EditText et_natoTargetW, et_natoTargetH;
+    EditText et_humanTargetW, et_humanTargetH;
+    EditText et_objTargetW, et_objTargetH;
     Vibrator vibrator;
     ReadWriteToFileController readWriteControll;
 
@@ -38,7 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ly_settings);
-        readWriteControll=new ReadWriteToFileController(getApplicationContext());
+        readWriteControll = new ReadWriteToFileController(getApplicationContext());
         // Set up UI
         setupUI();
 
@@ -52,21 +52,21 @@ public class SettingsActivity extends AppCompatActivity {
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         btn_refresh.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
-               // Vibrate
-               vibrator.vibrate(50);
+                // Vibrate
+                vibrator.vibrate(50);
 
-               // Refresh the current settings and set to default
-               readWriteControll.SetDefaultSettings();
+                // Refresh the current settings and set to default
+                readWriteControll.SetDefaultSettings();
 
-               // Display the default settings
-               readWriteControll.displaySettings();
+                // Display the default settings
+                readWriteControll.displaySettings();
 
-               Toast.makeText(SettingsActivity.this, "Settings set to default", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsActivity.this, "Settings set to default", Toast.LENGTH_SHORT).show();
 
-           }
+            }
         });
 
         btn_save.setOnClickListener(new View.OnClickListener() {

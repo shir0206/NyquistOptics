@@ -19,13 +19,13 @@ public class ReadWriteToFileController {
     SharedPreferences targetSizeDefaultSettings; // Save all target sizes default settings
     SharedPreferences linePairDefaultSettings; // Save all line pairs default settings
 
-    public ReadWriteToFileController(Context context){
+    public ReadWriteToFileController(Context context) {
 
-        this.cont=context;
+        this.cont = context;
 
     }
 
-    public void initReadDataFromFile(){
+    public void initReadDataFromFile() {
 
         getDefaultSettings();
 
@@ -38,6 +38,7 @@ public class ReadWriteToFileController {
         initLinePairDefaultSettings();
         initTargetSizeDefaultSettings();
     }
+
     public void SetDefaultSettings() {
         SetLinePairDefaultSettingsToClass();
         SetTargetSizeDefaultSettingsToObjects();
@@ -117,7 +118,7 @@ public class ReadWriteToFileController {
         double lpDetObj = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpDetObj", ""));
         // Set the parameters in LinePair classes according to the user input
 
-        DbRefrence.initLinePair(lpDet,lpRec,lpIdent,lpDetObj);
+        DbRefrence.initLinePair(lpDet, lpRec, lpIdent, lpDetObj);
     }
 
     /**
@@ -135,9 +136,9 @@ public class ReadWriteToFileController {
         double objTargetW = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_objTargetW", ""));
         double objTargetH = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_objTargetH", ""));
 
-        DbRefrence.addTargetSize(new TargetSize(natoTargetW, natoTargetH),TargetType.NATO );
-        DbRefrence.addTargetSize( new TargetSize(humanTargetW, humanTargetH),TargetType.HUMAN);
-        DbRefrence.addTargetSize( new TargetSize(objTargetW, objTargetH),TargetType.OBJECT);
+        DbRefrence.addTargetSize(new TargetSize(natoTargetW, natoTargetH), TargetType.NATO);
+        DbRefrence.addTargetSize(new TargetSize(humanTargetW, humanTargetH), TargetType.HUMAN);
+        DbRefrence.addTargetSize(new TargetSize(objTargetW, objTargetH), TargetType.OBJECT);
 
 
     }
@@ -198,10 +199,12 @@ public class ReadWriteToFileController {
         saveTargetSizeSettings(view);
 
     }
-    public void SetSettingsToClass(View view){
+
+    public void SetSettingsToClass(View view) {
         SetLinePairSettingsToClass(view);
         SetTargetSizeSettingsToClass(view);
     }
+
     /**
      * Set default settings derived from SharedPreferences file to the Line Pair class
      */
@@ -218,7 +221,7 @@ public class ReadWriteToFileController {
 
         // Set the parameters in LinePair classes according to the user input
 
-        DbRefrence.setLinePair(new LinePair(lpDet,lpRec,lpIdent,lpDetObj));
+        DbRefrence.setLinePair(new LinePair(lpDet, lpRec, lpIdent, lpDetObj));
 
 
     }
@@ -243,7 +246,7 @@ public class ReadWriteToFileController {
         // Set the parameters in TargetSizeS classes according to the user input
 
         TargetSize natoTargetSize = DbRefrence.getTargetSizes().get(TargetType.NATO);
-        TargetSize humanTargetSize =  DbRefrence.getTargetSizes().get(TargetType.HUMAN);
+        TargetSize humanTargetSize = DbRefrence.getTargetSizes().get(TargetType.HUMAN);
         TargetSize objTargetSize = DbRefrence.getTargetSizes().get(TargetType.OBJECT);
 
         natoTargetSize.setWidth(natoTargetW);
@@ -257,6 +260,7 @@ public class ReadWriteToFileController {
 
 
     }
+
     public void displaySettings() {
         displayLinePairSettings();
         displayTargetSizeSettings();
@@ -282,9 +286,9 @@ public class ReadWriteToFileController {
 //        et_lpDetObj.setText(lpDetObj);
     }
 
-public ArrayList<String> getTargetSizes(){
-        ArrayList<String> res=new ArrayList<>();
-    //    // Convert the target size from double to String
+    public ArrayList<String> getTargetSizes() {
+        ArrayList<String> res = new ArrayList<>();
+        //    // Convert the target size from double to String
 //    String natoSize = "(" + Double.toString(natoTargetSize.getWidth()) + "x" + Double.toString(natoTargetSize.getHeight()) + ")";
 //    String humanSize = "(" + Double.toString(humanTargetSize.getWidth()) + "x" + Double.toString(humanTargetSize.getHeight()) + ")";
 //    String objSize = "(" + Double.toString(objTargetSize.getWidth()) + "x" + Double.toString(objTargetSize.getHeight()) + ")";
@@ -293,9 +297,8 @@ public ArrayList<String> getTargetSizes(){
 //    tv_natoSize.setText(natoSize);
 //    tv_humanSize.setText(humanSize);
 //    tv_objSize.setText(objSize);
-    return res;
+        return res;
     }
-
 
 
     /**

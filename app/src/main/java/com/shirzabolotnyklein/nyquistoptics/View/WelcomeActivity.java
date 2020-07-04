@@ -12,7 +12,7 @@ import com.shirzabolotnyklein.nyquistoptics.R;
 public class WelcomeActivity extends AppCompatActivity {
 
     /**
-     *  Seconds of Appearance welcome logo
+     * Seconds of Appearance welcome logo
      */
     private int SLEEP_TIMER = 2;
 

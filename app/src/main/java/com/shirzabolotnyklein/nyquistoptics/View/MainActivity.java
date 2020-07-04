@@ -63,10 +63,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     ArrayList<TextView> textViewOutput = new ArrayList<>(); // Initialize output array to hide all TextViews output before bottom click
 
 
-
     Vibrator vibrator;
     ReadWriteToFileController setUp;
     MainAppController mainControl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,17 +84,17 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 //        mainControl=new MainAppController(getApplicationContext());
 
 
-       // input
-        String sensorPitch = null,focalLength=null,sensorSizeH=null,sensorSizeW=null;
-       // output
-        HashMap<FovType,String> fovResults=mainControl.calcFOV(sensorPitch,focalLength,sensorSizeH,sensorSizeW);
+        // input
+        String sensorPitch = null, focalLength = null, sensorSizeH = null, sensorSizeW = null;
+        // output
+        HashMap<FovType, String> fovResults = mainControl.calcFOV(sensorPitch, focalLength, sensorSizeH, sensorSizeW);
 
 
         //input
-         //sensorPitch;
+        //sensorPitch;
         // focalLength;
         //output
-        HashMap<TargetDRIType,String> driResults=mainControl.calculateDRI(sensorPitch,focalLength);
+        HashMap<TargetDRIType, String> driResults = mainControl.calculateDRI(sensorPitch, focalLength);
 
         // Set up UI
         setupUI();
@@ -205,8 +205,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 //        tv_resObjDet = findViewById(R.id.tv_resObjDet);
 //        tv_resObjRec = findViewById(R.id.tv_resObjRec);
 
-      //  createArrays();
-     //   turnInvisible();
+        //  createArrays();
+        //   turnInvisible();
 
     }
 
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     /**
      * Create an array list out of all output Views
      */
-    private void createLineOutputArrayList () {
+    private void createLineOutputArrayList() {
         lineOutput.add(v_rectangleLineFov);
         lineOutput.add(v_rectangleLineDri);
     }
@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     /**
      * Create an array list out of all output Tables
      */
-    private void createTableOutputArrayList () {
+    private void createTableOutputArrayList() {
         tableOutput.add(t_tableFov);
         tableOutput.add(t_tableTargetDri);
     }
@@ -360,6 +360,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     /**
      * Create options menu above and inflate it
+     *
      * @param menu
      * @return
      */
@@ -371,6 +372,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     /**
      * Open options menu above
+     *
      * @param item
      * @return
      */

@@ -14,59 +14,58 @@ public class MainAppController {
     DecimalFormat formatOneDig = new DecimalFormat("0.0"); // Initialize decimal format for outputs
     DecimalFormat formatSixDig = new DecimalFormat("0.000000"); // Initialize decimal format for outputs
     CalculationController calcControll;
-    public MainAppController(Context context){
-    calcControll=new CalculationController();
-    this.cont=context;
+
+    public MainAppController(Context context) {
+        calcControll = new CalculationController();
+        this.cont = context;
     }
-    
-    public void calculateIFOV(){
+
+    public void calculateIFOV() {
         //use private methods to calculate the ifov
     }
 
 
-    public void calculateFocalLength(){
+    public void calculateFocalLength() {
         //use private methods to calculate focal length
     }
 
-    public void calculateWidthHeightTarget(){
+    public void calculateWidthHeightTarget() {
         //use private methods to calcaulte the height and width of the target
     }
 
-    public  HashMap <FovType,String>  calcFOV(String SensorPitch,String FocalLength,String SensorSizeH,String SensorSizeW){
+    public HashMap<FovType, String> calcFOV(String SensorPitch, String FocalLength, String SensorSizeH, String SensorSizeW) {
         double sensorPitch = Double.parseDouble(SensorPitch);
         double focalLength = Double.parseDouble(FocalLength);
         double sensorSizeW = Double.parseDouble(SensorSizeW);
         double sensorSizeH = Double.parseDouble(SensorSizeH);
         //Calculate FOV
-        HashMap <FovType,String> results=new HashMap<FovType, String>();
-        double ifov=this.calcControll.calcIfov(sensorPitch,focalLength);
-        double hfov=this.calcControll.calcHfov(sensorPitch,sensorSizeW,focalLength);
-        double vfov=this.calcControll.calcVfov(sensorSizeH,sensorSizeW,hfov);
+        HashMap<FovType, String> results = new HashMap<FovType, String>();
+        double ifov = this.calcControll.calcIfov(sensorPitch, focalLength);
+        double hfov = this.calcControll.calcHfov(sensorPitch, sensorSizeW, focalLength);
+        double vfov = this.calcControll.calcVfov(sensorSizeH, sensorSizeW, hfov);
 
         // Convert the output from double to String and formatting the decimal digits
         String iFOV = formatSixDig.format(ifov);
         String hFov = formatOneDig.format(hfov);
         String vFov = formatOneDig.format(vfov);
 
-        results.put(FovType.IFOV,iFOV);
-        results.put(FovType.HFOV,hFov);
-        results.put(FovType.VFOV,vFov);
+        results.put(FovType.IFOV, iFOV);
+        results.put(FovType.HFOV, hFov);
+        results.put(FovType.VFOV, vFov);
 
 
         return results;
     }
-public HashMap<TargetDRIType,String>  calculateDRI(String SensorPitch,String FocalLength){
 
-        HashMap<TargetDRIType,String> result;
+    public HashMap<TargetDRIType, String> calculateDRI(String SensorPitch, String FocalLength) {
+
+        HashMap<TargetDRIType, String> result;
         double sensorPitch = Double.parseDouble(SensorPitch);
         double focalLength = Double.parseDouble(FocalLength);
 
 
-      return  result=this.calcControll.calculateDRI(sensorPitch,focalLength);
-}
-
-
-
+        return result = this.calcControll.calculateDRI(sensorPitch, focalLength);
+    }
 
 
 }

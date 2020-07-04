@@ -13,16 +13,18 @@ public class CalculationController {
     private DB DbRefrence;
     DecimalFormat formatOneDig = new DecimalFormat("0.0"); // Initialize decimal format for outputs
     DecimalFormat formatSixDig = new DecimalFormat("0.000000"); // Initialize decimal format for outputs
-    public CalculationController(){
+
+    public CalculationController() {
 
     }
 
     /**
      * Helper method that calculates the value of target detection/recognition/identify.
+     *
      * @param sensorPitch = The user input value of sensor pitch.
      * @param focalLength = The user input value of focal length.
-     * @param targetSize = The value of the target size (height & width).
-     * @param line = The value of the line pair.
+     * @param targetSize  = The value of the target size (height & width).
+     * @param line        = The value of the line pair.
      * @return = the calculated value for target detection/recognition/identify (DRI)
      */
     private double calcTarget(double sensorPitch, double focalLength, TargetSize targetSize, double line) {
@@ -36,10 +38,11 @@ public class CalculationController {
 
     /**
      * Method that returns the calculated value of target detection, by using the helper method calcTarget.
+     *
      * @param targetSize = The value of the target size (height & width).
      * @return = The value of target detection.
      */
-    private double calcDetection(TargetSize targetSize,double sensorPitch,double focalLength) {
+    private double calcDetection(TargetSize targetSize, double sensorPitch, double focalLength) {
 
         double detection;
 
@@ -53,19 +56,20 @@ public class CalculationController {
             detection = calcTarget(sensorPitch, focalLength, targetSize, DbRefrence.getLinePair().getLpDet());
         }
 
-       return detection;
+        return detection;
     }
 
     /**
      * Method that returns the calculated value of target recognition, by using the helper method calcTarget.
+     *
      * @param targetSize = The value of the target size (height & width).
      * @return = The value of target recognition.
      */
-    private double calcRecognition(TargetSize targetSize,double sensorPitch,double focalLength) {
+    private double calcRecognition(TargetSize targetSize, double sensorPitch, double focalLength) {
 
         double recognition;
 
-        recognition = calcTarget(sensorPitch, focalLength, targetSize,DbRefrence.getLinePair().getLpRec());
+        recognition = calcTarget(sensorPitch, focalLength, targetSize, DbRefrence.getLinePair().getLpRec());
 
         return recognition;
 
@@ -73,10 +77,11 @@ public class CalculationController {
 
     /**
      * Method that returns the calculated value of target identify, by using the helper method calcTarget.
+     *
      * @param targetSize = The value of the target size (height & width).
      * @return = The value of target identify.
      */
-    private double calcIdentify(TargetSize targetSize,double sensorPitch,double focalLength) {
+    private double calcIdentify(TargetSize targetSize, double sensorPitch, double focalLength) {
 
         double identify;
 
@@ -87,7 +92,7 @@ public class CalculationController {
 
         // Calculate identify for nato/human targets
         else {
-            identify = calcTarget(sensorPitch,  focalLength, targetSize, DbRefrence.getLinePair().getLpIdent());
+            identify = calcTarget(sensorPitch, focalLength, targetSize, DbRefrence.getLinePair().getLpIdent());
         }
 
 
@@ -95,24 +100,24 @@ public class CalculationController {
     }
 
 
-    public HashMap<TargetDRIType,String> calculateDRI(double sensorPitch,double focalLength){
+    public HashMap<TargetDRIType, String> calculateDRI(double sensorPitch, double focalLength) {
 
-        HashMap<TargetDRIType,String> result=new HashMap<TargetDRIType,String>();
+        HashMap<TargetDRIType, String> result = new HashMap<TargetDRIType, String>();
 
-        TargetSize tsNato=DbRefrence.getTargetSizes().get(TargetType.NATO);
-        TargetSize tsHuman=DbRefrence.getTargetSizes().get(TargetType.HUMAN);
-        TargetSize tsObj=DbRefrence.getTargetSizes().get(TargetType.OBJECT);
+        TargetSize tsNato = DbRefrence.getTargetSizes().get(TargetType.NATO);
+        TargetSize tsHuman = DbRefrence.getTargetSizes().get(TargetType.HUMAN);
+        TargetSize tsObj = DbRefrence.getTargetSizes().get(TargetType.OBJECT);
 
-        double natoDet=this.calcDetection(tsNato,sensorPitch,focalLength);
-        double natoRec=this.calcRecognition(tsNato,sensorPitch,focalLength);
-        double natoIdent=this.calcIdentify(tsNato,sensorPitch,focalLength);
+        double natoDet = this.calcDetection(tsNato, sensorPitch, focalLength);
+        double natoRec = this.calcRecognition(tsNato, sensorPitch, focalLength);
+        double natoIdent = this.calcIdentify(tsNato, sensorPitch, focalLength);
 
-        double humnaDet=this.calcDetection(tsHuman,sensorPitch,focalLength);
-        double humnaRec=this.calcRecognition(tsHuman,sensorPitch,focalLength);
-        double humnaIdent=this.calcIdentify(tsHuman,sensorPitch,focalLength);
+        double humnaDet = this.calcDetection(tsHuman, sensorPitch, focalLength);
+        double humnaRec = this.calcRecognition(tsHuman, sensorPitch, focalLength);
+        double humnaIdent = this.calcIdentify(tsHuman, sensorPitch, focalLength);
 
-        double objDet=this.calcDetection(tsObj,sensorPitch,focalLength);
-        double objRec=this.calcRecognition(tsObj,sensorPitch,focalLength);
+        double objDet = this.calcDetection(tsObj, sensorPitch, focalLength);
+        double objRec = this.calcRecognition(tsObj, sensorPitch, focalLength);
         // Convert the output from double to String
         String natoTargetDet = formatOneDig.format(natoDet);
         String natoTargetRec = formatOneDig.format(natoRec);
@@ -125,25 +130,26 @@ public class CalculationController {
         String objTargetDet = formatOneDig.format(objDet);
         String objTargetRec = formatOneDig.format(objRec);
 
-        result.put(TargetDRIType.NatoDet,natoTargetDet);
-        result.put(TargetDRIType.NatoIdent,natoTargetRec);
-        result.put(TargetDRIType.NatoRec,natoTargetIdent);
+        result.put(TargetDRIType.NatoDet, natoTargetDet);
+        result.put(TargetDRIType.NatoIdent, natoTargetRec);
+        result.put(TargetDRIType.NatoRec, natoTargetIdent);
 
-        result.put(TargetDRIType.HumanDet,humanTargetDet);
-        result.put(TargetDRIType.HumanRec,humanTargetRec);
-        result.put(TargetDRIType.HumanIdent,humanTargetIdent);
+        result.put(TargetDRIType.HumanDet, humanTargetDet);
+        result.put(TargetDRIType.HumanRec, humanTargetRec);
+        result.put(TargetDRIType.HumanIdent, humanTargetIdent);
 
-        result.put(TargetDRIType.ObjectDet,objTargetDet);
-        result.put(TargetDRIType.ObjectIdent,objTargetRec);
+        result.put(TargetDRIType.ObjectDet, objTargetDet);
+        result.put(TargetDRIType.ObjectIdent, objTargetRec);
 
         return result;
     }
 
     /**
      * The formula that calculates the value of instantaneous field of view (IFOV).
+     *
      * @return = The value of instantaneous field of view (IFOV).
      */
-    public double calcIfov(double sensorPitch,double focalLength) {
+    public double calcIfov(double sensorPitch, double focalLength) {
         double ifov;
 
         ifov = sensorPitch / (focalLength * ConstantsKt.OneThousand);
@@ -153,21 +159,23 @@ public class CalculationController {
 
     /**
      * The formula that calculates the value of horizontal field of view (HFOV).
+     *
      * @return = The value of horizontal field of view (HFOV).
      */
-    public double calcHfov(double sensorPitch,double DimInPixelWidth,double FocalLength) {
+    public double calcHfov(double sensorPitch, double DimInPixelWidth, double FocalLength) {
         double hfov;
 
-        hfov =  Math.atan((sensorPitch * DimInPixelWidth) / (ConstantsKt.OneThousand * FocalLength)) * 90 / Math.PI;
+        hfov = Math.atan((sensorPitch * DimInPixelWidth) / (ConstantsKt.OneThousand * FocalLength)) * 90 / Math.PI;
 
         return hfov;
     }
 
     /**
      * The formula that calculates the value of vertical field of view (VFOV).
+     *
      * @return = The value of vertical field of view (VFOV).
      */
-    public  double calcVfov(double DimInPixelHeight,double DimInPixelWidth,double hfov) {
+    public double calcVfov(double DimInPixelHeight, double DimInPixelWidth, double hfov) {
         double vfov;
         vfov = hfov * (DimInPixelHeight / DimInPixelWidth);
         return vfov;
