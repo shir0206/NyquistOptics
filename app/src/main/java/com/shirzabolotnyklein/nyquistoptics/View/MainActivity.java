@@ -21,7 +21,6 @@ import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteToFileController;
 import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
 import com.shirzabolotnyklein.nyquistoptics.R;
-import com.shirzabolotnyklein.nyquistoptics.Model.SensorSize;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 
 import java.io.Serializable;
@@ -70,19 +69,30 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.act_home);
 
         // Hide keyboard on start up app
-        hideKeyboardOnStartUp();
+        //hideKeyboardOnStartUp();
         //Create SharedPreferences files if haven't created yet, and set default settings to the files
         //isEmptyDefaultSettings();
         //Set default settings derived from SharedPreferences files to the objects
         //SetDefaultSettings();
 
-        setUp=new ReadWriteToFileController(getApplicationContext());
-        setUp.initReadDataFromFile();
-        mainControl=new MainAppController(getApplicationContext());
+//        setUp=new ReadWriteToFileController(getApplicationContext());
+//        setUp.initReadDataFromFile();
+//        mainControl=new MainAppController(getApplicationContext());
 
+
+        //input
+      //  String sensorPitch = null,focalLength=null,sensorSizeH=null,sensorSizeW=null;
+        //output
+       // HashMap<FovType,String>result=mainControl.calcFOV(sensorPitch,focalLength,sensorSizeH,sensorSizeW);
+
+
+        //input
+
+        //output
+     //   mainControl.calculateDRI();
 
         // Set up UI
         setupUI();
@@ -90,48 +100,41 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         // Get the vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
-        btn_calculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // Vibrate
-                vibrator.vibrate(50);
-
-                // If all fields are not filled, toast a massage to fill all fields
-                if (et_focalLength.getText().toString().isEmpty()
-                        || et_sensorPitch.getText().toString().isEmpty()
-                        || et_sensorSizeW.getText().toString().isEmpty()
-                        || et_sensorSizeH.getText().toString().isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-                }
-
-                // If all fields are filled, continue
-                else {
-
-                    // Hide keyboard once button pressed
-                    hideKeyboardOnceBtnPressed();
-
-
-
-                    //input
-                    String sensorPitch = null,focalLength=null,sensorSizeH=null,sensorSizeW=null;
-                    //output
-                    HashMap<FovType,String>result=mainControl.calculateFOV(sensorPitch,focalLength,sensorSizeH,sensorSizeW);
-
-
-
-                    mainControl.calculateTargetsDRI();
-
-
-                    // Turn the output  visible
-                    turnVisible();
-
-                    // Create a toast message calculated successfully
-                    Toast.makeText(MainActivity.this, "Calculated successfully", Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        });
+//        btn_calculate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                // Vibrate
+//                vibrator.vibrate(50);
+//
+//                // If all fields are not filled, toast a massage to fill all fields
+//                if (et_focalLength.getText().toString().isEmpty()
+//                        || et_sensorPitch.getText().toString().isEmpty()
+//                        || et_sensorSizeW.getText().toString().isEmpty()
+//                        || et_sensorSizeH.getText().toString().isEmpty()) {
+//                    Toast.makeText(MainActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                // If all fields are filled, continue
+//                else {
+//
+//                    // Hide keyboard once button pressed
+//                    hideKeyboardOnceBtnPressed();
+//
+//
+//
+//
+//
+//
+//                    // Turn the output  visible
+//                    turnVisible();
+//
+//                    // Create a toast message calculated successfully
+//                    Toast.makeText(MainActivity.this, "Calculated successfully", Toast.LENGTH_SHORT).show();
+//
+//                }
+//            }
+//        });
 
 
     }
@@ -144,64 +147,64 @@ public class MainActivity extends AppCompatActivity implements Serializable {
      */
     private void setupUI() {
 
-        v_rectangleBackgroundUp = findViewById(R.id.v_rectangleBackgroundUp);
-        v_rectangleLineUp = findViewById(R.id.v_rectangleLineUp);
+//        v_rectangleBackgroundUp = findViewById(R.id.v_rectangleBackgroundUp);
+//        v_rectangleLineUp = findViewById(R.id.v_rectangleLineUp);
+//
+//        t_tableInput = findViewById(R.id.t_tableInput);
+//
+//        iv_sensorPitch = findViewById(R.id.iv_sensorPitch);
+//        iv_focalLength = findViewById(R.id.iv_focalLength);
+//        iv_sensorSize = findViewById(R.id.iv_sensorSize);
+//        tv_txtSensorPitch = findViewById(R.id.tv_txtSensorPitch);
+//
+//        tv_txtFocalLength = findViewById(R.id.tv_txtFocalLength);
+//        tv_txtSensorSize = findViewById(R.id.tv_txtSensorSize);
+//        tv_txtSensorSizeX = findViewById(R.id.tv_txtSensorSizeX);
+//
+//        et_sensorPitch = findViewById(R.id.et_sensorPitch);
+//        et_focalLength = findViewById(R.id.et_focalLength);
+//        et_sensorSizeW = findViewById(R.id.et_sensorSizeW);
+//        et_sensorSizeH = findViewById(R.id.et_sensorSizeH);
+//
+//        btn_calculate = findViewById(R.id.btn_calculate);
+//
+//        // From here and out all the object are added to arrays in order to set invisible
+//
+//        v_rectangleLineFov = findViewById(R.id.v_rectangleLineFov);
+//        v_rectangleLineDri = findViewById(R.id.v_rectangleLineDri);
+//
+//        t_tableFov = findViewById(R.id.t_tableFov);
+//        t_tableTargetDri = findViewById(R.id.t_tableTargetDri);
+//
+//        tv_txtFov = findViewById(R.id.tv_txtFov);
+//        tv_txtIfov = findViewById(R.id.tv_txtIfov);
+//        tv_txtHfov = findViewById(R.id.tv_txtHfov);
+//        tv_txtVfov = findViewById(R.id.tv_txtVfov);
+//        tv_resIfov = findViewById(R.id.tv_resIfov);
+//        tv_resHfov = findViewById(R.id.tv_resHfov);
+//        tv_resVfov = findViewById(R.id.tv_resVfov);
+//
+//        tv_txtTargetDri = findViewById(R.id.tv_txtTargetDri);
+//        tv_txtNatoTarget = findViewById(R.id.tv_txtNatoTarget);
+//        tv_txtHumanTarget = findViewById(R.id.tv_txtHumanTarget);
+//        tv_txtObjTarget = findViewById(R.id.tv_txtObjTarget);
+//        tv_natoSize = findViewById(R.id.tv_natoSize);
+//        tv_humanSize = findViewById(R.id.tv_humanSize);
+//        tv_objSize = findViewById(R.id.tv_objSize);
+//        tv_txtDet = findViewById(R.id.tv_txtDet);
+//        tv_txtRec = findViewById(R.id.tv_txtRec);
+//        tv_txtIdent = findViewById(R.id.tv_txtIdent);
+//        tv_resNatoDet = findViewById(R.id.tv_resNatoDet);
+//        tv_resNatoRec = findViewById(R.id.tv_resNatoRec);
+//        tv_resNatoIdent = findViewById(R.id.tv_resNatoIdent);
+//        tv_resHumanDet = findViewById(R.id.tv_resHumanDet);
+//        tv_resHumanRec = findViewById(R.id.tv_resHumanRec);
+//        tv_resHumanIdent = findViewById(R.id.tv_resHumanIdent);
+//        tv_resObjDet = findViewById(R.id.tv_resObjDet);
+//        tv_resObjRec = findViewById(R.id.tv_resObjRec);
 
-        t_tableInput = findViewById(R.id.t_tableInput);
-
-        iv_sensorPitch = findViewById(R.id.iv_sensorPitch);
-        iv_focalLength = findViewById(R.id.iv_focalLength);
-        iv_sensorSize = findViewById(R.id.iv_sensorSize);
-        tv_txtSensorPitch = findViewById(R.id.tv_txtSensorPitch);
-
-        tv_txtFocalLength = findViewById(R.id.tv_txtFocalLength);
-        tv_txtSensorSize = findViewById(R.id.tv_txtSensorSize);
-        tv_txtSensorSizeX = findViewById(R.id.tv_txtSensorSizeX);
-
-        et_sensorPitch = findViewById(R.id.et_sensorPitch);
-        et_focalLength = findViewById(R.id.et_focalLength);
-        et_sensorSizeW = findViewById(R.id.et_sensorSizeW);
-        et_sensorSizeH = findViewById(R.id.et_sensorSizeH);
-
-        btn_calculate = findViewById(R.id.btn_calculate);
-
-        // From here and out all the object are added to arrays in order to set invisible
-
-        v_rectangleLineFov = findViewById(R.id.v_rectangleLineFov);
-        v_rectangleLineDri = findViewById(R.id.v_rectangleLineDri);
-
-        t_tableFov = findViewById(R.id.t_tableFov);
-        t_tableTargetDri = findViewById(R.id.t_tableTargetDri);
-
-        tv_txtFov = findViewById(R.id.tv_txtFov);
-        tv_txtIfov = findViewById(R.id.tv_txtIfov);
-        tv_txtHfov = findViewById(R.id.tv_txtHfov);
-        tv_txtVfov = findViewById(R.id.tv_txtVfov);
-        tv_resIfov = findViewById(R.id.tv_resIfov);
-        tv_resHfov = findViewById(R.id.tv_resHfov);
-        tv_resVfov = findViewById(R.id.tv_resVfov);
-
-        tv_txtTargetDri = findViewById(R.id.tv_txtTargetDri);
-        tv_txtNatoTarget = findViewById(R.id.tv_txtNatoTarget);
-        tv_txtHumanTarget = findViewById(R.id.tv_txtHumanTarget);
-        tv_txtObjTarget = findViewById(R.id.tv_txtObjTarget);
-        tv_natoSize = findViewById(R.id.tv_natoSize);
-        tv_humanSize = findViewById(R.id.tv_humanSize);
-        tv_objSize = findViewById(R.id.tv_objSize);
-        tv_txtDet = findViewById(R.id.tv_txtDet);
-        tv_txtRec = findViewById(R.id.tv_txtRec);
-        tv_txtIdent = findViewById(R.id.tv_txtIdent);
-        tv_resNatoDet = findViewById(R.id.tv_resNatoDet);
-        tv_resNatoRec = findViewById(R.id.tv_resNatoRec);
-        tv_resNatoIdent = findViewById(R.id.tv_resNatoIdent);
-        tv_resHumanDet = findViewById(R.id.tv_resHumanDet);
-        tv_resHumanRec = findViewById(R.id.tv_resHumanRec);
-        tv_resHumanIdent = findViewById(R.id.tv_resHumanIdent);
-        tv_resObjDet = findViewById(R.id.tv_resObjDet);
-        tv_resObjRec = findViewById(R.id.tv_resObjRec);
-
-        createArrays();
-        turnInvisible();
+      //  createArrays();
+     //   turnInvisible();
 
     }
 

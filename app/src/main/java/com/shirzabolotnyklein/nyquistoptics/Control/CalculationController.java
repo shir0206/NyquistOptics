@@ -34,19 +34,19 @@ public class CalculationController {
      */
     private void calcDetection(TargetSize targetSize) {
 
-        double detection;
-
-        // Calculate detection for object target
-        if (targetSize.getHeight() <= ConstantsKt.MinHeight) {
-            detection = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(), DbRefrence.getFocalLength().getFocalLength(), targetSize, DbRefrence.getLinePair().getLpDetObj());
-        }
-
-        // Calculate detection for nato/human targets
-        else {
-            detection = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(), DbRefrence.getFocalLength().getFocalLength(), targetSize, DbRefrence.getLinePair().getLpDet());
-        }
-
-        DbRefrence.getTargetDRI().setDetection(detection);
+//        double detection;
+//
+//        // Calculate detection for object target
+//        if (targetSize.getHeight() <= ConstantsKt.MinHeight) {
+//            detection = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(), DbRefrence.getFocalLength().getFocalLength(), targetSize, DbRefrence.getLinePair().getLpDetObj());
+//        }
+//
+//        // Calculate detection for nato/human targets
+//        else {
+//            detection = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(), DbRefrence.getFocalLength().getFocalLength(), targetSize, DbRefrence.getLinePair().getLpDet());
+//        }
+//
+//        DbRefrence.getTargetDRI().setDetection(detection);
     }
 
     /**
@@ -56,11 +56,11 @@ public class CalculationController {
      */
     private void calcRecognition(TargetSize targetSize) {
 
-        double recognition;
-
-        recognition = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(), DbRefrence.getFocalLength().getFocalLength(), targetSize,DbRefrence.getLinePair().getLpRec());
-
-        DbRefrence.getTargetDRI().setRecognition(recognition);
+//        double recognition;
+//
+//        recognition = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(), DbRefrence.getFocalLength().getFocalLength(), targetSize,DbRefrence.getLinePair().getLpRec());
+//
+//        DbRefrence.getTargetDRI().setRecognition(recognition);
 
     }
 
@@ -71,20 +71,20 @@ public class CalculationController {
      */
     private void calcIdentify(TargetSize targetSize) {
 
-        double identify;
-
-        // Calculate identify for object target
-        if (targetSize.getHeight() <= ConstantsKt.MinHeight) {
-            identify = 0;
-        }
-
-        // Calculate identify for nato/human targets
-        else {
-            identify = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(),  DbRefrence.getFocalLength().getFocalLength(), targetSize, DbRefrence.getLinePair().getLpIdent());
-        }
-
-
-        DbRefrence.getTargetDRI().setIdentification(identify);
+//        double identify;
+//
+//        // Calculate identify for object target
+//        if (targetSize.getHeight() <= ConstantsKt.MinHeight) {
+//            identify = 0;
+//        }
+//
+//        // Calculate identify for nato/human targets
+//        else {
+//            identify = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(),  DbRefrence.getFocalLength().getFocalLength(), targetSize, DbRefrence.getLinePair().getLpIdent());
+//        }
+//
+//
+//        DbRefrence.getTargetDRI().setIdentification(identify);
     }
 
 

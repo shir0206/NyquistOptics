@@ -14,9 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteToFileController;
-import com.shirzabolotnyklein.nyquistoptics.Model.LinePair;
+
 import com.shirzabolotnyklein.nyquistoptics.R;
-import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
+
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.ly_settings);
         readWriteControll=new ReadWriteToFileController(getApplicationContext());
         // Set up UI
         setupUI();
@@ -124,45 +124,45 @@ public class SettingsActivity extends AppCompatActivity {
      */
     private void setupUI() {
 
-        btn_refresh = findViewById(R.id.btn_refresh);
-        btn_save = findViewById(R.id.btn_save);
-
-        v_rectangleBackgroundDown = findViewById(R.id.v_rectangleBackgroundDown);
-        v_rectangleBackgroundUp = findViewById(R.id.v_rectangleBackgroundUp);
-        v_rectangleLineDown = findViewById(R.id.v_rectangleLineDown);
-        v_rectangleLineLp = findViewById(R.id.v_rectangleLineLp);
-
-
-        tv_lp = findViewById(R.id.tv_lp);
-
-        tv_lpDet = findViewById(R.id.tv_lpDet);
-        tv_lpDetObj = findViewById(R.id.tv_lpDetObj);
-        tv_lpIdent = findViewById(R.id.tv_lpIdent);
-        tv_lpRec = findViewById(R.id.tv_lpRec);
-
-        et_lpDet = findViewById(R.id.et_lpDet);
-        et_lpDetObj = findViewById(R.id.et_lpDetObj);
-        et_lpIdent = findViewById(R.id.et_lpIdent);
-        et_lpRec = findViewById(R.id.et_lpRec);
-
-        tv_targetSize = findViewById(R.id.tv_targetSize);
-
-        tv_txtHumanTargetSize = findViewById(R.id.tv_txtHumanTargetSize);
-        tv_txtNatoTargetSize = findViewById(R.id.tv_txtNatoTargetSize);
-        tv_txtObjTargetSize = findViewById(R.id.tv_txtObjTargetSize);
-
-        tv_natoTargetSizeX = findViewById(R.id.tv_natoTargetSizeX);
-        tv_humanTargetSizeX = findViewById(R.id.tv_humanTargetSizeX);
-        tv_objTargetSizeX = findViewById(R.id.tv_objTargetSizeX);
-
-        et_natoTargetW = findViewById(R.id.et_natoTargetW);
-        et_natoTargetH = findViewById(R.id.et_natoTargetH);
-
-        et_humanTargetW = findViewById(R.id.et_humanTargetW);
-        et_humanTargetH = findViewById(R.id.et_humanTargetH);
-
-        et_objTargetW = findViewById(R.id.et_objTargetW);
-        et_objTargetH = findViewById(R.id.et_objTargetH);
+//        btn_refresh = findViewById(R.id.btn_refresh);
+//        btn_save = findViewById(R.id.btn_save);
+//
+//        v_rectangleBackgroundDown = findViewById(R.id.v_rectangleBackgroundDown);
+//        v_rectangleBackgroundUp = findViewById(R.id.v_rectangleBackgroundUp);
+//        v_rectangleLineDown = findViewById(R.id.v_rectangleLineDown);
+//        v_rectangleLineLp = findViewById(R.id.v_rectangleLineLp);
+//
+//
+//        tv_lp = findViewById(R.id.tv_lp);
+//
+//        tv_lpDet = findViewById(R.id.tv_lpDet);
+//        tv_lpDetObj = findViewById(R.id.tv_lpDetObj);
+//        tv_lpIdent = findViewById(R.id.tv_lpIdent);
+//        tv_lpRec = findViewById(R.id.tv_lpRec);
+//
+//        et_lpDet = findViewById(R.id.et_lpDet);
+//        et_lpDetObj = findViewById(R.id.et_lpDetObj);
+//        et_lpIdent = findViewById(R.id.et_lpIdent);
+//        et_lpRec = findViewById(R.id.et_lpRec);
+//
+//        tv_targetSize = findViewById(R.id.tv_targetSize);
+//
+//        tv_txtHumanTargetSize = findViewById(R.id.tv_txtHumanTargetSize);
+//        tv_txtNatoTargetSize = findViewById(R.id.tv_txtNatoTargetSize);
+//        tv_txtObjTargetSize = findViewById(R.id.tv_txtObjTargetSize);
+//
+//        tv_natoTargetSizeX = findViewById(R.id.tv_natoTargetSizeX);
+//        tv_humanTargetSizeX = findViewById(R.id.tv_humanTargetSizeX);
+//        tv_objTargetSizeX = findViewById(R.id.tv_objTargetSizeX);
+//
+//        et_natoTargetW = findViewById(R.id.et_natoTargetW);
+//        et_natoTargetH = findViewById(R.id.et_natoTargetH);
+//
+//        et_humanTargetW = findViewById(R.id.et_humanTargetW);
+//        et_humanTargetH = findViewById(R.id.et_humanTargetH);
+//
+//        et_objTargetW = findViewById(R.id.et_objTargetW);
+//        et_objTargetH = findViewById(R.id.et_objTargetH);
 
     }
 

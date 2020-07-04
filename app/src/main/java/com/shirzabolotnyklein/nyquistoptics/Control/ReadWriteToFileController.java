@@ -145,22 +145,22 @@ public class ReadWriteToFileController {
      */
     public void saveTargetSizeSettings(View view) {
 
-        // Get the file named "targetSizeDefaultSettings", private
-        SharedPreferences targetSizeDefaultSettings = cont.getSharedPreferences("targetSizeDefaultSettings", Context.MODE_PRIVATE);
-
-        // Get the editor to edit the file
-        SharedPreferences.Editor editor = targetSizeDefaultSettings.edit();
-        editor.putString("defaultSettings_natoTargetW", et_natoTargetW.getText().toString());
-        editor.putString("defaultSettings_natoTargetH", et_natoTargetH.getText().toString());
-
-        editor.putString("defaultSettings_humanTargetW", et_humanTargetW.getText().toString());
-        editor.putString("defaultSettings_humanTargetH", et_humanTargetH.getText().toString());
-
-        editor.putString("defaultSettings_objTargetW", et_objTargetW.getText().toString());
-        editor.putString("defaultSettings_objTargetH", et_objTargetH.getText().toString());
-
-        // Save the changes
-        editor.apply();
+//        // Get the file named "targetSizeDefaultSettings", private
+//        SharedPreferences targetSizeDefaultSettings = cont.getSharedPreferences("targetSizeDefaultSettings", Context.MODE_PRIVATE);
+//
+//        // Get the editor to edit the file
+//        SharedPreferences.Editor editor = targetSizeDefaultSettings.edit();
+//        editor.putString("defaultSettings_natoTargetW", et_natoTargetW.getText().toString());
+//        editor.putString("defaultSettings_natoTargetH", et_natoTargetH.getText().toString());
+//
+//        editor.putString("defaultSettings_humanTargetW", et_humanTargetW.getText().toString());
+//        editor.putString("defaultSettings_humanTargetH", et_humanTargetH.getText().toString());
+//
+//        editor.putString("defaultSettings_objTargetW", et_objTargetW.getText().toString());
+//        editor.putString("defaultSettings_objTargetH", et_objTargetH.getText().toString());
+//
+//        // Save the changes
+//        editor.apply();
 
     }
 
@@ -171,19 +171,19 @@ public class ReadWriteToFileController {
     public void saveLinePairSettings(View view) {
 
         // Get the file named "linePairDefaultSettings", private
-        SharedPreferences linePairDefaultSettings = cont.getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE);
-
-        // Get the editor to edit the file
-        SharedPreferences.Editor editor = linePairDefaultSettings.edit();
-
-        // Put key+value to the file
-        editor.putString("defaultSettings_lpDet", et_lpDet.getText().toString());
-        editor.putString("defaultSettings_lpRec", et_lpRec.getText().toString());
-        editor.putString("defaultSettings_lpIdent", et_lpIdent.getText().toString());
-        editor.putString("defaultSettings_lpDetObj", et_lpDetObj.getText().toString());
-
-        // Save the changes
-        editor.apply();
+//        SharedPreferences linePairDefaultSettings = cont.getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE);
+//
+//        // Get the editor to edit the file
+//        SharedPreferences.Editor editor = linePairDefaultSettings.edit();
+//
+//        // Put key+value to the file
+//        editor.putString("defaultSettings_lpDet", et_lpDet.getText().toString());
+//        editor.putString("defaultSettings_lpRec", et_lpRec.getText().toString());
+//        editor.putString("defaultSettings_lpIdent", et_lpIdent.getText().toString());
+//        editor.putString("defaultSettings_lpDetObj", et_lpDetObj.getText().toString());
+//
+//        // Save the changes
+//        editor.apply();
 
     }
 
@@ -265,18 +265,18 @@ public class ReadWriteToFileController {
      */
     public void displayLinePairSettings() {
 
-        // Get the file named "linePairDefaultSettings", private
-        SharedPreferences linePairDefaultSettings = getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE);
-
-        String lpDet = linePairDefaultSettings.getString("defaultSettings_lpDet", "");
-        String lpRec = linePairDefaultSettings.getString("defaultSettings_lpRec", "");
-        String lpIdent = linePairDefaultSettings.getString("defaultSettings_lpIdent", "");
-        String lpDetObj = linePairDefaultSettings.getString("defaultSettings_lpDetObj", "");
-
-        et_lpDet.setText(lpDet);
-        et_lpRec.setText(lpRec);
-        et_lpIdent.setText(lpIdent);
-        et_lpDetObj.setText(lpDetObj);
+//        // Get the file named "linePairDefaultSettings", private
+//        SharedPreferences linePairDefaultSettings = getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE);
+//
+//        String lpDet = linePairDefaultSettings.getString("defaultSettings_lpDet", "");
+//        String lpRec = linePairDefaultSettings.getString("defaultSettings_lpRec", "");
+//        String lpIdent = linePairDefaultSettings.getString("defaultSettings_lpIdent", "");
+//        String lpDetObj = linePairDefaultSettings.getString("defaultSettings_lpDetObj", "");
+//
+//        et_lpDet.setText(lpDet);
+//        et_lpRec.setText(lpRec);
+//        et_lpIdent.setText(lpIdent);
+//        et_lpDetObj.setText(lpDetObj);
     }
 
 
@@ -289,28 +289,28 @@ public class ReadWriteToFileController {
      */
     public void displayTargetSizeSettings() {
 
-        // Get the file named "targetSizeDefaultSettings", private
-        SharedPreferences targetSizeDefaultSettings = cont.getSharedPreferences("targetSizeDefaultSettings", Context.MODE_PRIVATE);
-
-        // Convert the user input to String
-        String natoTargetW = targetSizeDefaultSettings.getString("defaultSettings_natoTargetW", "");
-        String natoTargetH = targetSizeDefaultSettings.getString("defaultSettings_natoTargetH", "");
-
-        String humanTargetW = targetSizeDefaultSettings.getString("defaultSettings_humanTargetW", "");
-        String humanTargetH = targetSizeDefaultSettings.getString("defaultSettings_humanTargetH", "");
-
-        String objTargetW = targetSizeDefaultSettings.getString("defaultSettings_objTargetW", "");
-        String objTargetH = targetSizeDefaultSettings.getString("defaultSettings_objTargetH", "");
-
-        // Set the user input to edit text
-        et_natoTargetW.setText(natoTargetW);
-        et_natoTargetH.setText(natoTargetH);
-
-        et_humanTargetW.setText(humanTargetW);
-        et_humanTargetH.setText(humanTargetH);
-
-        et_objTargetW.setText(objTargetW);
-        et_objTargetH.setText(objTargetH);
+//        // Get the file named "targetSizeDefaultSettings", private
+//        SharedPreferences targetSizeDefaultSettings = cont.getSharedPreferences("targetSizeDefaultSettings", Context.MODE_PRIVATE);
+//
+//        // Convert the user input to String
+//        String natoTargetW = targetSizeDefaultSettings.getString("defaultSettings_natoTargetW", "");
+//        String natoTargetH = targetSizeDefaultSettings.getString("defaultSettings_natoTargetH", "");
+//
+//        String humanTargetW = targetSizeDefaultSettings.getString("defaultSettings_humanTargetW", "");
+//        String humanTargetH = targetSizeDefaultSettings.getString("defaultSettings_humanTargetH", "");
+//
+//        String objTargetW = targetSizeDefaultSettings.getString("defaultSettings_objTargetW", "");
+//        String objTargetH = targetSizeDefaultSettings.getString("defaultSettings_objTargetH", "");
+//
+//        // Set the user input to edit text
+//        et_natoTargetW.setText(natoTargetW);
+//        et_natoTargetH.setText(natoTargetH);
+//
+//        et_humanTargetW.setText(humanTargetW);
+//        et_humanTargetH.setText(humanTargetH);
+//
+//        et_objTargetW.setText(objTargetW);
+//        et_objTargetH.setText(objTargetH);
 
     }
 }
