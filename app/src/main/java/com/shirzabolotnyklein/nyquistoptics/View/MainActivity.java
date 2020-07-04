@@ -94,14 +94,14 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         // input
         String sensorPitch = null, focalLength = null, sensorSizeH = null, sensorSizeW = null;
         // output
-        HashMap<FovType, String> fovResults = mainControl.calcFOV(sensorPitch, focalLength, sensorSizeH, sensorSizeW);
+        //HashMap<FovType, String> fovResults = mainControl.calcFOV(sensorPitch, focalLength, sensorSizeH, sensorSizeW);
 
 
         //input
         //sensorPitch;
         // focalLength;
         //output
-        HashMap<TargetDRIType, String> driResults = mainControl.calculateDRI(sensorPitch, focalLength);
+        //HashMap<TargetDRIType, String> driResults = mainControl.calculateDRI(sensorPitch, focalLength);
 
         // Set up UI
         setupUI();
@@ -193,64 +193,11 @@ public class MainActivity extends AppCompatActivity implements Serializable {
      */
     private void setupUI() {
 
-//        v_rectangleBackgroundUp = findViewById(R.id.v_rectangleBackgroundUp);
-//        v_rectangleLineUp = findViewById(R.id.v_rectangleLineUp);
-//
-//        t_tableInput = findViewById(R.id.t_tableInput);
-//
-//        iv_sensorPitch = findViewById(R.id.iv_sensorPitch);
-//        iv_focalLength = findViewById(R.id.iv_focalLength);
-//        iv_sensorSize = findViewById(R.id.iv_sensorSize);
-//        tv_txtSensorPitch = findViewById(R.id.tv_txtSensorPitch);
-//
-//        tv_txtFocalLength = findViewById(R.id.tv_txtFocalLength);
-//        tv_txtSensorSize = findViewById(R.id.tv_txtSensorSize);
-//        tv_txtSensorSizeX = findViewById(R.id.tv_txtSensorSizeX);
-//
-//        et_sensorPitch = findViewById(R.id.et_sensorPitch);
-//        et_focalLength = findViewById(R.id.et_focalLength);
-//        et_sensorSizeW = findViewById(R.id.et_sensorSizeW);
-//        et_sensorSizeH = findViewById(R.id.et_sensorSizeH);
-//
-//        btn_calculate = findViewById(R.id.btn_calculate);
-//
-//        // From here and out all the object are added to arrays in order to set invisible
-//
-//        v_rectangleLineFov = findViewById(R.id.v_rectangleLineFov);
-//        v_rectangleLineDri = findViewById(R.id.v_rectangleLineDri);
-//
-//        t_tableFov = findViewById(R.id.t_tableFov);
-//        t_tableTargetDri = findViewById(R.id.t_tableTargetDri);
-//
-//        tv_txtFov = findViewById(R.id.tv_txtFov);
-//        tv_txtIfov = findViewById(R.id.tv_txtIfov);
-//        tv_txtHfov = findViewById(R.id.tv_txtHfov);
-//        tv_txtVfov = findViewById(R.id.tv_txtVfov);
-//        tv_resIfov = findViewById(R.id.tv_resIfov);
-//        tv_resHfov = findViewById(R.id.tv_resHfov);
-//        tv_resVfov = findViewById(R.id.tv_resVfov);
-//
-//        tv_txtTargetDri = findViewById(R.id.tv_txtTargetDri);
-//        tv_txtNatoTarget = findViewById(R.id.tv_txtNatoTarget);
-//        tv_txtHumanTarget = findViewById(R.id.tv_txtHumanTarget);
-//        tv_txtObjTarget = findViewById(R.id.tv_txtObjTarget);
-//        tv_natoSize = findViewById(R.id.tv_natoSize);
-//        tv_humanSize = findViewById(R.id.tv_humanSize);
-//        tv_objSize = findViewById(R.id.tv_objSize);
-//        tv_txtDet = findViewById(R.id.tv_txtDet);
-//        tv_txtRec = findViewById(R.id.tv_txtRec);
-//        tv_txtIdent = findViewById(R.id.tv_txtIdent);
-//        tv_resNatoDet = findViewById(R.id.tv_resNatoDet);
-//        tv_resNatoRec = findViewById(R.id.tv_resNatoRec);
-//        tv_resNatoIdent = findViewById(R.id.tv_resNatoIdent);
-//        tv_resHumanDet = findViewById(R.id.tv_resHumanDet);
-//        tv_resHumanRec = findViewById(R.id.tv_resHumanRec);
-//        tv_resHumanIdent = findViewById(R.id.tv_resHumanIdent);
-//        tv_resObjDet = findViewById(R.id.tv_resObjDet);
-//        tv_resObjRec = findViewById(R.id.tv_resObjRec);
 
-        //  createArrays();
-        //   turnInvisible();
+         btn_fov= findViewById(R.id.btn_fov);
+         btn_dimension= findViewById(R.id.btn_dimension);
+         btn_targetSize = findViewById(R.id.btn_targetSize);
+
 
     }
 
