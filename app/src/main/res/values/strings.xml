@@ -3,9 +3,6 @@
     <string name="tv_parameters">Input</string>
 
 
-
-
-
     <string name="tv_txtTargetDri">Target DRI</string>
 
     <string name="tv_txtNatoTarget">Nato\nTarget</string>
@@ -76,7 +73,7 @@
     <string name="tv_txtDimension">Dimension (px):</string>
     <string name="tv_txtDimensionW">W</string>
     <string name="tv_txtDimensionH">H</string>
-    <string name="tv_txtDimensionX">x</string>
+    <string name="tv_x">x</string>
 
     <string name="tv_txtFOV">Feild of View (FOV):</string>
 
@@ -86,5 +83,12 @@
     <string name="tv_resIfov"></string>
     <string name="tv_resHfov"></string>
     <string name="tv_resVfov"></string>
+
+
+    <string name="tv_txtTargetRange">Target Range (m):</string>
+    <string name="tv_txtTargetSize">Target Size (m):</string>
+    <string name="tv_resTargetSizeW"></string>
+    <string name="tv_resTargetSizeH"></string>
+
 
 </resources>
