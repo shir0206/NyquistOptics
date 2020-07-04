@@ -2,12 +2,19 @@ package com.shirzabolotnyklein.nyquistoptics.Control;
 
 import android.content.Context;
 
+import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
+
+import java.text.DecimalFormat;
+import java.util.HashMap;
 
 public class MainAppController {
     private Context cont;
+    DecimalFormat formatOneDig = new DecimalFormat("0.0"); // Initialize decimal format for outputs
+    DecimalFormat formatSixDig = new DecimalFormat("0.000000"); // Initialize decimal format for outputs
+    CalculationController calcControll;
     public MainAppController(Context context){
-    CalculationController cc=new CalculationController();
+    calcControll=new CalculationController();
     this.cont=context;
     }
     
@@ -24,31 +31,29 @@ public class MainAppController {
         //use private methods to calcaulte the height and width of the target
     }
 
-    public void calculateFOVDRI(){
-
-        Properties.setSensorPitch(sensorPitch);
-        Properties.setFocalLength(focalLength);
-        SensorSize.setWidth(sensorSizeW);
-        SensorSize.setHeight(sensorSizeH);
-
-        // PART 1 - Calculate FOV
-
-        // Calculate the output
-        Fov.setFov();
+    public  HashMap <FovType,String>  calculateFOV(String SensorPitch,String FocalLength,String SensorSizeH,String SensorSizeW){
+        double sensorPitch = Double.parseDouble(SensorPitch);
+        double focalLength = Double.parseDouble(FocalLength);
+        double sensorSizeW = Double.parseDouble(SensorSizeW);
+        double sensorSizeH = Double.parseDouble(SensorSizeH);
+        //Calculate FOV
+        HashMap <FovType,String> results=new HashMap<FovType, String>();
+        double ifov=this.calcControll.calcIfov(sensorPitch,focalLength);
+        double hfov=this.calcControll.calcHfov(sensorPitch,sensorSizeW,focalLength);
+        double vfov=this.calcControll.calcVfov(sensorSizeH,sensorSizeW,hfov);
 
         // Convert the output from double to String and formatting the decimal digits
-        String ifov = formatSixDig.format(Fov.getIfov());
-        String hfov = formatOneDig.format(Fov.getHfov());
-        String vfov = formatOneDig.format(Fov.getVfov());
+        String iFOV = formatSixDig.format(ifov);
+        String hFov = formatOneDig.format(hfov);
+        String vFov = formatOneDig.format(vfov);
 
-        // Set the String output to TextView
-        tv_resIfov.setText(ifov);
-        tv_resHfov.setText(hfov);
-        tv_resVfov.setText(vfov);
-
+        results.put(FovType.IFOV,iFOV);
+        results.put(FovType.HFOV,hFov);
+        results.put(FovType.VFOV,vFov);
 
 
-}
+        return results;
+    }
 public void calculateTargetsDRI(){
     // PART 2 - Calculate Targets
 
