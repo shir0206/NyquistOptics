@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/orange"
+        android:text="@string/btn_txtSave"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_input"
+        app:layout_constraintVertical_bias="0.458" />
+
+
+    <Button
+        android:id="@+id/btn_def"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/black"
+        android:text="@string/btn_txtDef"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_input"
+        app:layout_constraintEnd_toStartOf="@+id/btn_save"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_input"
+        app:layout_constraintVertical_bias="0.458" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:paddingBottom="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:id="@+id/ll_linePairDet"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/ll_linePairDetObj"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_txtLinePair"
+
+            tools:ignore="MissingConstraints">
+
+
+            <ImageView
+                android:id="@+id/img_linePairDet"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="15dp"
+                app:srcCompat="@drawable/ic_line_pair"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_txtLinePairDet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_txtLinePairDet"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_linePairDet"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_linePairDetObj"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/ll_linePairRec"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_linePairDet"
+            tools:ignore="MissingConstraints">
+
+
+            <ImageView
+                android:id="@+id/img_linePairDetObj"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="15dp"
+                app:srcCompat="@drawable/ic_line_pair"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_txtLinePairDetObj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_txtLinePairDetObj"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_linePairDetObj"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_linePairRec"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/ll_linePairIdent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_linePairDetObj"
+            tools:ignore="MissingConstraints">
+
+
+            <ImageView
+                android:id="@+id/img_linePairRec"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="15dp"
+                app:srcCompat="@drawable/ic_line_pair"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_txtLinePairRec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_txtLinePairRec"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_linePairRec"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_linePairIdent"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_linePairRec"
+            tools:ignore="MissingConstraints">
+
+
+            <ImageView
+                android:id="@+id/img_linePairIdent"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="15dp"
+                app:srcCompat="@drawable/ic_line_pair"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_txtLinePairIdent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_txtLinePairIdent"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_linePairIdent"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_targetSizeNato"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/ll_targetSizeHuman"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_txtTargetSize"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/img_targetSizeNato"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="15dp"
+                app:srcCompat="@drawable/ic_target_size"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_txtTargetSizeNato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_txtTargetSizeNato"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_targetSizeNatoW"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="@string/et_targetSizeNatoW"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_txtTargetSizeNatoX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_x"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_targetSizeNatoH"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="@string/et_targetSizeNatoH"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_targetSizeHuman"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/ll_targetSizeObj"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_targetSizeNato"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/img_targetSizeHuman"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="15dp"
+                app:srcCompat="@drawable/ic_target_size"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_txtTargetSizeHuman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_txtTargetSizeHuman"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_targetSizeHumanW"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="@string/et_targetSizeHumanW"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_txtTargetSizeHumanX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_x"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_targetSizeHumanH"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="@string/et_targetSizeHumanH"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_targetSizeObj"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/ll_targetSizeHuman"
+
+
+            tools:ignore="MissingConstraints">
+
+
+            <ImageView
+                android:id="@+id/img_targetSizeObj"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="15dp"
+                app:srcCompat="@drawable/ic_target_size"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_txtTargetSizeObj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_txtTargetSizeObj"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_targetSizeObjW"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="@string/et_targetSizeObjW"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_txtTargetSizeObjX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="@string/tv_x"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/et_targetSizeObjH"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="@string/et_targetSizeObjH"
+                android:inputType="number"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_txtLinePair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/tv_txtLinePair"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/ll_linePairDet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_txtTargetSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/tv_txtTargetSize"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/ll_targetSizeNato"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="250dp"
+            android:layout_height="4dp"
+            android:layout_margin="30dp"
+            android:background="@color/orange"
+            app:layout_constraintBottom_toTopOf="@+id/tv_txtTargetSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_linePairIdent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -30,11 +30,7 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="tv_lp">Line Pairs</string>
-    <string name="tv_lpDetObj">Line pairs for detection (object)</string>
-    <string name="tv_lpDet">Line pairs for detection</string>
-    <string name="tv_lpRec">Line pairs for recognition</string>
-    <string name="tv_lpIdent">Line pairs for identify</string>
+
 
     <string name="tv_targetSize">Target Size</string>
 
@@ -61,11 +57,13 @@
     <string name="btn_txtDimension">Dimension</string>
     <string name="btn_txtTargetSize">Target Size</string>
     <string name="btn_txtFocalLength">Focal Length</string>
-    <string name="btn_txtFOV">Feild of View</string>
+    <string name="btn_txtFOV">Field of View</string>
     <string name="btn_txtDRI">DRI</string>
     <string name="btn_txtSettings">Settings</string>
 
     <string name="btn_txtCalc">Calculate</string>
+    <string name="btn_txtSave">Save</string>
+    <string name="btn_txtDef">Default</string>
 
 
     <string name="tv_txtFocalLength">Focal Length (mm):</string>
@@ -75,7 +73,7 @@
     <string name="et_txtDimensionH">H</string>
     <string name="tv_x">x</string>
 
-    <string name="tv_txtFOV">Feild of View (FOV):</string>
+    <string name="tv_txtFOV">Field of View (FOV):</string>
 
     <string name="tv_txtHfov">HFOV (deg):</string>
     <string name="tv_txtIfov">IFOV (rad):</string>
@@ -96,6 +94,27 @@
     <string name="tv_resDimensionW"></string>
     <string name="tv_resDimensionH"></string>
 
+    <string name="tv_txtLinePair">Line Pairs:</string>
+    <string name="tv_txtLinePairDet">Detection</string>
+    <string name="tv_txtLinePairDetObj">Detection (Object)</string>
+    <string name="tv_txtLinePairRec">Recognition</string>
+    <string name="tv_txtLinePairIdent">Identification</string>
+
+
+
+    <string name="tv_txtTargetSizeNato">Nato Target</string>
+    <string name="et_targetSizeNatoW">W</string>
+    <string name="et_targetSizeNatoH">H</string>
+
+
+    <string name="tv_txtTargetSizeHuman">Human Target</string>
+    <string name="et_targetSizeHumanW">W</string>
+    <string name="et_targetSizeHumanH">H</string>
+
+
+    <string name="tv_txtTargetSizeObj">Object Target</string>
+    <string name="et_targetSizeObjW">W</string>
+    <string name="et_targetSizeObjH">H</string>
 
 
 

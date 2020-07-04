@@ -37,81 +37,86 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ly_settings);
-        readWriteControll = new ReadWriteToFileController(getApplicationContext());
-        // Set up UI
-        setupUI();
+        setContentView(R.layout.act_settings);
 
-        // Hide keyboard on start up app
-        hideKeyboardOnStartUp();
 
-        // Display the settings from from SharedPreferences files in the activity.
-        readWriteControll.displaySettings();
 
-        // Get the vibrator
-        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-        btn_refresh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // Vibrate
-                vibrator.vibrate(50);
-
-                // Refresh the current settings and set to default
-                readWriteControll.SetDefaultSettings();
-
-                // Display the default settings
-                readWriteControll.displaySettings();
-
-                Toast.makeText(SettingsActivity.this, "Settings set to default", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        btn_save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // Vibrate
-                vibrator.vibrate(50);
-
-                // If all fields are not filled, toast a massage to fill all fields
-                if (et_lpDet.getText().toString().isEmpty()
-                        || et_lpRec.getText().toString().isEmpty()
-                        || et_lpIdent.getText().toString().isEmpty()
-                        || et_lpDetObj.getText().toString().isEmpty()
-                        || et_humanTargetH.getText().toString().isEmpty()
-                        || et_humanTargetW.getText().toString().isEmpty()
-                        || et_natoTargetH.getText().toString().isEmpty()
-                        || et_natoTargetW.getText().toString().isEmpty()
-                        || et_objTargetH.getText().toString().isEmpty()
-                        || et_objTargetW.getText().toString().isEmpty()) {
-                    Toast.makeText(SettingsActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-                }
-
-                // If all fields are filled, continue
-                else {
-
-                    // Set the user settings to settings in SharedPreferences files
-                    readWriteControll.saveSettings(view);
-                    //saveSettings(view);
-
-                    // Set default settings derived from SharedPreferences files to the class
-                    //SetSettingsToClass(view);
-                    readWriteControll.SetSettingsToClass(view);
-                    Toast.makeText(SettingsActivity.this, "Settings saved", Toast.LENGTH_SHORT).show();
-
-                    // Move from this activity (SettingsActivity) to MainActivity
-                    startActivity(new Intent(SettingsActivity.this, MainActivity.class));
-
-                    //Close MainActivity
-                    finish();
-
-                }
-            }
-
-        });
+//
+//        setContentView(R.layout.ly_settings);
+//        readWriteControll = new ReadWriteToFileController(getApplicationContext());
+//        // Set up UI
+//        setupUI();
+//
+//        // Hide keyboard on start up app
+//        hideKeyboardOnStartUp();
+//
+//        // Display the settings from from SharedPreferences files in the activity.
+//        readWriteControll.displaySettings();
+//
+//        // Get the vibrator
+//        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//
+//        btn_refresh.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                // Vibrate
+//                vibrator.vibrate(50);
+//
+//                // Refresh the current settings and set to default
+//                readWriteControll.SetDefaultSettings();
+//
+//                // Display the default settings
+//                readWriteControll.displaySettings();
+//
+//                Toast.makeText(SettingsActivity.this, "Settings set to default", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//
+//        btn_save.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                // Vibrate
+//                vibrator.vibrate(50);
+//
+//                // If all fields are not filled, toast a massage to fill all fields
+//                if (et_lpDet.getText().toString().isEmpty()
+//                        || et_lpRec.getText().toString().isEmpty()
+//                        || et_lpIdent.getText().toString().isEmpty()
+//                        || et_lpDetObj.getText().toString().isEmpty()
+//                        || et_humanTargetH.getText().toString().isEmpty()
+//                        || et_humanTargetW.getText().toString().isEmpty()
+//                        || et_natoTargetH.getText().toString().isEmpty()
+//                        || et_natoTargetW.getText().toString().isEmpty()
+//                        || et_objTargetH.getText().toString().isEmpty()
+//                        || et_objTargetW.getText().toString().isEmpty()) {
+//                    Toast.makeText(SettingsActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                // If all fields are filled, continue
+//                else {
+//
+//                    // Set the user settings to settings in SharedPreferences files
+//                    readWriteControll.saveSettings(view);
+//                    //saveSettings(view);
+//
+//                    // Set default settings derived from SharedPreferences files to the class
+//                    //SetSettingsToClass(view);
+//                    readWriteControll.SetSettingsToClass(view);
+//                    Toast.makeText(SettingsActivity.this, "Settings saved", Toast.LENGTH_SHORT).show();
+//
+//                    // Move from this activity (SettingsActivity) to MainActivity
+//                    startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+//
+//                    //Close MainActivity
+//                    finish();
+//
+//                }
+//            }
+//
+//        });
 
     }
 

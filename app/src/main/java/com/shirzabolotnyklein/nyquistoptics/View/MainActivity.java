@@ -60,14 +60,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     ArrayList<TextView> textViewOutput = new ArrayList<>(); // Initialize output array to hide all TextViews output before bottom click
 
 
-
-
-
     Button btn_fov;
     Button btn_dimension;
     Button btn_targetSize;
-
-
+    Button btn_settings;
 
 
     Vibrator vibrator;
@@ -146,6 +142,18 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             }
         });
 
+        btn_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                vibrator.vibrate(50);
+
+
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 //        btn_calculate.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -194,10 +202,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     private void setupUI() {
 
 
-         btn_fov= findViewById(R.id.btn_fov);
-         btn_dimension= findViewById(R.id.btn_dimension);
-         btn_targetSize = findViewById(R.id.btn_targetSize);
-
+        btn_fov = findViewById(R.id.btn_fov);
+        btn_dimension = findViewById(R.id.btn_dimension);
+        btn_targetSize = findViewById(R.id.btn_targetSize);
+        btn_settings = findViewById(R.id.btn_settings);
 
     }
 
