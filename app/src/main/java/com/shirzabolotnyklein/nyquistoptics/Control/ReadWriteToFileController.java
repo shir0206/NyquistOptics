@@ -9,6 +9,9 @@ import com.shirzabolotnyklein.nyquistoptics.Model.LinePair;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ReadWriteToFileController {
 
     private DB DbRefrence;
@@ -279,7 +282,19 @@ public class ReadWriteToFileController {
 //        et_lpDetObj.setText(lpDetObj);
     }
 
-
+public ArrayList<String> getTargetSizes(){
+        ArrayList<String> res=new ArrayList<>();
+    //    // Convert the target size from double to String
+//    String natoSize = "(" + Double.toString(natoTargetSize.getWidth()) + "x" + Double.toString(natoTargetSize.getHeight()) + ")";
+//    String humanSize = "(" + Double.toString(humanTargetSize.getWidth()) + "x" + Double.toString(humanTargetSize.getHeight()) + ")";
+//    String objSize = "(" + Double.toString(objTargetSize.getWidth()) + "x" + Double.toString(objTargetSize.getHeight()) + ")";
+//
+//    // Set the target size to TextView
+//    tv_natoSize.setText(natoSize);
+//    tv_humanSize.setText(humanSize);
+//    tv_objSize.setText(objSize);
+    return res;
+    }
 
 
 

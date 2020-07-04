@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteToFileController;
 import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
+import com.shirzabolotnyklein.nyquistoptics.Model.TargetDRIType;
 import com.shirzabolotnyklein.nyquistoptics.R;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 
@@ -83,16 +84,17 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 //        mainControl=new MainAppController(getApplicationContext());
 
 
-        //input
-      //  String sensorPitch = null,focalLength=null,sensorSizeH=null,sensorSizeW=null;
-        //output
-       // HashMap<FovType,String>result=mainControl.calcFOV(sensorPitch,focalLength,sensorSizeH,sensorSizeW);
+       // input
+        String sensorPitch = null,focalLength=null,sensorSizeH=null,sensorSizeW=null;
+       // output
+        HashMap<FovType,String> fovResults=mainControl.calcFOV(sensorPitch,focalLength,sensorSizeH,sensorSizeW);
 
 
         //input
-
+         //sensorPitch;
+        // focalLength;
         //output
-     //   mainControl.calculateDRI();
+        HashMap<TargetDRIType,String> driResults=mainControl.calculateDRI(sensorPitch,focalLength);
 
         // Set up UI
         setupUI();

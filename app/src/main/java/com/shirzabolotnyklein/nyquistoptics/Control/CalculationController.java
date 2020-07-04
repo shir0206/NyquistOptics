@@ -2,10 +2,17 @@ package com.shirzabolotnyklein.nyquistoptics.Control;
 
 import com.shirzabolotnyklein.nyquistoptics.Model.ConstantsKt;
 import com.shirzabolotnyklein.nyquistoptics.Model.DB;
+import com.shirzabolotnyklein.nyquistoptics.Model.TargetDRIType;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
+import com.shirzabolotnyklein.nyquistoptics.Model.TargetType;
+
+import java.text.DecimalFormat;
+import java.util.HashMap;
 
 public class CalculationController {
     private DB DbRefrence;
+    DecimalFormat formatOneDig = new DecimalFormat("0.0"); // Initialize decimal format for outputs
+    DecimalFormat formatSixDig = new DecimalFormat("0.000000"); // Initialize decimal format for outputs
     public CalculationController(){
 
     }
@@ -32,21 +39,21 @@ public class CalculationController {
      * @param targetSize = The value of the target size (height & width).
      * @return = The value of target detection.
      */
-    private void calcDetection(TargetSize targetSize) {
+    private double calcDetection(TargetSize targetSize,double sensorPitch,double focalLength) {
 
-//        double detection;
-//
-//        // Calculate detection for object target
-//        if (targetSize.getHeight() <= ConstantsKt.MinHeight) {
-//            detection = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(), DbRefrence.getFocalLength().getFocalLength(), targetSize, DbRefrence.getLinePair().getLpDetObj());
-//        }
-//
-//        // Calculate detection for nato/human targets
-//        else {
-//            detection = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(), DbRefrence.getFocalLength().getFocalLength(), targetSize, DbRefrence.getLinePair().getLpDet());
-//        }
-//
-//        DbRefrence.getTargetDRI().setDetection(detection);
+        double detection;
+
+        // Calculate detection for object target
+        if (targetSize.getHeight() <= ConstantsKt.MinHeight) {
+            detection = calcTarget(sensorPitch, focalLength, targetSize, DbRefrence.getLinePair().getLpDetObj());
+        }
+
+        // Calculate detection for nato/human targets
+        else {
+            detection = calcTarget(sensorPitch, focalLength, targetSize, DbRefrence.getLinePair().getLpDet());
+        }
+
+       return detection;
     }
 
     /**
@@ -54,13 +61,13 @@ public class CalculationController {
      * @param targetSize = The value of the target size (height & width).
      * @return = The value of target recognition.
      */
-    private void calcRecognition(TargetSize targetSize) {
+    private double calcRecognition(TargetSize targetSize,double sensorPitch,double focalLength) {
 
-//        double recognition;
-//
-//        recognition = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(), DbRefrence.getFocalLength().getFocalLength(), targetSize,DbRefrence.getLinePair().getLpRec());
-//
-//        DbRefrence.getTargetDRI().setRecognition(recognition);
+        double recognition;
+
+        recognition = calcTarget(sensorPitch, focalLength, targetSize,DbRefrence.getLinePair().getLpRec());
+
+        return recognition;
 
     }
 
@@ -69,24 +76,68 @@ public class CalculationController {
      * @param targetSize = The value of the target size (height & width).
      * @return = The value of target identify.
      */
-    private void calcIdentify(TargetSize targetSize) {
+    private double calcIdentify(TargetSize targetSize,double sensorPitch,double focalLength) {
 
-//        double identify;
-//
-//        // Calculate identify for object target
-//        if (targetSize.getHeight() <= ConstantsKt.MinHeight) {
-//            identify = 0;
-//        }
-//
-//        // Calculate identify for nato/human targets
-//        else {
-//            identify = calcTarget(DbRefrence.getSensorPitch().getSensorPitch(),  DbRefrence.getFocalLength().getFocalLength(), targetSize, DbRefrence.getLinePair().getLpIdent());
-//        }
-//
-//
-//        DbRefrence.getTargetDRI().setIdentification(identify);
+        double identify;
+
+        // Calculate identify for object target
+        if (targetSize.getHeight() <= ConstantsKt.MinHeight) {
+            identify = 0;
+        }
+
+        // Calculate identify for nato/human targets
+        else {
+            identify = calcTarget(sensorPitch,  focalLength, targetSize, DbRefrence.getLinePair().getLpIdent());
+        }
+
+
+        return identify;
     }
 
+
+    public HashMap<TargetDRIType,String> calculateDRI(double sensorPitch,double focalLength){
+
+        HashMap<TargetDRIType,String> result=new HashMap<TargetDRIType,String>();
+
+        TargetSize tsNato=DbRefrence.getTargetSizes().get(TargetType.NATO);
+        TargetSize tsHuman=DbRefrence.getTargetSizes().get(TargetType.HUMAN);
+        TargetSize tsObj=DbRefrence.getTargetSizes().get(TargetType.OBJECT);
+
+        double natoDet=this.calcDetection(tsNato,sensorPitch,focalLength);
+        double natoRec=this.calcRecognition(tsNato,sensorPitch,focalLength);
+        double natoIdent=this.calcIdentify(tsNato,sensorPitch,focalLength);
+
+        double humnaDet=this.calcDetection(tsHuman,sensorPitch,focalLength);
+        double humnaRec=this.calcRecognition(tsHuman,sensorPitch,focalLength);
+        double humnaIdent=this.calcIdentify(tsHuman,sensorPitch,focalLength);
+
+        double objDet=this.calcDetection(tsObj,sensorPitch,focalLength);
+        double objRec=this.calcRecognition(tsObj,sensorPitch,focalLength);
+        // Convert the output from double to String
+        String natoTargetDet = formatOneDig.format(natoDet);
+        String natoTargetRec = formatOneDig.format(natoRec);
+        String natoTargetIdent = formatOneDig.format(natoIdent);
+
+        String humanTargetDet = formatOneDig.format(humnaDet);
+        String humanTargetRec = formatOneDig.format(humnaRec);
+        String humanTargetIdent = formatOneDig.format(humnaIdent);
+
+        String objTargetDet = formatOneDig.format(objDet);
+        String objTargetRec = formatOneDig.format(objRec);
+
+        result.put(TargetDRIType.NatoDet,natoTargetDet);
+        result.put(TargetDRIType.NatoIdent,natoTargetRec);
+        result.put(TargetDRIType.NatoRec,natoTargetIdent);
+
+        result.put(TargetDRIType.HumanDet,humanTargetDet);
+        result.put(TargetDRIType.HumanRec,humanTargetRec);
+        result.put(TargetDRIType.HumanIdent,humanTargetIdent);
+
+        result.put(TargetDRIType.ObjectDet,objTargetDet);
+        result.put(TargetDRIType.ObjectIdent,objTargetRec);
+
+        return result;
+    }
 
     /**
      * The formula that calculates the value of instantaneous field of view (IFOV).
