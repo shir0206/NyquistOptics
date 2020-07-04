@@ -45,22 +45,19 @@
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
-            android:id="@+id/tv_hfov"
+            android:id="@+id/tv_txtHfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtHfov"
             android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/et_hfov"
-            android:layout_width="100dp"
+        <TextView
+            android:id="@+id/et_resHfov"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center_horizontal"
-            android:inputType="number"
             android:paddingTop="25dp"
-            android:textAlignment="center"
+            android:text="@string/tv_resHfov"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -86,23 +83,20 @@
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
-            android:id="@+id/tv_vfov"
+            android:id="@+id/tv_txtVfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtVfov"
             android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/et_vfov"
-            android:layout_width="100dp"
+        <TextView
+            android:id="@+id/tv_resVfov"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center_horizontal"
-            android:inputType="number"
             android:paddingTop="25dp"
-            android:textAlignment="center"
+            android:text="@string/tv_resVfov"
             android:textSize="24sp" />
+
 
     </LinearLayout>
 
@@ -129,22 +123,19 @@
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
-            android:id="@+id/tv_ifov"
+            android:id="@+id/tv_txtIfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtIfov"
             android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/et_ifov"
-            android:layout_width="100dp"
+        <TextView
+            android:id="@+id/et_resIfov"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center_horizontal"
-            android:inputType="number"
             android:paddingTop="25dp"
-            android:textAlignment="center"
+            android:text="@string/tv_resIfov"
             android:textSize="24sp" />
     </LinearLayout>
 

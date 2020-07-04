@@ -15,17 +15,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteToFileController;
 import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetDRIType;
 import com.shirzabolotnyklein.nyquistoptics.R;
-import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 
 import java.io.Serializable;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -61,6 +58,14 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     ArrayList<View> lineOutput = new ArrayList<>(); // Initialize output array to hide all lines for design before bottom click
     ArrayList<TableLayout> tableOutput = new ArrayList<>(); // Initialize output array to hide all tables output before bottom click
     ArrayList<TextView> textViewOutput = new ArrayList<>(); // Initialize output array to hide all TextViews output before bottom click
+
+
+
+
+
+    Button btn_fov;
+
+
 
 
     Vibrator vibrator;
@@ -101,6 +106,20 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
         // Get the vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+
+        btn_fov.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                vibrator.vibrate(50);
+
+
+                Intent intent = new Intent(MainActivity.this, CalcFovActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 //        btn_calculate.setOnClickListener(new View.OnClickListener() {
 //            @Override
