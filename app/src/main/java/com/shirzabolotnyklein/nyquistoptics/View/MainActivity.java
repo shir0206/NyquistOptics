@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
 
     Button btn_fov;
+    Button btn_dimension;
+    Button btn_targetSize;
 
 
 
@@ -120,6 +122,29 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             }
         });
 
+        btn_dimension.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                vibrator.vibrate(50);
+
+
+                Intent intent = new Intent(MainActivity.this, CalcDimensionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_targetSize.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                vibrator.vibrate(50);
+
+
+                Intent intent = new Intent(MainActivity.this, CalcTargetSizeActivity.class);
+                startActivity(intent);
+            }
+        });
 
 //        btn_calculate.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.shirzabolotnyklein.nyquistoptics.R;
 
-public class CalcTargetSize extends AppCompatActivity {
+public class CalcTargetSizeActivity extends AppCompatActivity {
 
 
     @Override
