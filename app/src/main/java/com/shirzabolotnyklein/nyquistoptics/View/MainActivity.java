@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteToFileController;
+import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
 import com.shirzabolotnyklein.nyquistoptics.R;
 import com.shirzabolotnyklein.nyquistoptics.Model.SensorSize;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
@@ -26,6 +27,7 @@ import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements Serializable {
 
@@ -60,12 +62,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     ArrayList<TableLayout> tableOutput = new ArrayList<>(); // Initialize output array to hide all tables output before bottom click
     ArrayList<TextView> textViewOutput = new ArrayList<>(); // Initialize output array to hide all TextViews output before bottom click
 
-    DecimalFormat formatOneDig = new DecimalFormat("0.0"); // Initialize decimal format for outputs
-    DecimalFormat formatSixDig = new DecimalFormat("0.000000"); // Initialize decimal format for outputs
 
-
-
-    TargetSizeHolder targetSizeHolder; // Initialize target size Singleton
 
     Vibrator vibrator;
     ReadWriteToFileController setUp;
@@ -116,12 +113,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
 
 
-                    // Convert the user input from String to double
-                    double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
-                    double focalLength = Double.parseDouble(et_focalLength.getText().toString());
-                    double sensorSizeW = Double.parseDouble(et_sensorSizeW.getText().toString());
-                    double sensorSizeH = Double.parseDouble(et_sensorSizeH.getText().toString());
-                    mainControl.calculateFOVDRI(sensorPitch,focalLength,sensorSizeH,sensorSizeW);
+                    //input
+                    String sensorPitch = null,focalLength=null,sensorSizeH=null,sensorSizeW=null;
+                    //output
+                    HashMap<FovType,String>result=mainControl.calculateFOV(sensorPitch,focalLength,sensorSizeH,sensorSizeW);
 
 
 

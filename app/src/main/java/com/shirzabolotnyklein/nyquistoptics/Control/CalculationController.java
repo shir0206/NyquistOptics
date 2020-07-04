@@ -92,30 +92,33 @@ public class CalculationController {
      * The formula that calculates the value of instantaneous field of view (IFOV).
      * @return = The value of instantaneous field of view (IFOV).
      */
-    private  void calcIfov() {
+    public double calcIfov(double sensorPitch,double focalLength) {
         double ifov;
 
-        ifov = DbRefrence.getSensorPitch().getSensorPitch() / (DbRefrence.getFocalLength().getFocalLength() * ConstantsKt.OneThousand);
-        DbRefrence.getFov().setIfov(ifov);
+        ifov = sensorPitch / (focalLength * ConstantsKt.OneThousand);
+
+        return ifov;
     }
 
     /**
      * The formula that calculates the value of horizontal field of view (HFOV).
      * @return = The value of horizontal field of view (HFOV).
      */
-    private  void calcHfov() {
+    public double calcHfov(double sensorPitch,double DimInPixelWidth,double FocalLength) {
         double hfov;
-        hfov =  Math.atan((DbRefrence.getSensorPitch().getSensorPitch() * DbRefrence.getDimInPixel().getWidth()) / (ConstantsKt.OneThousand * DbRefrence.getFocalLength().getFocalLength())) * 90 / Math.PI;
-        DbRefrence.getFov().setHfov(hfov);
+
+        hfov =  Math.atan((sensorPitch * DimInPixelWidth) / (ConstantsKt.OneThousand * FocalLength)) * 90 / Math.PI;
+
+        return hfov;
     }
 
     /**
      * The formula that calculates the value of vertical field of view (VFOV).
      * @return = The value of vertical field of view (VFOV).
      */
-    private  void calcVfov() {
+    public  double calcVfov(double DimInPixelHeight,double DimInPixelWidth,double hfov) {
         double vfov;
-        vfov = DbRefrence.getFov().getHfov() * (DbRefrence.getDimInPixel().getHeight() / DbRefrence.getDimInPixel().getWidth());
-        DbRefrence.getFov().setVfov(vfov);
+        vfov = hfov * (DimInPixelHeight / DimInPixelWidth);
+        return vfov;
     }
 }
