@@ -1,10 +1,13 @@
-package com.shirzabolotnyklein.nyquistoptics;
+package com.shirzabolotnyklein.nyquistoptics.View;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.shirzabolotnyklein.nyquistoptics.Model.ConstantsKt;
+import com.shirzabolotnyklein.nyquistoptics.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -37,7 +40,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private class LogoLauncher extends Thread {
         public void run() {
             try {
-                sleep(1000 * SLEEP_TIMER);
+                sleep(ConstantsKt.OneThousand * SLEEP_TIMER);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

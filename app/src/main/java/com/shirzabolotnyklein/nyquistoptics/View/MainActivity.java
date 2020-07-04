@@ -1,11 +1,10 @@
-package com.shir.nyquistoptics;
+package com.shirzabolotnyklein.nyquistoptics.View;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +15,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
+import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteToFileController;
+import com.shirzabolotnyklein.nyquistoptics.R;
+import com.shirzabolotnyklein.nyquistoptics.Model.SensorSize;
+import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class MainActivityOLD extends AppCompatActivity implements Serializable {
+public class MainActivity extends AppCompatActivity implements Serializable {
 
     View v_rectangleBackgroundUp; // Initialize background for activity design
     View v_rectangleLineUp; // Initialize lines for activity design
@@ -57,41 +63,29 @@ public class MainActivityOLD extends AppCompatActivity implements Serializable {
     DecimalFormat formatOneDig = new DecimalFormat("0.0"); // Initialize decimal format for outputs
     DecimalFormat formatSixDig = new DecimalFormat("0.000000"); // Initialize decimal format for outputs
 
-    SharedPreferences targetSizeDefaultSettings; // Save all target sizes default settings
-    SharedPreferences linePairDefaultSettings; // Save all line pairs default settings
+
 
     TargetSizeHolder targetSizeHolder; // Initialize target size Singleton
 
     Vibrator vibrator;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.ly_main);
-
-        // Hide keyboard on start up app
-        hideKeyboardOnStartUp();
-
-
-
-    }
-
-    /*
+    ReadWriteToFileController setUp;
+    MainAppController mainControl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         // Hide keyboard on start up app
         hideKeyboardOnStartUp();
+        //Create SharedPreferences files if haven't created yet, and set default settings to the files
+        //isEmptyDefaultSettings();
+        //Set default settings derived from SharedPreferences files to the objects
+        //SetDefaultSettings();
 
-        // Create SharedPreferences files if haven't created yet, and set default settings to the files
-        isEmptyDefaultSettings();
+        setUp=new ReadWriteToFileController(getApplicationContext());
+        setUp.initReadDataFromFile();
+        mainControl=new MainAppController(getApplicationContext());
 
-        // Set default settings derived from SharedPreferences files to the objects
-        SetDefaultSettings();
 
         // Set up UI
         setupUI();
@@ -127,78 +121,12 @@ public class MainActivityOLD extends AppCompatActivity implements Serializable {
                     double focalLength = Double.parseDouble(et_focalLength.getText().toString());
                     double sensorSizeW = Double.parseDouble(et_sensorSizeW.getText().toString());
                     double sensorSizeH = Double.parseDouble(et_sensorSizeH.getText().toString());
+                    mainControl.calculateFOVDRI(sensorPitch,focalLength,sensorSizeH,sensorSizeW);
 
-                    // Set the parameters in Properties & SensorSize classes according to the user input
-                    Properties.setSensorPitch(sensorPitch);
-                    Properties.setFocalLength(focalLength);
-                    SensorSize.setWidth(sensorSizeW);
-                    SensorSize.setHeight(sensorSizeH);
 
-                    // PART 1 - Calculate FOV
 
-                    // Calculate the output
-                    Fov.setFov();
+                    mainControl.calculateTargetsDRI();
 
-                    // Convert the output from double to String and formatting the decimal digits
-                    String ifov = formatSixDig.format(Fov.getIfov());
-                    String hfov = formatOneDig.format(Fov.getHfov());
-                    String vfov = formatOneDig.format(Fov.getVfov());
-
-                    // Set the String output to TextView
-                    tv_resIfov.setText(ifov);
-                    tv_resHfov.setText(hfov);
-                    tv_resVfov.setText(vfov);
-
-                    // PART 2 - Calculate Targets
-
-                    // Create local TargetSize instances, that contains data derived from targetSizeHolder class (in hashmap targetSizeCollection)
-                    TargetSize natoTargetSize = targetSizeHolder.getTargetSize("natoTargetSize");
-                    TargetSize humanTargetSize = targetSizeHolder.getTargetSize("humanTargetSize");
-                    TargetSize objTargetSize = targetSizeHolder.getTargetSize("objTargetSize");
-
-                    // Initialize Target class instances
-                    Target natoTarget = new Target();
-                    Target humanTarget = new Target();
-                    Target objTarget = new Target();
-
-                    // Calculate the output
-                    natoTarget.setTarget(natoTargetSize);
-                    humanTarget.setTarget(humanTargetSize);
-                    objTarget.setTarget(objTargetSize);
-
-                    // Convert the output from double to String
-                    String natoTargetDet = formatOneDig.format(natoTarget.getDetection());
-                    String natoTargetRec = formatOneDig.format(natoTarget.getRecognition());
-                    String natoTargetIdent = formatOneDig.format(natoTarget.getIdentify());
-
-                    String humanTargetDet = formatOneDig.format(humanTarget.getDetection());
-                    String humanTargetRec = formatOneDig.format(humanTarget.getRecognition());
-                    String humanTargetIdent = formatOneDig.format(humanTarget.getIdentify());
-
-                    String objTargetDet = formatOneDig.format(objTarget.getDetection());
-                    String objTargetRec = formatOneDig.format(objTarget.getRecognition());
-
-                    // Set the String output to TextView
-                    tv_resNatoDet.setText(natoTargetDet);
-                    tv_resNatoRec.setText(natoTargetRec);
-                    tv_resNatoIdent.setText(natoTargetIdent);
-
-                    tv_resHumanDet.setText(humanTargetDet);
-                    tv_resHumanRec.setText(humanTargetRec);
-                    tv_resHumanIdent.setText(humanTargetIdent);
-
-                    tv_resObjDet.setText(objTargetDet);
-                    tv_resObjRec.setText(objTargetRec);
-
-                    // Convert the target size from double to String
-                    String natoSize = "(" + Double.toString(natoTargetSize.getWidth()) + "x" + Double.toString(natoTargetSize.getHeight()) + ")";
-                    String humanSize = "(" + Double.toString(humanTargetSize.getWidth()) + "x" + Double.toString(humanTargetSize.getHeight()) + ")";
-                    String objSize = "(" + Double.toString(objTargetSize.getWidth()) + "x" + Double.toString(objTargetSize.getHeight()) + ")";
-
-                    // Set the target size to TextView
-                    tv_natoSize.setText(natoSize);
-                    tv_humanSize.setText(humanSize);
-                    tv_objSize.setText(objSize);
 
                     // Turn the output  visible
                     turnVisible();
@@ -212,8 +140,6 @@ public class MainActivityOLD extends AppCompatActivity implements Serializable {
 
 
     }
-
-    */
 
 
     //------------------------------------- Setup Methods -------------------------------------
@@ -421,138 +347,6 @@ public class MainActivityOLD extends AppCompatActivity implements Serializable {
         for (TextView currentTextViewOutput : textViewOutput) {
             currentTextViewOutput.setVisibility(View.VISIBLE);
         }
-    }
-
-    //------------------------------------- Shared Preference Methods -------------------------------------
-
-    /**
-     * Create SharedPreferences files and set default settings to the files
-     */
-    private void isEmptyDefaultSettings() {
-        isEmptyLinePairDefaultSettings();
-        isEmptyTargetSizeDefaultSettings();
-    }
-
-    /**
-     * Create SharedPreferences file for Line pairs settings, and set default settings
-     */
-    private void isEmptyLinePairDefaultSettings() {
-
-        // Get the file named "linePairDefaultSettings", private
-        linePairDefaultSettings = getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE);
-
-        // Check if SharedPreferences file is empty (linePairDefaultSettings file).
-        // If it's empty (first app usage), put default settings.
-        if (linePairDefaultSettings.getString("defaultSettings_lpDet", "").isEmpty()) {
-
-            // Get the editor to edit the file
-            SharedPreferences.Editor editor = linePairDefaultSettings.edit();
-
-            // Put default settings
-            editor.putString("defaultSettings_lpDet", "2");
-            editor.putString("defaultSettings_lpRec", "6");
-            editor.putString("defaultSettings_lpIdent", "10");
-            editor.putString("defaultSettings_lpDetObj", "1.2");
-
-            // Save the changes
-            editor.apply();
-
-        }
-    }
-
-    /**
-     * Create SharedPreferences file for Target Size settings, and set default settings
-     */
-    private void isEmptyTargetSizeDefaultSettings() {
-
-        // Get the file named "targetSizeDefaultSettings", private
-        targetSizeDefaultSettings = getSharedPreferences("targetSizeDefaultSettings", Context.MODE_PRIVATE);
-
-        // Check if SharedPreferences file is empty (targetSizeDefaultSettings file).
-        // If it's empty (first app usage), put default settings.
-        if (targetSizeDefaultSettings.getString("defaultSettings_natoTargetW", "").isEmpty()) {
-
-            // Get the editor to edit the file
-            SharedPreferences.Editor editor = targetSizeDefaultSettings.edit();
-
-            // Put default settings
-            editor.putString("defaultSettings_natoTargetW", "2.3");
-            editor.putString("defaultSettings_natoTargetH", "2.3");
-
-            editor.putString("defaultSettings_humanTargetW", "0.5");
-            editor.putString("defaultSettings_humanTargetH", "1.7");
-
-            editor.putString("defaultSettings_objTargetW", "0.5");
-            editor.putString("defaultSettings_objTargetH", "0.5");
-
-            //Save the changes
-            editor.apply();
-
-        }
-    }
-
-    /**
-     * Set default settings derived from SharedPreferences files to the objects
-     */
-    private void SetDefaultSettings() {
-        SetLinePairDefaultSettingsToClass();
-        SetTargetSizeDefaultSettingsToObjects();
-    }
-
-    /**
-     * Set default settings derived from SharedPreferences file to the Line Pair class
-     */
-    private void SetLinePairDefaultSettingsToClass() {
-
-        // Get the file named "linePairDefaultSettings", private
-        linePairDefaultSettings = getSharedPreferences("linePairDefaultSettings", Context.MODE_PRIVATE);
-
-        // Convert the user input from String to double
-        double lpDet = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpDet", ""));
-        double lpRec = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpRec", ""));
-        double lpIdent = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpIdent", ""));
-        double lpDetObj = Double.parseDouble(linePairDefaultSettings.getString("defaultSettings_lpDetObj", ""));
-
-        // Set the parameters in LinePair classes according to the user input
-        LinePair.setLpDet(lpDet);
-        LinePair.setLpRec(lpRec);
-        LinePair.setLpIdent(lpIdent);
-        LinePair.setLpDetObj(lpDetObj);
-    }
-
-    /**
-     * Set default settings derived from SharedPreferences file to the Target Size Holder (Singleton) class
-     */
-    private void SetTargetSizeDefaultSettingsToObjects() {
-
-        // Get the values from targetSizeDefaultSettings Shared Preferences and convert from String to double
-        double natoTargetW = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_natoTargetW", ""));
-        double natoTargetH = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_natoTargetH", ""));
-
-        double humanTargetW = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_humanTargetW", ""));
-        double humanTargetH = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_humanTargetH", ""));
-
-        double objTargetW = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_objTargetW", ""));
-        double objTargetH = Double.parseDouble(targetSizeDefaultSettings.getString("defaultSettings_objTargetH", ""));
-
-        // Initialize TargetSize class instances (using singleton - TargetSizeHolder class)
-        targetSizeHolder = TargetSizeHolder.getInstance();
-
-        // Check if a specific TargetSize instance exists in TargetSizeHolder class (in hashmap targetSizeCollection).
-        // If not, add the instance.
-
-        if (!targetSizeHolder.hasTargetSize("natoTargetSize")) {
-            targetSizeHolder.addTargetSize("natoTargetSize", new TargetSize(natoTargetW, natoTargetH));
-        }
-
-        if (!targetSizeHolder.hasTargetSize("humanTargetSize")) {
-            targetSizeHolder.addTargetSize("humanTargetSize", new TargetSize(humanTargetW, humanTargetH));
-        }
-
-        if (!targetSizeHolder.hasTargetSize("objTargetSize")) {
-            targetSizeHolder.addTargetSize("objTargetSize", new TargetSize(objTargetW, objTargetH));
-        }
-
     }
 
     //------------------------------------- Android Methods -------------------------------------

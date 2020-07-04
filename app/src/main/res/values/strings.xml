@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Nyquist Optics</string>
-
+    <string name="tv_parameters">Input</string>
     <string name="tv_txtSensorPitch">Sensor Pitch (mic):</string>
     <string name="tv_txtFocalLength">Focal Length (mm):</string>
     <string name="tv_txtSensorSize">Sensor Size (pxl):</string>
@@ -12,6 +12,7 @@
     <string name="tv_txtIfov">IFOV (rad)</string>
     <string name="tv_txtHfov">HFOV (deg)</string>
     <string name="tv_txtVfov">VFOV (deg)</string>
+    <string name="btn_calculate">Calculate</string>
 
     <string name="tv_resIfov"></string>
     <string name="tv_resHfov"></string>

@@ -55,8 +55,8 @@
     <item>
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
-            <gradient android:startColor="@color/blueBright"
-                android:endColor="@color/blueBright"
+            <gradient android:startColor="@color/colorAccent"
+                android:endColor="@color/colorAccent"
                 android:angle="270" />
             <corners android:radius="10dp" />
             <stroke android:width="3px" android:color="@color/black" />
