@@ -29,4 +29,8 @@ object DB {
     fun initTargetRange(range: Double) {
         targetRange = TargetRange(range)
     }
+
+    fun eraseTargetSizes() {
+        targetSizes.clear();
+    }
 }

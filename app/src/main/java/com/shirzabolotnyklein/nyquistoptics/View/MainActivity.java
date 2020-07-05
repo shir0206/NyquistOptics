@@ -77,18 +77,22 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
         // Hide keyboard on start up app
         //hideKeyboardOnStartUp();
-        //Create SharedPreferences files if haven't created yet, and set default settings to the files
-        //isEmptyDefaultSettings();
-        //Set default settings derived from SharedPreferences files to the objects
-        //SetDefaultSettings();
 
-//        setUp=new ReadWriteToFileController(getApplicationContext());
-//        setUp.initReadDataFromFile();
-//        mainControl=new MainAppController(getApplicationContext());
+        //must init the ReadWriteToFileController to get latest data from the shared prefrences
+        //setUp=new ReadWriteToFileController(getApplicationContext());
 
+        //must init with context
+        //mainControl=new MainAppController(getApplicationContext());
+
+        //Restore to default settings of the line pair and target sizes
+        // setUp.restoreDefaultSettings();
+
+        // String lineDet=null,lineRec=null,lineIdent=null,lineObj=null,TargetSizeNatoW=null,TargetSizeNatoH=null,TargetSizeHumanH=null,TargetSizeHumanW=null,TargetSizeObjectH=null,TargetSizeObjectW=null;
+        // setUp.SaveNewLinePairSettings(lineDet,lineRec,lineIdent,lineObj);
+        //setUp.SaveNewTargetSizeSettings(TargetSizeNatoW,TargetSizeNatoH,TargetSizeHumanH,TargetSizeHumanW,TargetSizeObjectH,TargetSizeObjectW);
 
         // input
-        String sensorPitch = null, focalLength = null, sensorSizeH = null, sensorSizeW = null;
+        //String sensorPitch = null, focalLength = null, sensorSizeH = null, sensorSizeW = null;
         // output
         //HashMap<FovType, String> fovResults = mainControl.calcFOV(sensorPitch, focalLength, sensorSizeH, sensorSizeW);
 
