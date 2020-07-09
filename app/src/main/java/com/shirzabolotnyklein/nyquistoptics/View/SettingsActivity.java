@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteToFileController;
+
 
 import com.shirzabolotnyklein.nyquistoptics.R;
 
@@ -32,13 +32,12 @@ public class SettingsActivity extends AppCompatActivity {
     EditText et_humanTargetW, et_humanTargetH;
     EditText et_objTargetW, et_objTargetH;
     Vibrator vibrator;
-    ReadWriteToFileController readWriteControll;
+//    ReadWriteFileController readWriteControll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_settings);
-
 
 
 //

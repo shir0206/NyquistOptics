@@ -2,6 +2,7 @@ package com.shirzabolotnyklein.nyquistoptics.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import com.shirzabolotnyklein.nyquistoptics.R;
 
 public class CalcTargetSizeActivity extends AppCompatActivity {

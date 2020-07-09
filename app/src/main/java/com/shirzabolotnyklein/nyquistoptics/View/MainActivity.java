@@ -17,14 +17,11 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
-import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteToFileController;
-import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
-import com.shirzabolotnyklein.nyquistoptics.Model.TargetDRIType;
+import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl;
 import com.shirzabolotnyklein.nyquistoptics.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements Serializable {
 
@@ -67,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
 
     Vibrator vibrator;
-    ReadWriteToFileController setUp;
+    ReadWriteFileControl setUp;
     MainAppController mainControl;
 
     @Override
@@ -78,8 +75,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         // Hide keyboard on start up app
         //hideKeyboardOnStartUp();
 
-        //must init the ReadWriteToFileController to get latest data from the shared prefrences
-        //setUp=new ReadWriteToFileController(getApplicationContext());
+        //must init the ... to get latest data from the shared prefrences
+        setUp = new ReadWriteFileControl(getApplicationContext());
 
         //must init with context
         //mainControl=new MainAppController(getApplicationContext());

@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetDRIType;
-import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
