@@ -14,8 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
+import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl;
+import com.shirzabolotnyklein.nyquistoptics.Model.LinePair;
+import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
+import com.shirzabolotnyklein.nyquistoptics.Model.TargetType;
 import com.shirzabolotnyklein.nyquistoptics.R;
+
+import java.util.HashMap;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -32,14 +37,15 @@ public class SettingsActivity extends AppCompatActivity {
     EditText et_humanTargetW, et_humanTargetH;
     EditText et_objTargetW, et_objTargetH;
     Vibrator vibrator;
-//    ReadWriteFileController readWriteControll;
+    ReadWriteFileControl readWriteControll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_settings);
-
-
+        readWriteControll = new ReadWriteFileControl(getApplicationContext());
+        LinePair lp=readWriteControll.getLinePairValues();
+        HashMap<TargetType, TargetSize> targetSizes=readWriteControll.getTargetSizesValues();
 //
 //        setContentView(R.layout.ly_settings);
 //        readWriteControll = new ReadWriteToFileController(getApplicationContext());

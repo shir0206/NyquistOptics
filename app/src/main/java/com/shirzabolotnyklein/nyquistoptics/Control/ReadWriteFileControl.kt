@@ -13,8 +13,8 @@ class ReadWriteFileControl(var context: Context) {
 
     private var DbRefrence: DB? = null
     private var cont: Context? = null
-    var targetSizeDefaultSettings: SharedPreferences;
-    var linePairDefaultSettings: SharedPreferences;
+    private var targetSizeDefaultSettings: SharedPreferences;
+    private var linePairDefaultSettings: SharedPreferences;
 
     init {
         this.cont = context;
@@ -33,8 +33,13 @@ class ReadWriteFileControl(var context: Context) {
 
 
     }
+    public fun getLinePairValues():LinePair{
+        return   this.DbRefrence!!.linePair;
+    }
 
-
+    public fun getTargetSizesValues():HashMap<TargetType,TargetSize>{
+       return  this.DbRefrence!!.targetSizes;
+    }
     private fun initDataFromFiles() {
         CoroutineScope(Dispatchers.IO).launch {
 
