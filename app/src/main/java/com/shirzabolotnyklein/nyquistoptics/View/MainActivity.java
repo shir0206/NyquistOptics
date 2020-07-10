@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
         //must init the ... to get latest data from the shared prefrences
         setUp = new ReadWriteFileControl(getApplicationContext());
-
+        setUp.initReadDataFromFile();
         //must init with context
         //mainControl=new MainAppController(getApplicationContext());
 

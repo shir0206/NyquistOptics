@@ -21,10 +21,10 @@ class ReadWriteFileControl(var context: Context) {
         linePairDefaultSettings = cont!!.getSharedPreferences(linePairFileName, Context.MODE_PRIVATE)
         targetSizeDefaultSettings = cont!!.getSharedPreferences(targetSizeFileName, Context.MODE_PRIVATE)
         DbRefrence = DB
-        initReadDataFromFile();
+
     }
 
-    fun initReadDataFromFile() {
+    public fun initReadDataFromFile() {
         CoroutineScope(Dispatchers.IO).launch {
             initDataFromFiles() // make sure the default data is available
             SetDefaultSettings() //save the data and store in the db for storage
