@@ -18,6 +18,174 @@ public class CalculationController {
 
     }
 
+
+    //=================================== Calculate Dimension ===================================
+
+
+    private double calcDimensionWidth(double targetSizeW,
+                                      double focalLength,
+                                      double sensorPitch,
+                                      double targetRange) {
+
+        double dimensionWidth = calcDimension(targetSizeW, focalLength, sensorPitch, targetRange);
+
+        return dimensionWidth;
+    }
+
+
+    private double calcDimensionHeight(double targetSizeH,
+                                       double focalLength,
+                                       double sensorPitch,
+                                       double targetRange) {
+
+        double dimensionHeight = calcDimension(targetSizeH, focalLength, sensorPitch, targetRange);
+
+        return dimensionHeight;
+    }
+
+
+    private double calcDimension(double targetSize,
+                                 double focalLength,
+                                 double sensorPitch,
+                                 double targetRange) {
+
+        double dimension;
+
+        double ifov = calcIfov(sensorPitch, focalLength);
+
+        dimension = (targetSize) / (ifov * targetRange);
+
+        return dimension;
+    }
+
+
+    //=================================== Calculate Target Size ===================================
+
+
+    private double calcTargetSizeWidth(double dimensionW,
+                                       double focalLength,
+                                       double sensorPitch,
+                                       double targetRange) {
+
+        double targetSizeWidth = calcTargetSize(dimensionW, focalLength, sensorPitch, targetRange);
+
+        return targetSizeWidth;
+    }
+
+
+    private double calcTargetSizeHeight(double dimensionH,
+                                        double focalLength,
+                                        double sensorPitch,
+                                        double targetRange) {
+
+        double targetSizeHeight = calcTargetSize(dimensionH, focalLength, sensorPitch, targetRange);
+
+        return targetSizeHeight;
+    }
+
+
+    private double calcTargetSize(double dimension,
+                                  double focalLength,
+                                  double sensorPitch,
+                                  double targetRange) {
+
+        double targetSize;
+
+        double ifov = calcIfov(sensorPitch, focalLength);
+
+        targetSize = dimension * ifov * targetRange;
+
+        return targetSize;
+    }
+
+    //=================================== Calculate Focal Length ===================================
+
+
+    private double calcFocalLengthViaTarget(double dimension,
+                                            double targetSize,
+                                            double sensorPitch,
+                                            double targetRange) {
+
+        double focalLength = (sensorPitch * dimension * targetRange) / targetSize;
+        return focalLength;
+    }
+
+
+    private double calcFocalLengthWidthViaTarget(double dimensionW,
+                                                 double targetSizeW,
+                                                 double sensorPitch,
+                                                 double targetRange) {
+
+        double focalLengthWidth = calcFocalLengthViaTarget(dimensionW, targetSizeW, sensorPitch, targetRange);
+        return focalLengthWidth;
+    }
+
+    private double calcFocalLengthHeightViaTarget(double dimensionH,
+                                                  double targetSizeH,
+                                                  double sensorPitch,
+                                                  double targetRange) {
+
+        double focalLengthHeight = calcFocalLengthViaTarget(dimensionH, targetSizeH, sensorPitch, targetRange);
+        return focalLengthHeight;
+    }
+
+
+    private double calcFocalLengthViaFOV(double dimensionW,
+                                         double dimensionH,
+                                         double hfov,
+                                         double sensorPitch) {
+
+        double focalLength = (sensorPitch * Math.max(dimensionW, dimensionH)) /
+                (ConstantsKt.TwoThousand * Math.atan((hfov * Math.PI) / ConstantsKt.Ninety));
+
+        return focalLength;
+    }
+
+
+    //=================================== Calculate FOV ===================================
+
+
+    /**
+     * The formula that calculates the value of instantaneous field of view (IFOV).
+     *
+     * @return = The value of instantaneous field of view (IFOV).
+     */
+    public double calcIfov(double sensorPitch, double focalLength) {
+        double ifov;
+
+        ifov = sensorPitch / (focalLength * ConstantsKt.OneThousand);
+
+        return ifov;
+    }
+
+    /**
+     * The formula that calculates the value of horizontal field of view (HFOV).
+     *
+     * @return = The value of horizontal field of view (HFOV).
+     */
+    public double calcHfov(double sensorPitch, double dimensionW, double FocalLength) {
+
+        double hfov = Math.atan((sensorPitch * dimensionW) /
+                (ConstantsKt.TwoThousand * FocalLength)) * ConstantsKt.Ninety / Math.PI;
+
+        return hfov;
+    }
+
+    /**
+     * The formula that calculates the value of vertical field of view (VFOV).
+     *
+     * @return = The value of vertical field of view (VFOV).
+     */
+    public double calcVfov(double dimensionH, double dimensionW, double hfov) {
+        double vfov;
+        vfov = hfov * (dimensionH / dimensionW);
+        return vfov;
+    }
+
+
+    //=================================== Calculate DRI ===================================
+
+
     /**
      * Helper method that calculates the value of target detection/recognition/identify.
      *
@@ -144,40 +312,5 @@ public class CalculationController {
         return result;
     }
 
-    /**
-     * The formula that calculates the value of instantaneous field of view (IFOV).
-     *
-     * @return = The value of instantaneous field of view (IFOV).
-     */
-    public double calcIfov(double sensorPitch, double focalLength) {
-        double ifov;
 
-        ifov = sensorPitch / (focalLength * ConstantsKt.OneThousand);
-
-        return ifov;
-    }
-
-    /**
-     * The formula that calculates the value of horizontal field of view (HFOV).
-     *
-     * @return = The value of horizontal field of view (HFOV).
-     */
-    public double calcHfov(double sensorPitch, double DimInPixelWidth, double FocalLength) {
-        double hfov;
-
-        hfov = Math.atan((sensorPitch * DimInPixelWidth) / (ConstantsKt.OneThousand * FocalLength)) * 90 / Math.PI;
-
-        return hfov;
-    }
-
-    /**
-     * The formula that calculates the value of vertical field of view (VFOV).
-     *
-     * @return = The value of vertical field of view (VFOV).
-     */
-    public double calcVfov(double DimInPixelHeight, double DimInPixelWidth, double hfov) {
-        double vfov;
-        vfov = hfov * (DimInPixelHeight / DimInPixelWidth);
-        return vfov;
-    }
 }

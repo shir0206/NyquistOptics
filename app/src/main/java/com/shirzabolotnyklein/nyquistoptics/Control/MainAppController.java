@@ -37,6 +37,7 @@ public class MainAppController {
         double focalLength = Double.parseDouble(FocalLength);
         double sensorSizeW = Double.parseDouble(SensorSizeW);
         double sensorSizeH = Double.parseDouble(SensorSizeH);
+
         //Calculate FOV
         HashMap<FovType, String> results = new HashMap<FovType, String>();
         double ifov = this.calcControll.calcIfov(sensorPitch, focalLength);
@@ -52,7 +53,6 @@ public class MainAppController {
         results.put(FovType.HFOV, hFov);
         results.put(FovType.VFOV, vFov);
 
-
         return results;
     }
 
@@ -61,7 +61,6 @@ public class MainAppController {
         HashMap<TargetDRIType, String> result;
         double sensorPitch = Double.parseDouble(SensorPitch);
         double focalLength = Double.parseDouble(FocalLength);
-
 
         return result = this.calcControll.calculateDRI(sensorPitch, focalLength);
     }

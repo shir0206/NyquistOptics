@@ -5,7 +5,6 @@ import android.content.SharedPreferences
 import com.shirzabolotnyklein.nyquistoptics.Model.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -30,7 +29,6 @@ class ReadWriteFileControl(var context: Context) {
             SetDefaultSettings() //save the data and store in the db for storage
 
         }
-
 
     }
     public fun getLinePairValues():LinePair{
