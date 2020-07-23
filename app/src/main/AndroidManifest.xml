@@ -2,13 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.shirzabolotnyklein.nyquistoptics">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/nyquist_optics_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.CalcDimensionActivity"></activity>
+        <activity android:name=".View.CalcFocalLengthTarget"></activity>
+        <activity android:name=".View.CalcDimensionActivity" />
         <activity android:name=".View.CalcTargetSizeActivity" />
         <activity
             android:name=".View.MainActivity"
@@ -30,7 +33,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.VIBRATE" />
 
 </manifest>
