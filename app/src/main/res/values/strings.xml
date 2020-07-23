@@ -115,4 +115,6 @@
     <string name="et_targetSizeObjH">H</string>
     <string name="tv_txtFocalLengthW">Focal Length W (mm):</string>
     <string name="tv_txtFocalLengthH">Focal Length H (mm):</string>
+    <string name="et_txtTargetSizeW">W</string>
+    <string name="et_txtTargetSizeH">H</string>
 </resources>
