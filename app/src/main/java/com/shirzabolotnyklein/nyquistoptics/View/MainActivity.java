@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     Button btn_dimension;
     Button btn_targetSize;
     Button btn_settings;
+    Button btn_focalLength;
 
 
     Vibrator vibrator;
@@ -155,6 +156,18 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             }
         });
 
+        btn_focalLength.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                vibrator.vibrate(50);
+
+
+                Intent intent = new Intent(MainActivity.this, CalcFocalLengthTarget.class);
+                startActivity(intent);
+            }
+        });
+
 //        btn_calculate.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -207,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         btn_dimension = findViewById(R.id.btn_dimension);
         btn_targetSize = findViewById(R.id.btn_targetSize);
         btn_settings = findViewById(R.id.btn_settings);
-
+        btn_focalLength=findViewById(R.id.btn_focalLength);
     }
 
     /**
