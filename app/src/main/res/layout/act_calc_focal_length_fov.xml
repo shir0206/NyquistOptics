@@ -113,7 +113,7 @@
 
         <EditText
             android:id="@+id/et_txtDimensionW"
-            android:layout_width="48dp"
+            android:layout_width="58dp"
             android:layout_height="46dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
@@ -127,12 +127,12 @@
 
         <EditText
             android:id="@+id/et_txtDimensionH"
-            android:layout_width="0dp"
+            android:layout_width="58dp"
             android:layout_height="46dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/et_txtDimensionH"
@@ -159,17 +159,18 @@
 
         <EditText
             android:id="@+id/tv_txtDimensionX"
-            android:layout_width="26dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_width="20dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
             android:text="@string/tv_x"
-            app:layout_constraintBottom_toBottomOf="@+id/img_dimnesionFov"
+            app:layout_constraintBottom_toBottomOf="@+id/et_txtDimensionW"
             app:layout_constraintStart_toEndOf="@+id/et_txtDimensionW"
-            app:layout_constraintTop_toTopOf="@+id/img_dimnesionFov" />
+            app:layout_constraintTop_toTopOf="@+id/et_txtDimensionW"
+            app:layout_constraintVertical_bias="0" />
     </android.support.constraint.ConstraintLayout>
 
     <TextView
