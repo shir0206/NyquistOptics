@@ -50,6 +50,8 @@ public class CalcTargetSizeActivity extends AppCompatActivity {
 
                 if(isValid()) {
 
+                    Util.hideKeyboard(CalcTargetSizeActivity.this);
+
                     CalculationController calculationController = new CalculationController();
 
                     double focalLength = Double.parseDouble(et_focalLength.getText().toString());

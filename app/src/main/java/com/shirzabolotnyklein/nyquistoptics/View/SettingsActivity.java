@@ -62,6 +62,9 @@ public class SettingsActivity extends AppCompatActivity {
                 // Vibrate
                 vibrator.vibrate(50);
 
+                Util.hideKeyboard(SettingsActivity.this);
+
+
                 // Refresh the current settings and set to default
                  readWriteControll.restoreDefaultSettings();
 
@@ -71,8 +74,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
                 //function to parse the data in to the tv and
-
-                Toast.makeText(SettingsActivity.this, "Settings Reset to Default", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsActivity.this, "Settings reset to default", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -100,6 +102,9 @@ public class SettingsActivity extends AppCompatActivity {
 
                 // If all fields are filled, continue
                 else {
+
+                    Util.hideKeyboard(SettingsActivity.this);
+
 
                     // Set the user settings to settings in SharedPreferences files
                     readWriteControll.SaveNewLinePairSettings(et_lpDet.getText().toString(),et_lpRec.getText().toString(),et_lpIdent.getText().toString(),et_lpDetObj.getText().toString());
