@@ -15,15 +15,15 @@ import com.shirzabolotnyklein.nyquistoptics.R;
 
 public class CalcTargetSizeActivity extends AppCompatActivity {
 
-    EditText        et_focalLength;
-    EditText     et_sensorPitch;
-    EditText  et_targetRange;
-    EditText         et_txtDimensionW;
-    EditText  et_txtDimensionH;
+    EditText et_focalLength;
+    EditText et_sensorPitch;
+    EditText et_targetRange;
+    EditText et_txtDimensionW;
+    EditText et_txtDimensionH;
 
     TextView tv_resTargetSizeW;
-    TextView  tv_resTargetSizeH;
-    TextView        tv_resTargetSizeX;
+    TextView tv_resTargetSizeH;
+    TextView tv_resTargetSizeX;
     Button btn_calc;
     Vibrator vibrator;
 

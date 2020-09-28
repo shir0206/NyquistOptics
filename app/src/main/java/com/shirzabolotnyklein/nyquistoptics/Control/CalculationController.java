@@ -163,10 +163,10 @@ public class CalculationController {
      *
      * @return = The value of horizontal field of view (HFOV).
      */
-    public double calcHfov(double sensorPitch, double dimensionW, double FocalLength) {
+    public double calcHfov(double sensorPitch, double dimensionW, double focalLength) {
 
         double hfov = Math.atan((sensorPitch * dimensionW) /
-                (ConstantsKt.TwoThousand * FocalLength)) * ConstantsKt.Ninety / Math.PI;
+                (ConstantsKt.TwoThousand * focalLength)) * ConstantsKt.Ninety / Math.PI;
 
         return hfov;
     }
