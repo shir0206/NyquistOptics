@@ -22,26 +22,26 @@ public class CalcDimensionActivity extends AppCompatActivity {
     EditText et_resTargetSizeW;
     EditText et_resTargetSizeH;
     TextView tv_resDimensionW;
+    TextView tv_dimensionX;
     TextView tv_resDimensionH;
-Vibrator vibrator;
+    Vibrator vibrator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_calc_dimension);
 
-
         // Set up UI
         setupUI();
+
+        tv_dimensionX.setVisibility(View.INVISIBLE);
 
         // Get the vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
-
         btn_calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
                 // Vibrate
                 vibrator.vibrate(50);
@@ -50,31 +50,27 @@ Vibrator vibrator;
 
                     CalculationController calculationController = new CalculationController();
 
-
                     double targetSizeW = Double.parseDouble(et_resTargetSizeW.getText().toString());
                     double targetSizeH = Double.parseDouble(et_resTargetSizeH.getText().toString());
                     double focalLength = Double.parseDouble(et_focalLength.getText().toString());
                     double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
                     double targetRange = Double.parseDouble(et_targetRange.getText().toString());
 
-
                     String dimensionW = Double.toString(calculationController.calcDimensionWidth(targetSizeW,focalLength,sensorPitch,targetRange));
                     String dimensionH = Double.toString(calculationController.calcDimensionHeight(targetSizeH,focalLength,sensorPitch,targetRange));
 
                     tv_resDimensionW.setText(dimensionW);
                     tv_resDimensionH.setText(dimensionH);
+                    tv_dimensionX.setVisibility(View.VISIBLE);
 
                 }
 
             }
     });
 
-
-
     }
 
     private void setupUI() {
-
 
         et_focalLength = findViewById(R.id.et_focalLength);
         et_sensorPitch = findViewById(R.id.et_sensorPitch);
@@ -82,11 +78,10 @@ Vibrator vibrator;
         et_resTargetSizeW = findViewById(R.id.et_resTargetSizeW);
         et_resTargetSizeH = findViewById(R.id.et_resTargetSizeH);
         tv_resDimensionW = findViewById(R.id.tv_resDimensionW);
+        tv_dimensionX = findViewById(R.id.tv_dimensionX);
         tv_resDimensionH = findViewById(R.id.tv_resDimensionH);
         btn_calc = findViewById(R.id.btn_calc);
     }
-
-
 
     private boolean isValid() {
 
@@ -103,17 +98,20 @@ Vibrator vibrator;
             Toast.makeText(CalcDimensionActivity.this, value + msg, Toast.LENGTH_SHORT).show();
             return false;
 
-        }else if (et_targetRange.getText().toString().equals("")) {
+        }
+        else if (et_targetRange.getText().toString().equals("")) {
             value = "Target range";
             Toast.makeText(CalcDimensionActivity.this, value + msg, Toast.LENGTH_SHORT).show();
             return false;
 
-        }else if (et_resTargetSizeW.getText().toString().equals("")) {
+        }
+        else if (et_resTargetSizeW.getText().toString().equals("")) {
             value = "Target width";
             Toast.makeText(CalcDimensionActivity.this, value + msg, Toast.LENGTH_SHORT).show();
             return false;
 
-        }else if (et_resTargetSizeH.getText().toString().equals("")) {
+        }
+        else if (et_resTargetSizeH.getText().toString().equals("")) {
             value = "Target height";
             Toast.makeText(CalcDimensionActivity.this, value + msg, Toast.LENGTH_SHORT).show();
             return false;
