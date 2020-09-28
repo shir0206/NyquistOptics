@@ -184,7 +184,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/tv_txtDimensionW"
+                android:id="@+id/et_txtDimensionW"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -202,7 +202,7 @@
                 android:text="@string/tv_x"
                 android:textSize="24sp" />
             <EditText
-                android:id="@+id/tv_txtDimensionH"
+                android:id="@+id/et_txtDimensionH"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -269,17 +269,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
-            android:text="@string/tv_resTargetSizeW"
             android:textSize="24sp" />
 
+        <TextView
+            android:id="@+id/tv_resTargetSizeX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="25dp"
+            android:text="@string/tv_resTargetSizeX"
+            android:textSize="24sp"/>
         <TextView
             android:id="@+id/tv_resTargetSizeH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
-            android:text="@string/tv_resTargetSizeH"
-            android:textSize="24sp"
-            tools:text=" " />
+            android:textSize="24sp" />
     </LinearLayout>
 
 
