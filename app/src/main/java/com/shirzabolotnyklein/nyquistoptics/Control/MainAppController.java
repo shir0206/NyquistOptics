@@ -10,8 +10,11 @@ import java.util.HashMap;
 
 public class MainAppController {
     private Context cont;
-    DecimalFormat formatOneDig = new DecimalFormat("0.0"); // Initialize decimal format for outputs
-    DecimalFormat formatSixDig = new DecimalFormat("0.000000"); // Initialize decimal format for outputs
+
+    // Initialize decimal format for outputs
+    DecimalFormat formatOneDig = new DecimalFormat("0.0");
+    DecimalFormat formatSixDig = new DecimalFormat("0.000000");
+
     CalculationController calcControll;
 
     public MainAppController(Context context) {

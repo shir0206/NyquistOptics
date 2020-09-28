@@ -265,7 +265,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/et_txtDimensionW"
+                android:id="@+id/et_resTargetSizeW"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -283,7 +283,7 @@
                 android:text="@string/tv_x"
                 android:textSize="24sp" />
             <EditText
-                android:id="@+id/et_txtDimensionH"
+                android:id="@+id/et_resTargetSizeW"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"

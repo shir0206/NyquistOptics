@@ -22,7 +22,7 @@ public class CalculationController {
     //=================================== Calculate Dimension ===================================
 
 
-    private double calcDimensionWidth(double targetSizeW,
+    public double calcDimensionWidth(double targetSizeW,
                                       double focalLength,
                                       double sensorPitch,
                                       double targetRange) {
@@ -33,7 +33,7 @@ public class CalculationController {
     }
 
 
-    private double calcDimensionHeight(double targetSizeH,
+    public double calcDimensionHeight(double targetSizeH,
                                        double focalLength,
                                        double sensorPitch,
                                        double targetRange) {
@@ -286,6 +286,7 @@ public class CalculationController {
 
         double objDet = this.calcDetection(tsObj, sensorPitch, focalLength);
         double objRec = this.calcRecognition(tsObj, sensorPitch, focalLength);
+
         // Convert the output from double to String
         String natoTargetDet = formatOneDig.format(natoDet);
         String natoTargetRec = formatOneDig.format(natoRec);

@@ -205,7 +205,7 @@
             app:srcCompat="@drawable/ic_target_size" />
 
         <EditText
-            android:id="@+id/et_txtDimensionH"
+            android:id="@+id/et_resTargetSizeW"
             android:layout_width="58dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -229,13 +229,13 @@
             android:layout_marginRight="8dp"
             android:text="@string/tv_x"
             app:layout_constraintBottom_toBottomOf="@+id/img_dimension"
-            app:layout_constraintEnd_toStartOf="@+id/et_txtDimensionW"
-            app:layout_constraintStart_toEndOf="@+id/et_txtDimensionH"
+            app:layout_constraintEnd_toStartOf="@+id/et_resTargetSizeW"
+            app:layout_constraintStart_toEndOf="@+id/et_resTargetSizeW"
             app:layout_constraintTop_toTopOf="@+id/img_dimension"
             app:layout_constraintVertical_bias="0.333" />
 
         <EditText
-            android:id="@+id/et_txtDimensionW"
+            android:id="@+id/et_resTargetSizeW"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
