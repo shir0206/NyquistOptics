@@ -53,7 +53,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/et_resHfov"
+            android:id="@+id/tv_resHfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
@@ -131,7 +131,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/et_resIfov"
+            android:id="@+id/tv_resIfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
@@ -265,7 +265,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/et_resTargetSizeW"
+                android:id="@+id/et_txtDimensionW"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -283,7 +283,7 @@
                 android:text="@string/tv_x"
                 android:textSize="24sp" />
             <EditText
-                android:id="@+id/et_resTargetSizeW"
+                android:id="@+id/et_txtDimensionH"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
