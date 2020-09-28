@@ -7,6 +7,7 @@ import com.shirzabolotnyklein.nyquistoptics.R
 class CalcFocalLengthTarget : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calc_focal_length_target)
+        //setContentView(R.layout.activity_calc_focal_length_target)
+        setContentView(R.layout.act_calcfocallengthfov)
     }
 }

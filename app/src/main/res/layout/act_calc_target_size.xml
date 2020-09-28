@@ -32,7 +32,7 @@
 
 
             <ImageView
-                android:id="@+id/img_focalLength"
+                android:id="@+id/img_hFov"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:padding="15dp"
@@ -271,20 +271,15 @@
             android:paddingTop="25dp"
             android:text="@string/tv_resTargetSizeW"
             android:textSize="24sp" />
-        <TextView
-            android:id="@+id/tv_x"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="25dp"
-            android:text="@string/tv_x"
-            android:textSize="24sp" />
+
         <TextView
             android:id="@+id/tv_resTargetSizeH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_resTargetSizeH"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            tools:text=" " />
     </LinearLayout>
 
 
