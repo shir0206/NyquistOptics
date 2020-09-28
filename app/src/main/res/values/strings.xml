@@ -124,5 +124,17 @@
     <string name="tv_resTargetSizeX">x</string>
 
 
+    <string name="tv_txtNatoDet">Detection (m):</string>
+    <string name="tv_txtNatoRec">Recognition (m):</string>
+    <string name="tv_txtNatoIdent">Identification (m):</string>
+
+    <string name="tv_txtHumanDet">Detection (m):</string>
+    <string name="tv_txtHumanRec">Recognition (m):</string>
+    <string name="tv_txtHumanIdent">Identification (m):</string>
+
+
+    <string name="tv_txtObjDet">Detection (m):</string>
+    <string name="tv_txtObjRec">Recognition (m):</string>
+
 
 </resources>
