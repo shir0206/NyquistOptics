@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.CalcFocalLengthTarget"></activity>
+        <activity android:name=".View.CalcFocalLengthFOV"></activity>
+        <activity android:name=".View.CalcFocalLengthTarget" />
         <activity android:name=".View.CalcDimensionActivity" />
         <activity android:name=".View.CalcTargetSizeActivity" />
         <activity
