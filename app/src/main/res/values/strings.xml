@@ -117,4 +117,9 @@
     <string name="tv_txtFocalLengthH">Focal Length H (mm):</string>
     <string name="et_txtTargetSizeW">W</string>
     <string name="et_txtTargetSizeH">H</string>
+
+    <string name="tv_resTargetSizeX">x</string>
+
+
+
 </resources>

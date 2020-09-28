@@ -84,7 +84,7 @@ public class CalculationController {
     }
 
 
-    private double calcTargetSize(double dimension,
+    public double calcTargetSize(double dimension,
                                   double focalLength,
                                   double sensorPitch,
                                   double targetRange) {
