@@ -1,5 +1,6 @@
 package com.shirzabolotnyklein.nyquistoptics.View;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     ArrayList<View> lineOutput = new ArrayList<>(); // Initialize output array to hide all lines for design before bottom click
     ArrayList<TableLayout> tableOutput = new ArrayList<>(); // Initialize output array to hide all tables output before bottom click
     ArrayList<TextView> textViewOutput = new ArrayList<>(); // Initialize output array to hide all TextViews output before bottom click
-
+    Dialog myDialog;
 
     Button btn_fov;
     Button btn_dimension;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_home);
 
+        myDialog=new Dialog(this);
         // Hide keyboard on start up app
         //hideKeyboardOnStartUp();
 
@@ -162,9 +164,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
                 vibrator.vibrate(50);
 
+                showPopUp(view);
 
-                Intent intent = new Intent(MainActivity.this, CalcFocalLengthTarget.class);
-                startActivity(intent);
             }
         });
 
@@ -409,6 +410,37 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         assert imm != null;
         imm.hideSoftInputFromWindow(btn.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
+    }
+
+    public void showPopUp(View v){
+        Button calculateTargetInput;
+        Button FOVInput;
+        myDialog.setContentView(R.layout.act_home_focal_popup);
+        calculateTargetInput=myDialog.findViewById(R.id.btn_TargetInput);
+        FOVInput=myDialog.findViewById(R.id.btn_FOVInput);
+
+        calculateTargetInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, CalcFocalLengthTarget.class);
+                startActivity(intent);
+                myDialog.dismiss();
+            }
+        });
+
+        FOVInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, CalcFocalLengthFOV.class);
+                startActivity(intent);
+                myDialog.dismiss();
+
+            }
+        });
+        myDialog.show();
+
     }
 
 }

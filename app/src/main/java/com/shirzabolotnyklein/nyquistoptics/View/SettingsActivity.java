@@ -52,7 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
        // Hide keyboard on start up app
         hideKeyboardOnStartUp();
 
-//        // Get the vibrator
+        // Get the vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         btn_def.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +108,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                     // Set the user settings to settings in SharedPreferences files
                     readWriteControll.SaveNewLinePairSettings(et_lpDet.getText().toString(),et_lpRec.getText().toString(),et_lpIdent.getText().toString(),et_lpDetObj.getText().toString());
-                    readWriteControll.SaveNewTargetSizeSettings(et_humanTargetW.getText().toString(),et_humanTargetH.getText().toString(),et_humanTargetW.getText().toString(), et_humanTargetH.getText().toString(),et_objTargetW.getText().toString(), et_objTargetH.getText().toString());
+                    readWriteControll.SaveNewTargetSizeSettings(et_natoTargetW.getText().toString(),et_natoTargetH.getText().toString(),et_humanTargetW.getText().toString(), et_humanTargetH.getText().toString(),et_objTargetW.getText().toString(), et_objTargetH.getText().toString());
 
                     Toast.makeText(SettingsActivity.this, "Settings saved", Toast.LENGTH_SHORT).show();
 
