@@ -48,6 +48,9 @@ public class CalcDimensionActivity extends AppCompatActivity {
 
                 if(isValid()) {
 
+                    Util.hideKeyboard(CalcDimensionActivity.this);
+
+
                     CalculationController calculationController = new CalculationController();
 
                     double targetSizeW = Double.parseDouble(et_resTargetSizeW.getText().toString());

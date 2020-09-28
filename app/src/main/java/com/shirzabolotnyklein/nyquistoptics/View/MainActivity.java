@@ -404,11 +404,11 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     /**
      * Hide keyboard once btn pressed
      */
-    private void hideKeyboardOnceBtnPressed() {
+    public void hideKeyboardOnceBtnPressed(Button btn) {
 
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         assert imm != null;
-        imm.hideSoftInputFromWindow(btn_calculate.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
+        imm.hideSoftInputFromWindow(btn.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
     }
 
 }

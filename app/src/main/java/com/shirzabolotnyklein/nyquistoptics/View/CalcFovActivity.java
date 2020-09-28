@@ -1,6 +1,7 @@
 package com.shirzabolotnyklein.nyquistoptics.View;
 
 import android.content.Context;
+import android.inputmethodservice.Keyboard;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +46,10 @@ public class CalcFovActivity extends AppCompatActivity {
                 // Vibrate
                 vibrator.vibrate(50);
 
+
                 if(isValid()) {
+
+                    Util.hideKeyboard(CalcFovActivity.this);
 
                     CalculationController calculationController = new CalculationController();
 
