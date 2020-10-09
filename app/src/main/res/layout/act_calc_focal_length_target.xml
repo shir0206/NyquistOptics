@@ -223,14 +223,11 @@
             android:id="@+id/tv_txtDimensionX"
             android:layout_width="7dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/tv_x"
             app:layout_constraintBottom_toBottomOf="@+id/img_dimension"
-            app:layout_constraintEnd_toStartOf="@+id/et_resTargetSizeW"
-            app:layout_constraintStart_toEndOf="@+id/et_resTargetSizeW"
+            app:layout_constraintEnd_toStartOf="@+id/et_dimensionH"
             app:layout_constraintTop_toTopOf="@+id/img_dimension"
             app:layout_constraintVertical_bias="0.333" />
 
