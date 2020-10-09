@@ -21,7 +21,6 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_input"
         app:layout_constraintVertical_bias="0.458" />
 
-
     <android.support.constraint.ConstraintLayout
         android:id="@+id/ll_input"
         android:layout_width="match_parent"
@@ -75,13 +74,11 @@
                 android:textSize="24sp" />
         </LinearLayout>
 
-
         <LinearLayout
             android:id="@+id/ll_sensorPitch"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/ll_targetRange"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -120,127 +117,423 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="413dp"
-        android:layout_height="476dp"
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_calc">
+        app:layout_constraintTop_toBottomOf="@+id/ll_input">
 
         <LinearLayout
-            android:id="@+id/ll_nato_det"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/ll_nato_rec"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-
-            <ImageView
-                android:id="@+id/img_nato_det"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:padding="15dp"
-                app:srcCompat="@drawable/ic_nato"
-                tools:ignore="VectorDrawableCompat" />
-
-            <TextView
-                android:id="@+id/tv_txtNatoDet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="25dp"
-                android:text="@string/tv_txtNatoDet"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tv_resNatoDet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="25dp"
-                android:text="@string/tv_resNatoDet"
-                android:textSize="24sp" />
-
-            <ScrollView
-                android:id="@+id/scrollView2"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/const_Human"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_nato_targetsize"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_nato_det"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_txtNatoTargetSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tv_txtNatoTargetSize"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_txtNatoTargetWidth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_NatoX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tv_x" />
+
+                    <TextView
+                        android:id="@+id/tv_txtNatoTargetHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nato_det"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_nato_rec"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_nato_targetsize">
+
+
+                    <ImageView
+                        android:id="@+id/img_nato_det"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:padding="15dp"
+                        app:srcCompat="@drawable/ic_nato"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/tv_txtNatoDet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/tv_txtNatoDet"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_resNatoDet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="25dp"
+                        android:text="@string/tv_resNatoDet"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nato_rec"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_nato_ident"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_nato_det"
+                    tools:ignore="MissingConstraints">
+
+
+                    <ImageView
+                        android:id="@+id/img_nato_rec"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:padding="15dp"
+                        app:srcCompat="@drawable/ic_nato"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/tv_txtNatoRec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="25dp"
+                        android:text="@string/tv_txtNatoRec"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_resNatoRec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="25dp"
+                        android:text="@string/tv_resNatoRec"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nato_ident"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_human_targetszie"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_nato_rec"
+                    tools:ignore="MissingConstraints">
+
+
+                    <ImageView
+                        android:id="@+id/img_nato_ident"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:padding="15dp"
+                        app:srcCompat="@drawable/ic_nato"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/tv_txtNatoIdent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="25dp"
+                        android:text="@string/tv_txtNatoIdent"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_resNatoIdent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="25dp"
+                        android:text="@string/tv_resNatoIdent"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_human_targetszie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_human_det"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_nato_ident">
+
+                    <TextView
+                        android:id="@+id/tv_txtHumanTargetSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tv_txtHumanTargetSize"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_txtHumanTargetWidth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_HumanX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        tools:text="@string/tv_x" />
+
+                    <TextView
+                        android:id="@+id/tv_txtHumanTargetHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_human_det"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_human_rec"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_human_targetszie">
+
+                    <ImageView
+                        android:id="@+id/img_human_det"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/ic_human" />
+
+                    <TextView
+                        android:id="@+id/tv_txtHumanDet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/tv_txtHumanDet"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_resHumanDet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/tv_resHumanDet"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_human_rec"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_human_ident"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_human_det">
+
+                    <ImageView
+                        android:id="@+id/img_human_rec"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/ic_human" />
+
+                    <TextView
+                        android:id="@+id/tv_txtHumanRec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/tv_txtHumanRec"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_resHumanRec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tv_resHumanRec"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_human_ident"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_object_targetsize"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_human_rec">
+
+                    <ImageView
+                        android:id="@+id/img_human_ident"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/ic_human" />
+
+                    <TextView
+                        android:id="@+id/tv_txtHumanIdent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tv_txtHumanIdent"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_resHumanIdent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tv_resHumanIdent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_object_targetsize"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_object_det"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_human_ident">
+
+                    <TextView
+                        android:id="@+id/tv_txtObjectTargetSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tv_txtObjTargetSize"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_txtObjectTargetWidth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_ObjectX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tv_x"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_txtObjectTargetHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_object_det"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_object_rec"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_object_targetsize">
+
+                    <ImageView
+                        android:id="@+id/img_object_det"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/ic_obj" />
+
+                    <TextView
+                        android:id="@+id/tv_txtObjectDet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tv_txtObjDet"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_resObjectDet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tv_resObjDet"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_object_rec"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_object_det">
+
+                    <ImageView
+                        android:id="@+id/img_object_rec"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/ic_obj" />
+
+                    <TextView
+                        android:id="@+id/tv_txtObjectRec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tv_txtObjRec"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_resObjectRec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tv_resObjRec"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_nato_rec"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/ll_nato_ident"
-            app:layout_constraintTop_toBottomOf="@+id/ll_nato_det"
-            tools:ignore="MissingConstraints">
-
-
-            <ImageView
-                android:id="@+id/img_nato_rec"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:padding="15dp"
-                app:srcCompat="@drawable/ic_nato"
-                tools:ignore="VectorDrawableCompat" />
-
-            <TextView
-                android:id="@+id/tv_txtNatoRec"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="25dp"
-                android:text="@string/tv_txtNatoRec"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tv_resNatoRec"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="25dp"
-                android:text="@string/tv_resNatoRec"
-                android:textSize="24sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_nato_ident"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_nato_rec"
-            tools:ignore="MissingConstraints">
-
-
-            <ImageView
-                android:id="@+id/img_nato_ident"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:padding="15dp"
-                app:srcCompat="@drawable/ic_nato"
-                tools:ignore="VectorDrawableCompat" />
-
-            <TextView
-                android:id="@+id/tv_txtNatoIdent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="25dp"
-                android:text="@string/tv_txtNatoIdent"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tv_resNatoIdent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="25dp"
-                android:text="@string/tv_resNatoIdent"
-                android:textSize="24sp" />
-
-        </LinearLayout>
-    </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>
