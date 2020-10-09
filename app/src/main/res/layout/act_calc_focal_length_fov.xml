@@ -157,7 +157,7 @@
             app:layout_constraintStart_toEndOf="@+id/tv_sensorPitch"
             app:layout_constraintTop_toTopOf="@+id/img_sensorPitchFov" />
 
-        <EditText
+        <TextView
             android:id="@+id/tv_txtDimensionX"
             android:layout_width="20dp"
             android:layout_height="46dp"
@@ -191,7 +191,7 @@
         app:layout_constraintTop_toTopOf="@+id/img_focalLengthFov" />
 
     <Button
-        android:id="@+id/btn_calcFocalLengthFov"
+        android:id="@+id/btn_calc"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"

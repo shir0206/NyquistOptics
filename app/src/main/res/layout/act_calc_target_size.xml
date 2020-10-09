@@ -52,10 +52,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center_horizontal"
+
                 android:inputType="number"
                 android:paddingTop="25dp"
-                android:textAlignment="center"
+
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -94,10 +94,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center_horizontal"
+
                 android:inputType="number"
                 android:paddingTop="25dp"
-                android:textAlignment="center"
+
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -142,10 +142,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center_horizontal"
+
                 android:inputType="number"
                 android:paddingTop="25dp"
-                android:textAlignment="center"
+
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -188,10 +188,10 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center_horizontal"
+
                 android:inputType="number"
                 android:paddingTop="25dp"
-                android:textAlignment="center"
+
                 android:hint="@string/et_txtDimensionW"
                 android:textSize="24sp" />
             <TextView
@@ -206,10 +206,10 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center_horizontal"
+
                 android:inputType="number"
                 android:paddingTop="25dp"
-                android:textAlignment="center"
+
                 android:hint="@string/et_txtDimensionH"
                 android:textSize="24sp"
                 android:autofillHints="" />
