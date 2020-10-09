@@ -64,10 +64,10 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
+
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
+
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -105,10 +105,10 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
+
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
+
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -147,10 +147,10 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
+
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
+
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -189,10 +189,10 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
+
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
+
                         android:textSize="24sp" />
 
 
@@ -232,11 +232,11 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
+
                         android:hint="@string/et_targetSizeNatoW"
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
+
                         android:textSize="24sp" />
 
                     <TextView
@@ -252,11 +252,11 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
+
                         android:hint="@string/et_targetSizeNatoH"
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
+
                         android:textSize="24sp" />
 
 
@@ -296,11 +296,11 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
+
                         android:hint="@string/et_targetSizeHumanW"
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
+
                         android:textSize="24sp" />
 
                     <TextView
@@ -316,11 +316,9 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
                         android:hint="@string/et_targetSizeHumanH"
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
                         android:textSize="24sp" />
 
 
@@ -335,11 +333,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-
-
                     app:layout_constraintTop_toBottomOf="@+id/ll_targetSizeHuman"
-
-
                     tools:ignore="MissingConstraints">
 
 
@@ -364,11 +358,9 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
                         android:hint="@string/et_targetSizeObjW"
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
                         android:textSize="24sp" />
 
                     <TextView
@@ -384,11 +376,9 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="center_horizontal"
                         android:hint="@string/et_targetSizeObjH"
                         android:inputType="number"
                         android:paddingTop="25dp"
-                        android:textAlignment="center"
                         android:textSize="24sp" />
 
                 </LinearLayout>

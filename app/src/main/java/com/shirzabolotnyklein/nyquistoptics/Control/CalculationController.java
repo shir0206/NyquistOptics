@@ -111,7 +111,7 @@ public class CalculationController {
     }
 
 
-    private double calcFocalLengthWidthViaTarget(double dimensionW,
+    public double calcFocalLengthWidthViaTarget(double dimensionW,
                                                  double targetSizeW,
                                                  double sensorPitch,
                                                  double targetRange) {
@@ -120,7 +120,7 @@ public class CalculationController {
         return focalLengthWidth;
     }
 
-    private double calcFocalLengthHeightViaTarget(double dimensionH,
+    public double calcFocalLengthHeightTarget(double dimensionH,
                                                   double targetSizeH,
                                                   double sensorPitch,
                                                   double targetRange) {
@@ -130,10 +130,10 @@ public class CalculationController {
     }
 
 
-    private double calcFocalLengthViaFOV(double dimensionW,
-                                         double dimensionH,
-                                         double hfov,
-                                         double sensorPitch) {
+    public double calcFocalLengthFOV(double dimensionW,
+                                     double dimensionH,
+                                     double hfov,
+                                     double sensorPitch) {
 
         double focalLength = (sensorPitch * Math.max(dimensionW, dimensionH)) /
                 (ConstantsKt.TwoThousand * Math.atan((hfov * Math.PI) / ConstantsKt.Ninety));
