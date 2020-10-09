@@ -111,7 +111,7 @@ public class CalculationController {
     }
 
 
-    public double calcFocalLengthWidthViaTarget(double dimensionW,
+    public double calcFocalLengthWidthTarget(double dimensionW,
                                                  double targetSizeW,
                                                  double sensorPitch,
                                                  double targetRange) {

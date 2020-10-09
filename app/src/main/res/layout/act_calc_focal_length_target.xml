@@ -139,7 +139,7 @@
             app:srcCompat="@drawable/ic_sensor_pitch" />
 
         <EditText
-            android:id="@+id/et_txtSensorPitch"
+            android:id="@+id/et_sensorPitch"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -205,7 +205,7 @@
             app:srcCompat="@drawable/ic_target_size" />
 
         <EditText
-            android:id="@+id/et_resTargetSizeW"
+            android:id="@+id/et_dimensionW"
             android:layout_width="58dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -235,7 +235,7 @@
             app:layout_constraintVertical_bias="0.333" />
 
         <EditText
-            android:id="@+id/et_resTargetSizeH"
+            android:id="@+id/et_dimensionH"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -335,7 +335,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <Button
-        android:id="@+id/btn_calcFocalLengthTarget"
+        android:id="@+id/btn_calc"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@color/black"
