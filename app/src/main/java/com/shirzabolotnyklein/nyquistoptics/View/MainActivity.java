@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     Button btn_targetSize;
     Button btn_settings;
     Button btn_focalLength;
-
+    Button btn_dri;
 
     Vibrator vibrator;
     ReadWriteFileControl setUp;
@@ -146,6 +146,18 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             }
         });
 
+        btn_dri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                vibrator.vibrate(50);
+
+
+                Intent intent = new Intent(MainActivity.this, CalcDRIActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btn_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,6 +180,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
             }
         });
+
+
 
 //        btn_calculate.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -222,6 +236,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         btn_targetSize = findViewById(R.id.btn_targetSize);
         btn_settings = findViewById(R.id.btn_settings);
         btn_focalLength = findViewById(R.id.btn_focalLength);
+        btn_dri = findViewById(R.id.btn_dri);
+
     }
 
     /**

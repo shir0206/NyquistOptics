@@ -68,8 +68,8 @@
     <string name="tv_txtFocalLength">Focal Length (mm):</string>
     <string name="tv_txtSensorPitch">Sensor Pitch (mic):</string>
     <string name="tv_txtDimension">Dimension (px):</string>
-    <string name="et_txtDimensionW">W</string>
-    <string name="et_txtDimensionH">H</string>
+    <string name="et_txtDimensionW">  W</string>
+    <string name="et_txtDimensionH">  H</string>
     <string name="tv_x">x</string>
 
     <string name="tv_txtFOV">Field of View (FOV):</string>
