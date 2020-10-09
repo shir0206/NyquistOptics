@@ -10,7 +10,7 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 
 public class CalculationController {
-    private DB DbRefrence;
+    private DB DbRefrence = DB.INSTANCE;
     DecimalFormat formatOneDig = new DecimalFormat("0.0"); // Initialize decimal format for outputs
     DecimalFormat formatSixDig = new DecimalFormat("0.000000"); // Initialize decimal format for outputs
 
@@ -271,7 +271,6 @@ public class CalculationController {
     public HashMap<TargetDRIType, String> calculateDRI(double sensorPitch, double focalLength) {
 
         HashMap<TargetDRIType, String> result = new HashMap<TargetDRIType, String>();
-
         TargetSize tsNato = DbRefrence.getTargetSizes().get(TargetType.NATO);
         TargetSize tsHuman = DbRefrence.getTargetSizes().get(TargetType.HUMAN);
         TargetSize tsObj = DbRefrence.getTargetSizes().get(TargetType.OBJECT);

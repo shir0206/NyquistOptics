@@ -118,6 +118,8 @@
     </android.support.constraint.ConstraintLayout>
 
     <ScrollView
+        android:id="@+id/sv_output"
+
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
@@ -157,7 +159,8 @@
                         android:id="@+id/tv_txtNatoTargetWidth"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="24sp"/>
 
                     <TextView
                         android:id="@+id/tv_NatoX"
@@ -165,12 +168,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:textSize="24sp"
                         android:text="@string/tv_x" />
 
                     <TextView
                         android:id="@+id/tv_txtNatoTargetHeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textSize="24sp"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -302,6 +307,7 @@
                         android:id="@+id/tv_txtHumanTargetWidth"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textSize="24sp"
                         android:layout_weight="1" />
 
                     <TextView
@@ -309,6 +315,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textSize="24sp"
                         android:gravity="center"
                         tools:text="@string/tv_x" />
 
@@ -316,6 +323,7 @@
                         android:id="@+id/tv_txtHumanTargetHeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textSize="24sp"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -416,6 +424,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:textSize="24sp"
                         android:text="@string/tv_resHumanIdent" />
                 </LinearLayout>
 
@@ -519,7 +528,7 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/tv_resObjectRec"
+                        android:id="@+id/tv_resObjectIdent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
