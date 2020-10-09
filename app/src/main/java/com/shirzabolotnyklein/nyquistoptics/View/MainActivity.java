@@ -56,14 +56,14 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     ArrayList<View> lineOutput = new ArrayList<>(); // Initialize output array to hide all lines for design before bottom click
     ArrayList<TableLayout> tableOutput = new ArrayList<>(); // Initialize output array to hide all tables output before bottom click
     ArrayList<TextView> textViewOutput = new ArrayList<>(); // Initialize output array to hide all TextViews output before bottom click
-    Dialog myDialog;
+    Dialog focalLenInputType;
 
     Button btn_fov;
     Button btn_dimension;
     Button btn_targetSize;
     Button btn_settings;
     Button btn_focalLength;
-
+    Button btn_dri;
 
     Vibrator vibrator;
     ReadWriteFileControl setUp;
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_home);
 
-        myDialog=new Dialog(this);
+        focalLenInputType = new Dialog(this);
         // Hide keyboard on start up app
         //hideKeyboardOnStartUp();
 
@@ -146,6 +146,18 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             }
         });
 
+        btn_dri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                vibrator.vibrate(50);
+
+
+                Intent intent = new Intent(MainActivity.this, CalcDRIActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btn_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,6 +180,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
             }
         });
+
+
 
 //        btn_calculate.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -221,7 +235,9 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         btn_dimension = findViewById(R.id.btn_dimension);
         btn_targetSize = findViewById(R.id.btn_targetSize);
         btn_settings = findViewById(R.id.btn_settings);
-        btn_focalLength=findViewById(R.id.btn_focalLength);
+        btn_focalLength = findViewById(R.id.btn_focalLength);
+        btn_dri = findViewById(R.id.btn_dri);
+
     }
 
     /**
@@ -394,7 +410,6 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                // Move from this activity (MainActivity) to SettingActivity
                 startActivity(new Intent(this, SettingsActivity.class));
                 //finish(); //Closes MainActivity
                 return true;
@@ -402,22 +417,14 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Hide keyboard once btn pressed
-     */
-    public void hideKeyboardOnceBtnPressed(Button btn) {
 
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        assert imm != null;
-        imm.hideSoftInputFromWindow(btn.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
-    }
 
-    public void showPopUp(View v){
+    public void showPopUp(View v) {
         Button calculateTargetInput;
         Button FOVInput;
-        myDialog.setContentView(R.layout.act_home_focal_popup);
-        calculateTargetInput=myDialog.findViewById(R.id.btn_TargetInput);
-        FOVInput=myDialog.findViewById(R.id.btn_FOVInput);
+        focalLenInputType.setContentView(R.layout.act_home_focal_popup);
+        calculateTargetInput = focalLenInputType.findViewById(R.id.btn_TargetInput);
+        FOVInput = focalLenInputType.findViewById(R.id.btn_FOVInput);
 
         calculateTargetInput.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -425,7 +432,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
                 Intent intent = new Intent(MainActivity.this, CalcFocalLengthTarget.class);
                 startActivity(intent);
-                myDialog.dismiss();
+                focalLenInputType.dismiss();
             }
         });
 
@@ -435,11 +442,11 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
                 Intent intent = new Intent(MainActivity.this, CalcFocalLengthFOV.class);
                 startActivity(intent);
-                myDialog.dismiss();
+                focalLenInputType.dismiss();
 
             }
         });
-        myDialog.show();
+        focalLenInputType.show();
 
     }
 
