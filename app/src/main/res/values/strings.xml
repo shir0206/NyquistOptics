@@ -111,7 +111,7 @@
 
     <string name="btn_TargetInput">Target Input</string>
     <string name="btn_FOVInput">FOV Input</string>
-    <string name="tv_ChooseAction">Focal Length input type?</string>
+    <string name="tv_ChooseAction">Focal Length\ninput type?</string>
 
     <string name="tv_txtTargetSizeObj">Object Target</string>
     <string name="et_targetSizeObjW">W</string>
