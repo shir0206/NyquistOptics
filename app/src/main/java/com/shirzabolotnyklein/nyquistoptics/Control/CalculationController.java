@@ -11,8 +11,6 @@ import java.util.HashMap;
 
 public class CalculationController {
     private DB DbRefrence = DB.INSTANCE;
-    DecimalFormat formatOneDig = new DecimalFormat("0.0"); // Initialize decimal format for outputs
-    DecimalFormat formatSixDig = new DecimalFormat("0.000000"); // Initialize decimal format for outputs
 
     public CalculationController() {
 
@@ -268,9 +266,9 @@ public class CalculationController {
     }
 
 
-    public HashMap<TargetDRIType, String> calculateDRI(double sensorPitch, double focalLength) {
+    public HashMap<TargetDRIType, Double> calculateDRI(double sensorPitch, double focalLength) {
 
-        HashMap<TargetDRIType, String> result = new HashMap<TargetDRIType, String>();
+        HashMap<TargetDRIType, Double> result = new HashMap<TargetDRIType, Double>();
         TargetSize tsNato = DbRefrence.getTargetSizes().get(TargetType.NATO);
         TargetSize tsHuman = DbRefrence.getTargetSizes().get(TargetType.HUMAN);
         TargetSize tsObj = DbRefrence.getTargetSizes().get(TargetType.OBJECT);
@@ -287,27 +285,17 @@ public class CalculationController {
         double objRec = this.calcRecognition(tsObj, sensorPitch, focalLength);
 
         // Convert the output from double to String
-        String natoTargetDet = formatOneDig.format(natoDet);
-        String natoTargetRec = formatOneDig.format(natoRec);
-        String natoTargetIdent = formatOneDig.format(natoIdent);
 
-        String humanTargetDet = formatOneDig.format(humnaDet);
-        String humanTargetRec = formatOneDig.format(humnaRec);
-        String humanTargetIdent = formatOneDig.format(humnaIdent);
+        result.put(TargetDRIType.NatoDet, natoDet);
+        result.put(TargetDRIType.NatoIdent, natoRec);
+        result.put(TargetDRIType.NatoRec, natoIdent);
 
-        String objTargetDet = formatOneDig.format(objDet);
-        String objTargetRec = formatOneDig.format(objRec);
+        result.put(TargetDRIType.HumanDet, humnaDet);
+        result.put(TargetDRIType.HumanRec, humnaRec);
+        result.put(TargetDRIType.HumanIdent, humnaIdent);
 
-        result.put(TargetDRIType.NatoDet, natoTargetDet);
-        result.put(TargetDRIType.NatoIdent, natoTargetRec);
-        result.put(TargetDRIType.NatoRec, natoTargetIdent);
-
-        result.put(TargetDRIType.HumanDet, humanTargetDet);
-        result.put(TargetDRIType.HumanRec, humanTargetRec);
-        result.put(TargetDRIType.HumanIdent, humanTargetIdent);
-
-        result.put(TargetDRIType.ObjectDet, objTargetDet);
-        result.put(TargetDRIType.ObjectIdent, objTargetRec);
+        result.put(TargetDRIType.ObjectDet, objDet);
+        result.put(TargetDRIType.ObjectIdent, objRec);
 
         return result;
     }

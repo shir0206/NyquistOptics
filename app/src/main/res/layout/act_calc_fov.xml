@@ -186,7 +186,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -226,7 +226,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -265,10 +265,10 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number"
-                android:paddingTop="25dp"
-
                 android:hint="@string/et_txtDimensionW"
+
+                android:inputType="numberDecimal"
+                android:paddingTop="25dp"
                 android:textSize="24sp" />
             <TextView
                 android:id="@+id/tv_txtDimensionX"
@@ -277,14 +277,15 @@
                 android:paddingTop="25dp"
                 android:text="@string/tv_x"
                 android:textSize="24sp" />
+
             <EditText
                 android:id="@+id/et_txtDimensionH"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number"
-                android:paddingTop="25dp"
                 android:hint="@string/et_txtDimensionH"
+                android:inputType="numberDecimal"
+                android:paddingTop="25dp"
                 android:textSize="24sp" />
         </LinearLayout>
 

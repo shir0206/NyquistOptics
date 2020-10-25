@@ -58,9 +58,9 @@ public class CalcFovActivity extends AppCompatActivity {
                     double dimensionW  = Double.parseDouble(et_txtDimensionW.getText().toString());
                     double dimensionH  = Double.parseDouble(et_txtDimensionH.getText().toString());
 
-                    String hfov = Double.toString(calculationController.calcHfov(sensorPitch, dimensionW, focalLength));
-                    String vfov = Double.toString(calculationController.calcVfov( dimensionH, dimensionW, Double.parseDouble(hfov)));
-                    String ifov = Double.toString(calculationController.calcIfov(sensorPitch, focalLength));
+                    String hfov =Util.formatDouble(calculationController.calcHfov(sensorPitch, dimensionW, focalLength),2);
+                    String vfov = Util.formatDouble(calculationController.calcVfov( dimensionH, dimensionW, Double.parseDouble(hfov)),2);
+                    String ifov = Util.formatDouble(calculationController.calcIfov(sensorPitch, focalLength),2);
 
                     tv_resHfov.setText(hfov);
                     tv_resVfov.setText(vfov);

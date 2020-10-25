@@ -59,8 +59,8 @@ public class CalcDimensionActivity extends AppCompatActivity {
                     double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
                     double targetRange = Double.parseDouble(et_targetRange.getText().toString());
 
-                    String dimensionW = Double.toString(calculationController.calcDimensionWidth(targetSizeW,focalLength,sensorPitch,targetRange));
-                    String dimensionH = Double.toString(calculationController.calcDimensionHeight(targetSizeH,focalLength,sensorPitch,targetRange));
+                    String dimensionW = Util.formatDouble(calculationController.calcDimensionWidth(targetSizeW,focalLength,sensorPitch,targetRange),2);
+                    String dimensionH = Util.formatDouble(calculationController.calcDimensionHeight(targetSizeH,focalLength,sensorPitch,targetRange),2);
 
                     tv_resDimensionW.setText(dimensionW);
                     tv_resDimensionH.setText(dimensionH);

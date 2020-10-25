@@ -59,9 +59,9 @@ public class MainAppController {
         return results;
     }
 
-    public HashMap<TargetDRIType, String> calculateDRI(String SensorPitch, String FocalLength) {
+    public HashMap<TargetDRIType, Double> calculateDRI(String SensorPitch, String FocalLength) {
 
-        HashMap<TargetDRIType, String> result;
+        HashMap<TargetDRIType, Double> result;
         double sensorPitch = Double.parseDouble(SensorPitch);
         double focalLength = Double.parseDouble(FocalLength);
 

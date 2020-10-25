@@ -63,8 +63,8 @@ class CalcFocalLengthTarget : AppCompatActivity() {
                         sensorPitch,
                         targetRange))
 
-                tv_resFocalLengthW?.text = focalLengthW.toString()
-                tv_resFocalLengthH?.text = focalLengthH.toString()
+                tv_resFocalLengthW?.text = Util.formatDouble(focalLengthW,2);
+                tv_resFocalLengthH?.text =  Util.formatDouble(focalLengthH,2);
             }
         }
 

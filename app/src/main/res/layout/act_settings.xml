@@ -65,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:paddingTop="25dp"
 
                         android:textSize="24sp" />
@@ -106,9 +106,9 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
-                        android:inputType="number"
-                        android:paddingTop="25dp"
+                        android:inputType="numberDecimal"
 
+                        android:paddingTop="25dp"
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -148,9 +148,9 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
-                        android:inputType="number"
-                        android:paddingTop="25dp"
+                        android:inputType="numberDecimal"
 
+                        android:paddingTop="25dp"
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -190,9 +190,9 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
-                        android:inputType="number"
-                        android:paddingTop="25dp"
+                        android:inputType="numberDecimal"
 
+                        android:paddingTop="25dp"
                         android:textSize="24sp" />
 
 
@@ -234,9 +234,9 @@
                         android:ems="10"
 
                         android:hint="@string/et_targetSizeNatoW"
-                        android:inputType="number"
-                        android:paddingTop="25dp"
+                        android:inputType="numberDecimal"
 
+                        android:paddingTop="25dp"
                         android:textSize="24sp" />
 
                     <TextView
@@ -254,7 +254,7 @@
                         android:ems="10"
 
                         android:hint="@string/et_targetSizeNatoH"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:paddingTop="25dp"
 
                         android:textSize="24sp" />
@@ -298,7 +298,7 @@
                         android:ems="10"
 
                         android:hint="@string/et_targetSizeHumanW"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:paddingTop="25dp"
 
                         android:textSize="24sp" />
@@ -317,7 +317,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="@string/et_targetSizeHumanH"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="24sp" />
 
@@ -359,7 +359,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="@string/et_targetSizeObjW"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="24sp" />
 
@@ -377,7 +377,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="@string/et_targetSizeObjH"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="24sp" />
 

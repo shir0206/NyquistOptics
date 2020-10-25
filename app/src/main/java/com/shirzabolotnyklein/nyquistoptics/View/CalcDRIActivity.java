@@ -79,19 +79,19 @@ public class CalcDRIActivity extends AppCompatActivity {
                     setResTitles();
 
 
-                    HashMap<TargetDRIType, String> calculateDRI = calculationController.calculateDRI(sensorPitch, focalLength);
+                    HashMap<TargetDRIType, Double> calculateDRI = calculationController.calculateDRI(sensorPitch, focalLength);
 
 
-                    String natoDet = calculateDRI.get(TargetDRIType.NatoDet);
-                    String natoRec = calculateDRI.get(TargetDRIType.NatoRec);
-                    String natoIdent = calculateDRI.get(TargetDRIType.NatoIdent);
+                    String natoDet = Util.formatDouble(calculateDRI.get(TargetDRIType.NatoDet),1);
+                    String natoRec = Util.formatDouble(calculateDRI.get(TargetDRIType.NatoRec),1);
+                    String natoIdent = Util.formatDouble(calculateDRI.get(TargetDRIType.NatoIdent),1);
 
-                    String humanDet = calculateDRI.get(TargetDRIType.HumanDet);
-                    String humanRec = calculateDRI.get(TargetDRIType.HumanRec);
-                    String humanIdent = calculateDRI.get(TargetDRIType.NatoIdent);
+                    String humanDet = Util.formatDouble(calculateDRI.get(TargetDRIType.HumanDet),1);
+                    String humanRec = Util.formatDouble(calculateDRI.get(TargetDRIType.HumanRec),1);
+                    String humanIdent = Util.formatDouble(calculateDRI.get(TargetDRIType.NatoIdent),1);
 
-                    String objectDet = calculateDRI.get(TargetDRIType.ObjectDet);
-                    String objectIdent = calculateDRI.get(TargetDRIType.ObjectIdent);
+                    String objectDet = Util.formatDouble(calculateDRI.get(TargetDRIType.ObjectDet),1);
+                    String objectIdent = Util.formatDouble(calculateDRI.get(TargetDRIType.ObjectIdent),1);
 
 
                     tv_resNatoDet.setText(natoDet);

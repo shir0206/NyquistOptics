@@ -57,10 +57,10 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
                     double dimensionH  = Double.parseDouble(et_txtDimensionH.getText().toString());
 
 
-                    String focalLengthFov = Double.toString(calculationController.calcFocalLengthFOV( dimensionW,
+                    String focalLengthFov = Util.formatDouble(calculationController.calcFocalLengthFOV( dimensionW,
                      dimensionH,
                      hfov,
-                     sensorPitch));
+                     sensorPitch),2);
 
                     tv_resFocalLengthFov.setText(focalLengthFov);
 

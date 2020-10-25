@@ -62,10 +62,10 @@ public class CalcTargetSizeActivity extends AppCompatActivity {
 
 
 
-                    String targetSizeW = Double.toString(calculationController.calcTargetSize(dimensionW, focalLength,sensorPitch, targetRange));
+                    String targetSizeW =Util.formatDouble(calculationController.calcTargetSize(dimensionW, focalLength,sensorPitch, targetRange),2);
 
 
-                    String targetSizeH = Double.toString(calculationController.calcTargetSize(dimensionH, focalLength,sensorPitch, targetRange));
+                    String targetSizeH= Util.formatDouble((calculationController.calcTargetSize(dimensionH, focalLength,sensorPitch, targetRange)),2);
 
                     tv_resTargetSizeW.setText(targetSizeW);
                     tv_resTargetSizeH.setText(targetSizeH);
