@@ -3,15 +3,21 @@
 <img  align="right" src="https://lh3.googleusercontent.com/mAaSRqqx1WRkwVwNIM4jnLdQfoh6KMnWbFczL57H7qp-9zIPl6ODHpHOZ0vtAW0BKYWQ=s180-rw"
 alt="NyquistOptics" width="250"/>
 
+> The app is currently in the refractor process, in order to meet additional requirements and additional calculations.
+> The mockups can be viewed [here](https://www.figma.com/file/yNWB81nUhkg9DxWnjy2GE7/OpTarget).
+
 ## :globe_with_meridians: About
-This application was designed to calculate DRI (detection/recognition/identification) ranges and other performance data for a variety
-of cameras, by using Nyquist formulas.
-In order to calculate performance the user is required to insert the following values: sensor pitch, sensor size in px (width x height)
-and lens focal length. In return, the application will calculate respective FOV dimensions as well as geometrical DRI for various target 
+
+ - This application was designed to calculate DRI (detection/recognition/identification) ranges and other performance data for a variety
+of cameras, by using *Nyquist formulas*.
+ - In order to calculate performance the user is required to insert the following values: sensor pitch, sensor size in px (width x height)
+and lens focal length.
+ - In return, the application will calculate respective FOV dimensions as well as geometrical DRI for various target 
 sizes.
-Default values of target size and line-pairs can be configured through the application settings menu.
-The information contained on Nyquist Optics mobile app is for general information purposes only. Assumes no responsibility for errors
+ - Default values of target size and line-pairs can be configured through the application settings menu.
+ - The information contained on Nyquist Optics mobile app is for general information purposes only. Assumes no responsibility for errors
 or omissions in the contents on the Service.
+
 
 
 
