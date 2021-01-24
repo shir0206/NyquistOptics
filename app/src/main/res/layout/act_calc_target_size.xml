@@ -189,9 +189,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
 
+                android:gravity="center"
                 android:hint="@string/et_txtDimensionW"
-                android:inputType="numberDecimal"
 
+                android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
             <TextView
@@ -209,8 +210,9 @@
                 android:autofillHints=""
 
                 android:ems="10"
-                android:hint="@string/et_txtDimensionH"
+                android:gravity="center"
 
+                android:hint="@string/et_txtDimensionH"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />

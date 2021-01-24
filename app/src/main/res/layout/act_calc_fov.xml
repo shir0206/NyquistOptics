@@ -40,6 +40,7 @@
             android:id="@+id/img_hfov"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:contentDescription="@string/tv_txtIfov"
             android:padding="15dp"
             app:srcCompat="@drawable/ic_hfov"
             tools:ignore="VectorDrawableCompat" />
@@ -78,6 +79,7 @@
             android:id="@+id/img_vfov"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:contentDescription="@string/tv_txtVfov"
             android:padding="15dp"
             app:srcCompat="@drawable/ic_vfov"
             tools:ignore="VectorDrawableCompat" />
@@ -265,8 +267,9 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/et_txtDimensionW"
+                android:gravity="center"
 
+                android:hint="@string/et_txtDimensionW"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
@@ -283,6 +286,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="@string/et_txtDimensionH"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
