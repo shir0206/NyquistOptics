@@ -219,26 +219,38 @@
             app:layout_constraintBottom_toBottomOf="@+id/img_dimension"
             app:layout_constraintStart_toEndOf="@+id/tv_txtDimension"
             app:layout_constraintTop_toTopOf="@+id/img_dimension"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.684" />
 
         <TextView
             android:id="@+id/tv_txtDimensionX"
             android:layout_width="7dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
             android:text="@string/tv_x"
             app:layout_constraintBottom_toBottomOf="@+id/img_dimension"
             app:layout_constraintEnd_toStartOf="@+id/et_dimensionH"
             app:layout_constraintTop_toTopOf="@+id/img_dimension"
-            app:layout_constraintVertical_bias="0.333" />
+            app:layout_constraintVertical_bias="0.75" />
+
+        <TextView
+            android:id="@+id/tv_txtDimensionX2"
+            android:layout_width="7dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:text="@string/tv_x"
+            app:layout_constraintBottom_toBottomOf="@+id/img_targetSize"
+            app:layout_constraintEnd_toStartOf="@+id/et_targetSizeH"
+            app:layout_constraintTop_toTopOf="@+id/img_targetSize"
+            app:layout_constraintVertical_bias="0.68" />
 
         <EditText
             android:id="@+id/et_dimensionH"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/et_txtDimensionH"
@@ -246,7 +258,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/img_dimension"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/img_dimension"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.684" />
 
         <ImageView
             android:id="@+id/img_dimension"
@@ -277,8 +289,8 @@
             android:id="@+id/et_targetSizeH"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/et_txtTargetSizeH"
@@ -286,7 +298,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/img_targetSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/img_targetSize"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.6" />
 
         <EditText
             android:id="@+id/et_targetSizeW"
@@ -301,7 +313,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/img_targetSize"
             app:layout_constraintStart_toEndOf="@+id/tv_txtTargetSize"
             app:layout_constraintTop_toTopOf="@+id/img_targetSize"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.6" />
 
         <TextView
             android:id="@+id/tv_txtTargetSizeX"
