@@ -13,72 +13,26 @@
 
 
     <Button
-        android:id="@+id/btn_TargetInput"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/ic_frame"
-        android:drawableTop="@drawable/ic_target_size"
-        android:paddingTop="20dp"
-        android:paddingBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_FOVInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_txtChooseAction" />
-
-    <Button
         android:id="@+id/btn_FOVInput"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@drawable/ic_frame"
         android:drawableTop="@drawable/ic_ifov"
         android:paddingTop="20dp"
         android:paddingBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_FOVInput_txt"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_TargetInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_TargetInput" />
-
-
-    <TextView
-        android:id="@+id/btn_TargetInput_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="0dp"
-        android:paddingBottom="24dp"
-        android:text="@string/btn_TargetInput"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_FOVInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_TargetInput" />
-
-    <TextView
-        android:id="@+id/tv_txtChooseAction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/tv_ChooseAction"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        android:paddingBottom="24dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/btn_TargetInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/btn_TargetInput" />
 
 
     <TextView
         android:id="@+id/btn_FOVInput_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="68dp"
         android:paddingTop="0dp"
         android:paddingBottom="8dp"
         android:text="@string/btn_FOVInput"
@@ -87,7 +41,65 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_FOVInput" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_FOVInput"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <Button
+        android:id="@+id/btn_TargetInput"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="336dp"
+        android:background="@drawable/ic_frame"
+        android:drawableTop="@drawable/ic_target_size"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_FOVInput"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_TargetInput_txt"
+        android:layout_width="99dp"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingTop="0dp"
+        android:paddingBottom="24dp"
+        android:text="@string/btn_TargetInput"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_TargetInput"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <TextView
+        android:id="@+id/tv_txtChooseAction"
+        android:layout_width="282dp"
+        android:layout_height="96dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginRight="8dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:paddingBottom="24dp"
+        android:text="@string/tv_ChooseAction"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_TargetInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

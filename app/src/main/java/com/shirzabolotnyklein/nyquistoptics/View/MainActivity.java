@@ -1,5 +1,6 @@
 package com.shirzabolotnyklein.nyquistoptics.View;
 
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -75,33 +77,13 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         setContentView(R.layout.act_home);
 
         focalLenInputType = new Dialog(this);
-        // Hide keyboard on start up app
-        //hideKeyboardOnStartUp();
+
 
         //must init the ... to get latest data from the shared prefrences
         setUp = new ReadWriteFileControl(getApplicationContext());
         setUp.initReadDataFromFile();
-        //must init with context
-        //mainControl=new MainAppController(getApplicationContext());
-
-        //Restore to default settings of the line pair and target sizes
-        // setUp.restoreDefaultSettings();
-
-        // String lineDet=null,lineRec=null,lineIdent=null,lineObj=null,TargetSizeNatoW=null,TargetSizeNatoH=null,TargetSizeHumanH=null,TargetSizeHumanW=null,TargetSizeObjectH=null,TargetSizeObjectW=null;
-        // setUp.SaveNewLinePairSettings(lineDet,lineRec,lineIdent,lineObj);
-        //setUp.SaveNewTargetSizeSettings(TargetSizeNatoW,TargetSizeNatoH,TargetSizeHumanH,TargetSizeHumanW,TargetSizeObjectH,TargetSizeObjectW);
-
-        // input
-        //String sensorPitch = null, focalLength = null, sensorSizeH = null, sensorSizeW = null;
-        // output
-        //HashMap<FovType, String> fovResults = mainControl.calcFOV(sensorPitch, focalLength, sensorSizeH, sensorSizeW);
 
 
-        //input
-        //sensorPitch;
-        // focalLength;
-        //output
-        //HashMap<TargetDRIType, String> driResults = mainControl.calculateDRI(sensorPitch, focalLength);
 
         // Set up UI
         setupUI();
@@ -180,45 +162,6 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
             }
         });
-
-
-
-//        btn_calculate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                // Vibrate
-//                vibrator.vibrate(50);
-//
-//                // If all fields are not filled, toast a massage to fill all fields
-//                if (et_focalLength.getText().toString().isEmpty()
-//                        || et_sensorPitch.getText().toString().isEmpty()
-//                        || et_sensorSizeW.getText().toString().isEmpty()
-//                        || et_sensorSizeH.getText().toString().isEmpty()) {
-//                    Toast.makeText(MainActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                // If all fields are filled, continue
-//                else {
-//
-//                    // Hide keyboard once button pressed
-//                    hideKeyboardOnceBtnPressed();
-//
-//
-//
-//
-//
-//
-//                    // Turn the output  visible
-//                    turnVisible();
-//
-//                    // Create a toast message calculated successfully
-//                    Toast.makeText(MainActivity.this, "Calculated successfully", Toast.LENGTH_SHORT).show();
-//
-//                }
-//            }
-//        });
-
 
     }
 
@@ -423,6 +366,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         Button calculateTargetInput;
         Button FOVInput;
         focalLenInputType.setContentView(R.layout.act_home_focal_popup);
+
         calculateTargetInput = focalLenInputType.findViewById(R.id.btn_TargetInput);
         FOVInput = focalLenInputType.findViewById(R.id.btn_FOVInput);
 
@@ -446,8 +390,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
             }
         });
+        //Set the size of the window
+        focalLenInputType.getWindow().setLayout(ViewGroup.LayoutParams.FILL_PARENT,ViewGroup.LayoutParams.FILL_PARENT);
+        //Open the window
         focalLenInputType.show();
-
     }
 
 }
