@@ -143,15 +143,23 @@
                     android:id="@+id/ll_nato_targetsize"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_nato_det"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:weightSum="10">
 
                     <TextView
                         android:id="@+id/tv_txtNatoTargetSize"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="4"
                         android:text="@string/tv_txtNatoTargetSize"
                         android:textSize="24sp" />
 
@@ -159,32 +167,39 @@
                         android:id="@+id/tv_txtNatoTargetWidth"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="24sp"/>
+                        android:layout_weight="2"
+                        android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/tv_NatoX"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:textSize="24sp"
-                        android:text="@string/tv_x" />
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:text="@string/tv_x"
+                        android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/tv_txtNatoTargetHeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:layout_weight="1" />
+                        android:layout_weight="2"
+                        android:textSize="24sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_nato_det"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_nato_rec"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_nato_targetsize">
 
 
@@ -209,6 +224,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:paddingLeft="8dp"
                         android:paddingTop="25dp"
                         android:text="@string/tv_resNatoDet"
                         android:textSize="24sp" />
@@ -219,8 +235,14 @@
                     android:id="@+id/ll_nato_rec"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_nato_ident"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_nato_det"
                     tools:ignore="MissingConstraints">
 
@@ -245,6 +267,8 @@
                         android:id="@+id/tv_resNatoRec"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="8dp"
                         android:paddingTop="25dp"
                         android:text="@string/tv_resNatoRec"
                         android:textSize="24sp" />
@@ -255,8 +279,14 @@
                     android:id="@+id/ll_nato_ident"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_human_targetszie"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_nato_rec"
                     tools:ignore="MissingConstraints">
 
@@ -281,6 +311,7 @@
                         android:id="@+id/tv_resNatoIdent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
                         android:paddingTop="25dp"
                         android:text="@string/tv_resNatoIdent"
                         android:textSize="24sp" />
@@ -291,48 +322,66 @@
                     android:id="@+id/ll_human_targetszie"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_human_det"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_nato_ident">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_nato_ident"
+                    android:weightSum="10">
 
                     <TextView
                         android:id="@+id/tv_txtHumanTargetSize"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="4"
                         android:text="@string/tv_txtHumanTargetSize"
                         android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/tv_txtHumanTargetWidth"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:layout_weight="1" />
+                        android:layout_weight="2"
+                        android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/tv_HumanX"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+
+                        android:layout_weight="2"
+                        android:gravity="left"
                         android:textSize="24sp"
-                        android:gravity="center"
                         tools:text="@string/tv_x" />
 
                     <TextView
                         android:id="@+id/tv_txtHumanTargetHeight"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:layout_weight="1" />
+                        android:layout_weight="2"
+                        android:textSize="24sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_human_det"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_human_rec"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_human_targetszie">
 
                     <ImageView
@@ -355,6 +404,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:paddingLeft="8dp"
                         android:text="@string/tv_resHumanDet"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -363,8 +413,16 @@
                     android:id="@+id/ll_human_rec"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_human_ident"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_human_det">
 
                     <ImageView
@@ -378,7 +436,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
+
                         android:text="@string/tv_txtHumanRec"
                         android:textSize="24sp" />
 
@@ -386,9 +444,8 @@
                         android:id="@+id/tv_resHumanRec"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="25dp"
                         android:text="@string/tv_resHumanRec"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -397,8 +454,16 @@
                     android:id="@+id/ll_human_ident"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_object_targetsize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_human_rec">
 
                     <ImageView
@@ -412,8 +477,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
+
+                        android:gravity="left"
                         android:text="@string/tv_txtHumanIdent"
                         android:textSize="24sp" />
 
@@ -422,25 +487,32 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
                         android:gravity="center"
-                        android:textSize="24sp"
-                        android:text="@string/tv_resHumanIdent" />
+                        android:paddingLeft="8dp"
+                        android:text="@string/tv_resHumanIdent"
+                        android:textSize="24sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_object_targetsize"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_object_det"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_human_ident">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_human_ident"
+                    android:weightSum="9">
 
                     <TextView
                         android:id="@+id/tv_txtObjectTargetSize"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="3"
                         android:text="@string/tv_txtObjTargetSize"
                         android:textSize="24sp" />
 
@@ -448,15 +520,16 @@
                         android:id="@+id/tv_txtObjectTargetWidth"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/tv_ObjectX"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
+                        android:layout_gravity="left"
+                        android:layout_weight="2"
+                        android:gravity="left"
                         android:text="@string/tv_x"
                         android:textSize="24sp" />
 
@@ -464,7 +537,8 @@
                         android:id="@+id/tv_txtObjectTargetHeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+
+                        android:layout_weight="2"
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -472,8 +546,16 @@
                     android:id="@+id/ll_object_det"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_object_rec"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_object_targetsize">
 
                     <ImageView
@@ -487,8 +569,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="@string/tv_txtObjDet"
                         android:textSize="24sp" />
 
@@ -497,8 +578,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
+                        android:paddingLeft="8dp"
                         android:text="@string/tv_resObjDet"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -507,8 +587,16 @@
                     android:id="@+id/ll_object_rec"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_object_det">
 
                     <ImageView
@@ -522,7 +610,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/tv_txtObjRec"
                         android:textSize="24sp" />
@@ -532,9 +619,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="@string/tv_resObjRec"
+                        android:paddingLeft="8dp"
                         android:textSize="24sp" />
                 </LinearLayout>
 

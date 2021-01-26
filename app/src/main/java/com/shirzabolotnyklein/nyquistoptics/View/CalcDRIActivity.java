@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ScrollView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +24,9 @@ public class CalcDRIActivity extends AppCompatActivity {
 
     EditText et_focalLength;
     EditText et_sensorPitch;
-    TextView tv_txtNatoTargetWidth;
-    TextView tv_txtNatoTargetHeight;
-    TextView tv_txtHumanTargetWidth;
-    TextView tv_txtHumanTargetHeight;
-    TextView tv_txtObjectTargetWidth;
-    TextView tv_txtObjectTargetHeight;
+    TextView tv_txtNatoTarget;
+    TextView tv_txtHumanTarget;
+    TextView tv_txtObjectTarget;
     TextView tv_resNatoDet;
     TextView tv_resNatoRec;
     TextView tv_resNatoIdent;
@@ -41,22 +38,20 @@ public class CalcDRIActivity extends AppCompatActivity {
     Button btn_calc;
     Vibrator vibrator;
     ReadWriteFileControl readWriteControll;
-
-    ScrollView sv_output;
+    TableLayout tableLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.act_calc_dri);
+        setContentView(R.layout.act_calc_dri_table);
         // Set up UI
         setupUI();
 
         // Get the vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
-        sv_output.setVisibility(View.INVISIBLE);
-
+        tableLayout.setVisibility(View.INVISIBLE);
         btn_calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,8 +62,8 @@ public class CalcDRIActivity extends AppCompatActivity {
 
 
                 if(isValid()) {
-                    sv_output.setVisibility(View.VISIBLE);
 
+                    tableLayout.setVisibility(View.VISIBLE);
                     Util.hideKeyboard(CalcDRIActivity.this);
 
                     CalculationController calculationController = new CalculationController();
@@ -117,14 +112,14 @@ public class CalcDRIActivity extends AppCompatActivity {
         et_focalLength = findViewById(R.id.et_focalLength);
         et_sensorPitch = findViewById(R.id.et_sensorPitch);
 
-        tv_txtNatoTargetWidth = findViewById(R.id.tv_txtNatoTargetWidth);
-        tv_txtNatoTargetHeight = findViewById(R.id.tv_txtNatoTargetHeight);
+        tv_txtNatoTarget = findViewById(R.id.tv_txtNatoTarget);
+        tableLayout=findViewById(R.id.table_tableLayout);
 
-        tv_txtHumanTargetWidth = findViewById(R.id.tv_txtHumanTargetWidth);
-        tv_txtHumanTargetHeight = findViewById(R.id.tv_txtHumanTargetHeight);
+        tv_txtHumanTarget = findViewById(R.id.tv_txtHumanTarget);
 
-        tv_txtObjectTargetWidth = findViewById(R.id.tv_txtObjectTargetWidth);
-        tv_txtObjectTargetHeight = findViewById(R.id.tv_txtObjectTargetHeight);
+
+        tv_txtObjectTarget = findViewById(R.id.tv_txtObjectTarget);
+
 
         tv_resNatoDet = findViewById(R.id.tv_resNatoDet);
         tv_resNatoRec = findViewById(R.id.tv_resNatoRec);
@@ -139,7 +134,7 @@ public class CalcDRIActivity extends AppCompatActivity {
 
         btn_calc = findViewById(R.id.btn_calc);
 
-        sv_output = findViewById(R.id.sv_output);
+
     }
 
     private void setResTitles(){
@@ -147,16 +142,20 @@ public class CalcDRIActivity extends AppCompatActivity {
         readWriteControll.initReadDataFromFile();
 
         HashMap<TargetType, TargetSize> targetSizes = readWriteControll.getTargetSizesValues();
+        StringBuilder sb=new StringBuilder();
+        sb.append("("+String.valueOf((targetSizes.get(TargetType.NATO)).getWidth()));
+        sb.append("x"+String.valueOf((targetSizes.get(TargetType.NATO)).getHeight())+")");
+        tv_txtNatoTarget.setText(sb.toString());
 
-        tv_txtNatoTargetWidth.setText(String.valueOf((targetSizes.get(TargetType.NATO)).getWidth()));
-        tv_txtNatoTargetHeight.setText(String.valueOf((targetSizes.get(TargetType.NATO)).getHeight()));
+        sb=new StringBuilder();
+        sb.append("("+String.valueOf((targetSizes.get(TargetType.HUMAN)).getWidth()));
+        sb.append("x"+String.valueOf((targetSizes.get(TargetType.HUMAN)).getHeight())+")");
+        tv_txtHumanTarget.setText(sb.toString());
 
-        tv_txtHumanTargetWidth.setText(String.valueOf((targetSizes.get(TargetType.HUMAN)).getWidth()));
-        tv_txtHumanTargetHeight.setText(String.valueOf((targetSizes.get(TargetType.HUMAN)).getHeight()));
-
-        tv_txtObjectTargetWidth.setText(String.valueOf((targetSizes.get(TargetType.OBJECT)).getWidth()));
-        tv_txtObjectTargetHeight.setText(String.valueOf((targetSizes.get(TargetType.OBJECT)).getHeight()));
-
+        sb=new StringBuilder();
+        sb.append("("+String.valueOf((targetSizes.get(TargetType.OBJECT)).getWidth()));
+        sb.append("x"+String.valueOf((targetSizes.get(TargetType.OBJECT)).getHeight())+")");
+        tv_txtObjectTarget.setText(sb.toString());
     }
 
     private boolean isValid() {

@@ -9,6 +9,8 @@
 
     <color name="orange">#F47D20</color>
     <color name="grey">#EFF2F4</color>
+    <color name="lightOrange">#fef2e9</color>
+    <color name="darkerOrange">#fde5d2</color>
 
 
 </resources>
