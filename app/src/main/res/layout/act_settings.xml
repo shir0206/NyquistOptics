@@ -65,9 +65,10 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
+                        android:gravity="center"
+
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
-
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -106,8 +107,9 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
-                        android:inputType="numberDecimal"
+                        android:gravity="center"
 
+                        android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -148,8 +150,9 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
-                        android:inputType="numberDecimal"
+                        android:gravity="center"
 
+                        android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -190,8 +193,9 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
-                        android:inputType="numberDecimal"
+                        android:gravity="center"
 
+                        android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="24sp" />
 
@@ -231,11 +235,12 @@
                         android:id="@+id/et_targetSizeNatoW"
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
+
                         android:ems="10"
+                        android:gravity="center"
 
                         android:hint="@string/et_targetSizeNatoW"
                         android:inputType="numberDecimal"
-
                         android:paddingTop="25dp"
                         android:textSize="24sp" />
 
@@ -253,10 +258,11 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
+                        android:gravity="center"
                         android:hint="@string/et_targetSizeNatoH"
                         android:inputType="numberDecimal"
-                        android:paddingTop="25dp"
 
+                        android:paddingTop="25dp"
                         android:textSize="24sp" />
 
 
@@ -297,10 +303,11 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
 
+                        android:gravity="center"
                         android:hint="@string/et_targetSizeHumanW"
                         android:inputType="numberDecimal"
-                        android:paddingTop="25dp"
 
+                        android:paddingTop="25dp"
                         android:textSize="24sp" />
 
                     <TextView
@@ -316,6 +323,7 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:gravity="center"
                         android:hint="@string/et_targetSizeHumanH"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
@@ -358,6 +366,7 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:gravity="center"
                         android:hint="@string/et_targetSizeObjW"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
@@ -376,6 +385,7 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:gravity="center"
                         android:hint="@string/et_targetSizeObjH"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
