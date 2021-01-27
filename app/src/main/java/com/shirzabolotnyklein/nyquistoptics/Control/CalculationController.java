@@ -25,9 +25,8 @@ public class CalculationController {
                                       double sensorPitch,
                                       double targetRange) {
 
-        double dimensionWidth = calcDimension(targetSizeW, focalLength, sensorPitch, targetRange);
+        return calcDimension(targetSizeW, focalLength, sensorPitch, targetRange);
 
-        return dimensionWidth;
     }
 
 
@@ -36,9 +35,7 @@ public class CalculationController {
                                        double sensorPitch,
                                        double targetRange) {
 
-        double dimensionHeight = calcDimension(targetSizeH, focalLength, sensorPitch, targetRange);
-
-        return dimensionHeight;
+        return calcDimension(targetSizeH, focalLength, sensorPitch, targetRange);
     }
 
 
@@ -58,28 +55,6 @@ public class CalculationController {
 
 
     //=================================== Calculate Target Size ===================================
-
-
-    private double calcTargetSizeWidth(double dimensionW,
-                                       double focalLength,
-                                       double sensorPitch,
-                                       double targetRange) {
-
-        double targetSizeWidth = calcTargetSize(dimensionW, focalLength, sensorPitch, targetRange);
-
-        return targetSizeWidth;
-    }
-
-
-    private double calcTargetSizeHeight(double dimensionH,
-                                        double focalLength,
-                                        double sensorPitch,
-                                        double targetRange) {
-
-        double targetSizeHeight = calcTargetSize(dimensionH, focalLength, sensorPitch, targetRange);
-
-        return targetSizeHeight;
-    }
 
 
     public double calcTargetSize(double dimension,
@@ -104,8 +79,7 @@ public class CalculationController {
                                             double sensorPitch,
                                             double targetRange) {
 
-        double focalLength = (sensorPitch * dimension * targetRange) / targetSize;
-        return focalLength;
+        return (sensorPitch * dimension * targetRange) / targetSize;
     }
 
 
@@ -114,8 +88,7 @@ public class CalculationController {
                                                  double sensorPitch,
                                                  double targetRange) {
 
-        double focalLengthWidth = calcFocalLengthViaTarget(dimensionW, targetSizeW, sensorPitch, targetRange);
-        return focalLengthWidth;
+        return calcFocalLengthViaTarget(dimensionW, targetSizeW, sensorPitch, targetRange);
     }
 
     public double calcFocalLengthHeightTarget(double dimensionH,
@@ -123,8 +96,7 @@ public class CalculationController {
                                                   double sensorPitch,
                                                   double targetRange) {
 
-        double focalLengthHeight = calcFocalLengthViaTarget(dimensionH, targetSizeH, sensorPitch, targetRange);
-        return focalLengthHeight;
+        return calcFocalLengthViaTarget(dimensionH, targetSizeH, sensorPitch, targetRange);
     }
 
 
@@ -133,10 +105,8 @@ public class CalculationController {
                                      double hfov,
                                      double sensorPitch) {
 
-        double focalLength = (sensorPitch * Math.max(dimensionW, dimensionH)) /
+        return (sensorPitch * Math.max(dimensionW, dimensionH)) /
                 (ConstantsKt.TwoThousand * Math.atan((hfov * Math.PI) / ConstantsKt.Ninety));
-
-        return focalLength;
     }
 
 
@@ -163,10 +133,8 @@ public class CalculationController {
      */
     public double calcHfov(double sensorPitch, double dimensionW, double focalLength) {
 
-        double hfov = Math.atan((sensorPitch * dimensionW) /
+        return Math.atan((sensorPitch * dimensionW) /
                 (ConstantsKt.TwoThousand * focalLength)) * ConstantsKt.Ninety / Math.PI;
-
-        return hfov;
     }
 
     /**
