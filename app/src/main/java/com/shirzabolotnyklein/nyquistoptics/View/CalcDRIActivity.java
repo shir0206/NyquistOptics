@@ -145,16 +145,19 @@ public class CalcDRIActivity extends AppCompatActivity {
 
         HashMap<TargetType, TargetSize> targetSizes = readWriteControll.getTargetSizesValues();
         StringBuilder sb=new StringBuilder();
+        sb.append("\t\tNato\n");
         sb.append("("+String.valueOf((targetSizes.get(TargetType.NATO)).getWidth()));
         sb.append("x"+String.valueOf((targetSizes.get(TargetType.NATO)).getHeight())+")");
         tv_txtNatoTarget.setText(sb.toString());
 
         sb=new StringBuilder();
+        sb.append("\tHuman\n");
         sb.append("("+String.valueOf((targetSizes.get(TargetType.HUMAN)).getWidth()));
         sb.append("x"+String.valueOf((targetSizes.get(TargetType.HUMAN)).getHeight())+")");
         tv_txtHumanTarget.setText(sb.toString());
 
         sb=new StringBuilder();
+        sb.append("\tObject\n");
         sb.append("("+String.valueOf((targetSizes.get(TargetType.OBJECT)).getWidth()));
         sb.append("x"+String.valueOf((targetSizes.get(TargetType.OBJECT)).getHeight())+")");
         tv_txtObjectTarget.setText(sb.toString());

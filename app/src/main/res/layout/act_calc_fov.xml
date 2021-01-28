@@ -29,13 +29,10 @@
         android:layout_height="80dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/ll_vfov"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/btn_calc"
         tools:ignore="MissingConstraints">
-
-
         <ImageView
             android:id="@+id/img_hfov"
             android:layout_width="80dp"
@@ -44,7 +41,6 @@
             android:padding="15dp"
             app:srcCompat="@drawable/ic_hfov"
             tools:ignore="VectorDrawableCompat" />
-
         <TextView
             android:id="@+id/tv_txtHfov"
             android:layout_width="wrap_content"
@@ -52,14 +48,16 @@
             android:paddingTop="25dp"
             android:text="@string/tv_txtHfov"
             android:textSize="24sp" />
-
         <TextView
             android:id="@+id/tv_resHfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            tools:layout_marginStart="8dp"
             android:paddingTop="25dp"
             android:text="@string/tv_resHfov"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+           />
     </LinearLayout>
 
     <LinearLayout
@@ -67,14 +65,10 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/ll_ifov"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_ifov"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_hfov"
         tools:ignore="MissingConstraints">
-
-
         <ImageView
             android:id="@+id/img_vfov"
             android:layout_width="80dp"
@@ -83,7 +77,6 @@
             android:padding="15dp"
             app:srcCompat="@drawable/ic_vfov"
             tools:ignore="VectorDrawableCompat" />
-
         <TextView
             android:id="@+id/tv_txtVfov"
             android:layout_width="wrap_content"
@@ -97,7 +90,9 @@
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_resVfov"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_marginStart="8dp"
+            tools:layout_marginStart="8dp"/>
 
 
     </LinearLayout>
@@ -108,10 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_vfov"
         tools:ignore="MissingConstraints">
 
@@ -138,7 +130,9 @@
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_resIfov"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_marginStart="8dp"
+            tools:layout_marginStart="8dp"/>
     </LinearLayout>
 
 
