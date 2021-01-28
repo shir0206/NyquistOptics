@@ -19,27 +19,7 @@ public class CalculationController {
 
     //=================================== Calculate Dimension ===================================
 
-
-    public double calcDimensionWidth(double targetSizeW,
-                                      double focalLength,
-                                      double sensorPitch,
-                                      double targetRange) {
-
-        return calcDimension(targetSizeW, focalLength, sensorPitch, targetRange);
-
-    }
-
-
-    public double calcDimensionHeight(double targetSizeH,
-                                       double focalLength,
-                                       double sensorPitch,
-                                       double targetRange) {
-
-        return calcDimension(targetSizeH, focalLength, sensorPitch, targetRange);
-    }
-
-
-    private double calcDimension(double targetSize,
+    public double calcDimension(double targetSize,
                                  double focalLength,
                                  double sensorPitch,
                                  double targetRange) {
@@ -74,29 +54,12 @@ public class CalculationController {
     //=================================== Calculate Focal Length ===================================
 
 
-    private double calcFocalLengthViaTarget(double dimension,
+    public double calcFocalLengthViaTarget(double dimension,
                                             double targetSize,
                                             double sensorPitch,
                                             double targetRange) {
 
         return (sensorPitch * dimension * targetRange) / targetSize;
-    }
-
-
-    public double calcFocalLengthWidthTarget(double dimensionW,
-                                                 double targetSizeW,
-                                                 double sensorPitch,
-                                                 double targetRange) {
-
-        return calcFocalLengthViaTarget(dimensionW, targetSizeW, sensorPitch, targetRange);
-    }
-
-    public double calcFocalLengthHeightTarget(double dimensionH,
-                                                  double targetSizeH,
-                                                  double sensorPitch,
-                                                  double targetRange) {
-
-        return calcFocalLengthViaTarget(dimensionH, targetSizeH, sensorPitch, targetRange);
     }
 
 

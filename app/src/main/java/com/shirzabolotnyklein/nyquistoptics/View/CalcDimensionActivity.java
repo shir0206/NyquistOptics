@@ -11,7 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController;
+import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.R;
+import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
 
 public class CalcDimensionActivity extends AppCompatActivity {
 
@@ -51,7 +53,7 @@ public class CalcDimensionActivity extends AppCompatActivity {
                     Util.hideKeyboard(CalcDimensionActivity.this);
 
 
-                    CalculationController calculationController = new CalculationController();
+                    MainAppController mainAppController = new MainAppController();
 
                     double targetSizeW = Double.parseDouble(et_resTargetSizeW.getText().toString());
                     double targetSizeH = Double.parseDouble(et_resTargetSizeH.getText().toString());
@@ -59,8 +61,8 @@ public class CalcDimensionActivity extends AppCompatActivity {
                     double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
                     double targetRange = Double.parseDouble(et_targetRange.getText().toString());
 
-                    String dimensionW = Util.formatDouble(calculationController.calcDimensionWidth(targetSizeW,focalLength,sensorPitch,targetRange),2);
-                    String dimensionH = Util.formatDouble(calculationController.calcDimensionHeight(targetSizeH,focalLength,sensorPitch,targetRange),2);
+                    String dimensionW = Util.formatDouble(mainAppController.calcDimension(targetSizeW,focalLength,sensorPitch,targetRange),2);
+                    String dimensionH = Util.formatDouble(mainAppController.calcDimension(targetSizeH,focalLength,sensorPitch,targetRange),2);
 
                     tv_resDimensionW.setText(dimensionW);
                     tv_resDimensionH.setText(dimensionH);

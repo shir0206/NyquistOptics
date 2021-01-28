@@ -11,7 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController;
+import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.R;
+import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
 
 public class CalcFocalLengthFOV extends AppCompatActivity {
 
@@ -23,14 +25,14 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
     TextView tv_resFocalLengthFov;
     Button btn_calc;
     Vibrator vibrator;
-
+    MainAppController mainAppController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.act_calc_focal_length_fov);
-
+        mainAppController=new MainAppController();
         // Set up UI
         setupUI();
 
@@ -49,15 +51,13 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
 
                     Util.hideKeyboard(CalcFocalLengthFOV.this);
 
-                    CalculationController calculationController = new CalculationController();
-
                     double hfov = Double.parseDouble(et_txtHfov.getText().toString());
                     double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
                     double dimensionW  = Double.parseDouble(et_txtDimensionW.getText().toString());
                     double dimensionH  = Double.parseDouble(et_txtDimensionH.getText().toString());
 
 
-                    String focalLengthFov = Util.formatDouble(calculationController.calcFocalLengthFOV( dimensionW,
+                    String focalLengthFov = Util.formatDouble(mainAppController.calculateFocalLengthViaHfov(dimensionW,
                      dimensionH,
                      hfov,
                      sensorPitch),2);

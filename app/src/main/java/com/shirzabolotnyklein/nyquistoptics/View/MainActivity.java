@@ -391,7 +391,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             }
         });
         //Set the size of the window
-        focalLenInputType.getWindow().setLayout(ViewGroup.LayoutParams.FILL_PARENT,ViewGroup.LayoutParams.FILL_PARENT);
+        focalLenInputType.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         //Open the window
         focalLenInputType.show();
     }

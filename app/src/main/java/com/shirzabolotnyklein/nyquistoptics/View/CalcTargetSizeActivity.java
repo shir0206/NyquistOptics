@@ -11,7 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController;
+import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.R;
+import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
 
 public class CalcTargetSizeActivity extends AppCompatActivity {
 
@@ -52,7 +54,7 @@ public class CalcTargetSizeActivity extends AppCompatActivity {
 
                     Util.hideKeyboard(CalcTargetSizeActivity.this);
 
-                    CalculationController calculationController = new CalculationController();
+                    MainAppController mainAppController = new MainAppController();
 
                     double focalLength = Double.parseDouble(et_focalLength.getText().toString());
                     double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
@@ -62,10 +64,10 @@ public class CalcTargetSizeActivity extends AppCompatActivity {
 
 
 
-                    String targetSizeW =Util.formatDouble(calculationController.calcTargetSize(dimensionW, focalLength,sensorPitch, targetRange),2);
+                    String targetSizeW =Util.formatDouble(mainAppController.calcualteTargetSize(dimensionW, focalLength,sensorPitch, targetRange),2);
 
 
-                    String targetSizeH= Util.formatDouble((calculationController.calcTargetSize(dimensionH, focalLength,sensorPitch, targetRange)),2);
+                    String targetSizeH= Util.formatDouble((mainAppController.calcualteTargetSize(dimensionH, focalLength,sensorPitch, targetRange)),2);
 
                     tv_resTargetSizeW.setText(targetSizeW);
                     tv_resTargetSizeH.setText(targetSizeH);

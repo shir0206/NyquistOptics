@@ -2,8 +2,10 @@ package com.shirzabolotnyklein.nyquistoptics.Control;
 
 import android.content.Context;
 
+
 import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetDRIType;
+import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -11,29 +13,78 @@ import java.util.HashMap;
 public class MainAppController {
     private Context cont;
 
-    // Initialize decimal format for outputs
-    DecimalFormat formatOneDig = new DecimalFormat("0.0");
-    DecimalFormat formatSixDig = new DecimalFormat("0.000000");
-
     CalculationController calcControll;
 
     public MainAppController(Context context) {
-        calcControll = new CalculationController();
+        super();
         this.cont = context;
+    }
+
+    public MainAppController(){
+        calcControll=new CalculationController();
     }
 
     public void calculateIFOV() {
         //use private methods to calculate the ifov
     }
 
+    /**
+     * Calculates the dimensions of the sensor according to the Height and Width that was sent
+     * @param targetSize
+     * @param focalLength
+     * @param sensorPitch
+     * @param targetRange
+     * @return
+     */
+    public double calcDimension( double targetSize,
+                                 double focalLength,
+                                 double sensorPitch,
+                                 double targetRange){
+        return  this.calcControll.calcDimension(targetSize,
+                focalLength,
+                sensorPitch,
+                targetRange);
+    }
+    public double calcualteTargetSize(double dimension,
+                                      double focalLength,
+                                      double sensorPitch,
+                                      double targetRange){
+        return this.calcControll.calcTargetSize( dimension,
+         focalLength,
+         sensorPitch,
+         targetRange);
+    }
+    /**
+     * Calcualte focal length via HFOV
+     * @param dimensionW
+     * @param dimensionH
+     * @param hfov
+     * @param sensorPitch
+     */
+    public double calculateFocalLengthViaHfov(double dimensionW,
+                                     double dimensionH,
+                                     double hfov,
+                                     double sensorPitch) {
 
-    public void calculateFocalLength() {
-        //use private methods to calculate focal length
+       return this.calcControll.calcFocalLengthFOV(dimensionW,dimensionH,hfov,sensorPitch);
     }
 
-    public void calculateWidthHeightTarget() {
-        //use private methods to calcaulte the height and width of the target
+    /**
+     * Calculate focal length via TargetSizes
+     * @param dimensionH
+     * @param targetSizeH
+     * @param sensorPitch
+     * @param targetRange
+     * @return
+     */
+    public double calculateFocalLengthViaTarget(double dimensionH,
+                                                double targetSizeH,
+                                                double sensorPitch,
+                                                double targetRange){
+        return this.calcControll.calcFocalLengthViaTarget( dimensionH,targetSizeH,sensorPitch,targetRange);
     }
+
+
 
     public HashMap<FovType, String> calcFOV(String SensorPitch, String FocalLength, String SensorSizeH, String SensorSizeW) {
         double sensorPitch = Double.parseDouble(SensorPitch);
@@ -48,9 +99,9 @@ public class MainAppController {
         double vfov = this.calcControll.calcVfov(sensorSizeH, sensorSizeW, hfov);
 
         // Convert the output from double to String and formatting the decimal digits
-        String iFOV = formatSixDig.format(ifov);
-        String hFov = formatOneDig.format(hfov);
-        String vFov = formatOneDig.format(vfov);
+        String iFOV = Util.formatDouble(ifov,6);
+        String hFov = Util.formatDouble(hfov,1);
+        String vFov = Util.formatDouble(vfov,1);
 
         results.put(FovType.IFOV, iFOV);
         results.put(FovType.HFOV, hFov);

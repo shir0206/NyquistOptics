@@ -12,11 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController;
+import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetDRIType;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetType;
 import com.shirzabolotnyklein.nyquistoptics.R;
+import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
 
 import java.util.HashMap;
 
@@ -66,15 +68,15 @@ public class CalcDRIActivity extends AppCompatActivity {
                     tableLayout.setVisibility(View.VISIBLE);
                     Util.hideKeyboard(CalcDRIActivity.this);
 
-                    CalculationController calculationController = new CalculationController();
+                    MainAppController mainAppController = new MainAppController();
 
-                    double focalLength = Double.parseDouble(et_focalLength.getText().toString());
-                    double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
+                    String focalLength = (et_focalLength.getText().toString());
+                    String sensorPitch = (et_sensorPitch.getText().toString());
 
                     setResTitles();
 
 
-                    HashMap<TargetDRIType, Double> calculateDRI = calculationController.calculateDRI(sensorPitch, focalLength);
+                    HashMap<TargetDRIType, Double> calculateDRI = mainAppController.calculateDRI(sensorPitch, focalLength);
 
 
                     String natoDet = Util.formatDouble(calculateDRI.get(TargetDRIType.NatoDet),1);

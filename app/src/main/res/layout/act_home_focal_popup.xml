@@ -9,7 +9,8 @@
     android:paddingLeft="50dp"
     android:paddingTop="20dp"
     android:paddingRight="50dp"
-    android:paddingBottom="20dp">
+    android:paddingBottom="20dp"
+      >
 
 
     <Button
@@ -52,7 +53,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="336dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/ic_frame"
         android:drawableTop="@drawable/ic_target_size"
         android:paddingTop="20dp"
@@ -91,6 +92,7 @@
         android:layout_marginEnd="8dp"
 
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
         android:gravity="center|center_horizontal|center_vertical"
         android:paddingBottom="24dp"
         android:text="@string/tv_ChooseAction"

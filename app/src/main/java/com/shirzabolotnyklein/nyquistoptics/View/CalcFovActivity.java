@@ -1,7 +1,6 @@
 package com.shirzabolotnyklein.nyquistoptics.View;
 
 import android.content.Context;
-import android.inputmethodservice.Keyboard;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController;
+import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
+import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
 import com.shirzabolotnyklein.nyquistoptics.R;
+import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
+
+import java.util.HashMap;
 
 public class CalcFovActivity extends AppCompatActivity {
 
@@ -51,16 +55,18 @@ public class CalcFovActivity extends AppCompatActivity {
 
                     Util.hideKeyboard(CalcFovActivity.this);
 
-                    CalculationController calculationController = new CalculationController();
+                    MainAppController mainAppController = new MainAppController();
 
-                    double focalLength = Double.parseDouble(et_focalLength.getText().toString());
-                    double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
-                    double dimensionW  = Double.parseDouble(et_txtDimensionW.getText().toString());
-                    double dimensionH  = Double.parseDouble(et_txtDimensionH.getText().toString());
+                    String focalLength = (et_focalLength.getText().toString());
+                    String sensorPitch = (et_sensorPitch.getText().toString());
+                    String dimensionW  = (et_txtDimensionW.getText().toString());
+                    String dimensionH  = (et_txtDimensionH.getText().toString());
 
-                    String hfov =Util.formatDouble(calculationController.calcHfov(sensorPitch, dimensionW, focalLength),2);
-                    String vfov = Util.formatDouble(calculationController.calcVfov( dimensionH, dimensionW, Double.parseDouble(hfov)),2);
-                    String ifov = Util.formatDouble(calculationController.calcIfov(sensorPitch, focalLength),2);
+                    HashMap<FovType,String> res=mainAppController.calcFOV(sensorPitch,focalLength,dimensionH,dimensionW);
+
+                    String hfov =Util.formatDouble(Double.parseDouble(res.get(FovType.HFOV)),2);
+                    String vfov = Util.formatDouble(Double.parseDouble(res.get(FovType.VFOV)),2);
+                    String ifov = Util.formatDouble(Double.parseDouble(res.get(FovType.IFOV)),2);
 
                     tv_resHfov.setText(hfov);
                     tv_resVfov.setText(vfov);

@@ -10,8 +10,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController
+import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController
 import com.shirzabolotnyklein.nyquistoptics.R
+import com.shirzabolotnyklein.nyquistoptics.Utils.Util
 
 class CalcFocalLengthTarget : AppCompatActivity() {
 
@@ -40,7 +41,7 @@ class CalcFocalLengthTarget : AppCompatActivity() {
             phoneVib()
             if (isValid()) {
                 Util.hideKeyboard(this@CalcFocalLengthTarget)
-                val calculationController = CalculationController()
+                val mainAppController = MainAppController();
 
                 val dimensionW: Double = et_dimensionW?.text.toString().toDouble()
                 val dimensionH: Double = et_dimensionH?.text.toString().toDouble()
@@ -50,14 +51,14 @@ class CalcFocalLengthTarget : AppCompatActivity() {
                 val targetRange: Double = et_targetRange?.text.toString().toDouble()
 
 
-                val focalLengthW = (calculationController.calcFocalLengthWidthTarget(
+                val focalLengthW = (mainAppController.calculateFocalLengthViaTarget(
                         dimensionW,
                         targetSizeW,
                         sensorPitch,
                         targetRange))
 
 
-                val focalLengthH = (calculationController.calcFocalLengthHeightTarget(
+                val focalLengthH = (mainAppController.calculateFocalLengthViaTarget(
                         dimensionH,
                         targetSizeH,
                         sensorPitch,

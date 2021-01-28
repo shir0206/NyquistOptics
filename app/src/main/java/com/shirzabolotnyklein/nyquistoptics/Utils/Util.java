@@ -1,4 +1,4 @@
-package com.shirzabolotnyklein.nyquistoptics.View;
+package com.shirzabolotnyklein.nyquistoptics.Utils;
 
 
 import android.app.Activity;
@@ -40,7 +40,8 @@ public class Util {
             case 2:
                 df=new DecimalFormat("#.##");
                 break;
-
+            case 6:
+                df=new DecimalFormat("#.######");
             default:
                 //no such digits found
                 break;

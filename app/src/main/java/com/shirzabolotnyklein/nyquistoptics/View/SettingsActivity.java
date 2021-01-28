@@ -2,7 +2,6 @@ package com.shirzabolotnyklein.nyquistoptics.View;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +18,7 @@ import com.shirzabolotnyklein.nyquistoptics.Model.LinePair;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetType;
 import com.shirzabolotnyklein.nyquistoptics.R;
+import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
 
 import java.util.HashMap;
 

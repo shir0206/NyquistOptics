@@ -188,6 +188,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
@@ -228,6 +229,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
