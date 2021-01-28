@@ -273,27 +273,16 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/tv_resDimensionW"
+            android:id="@+id/tv_resDimension"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:paddingTop="25dp"
             android:text="@string/tv_resDimensionW"
-            android:textSize="24sp" />
-        <TextView
-            android:id="@+id/tv_dimensionX"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="25dp"
-            android:text="@string/tv_x"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            tools:layout_marginLeft="8dp" />
 
-        <TextView
-            android:id="@+id/tv_resDimensionH"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="25dp"
-            android:text="@string/tv_resDimensionH"
-            android:textSize="24sp" />
     </LinearLayout>
 
 

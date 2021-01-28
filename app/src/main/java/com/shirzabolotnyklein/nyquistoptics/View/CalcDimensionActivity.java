@@ -23,9 +23,7 @@ public class CalcDimensionActivity extends AppCompatActivity {
     EditText et_targetRange;
     EditText et_resTargetSizeW;
     EditText et_resTargetSizeH;
-    TextView tv_resDimensionW;
-    TextView tv_dimensionX;
-    TextView tv_resDimensionH;
+    TextView tv_resDimension;
     Vibrator vibrator;
 
     @Override
@@ -36,7 +34,7 @@ public class CalcDimensionActivity extends AppCompatActivity {
         // Set up UI
         setupUI();
 
-        tv_dimensionX.setVisibility(View.INVISIBLE);
+        tv_resDimension.setVisibility(View.INVISIBLE);
 
         // Get the vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -61,12 +59,16 @@ public class CalcDimensionActivity extends AppCompatActivity {
                     double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
                     double targetRange = Double.parseDouble(et_targetRange.getText().toString());
 
-                    String dimensionW = Util.formatDouble(mainAppController.calcDimension(targetSizeW,focalLength,sensorPitch,targetRange),2);
-                    String dimensionH = Util.formatDouble(mainAppController.calcDimension(targetSizeH,focalLength,sensorPitch,targetRange),2);
+                    String dimensionW = Util.formatDouble(mainAppController.calcDimension(targetSizeW,focalLength,sensorPitch,targetRange),1);
+                    String dimensionH = Util.formatDouble(mainAppController.calcDimension(targetSizeH,focalLength,sensorPitch,targetRange),1);
 
-                    tv_resDimensionW.setText(dimensionW);
-                    tv_resDimensionH.setText(dimensionH);
-                    tv_dimensionX.setVisibility(View.VISIBLE);
+
+                    StringBuilder sb=new StringBuilder();
+                    sb.append(dimensionW);
+                    sb.append(" x ");
+                    sb.append(dimensionH);
+                    tv_resDimension.setText(sb.toString());
+                    tv_resDimension.setVisibility(View.VISIBLE);
 
                 }
 
@@ -82,9 +84,7 @@ public class CalcDimensionActivity extends AppCompatActivity {
         et_targetRange = findViewById(R.id.et_targetRange);
         et_resTargetSizeW = findViewById(R.id.et_resTargetSizeW);
         et_resTargetSizeH = findViewById(R.id.et_resTargetSizeH);
-        tv_resDimensionW = findViewById(R.id.tv_resDimensionW);
-        tv_dimensionX = findViewById(R.id.tv_dimensionX);
-        tv_resDimensionH = findViewById(R.id.tv_resDimensionH);
+        tv_resDimension = findViewById(R.id.tv_resDimension);
         btn_calc = findViewById(R.id.btn_calc);
     }
 
