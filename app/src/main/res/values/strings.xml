@@ -66,8 +66,8 @@
 
 
     <string name="tv_txtFocalLength">Focal Length (mm):</string>
-    <string name="tv_txtSensorPitch">Sensor Pitch (mic):</string>
-    <string name="tv_txtDimension">Dimension (px):</string>
+    <string name="tv_txtSensorPitch">Detector Pitch (mic):</string>
+    <string name="tv_txtDimension">Detector Size (px):</string>
     <string name="et_txtDimensionW">  W</string>
     <string name="et_txtDimensionH">  H</string>
     <string name="tv_x">x</string>
@@ -109,9 +109,9 @@
     <string name="et_targetSizeHumanW">W</string>
     <string name="et_targetSizeHumanH">H</string>
 
-    <string name="btn_TargetInput">Target Input</string>
-    <string name="btn_FOVInput">FOV Input</string>
-    <string name="tv_ChooseAction">Calculate Focal Length:</string>
+    <string name="btn_TargetInput">Target Size Input</string>
+    <string name="btn_FOVInput">Angle Input</string>
+    <string name="tv_ChooseAction">Calculate Focal Length according to :</string>
 
     <string name="tv_txtTargetSizeObj">Object Target</string>
     <string name="et_targetSizeObjW">W</string>
