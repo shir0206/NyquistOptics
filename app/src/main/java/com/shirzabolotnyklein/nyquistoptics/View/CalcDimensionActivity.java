@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,10 @@ public class CalcDimensionActivity extends AppCompatActivity {
     EditText et_targetRange;
     EditText et_resTargetSizeW;
     EditText et_resTargetSizeH;
-    TextView tv_resDimension;
+    LinearLayout table;
+    TextView tv_DetectorSizeWidth;
+    TextView tv_DetectorSizeHeight;
+    TextView tv_DetectorSizeTotal;
     Vibrator vibrator;
 
     @Override
@@ -34,7 +38,7 @@ public class CalcDimensionActivity extends AppCompatActivity {
         // Set up UI
         setupUI();
 
-        tv_resDimension.setVisibility(View.INVISIBLE);
+        table.setVisibility(View.INVISIBLE);
 
         // Get the vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -59,16 +63,20 @@ public class CalcDimensionActivity extends AppCompatActivity {
                     double sensorPitch = Double.parseDouble(et_sensorPitch.getText().toString());
                     double targetRange = Double.parseDouble(et_targetRange.getText().toString());
 
-                    String dimensionW = Util.formatDouble(mainAppController.calcDimension(targetSizeW,focalLength,sensorPitch,targetRange),1);
-                    String dimensionH = Util.formatDouble(mainAppController.calcDimension(targetSizeH,focalLength,sensorPitch,targetRange),1);
+                    double dimensionWRes=mainAppController.calcDimension(targetSizeW,focalLength,sensorPitch,targetRange);
+                    double dimensionHRes=mainAppController.calcDimension(targetSizeH,focalLength,sensorPitch,targetRange);
+
+                    double totalPixelSize= dimensionWRes*dimensionHRes;
+
+                    String dimensionW = Util.formatDouble(dimensionWRes,1);
+                    String dimensionH = Util.formatDouble(dimensionHRes,1);
+                    String dimensionTotal=Util.formatDouble(totalPixelSize,1);
 
 
-                    StringBuilder sb=new StringBuilder();
-                    sb.append(dimensionW);
-                    sb.append(" x ");
-                    sb.append(dimensionH);
-                    tv_resDimension.setText(sb.toString());
-                    tv_resDimension.setVisibility(View.VISIBLE);
+                    tv_DetectorSizeHeight.setText(dimensionH);
+                    tv_DetectorSizeWidth.setText(dimensionW);
+                    tv_DetectorSizeTotal.setText(dimensionTotal);
+                    table.setVisibility(View.VISIBLE);
 
                 }
 
@@ -78,13 +86,15 @@ public class CalcDimensionActivity extends AppCompatActivity {
     }
 
     private void setupUI() {
-
+        table=findViewById(R.id.table_DetectorSize);
         et_focalLength = findViewById(R.id.et_focalLength);
         et_sensorPitch = findViewById(R.id.et_sensorPitch);
         et_targetRange = findViewById(R.id.et_targetRange);
         et_resTargetSizeW = findViewById(R.id.et_resTargetSizeW);
         et_resTargetSizeH = findViewById(R.id.et_resTargetSizeH);
-        tv_resDimension = findViewById(R.id.tv_resDimension);
+        tv_DetectorSizeWidth = findViewById(R.id.tv_DetectorSizeWidth);
+        tv_DetectorSizeHeight=findViewById(R.id.tv_DetectorSizeHeight);
+        tv_DetectorSizeTotal=findViewById(R.id.tv_DetectorSizeTotal);
         btn_calc = findViewById(R.id.btn_calc);
     }
 

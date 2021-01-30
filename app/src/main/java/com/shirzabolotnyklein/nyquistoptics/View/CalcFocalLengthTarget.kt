@@ -23,8 +23,8 @@ class CalcFocalLengthTarget : AppCompatActivity() {
     var et_dimensionW: EditText? = null
     var et_dimensionH: EditText? = null
     var et_sensorPitch: EditText? = null
-    var tv_resFocalLengthH: TextView? = null
-    var tv_resFocalLengthW: TextView? = null
+    var smallestDimensionSize:Double?=0.0
+    var tv_resFocalLength: TextView? = null
     var btn_calc: Button? = null
     private var vibrator: Vibrator? = null
 
@@ -50,22 +50,22 @@ class CalcFocalLengthTarget : AppCompatActivity() {
                 val sensorPitch: Double = et_sensorPitch?.text.toString().toDouble()
                 val targetRange: Double = et_targetRange?.text.toString().toDouble()
 
+                val smallestTargetSize= minOf(targetSizeW,targetSizeH);
 
-                val focalLengthW = (mainAppController.calculateFocalLengthViaTarget(
-                        dimensionW,
-                        targetSizeW,
+                if(smallestTargetSize==targetSizeW){
+                    smallestDimensionSize=dimensionW
+                }else{
+                    smallestDimensionSize=dimensionH
+                }
+                val minFocalLength= (mainAppController.calculateFocalLengthViaTarget(
+                        smallestDimensionSize!!,
+                        smallestTargetSize,
                         sensorPitch,
                         targetRange))
 
 
-                val focalLengthH = (mainAppController.calculateFocalLengthViaTarget(
-                        dimensionH,
-                        targetSizeH,
-                        sensorPitch,
-                        targetRange))
+                tv_resFocalLength?.text = Util.formatDouble(minFocalLength,2);
 
-                tv_resFocalLengthW?.text = Util.formatDouble(focalLengthW,2);
-                tv_resFocalLengthH?.text =  Util.formatDouble(focalLengthH,2);
             }
         }
 
@@ -78,8 +78,7 @@ class CalcFocalLengthTarget : AppCompatActivity() {
         et_dimensionW = findViewById(R.id.et_dimensionW)
         et_dimensionH = findViewById(R.id.et_dimensionH)
         et_sensorPitch = findViewById(R.id.et_sensorPitch)
-        tv_resFocalLengthH = findViewById(R.id.tv_resFocalLengthH)
-        tv_resFocalLengthW = findViewById(R.id.tv_resFocalLengthW)
+        tv_resFocalLength = findViewById(R.id.tv_resFocalLength)
         btn_calc = findViewById(R.id.btn_calc)
         vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     }

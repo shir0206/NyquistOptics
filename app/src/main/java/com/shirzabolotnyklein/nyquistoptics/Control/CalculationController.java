@@ -59,7 +59,7 @@ public class CalculationController {
                                             double sensorPitch,
                                             double targetRange) {
 
-        return (sensorPitch * dimension * targetRange) / targetSize;
+        return( ((sensorPitch/ConstantsKt.OneMillion) * dimension * targetRange) / targetSize)*ConstantsKt.OneThousand;
     }
 
 

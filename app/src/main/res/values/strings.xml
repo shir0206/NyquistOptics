@@ -53,7 +53,7 @@
 
     <!--====================================-->
 
-    <string name="btn_txtDimension">Calculate Detector Pitch</string>
+    <string name="btn_txtDimension">Calculate Detector Size</string>
     <string name="btn_txtTargetSize">Target Size</string>
     <string name="btn_txtFocalLength">Calculate Required Lens</string>
     <string name="btn_txtFOV">Field of View Calculator</string>
@@ -117,7 +117,7 @@
     <string name="et_targetSizeObjW">W</string>
     <string name="et_targetSizeObjH">H</string>
     <string name="tv_txtFocalLengthW">Focal Length Width (mm):</string>
-    <string name="tv_txtFocalLengthH">Focal Length Height (mm):</string>
+    <string name="tv_txtFocalLengthH">Focal Length (mm):</string>
     <string name="et_txtTargetSizeW">W</string>
     <string name="et_txtTargetSizeH">H</string>
 

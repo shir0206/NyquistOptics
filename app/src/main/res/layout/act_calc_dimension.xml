@@ -243,46 +243,147 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_input"
         app:layout_constraintVertical_bias="0.458" />
 
-
     <LinearLayout
-        android:id="@+id/ll_dimension"
+
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_calc"
-        tools:ignore="MissingConstraints">
+        android:layout_height="wrap_content"
+        android:id="@+id/table_DetectorSize"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calc">
 
-
-        <ImageView
-            android:id="@+id/img_dimension"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:padding="15dp"
-            app:srcCompat="@drawable/ic_dimension"
-            tools:ignore="VectorDrawableCompat" />
-
-        <TextView
-            android:id="@+id/tv_txtDimension"
-            android:layout_width="wrap_content"
+        <TableLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="25dp"
-            android:text="@string/tv_txtDimension"
-            android:textSize="24sp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_input"
+            android:id="@+id/table_tableLayout">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:minHeight="60dp"
+                >
+                <TextView android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    tools:text=""/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
 
-        <TextView
-            android:id="@+id/tv_resDimension"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:paddingTop="25dp"
-            android:text="@string/tv_resDimensionW"
-            android:textSize="24sp"
-            tools:layout_marginLeft="8dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="24sp"
+                        android:text="Width"
+                        tools:text="Width" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:text="(px)"
+                        tools:text="(px)" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center"
+                        android:textSize="24sp"
+                        android:text="Height "
+                        tools:text="Height" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:text="(px)"
+                        tools:text="(px)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center"
+                        android:textSize="24sp"
+                        android:text="Total"
+                        tools:text="Total" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:text="(px)"
+                        tools:text="(px)" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:minHeight="60dp">
+
+                <ImageView
+                    android:id="@+id/img_dimension"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:padding="15dp"
+                    app:srcCompat="@drawable/ic_dimension"
+                    tools:ignore="VectorDrawableCompat"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_DetectorSizeWidth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="24sp"
+                    tools:text="" />
+
+                <TextView
+                    android:id="@+id/tv_DetectorSizeHeight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="24sp"
+                    tools:text="" />
+
+                <TextView
+                    android:id="@+id/tv_DetectorSizeTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="24sp"
+                    tools:text="" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 
 
