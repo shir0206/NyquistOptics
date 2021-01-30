@@ -53,11 +53,11 @@
 
     <!--====================================-->
 
-    <string name="btn_txtDimension">Dimension</string>
+    <string name="btn_txtDimension">Calculate Detector Pitch</string>
     <string name="btn_txtTargetSize">Target Size</string>
-    <string name="btn_txtFocalLength">Focal Length</string>
-    <string name="btn_txtFOV">Field of View</string>
-    <string name="btn_txtDRI">DRI</string>
+    <string name="btn_txtFocalLength">Calculate Required Lens</string>
+    <string name="btn_txtFOV">Field of View Calculator</string>
+    <string name="btn_txtDRI">DRI calculator</string>
     <string name="btn_txtSettings">Settings</string>
 
     <string name="btn_txtCalc">Calculate</string>
