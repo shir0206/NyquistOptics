@@ -91,6 +91,7 @@ public class CalcTargetSizeActivity extends AppCompatActivity {
         tv_resTargetSizeH = findViewById(R.id.tv_resTargetSizeH);
         tv_resTargetSizeX = findViewById(R.id.tv_resTargetSizeX);
         btn_calc = findViewById(R.id.btn_calc);
+        Util.SetActionBarICon(getSupportActionBar());
     }
 
     private boolean isValid() {

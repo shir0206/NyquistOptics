@@ -1,9 +1,12 @@
 package com.shirzabolotnyklein.nyquistoptics.Utils;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+
+import com.shirzabolotnyklein.nyquistoptics.R;
 
 import java.text.DecimalFormat;
 
@@ -50,5 +53,14 @@ public class Util {
         formated=df.format(doubleNum);
         return formated;
     }
+
+    public static void SetActionBarICon(android.support.v7.app.ActionBar bar){
+        bar.setDisplayShowHomeEnabled(true);
+        bar.setLogo(R.mipmap.optarget);
+        bar.setDisplayUseLogoEnabled(true);
+
+    }
+
+
 
 }

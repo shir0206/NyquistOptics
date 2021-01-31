@@ -10,20 +10,25 @@
         android:label="Op Target"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.CalcFocalLengthFOV"></activity>
-        <activity android:name=".View.CalcFocalLengthTarget" />
-        <activity android:name=".View.CalcDimensionActivity" />
-        <activity android:name=".View.CalcTargetSizeActivity" />
-        <activity android:name=".View.CalcDRIActivity"/>
+        <activity android:name=".View.CalcFocalLengthFOV" android:label="" ></activity>
+        <activity android:name=".View.CalcFocalLengthTarget" android:label="" />
+        <activity android:name=".View.CalcDimensionActivity"  android:label="" />
+        <activity android:name=".View.CalcTargetSizeActivity"  android:label="" />
+        <activity android:name=".View.CalcDRIActivity"  android:label="" />
         <activity
             android:name=".View.MainActivity"
             android:label=""
+
             android:screenOrientation="portrait" />
         <activity
             android:name=".View.CalcFovActivity"
+            android:label=""
+
             android:screenOrientation="portrait" />
         <activity
             android:name=".View.SettingsActivity"
+            android:label=""
+
             android:screenOrientation="portrait" />
         <activity android:name=".View.WelcomeActivity">
             <intent-filter>

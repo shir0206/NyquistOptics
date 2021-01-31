@@ -49,6 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
         // Set up UI
         setupUI();
         insertDataToViews();
+
        // Hide keyboard on start up app
         hideKeyboardOnStartUp();
 
@@ -184,7 +185,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         et_objTargetW = findViewById(R.id.et_targetSizeObjW);
         et_objTargetH = findViewById(R.id.et_targetSizeObjH);
-
+        Util.SetActionBarICon(getSupportActionBar());
     }
 
 

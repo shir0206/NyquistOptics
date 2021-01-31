@@ -96,6 +96,7 @@ public class CalcDimensionActivity extends AppCompatActivity {
         tv_DetectorSizeHeight=findViewById(R.id.tv_DetectorSizeHeight);
         tv_DetectorSizeTotal=findViewById(R.id.tv_DetectorSizeTotal);
         btn_calc = findViewById(R.id.btn_calc);
+        Util.SetActionBarICon(getSupportActionBar());
     }
 
     private boolean isValid() {

@@ -81,6 +81,7 @@ class CalcFocalLengthTarget : AppCompatActivity() {
         tv_resFocalLength = findViewById(R.id.tv_resFocalLength)
         btn_calc = findViewById(R.id.btn_calc)
         vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        Util.SetActionBarICon(supportActionBar)
     }
 
     private fun phoneVib(){

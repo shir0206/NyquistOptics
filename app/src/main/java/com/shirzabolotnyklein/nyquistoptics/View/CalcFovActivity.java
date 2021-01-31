@@ -89,6 +89,7 @@ public class CalcFovActivity extends AppCompatActivity {
         tv_resVfov = findViewById(R.id.tv_resVfov);
         tv_resIfov = findViewById(R.id.tv_resIfov);
         btn_calc = findViewById(R.id.btn_calc);
+        Util.SetActionBarICon(getSupportActionBar());
     }
 
     private boolean isValid() {

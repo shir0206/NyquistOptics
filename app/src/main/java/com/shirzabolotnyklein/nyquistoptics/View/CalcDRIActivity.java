@@ -136,7 +136,7 @@ public class CalcDRIActivity extends AppCompatActivity {
 
         btn_calc = findViewById(R.id.btn_calc);
 
-
+        Util.SetActionBarICon(getSupportActionBar());
     }
 
     private void setResTitles(){

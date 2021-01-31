@@ -1,7 +1,6 @@
 package com.shirzabolotnyklein.nyquistoptics.View;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,20 +13,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TableLayout;
-import android.widget.TextView;
 
-import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl;
 import com.shirzabolotnyklein.nyquistoptics.R;
+import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
 
 import java.io.Serializable;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements Serializable {
 
@@ -129,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         btn_dimension = findViewById(R.id.btn_dimension);
         btn_focalLength = findViewById(R.id.btn_focalLength);
         btn_dri = findViewById(R.id.btn_dri);
-
+        Util.SetActionBarICon(getSupportActionBar());
     }
 
     //------------------------------------- Android Methods -------------------------------------
@@ -154,9 +146,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         MenuBuilder menuBuilder = (MenuBuilder) menu;
         menuBuilder.setOptionalIconsVisible(true);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setLogo(R.mipmap.optarget);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         return true;
     }
 

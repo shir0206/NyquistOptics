@@ -79,6 +79,7 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
         et_txtDimensionH = findViewById(R.id.et_txtDimensionH);
         tv_resFocalLengthFov = findViewById(R.id.tv_resFocalLengthFov);
         btn_calc = findViewById(R.id.btn_calc);
+        Util.SetActionBarICon(getSupportActionBar());
     }
 
     private boolean isValid() {
