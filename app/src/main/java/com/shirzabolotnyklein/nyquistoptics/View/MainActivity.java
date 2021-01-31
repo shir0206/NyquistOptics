@@ -153,6 +153,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         getMenuInflater().inflate(R.menu.mainactivity, menu);
         MenuBuilder menuBuilder = (MenuBuilder) menu;
         menuBuilder.setOptionalIconsVisible(true);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.optarget);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         return true;
     }
 

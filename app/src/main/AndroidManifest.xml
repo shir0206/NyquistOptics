@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/nyquist_optics_logo"
+        android:icon="@mipmap/optarget"
         android:label="Op Target"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -17,6 +17,7 @@
         <activity android:name=".View.CalcDRIActivity"/>
         <activity
             android:name=".View.MainActivity"
+            android:label=""
             android:screenOrientation="portrait" />
         <activity
             android:name=".View.CalcFovActivity"
