@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtFocalLength"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_focalLength"
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtSensorPitch"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_sensorPitch"
@@ -137,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtTargetRange"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_targetRange"
@@ -184,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtDimension"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_txtDimensionW"
@@ -268,7 +268,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtTargetSize"
-            android:textSize="24sp" />
+            android:textSize="21sp" />
 
         <TextView
             android:id="@+id/tv_resTargetSizeW"
@@ -283,13 +283,14 @@
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_resTargetSizeX"
-            android:textSize="24sp"/>
+            android:textSize="21sp" />
+
         <TextView
             android:id="@+id/tv_resTargetSizeH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
-            android:textSize="24sp" />
+            android:textSize="21sp" />
     </LinearLayout>
 
 

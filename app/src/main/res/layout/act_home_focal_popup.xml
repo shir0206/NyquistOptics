@@ -34,7 +34,7 @@
 
         android:text="@string/btn_FOVInput"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btn_TargetInput_txt"
         app:layout_constraintEnd_toEndOf="@+id/btn_FOVInput"
@@ -67,7 +67,7 @@
         android:paddingTop="0dp"
         android:text="@string/btn_TargetInput"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_TargetInput"
@@ -88,7 +88,7 @@
         android:text="@string/tv_ChooseAction"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="24dp"
+        android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

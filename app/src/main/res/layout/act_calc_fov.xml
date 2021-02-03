@@ -41,23 +41,24 @@
             android:padding="15dp"
             app:srcCompat="@drawable/ic_hfov"
             tools:ignore="VectorDrawableCompat" />
+
         <TextView
             android:id="@+id/tv_txtHfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtHfov"
-            android:textSize="24sp" />
+            android:textSize="21sp" />
+
         <TextView
             android:id="@+id/tv_resHfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            tools:layout_marginStart="8dp"
             android:paddingTop="25dp"
             android:text="@string/tv_resHfov"
-            android:textSize="24sp"
-           />
+            android:textSize="21sp"
+            tools:layout_marginStart="8dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -77,22 +78,24 @@
             android:padding="15dp"
             app:srcCompat="@drawable/ic_vfov"
             tools:ignore="VectorDrawableCompat" />
+
         <TextView
             android:id="@+id/tv_txtVfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtVfov"
-            android:textSize="24sp" />
+            android:textSize="21sp" />
+
         <TextView
             android:id="@+id/tv_resVfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:paddingTop="25dp"
             android:text="@string/tv_resVfov"
             android:textSize="24sp"
-            android:layout_marginStart="8dp"
-            tools:layout_marginStart="8dp"/>
+            tools:layout_marginStart="8dp" />
 
 
     </LinearLayout>
@@ -122,17 +125,17 @@
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtIfov"
-            android:textSize="24sp" />
+            android:textSize="21sp" />
 
         <TextView
             android:id="@+id/tv_resIfov"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:paddingTop="25dp"
             android:text="@string/tv_resIfov"
-            android:textSize="24sp"
-            android:layout_marginStart="8dp"
-            tools:layout_marginStart="8dp"/>
+            android:textSize="21sp"
+            tools:layout_marginStart="8dp" />
     </LinearLayout>
 
 
@@ -175,7 +178,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtFocalLength"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_focalLength"
@@ -185,7 +188,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
         </LinearLayout>
 
 
@@ -216,7 +219,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtSensorPitch"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_sensorPitch"
@@ -226,7 +229,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
         </LinearLayout>
 
 
@@ -256,7 +259,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtDimension"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_txtDimensionW"
@@ -268,14 +271,15 @@
                 android:hint="@string/et_txtDimensionW"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
+
             <TextView
                 android:id="@+id/tv_txtDimensionX"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_x"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_txtDimensionH"
@@ -286,7 +290,7 @@
                 android:hint="@string/et_txtDimensionH"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
         </LinearLayout>
 
 

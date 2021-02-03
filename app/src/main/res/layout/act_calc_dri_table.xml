@@ -97,28 +97,28 @@
                 android:textSize="16dp"/>
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:id="@+id/tv_resNatoDet"
-                android:textSize="24dp"/>
-
-            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="21sp" />
+
+            <TextView
                 android:id="@+id/tv_resHumanDet"
-                android:textSize="24dp"/>
-
-            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="21sp" />
+
+            <TextView
                 android:id="@+id/tv_resObjectDet"
-                android:textSize="24dp"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="21sp" />
         </TableRow>
 
         <TableRow
@@ -135,27 +135,27 @@
                 android:textSize="16dp"/>
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:id="@+id/tv_resNatoRec"
-                android:textSize="24dp"/>
-
-            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="21sp" />
+
+            <TextView
                 android:id="@+id/tv_resHumanRec"
-                android:textSize="24dp"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="21sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="24dp"/>
+                android:textSize="21sp" />
         </TableRow>
 
         <TableRow
@@ -172,28 +172,28 @@
                 android:textSize="16dp"/>
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:id="@+id/tv_resNatoIdent"
-                android:textSize="24dp"/>
-
-            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="21sp" />
+
+            <TextView
                 android:id="@+id/tv_resHumanIdent"
-                android:textSize="24dp"/>
-
-            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="21sp" />
+
+            <TextView
                 android:id="@+id/tv_resObjectIdent"
-                android:textSize="24dp"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="21sp" />
         </TableRow>
     </TableLayout>
 
@@ -253,7 +253,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtSensorPitch"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_sensorPitch"
@@ -264,7 +264,7 @@
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -294,7 +294,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtFocalLength"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_focalLength"
@@ -305,7 +305,7 @@
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
         </LinearLayout>
 
 
