@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController
+import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl
 import com.shirzabolotnyklein.nyquistoptics.R
 import com.shirzabolotnyklein.nyquistoptics.Utils.Util
 
@@ -81,6 +82,13 @@ class CalcFocalLengthTarget : AppCompatActivity() {
         tv_resFocalLength = findViewById(R.id.tv_resFocalLength)
         btn_calc = findViewById(R.id.btn_calc)
         vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+
+        val fileAccess= ReadWriteFileControl(this)
+
+        val detecorVals=fileAccess.getDetectorValues()
+        et_sensorPitch?.setText(detecorVals.detectorPitch.toString())
+        et_dimensionH?.setText(detecorVals.detectorSizeH.toString())
+        et_dimensionW?.setText(detecorVals.detectorSizeW.toString())
         Util.SetActionBarICon(supportActionBar)
     }
 

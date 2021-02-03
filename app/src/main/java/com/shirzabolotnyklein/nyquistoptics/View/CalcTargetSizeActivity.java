@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController;
 import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
+import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl;
+import com.shirzabolotnyklein.nyquistoptics.Model.Detector;
 import com.shirzabolotnyklein.nyquistoptics.R;
 import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
 
@@ -91,6 +93,13 @@ public class CalcTargetSizeActivity extends AppCompatActivity {
         tv_resTargetSizeH = findViewById(R.id.tv_resTargetSizeH);
         tv_resTargetSizeX = findViewById(R.id.tv_resTargetSizeX);
         btn_calc = findViewById(R.id.btn_calc);
+
+        ReadWriteFileControl readWriteFileControl=new ReadWriteFileControl(this);
+        Detector values=readWriteFileControl.getDetectorValues();
+        et_sensorPitch.setText(String.valueOf(values.getDetectorPitch()));
+        et_txtDimensionH.setText(String.valueOf(values.getDetectorSizeH()));
+        et_txtDimensionW.setText(String.valueOf(values.getDetectorSizeW()));
+
         Util.SetActionBarICon(getSupportActionBar());
     }
 

@@ -27,7 +27,9 @@ public class MainAppController {
     public void calculateIFOV() {
         //use private methods to calculate the ifov
     }
+    public void getDetecotrValues(){
 
+    }
     /**
      * Calculates the dimensions of the sensor according to the Height and Width that was sent
      * @param targetSize

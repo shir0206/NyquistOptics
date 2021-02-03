@@ -15,6 +15,9 @@ const val lpDet = 2.0
 const val lpRec = 6.0
 const val lpIdent = 10.0
 const val lpDetObj = 1.2
+const val detSizeWidth=640
+const val detSizeHeight=480
+const val detPitch=17
 const val lpDetection = "lpDet"
 const val lpRecognition = "lpRec"
 const val lpIdentification = "lpIDent"
@@ -27,5 +30,10 @@ const val objectTargetSizeW = "defaultSettings_objTargetW"
 const val objectTargetSizeH = "defaultSettings_objTargetH"
 const val linePairFileName = "linePairDefaultSettings"
 const val targetSizeFileName = "targetSizeDefaultSettings"
+const val detectorSettingsFileName="detectorDefaultSettings"
+const val detectorSizeW="detectorSizeW"
+const val detectorSizeH="detectorSizeH"
+const val detectorPitch="detectorPitch"
+
 
 

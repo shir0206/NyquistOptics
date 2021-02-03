@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController;
 import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
+import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl;
+import com.shirzabolotnyklein.nyquistoptics.Model.Detector;
 import com.shirzabolotnyklein.nyquistoptics.Model.FovType;
 import com.shirzabolotnyklein.nyquistoptics.R;
 import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
@@ -89,6 +91,12 @@ public class CalcFovActivity extends AppCompatActivity {
         tv_resVfov = findViewById(R.id.tv_resVfov);
         tv_resIfov = findViewById(R.id.tv_resIfov);
         btn_calc = findViewById(R.id.btn_calc);
+
+        ReadWriteFileControl readWriteFileControl=new ReadWriteFileControl(this);
+        Detector values=readWriteFileControl.getDetectorValues();
+        et_sensorPitch.setText(String.valueOf(values.getDetectorPitch()));
+        et_txtDimensionH.setText(String.valueOf(values.getDetectorSizeH()));
+        et_txtDimensionW.setText(String.valueOf(values.getDetectorSizeW()));
         Util.SetActionBarICon(getSupportActionBar());
     }
 

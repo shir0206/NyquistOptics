@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController;
 import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
+import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl;
+import com.shirzabolotnyklein.nyquistoptics.Model.Detector;
 import com.shirzabolotnyklein.nyquistoptics.R;
 import com.shirzabolotnyklein.nyquistoptics.Utils.Util;
 
@@ -29,7 +31,7 @@ public class CalcDimensionActivity extends AppCompatActivity {
     TextView tv_DetectorSizeHeight;
     TextView tv_DetectorSizeTotal;
     Vibrator vibrator;
-
+    ReadWriteFileControl readWriteFileControl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +98,10 @@ public class CalcDimensionActivity extends AppCompatActivity {
         tv_DetectorSizeHeight=findViewById(R.id.tv_DetectorSizeHeight);
         tv_DetectorSizeTotal=findViewById(R.id.tv_DetectorSizeTotal);
         btn_calc = findViewById(R.id.btn_calc);
+        readWriteFileControl=new ReadWriteFileControl(this);
+        Detector values=readWriteFileControl.getDetectorValues();
+        et_sensorPitch.setText(String.valueOf(values.getDetectorPitch()));
+
         Util.SetActionBarICon(getSupportActionBar());
     }
 

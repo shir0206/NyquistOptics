@@ -63,11 +63,12 @@
     <string name="btn_txtCalc">Calculate</string>
     <string name="btn_txtSave">Save</string>
     <string name="btn_txtDef">Default</string>
-
+    <string name="tv_txtDetectorSettings">Detector Settings (px):</string>
 
     <string name="tv_txtFocalLength">Focal Length (mm):</string>
     <string name="tv_txtSensorPitch">Detector Pitch (mic):</string>
     <string name="tv_txtDimension">Detector Size (px):</string>
+    <string name="tv_txtDetectorSize">Detector Size</string>
     <string name="et_txtDimensionW">  W</string>
     <string name="et_txtDimensionH">  H</string>
     <string name="tv_x">x</string>

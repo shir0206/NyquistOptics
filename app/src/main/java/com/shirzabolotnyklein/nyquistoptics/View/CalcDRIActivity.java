@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.shirzabolotnyklein.nyquistoptics.Control.CalculationController;
 import com.shirzabolotnyklein.nyquistoptics.Control.MainAppController;
 import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl;
+import com.shirzabolotnyklein.nyquistoptics.Model.Detector;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetDRIType;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetType;
@@ -48,6 +49,7 @@ public class CalcDRIActivity extends AppCompatActivity {
 
         setContentView(R.layout.act_calc_dri_table);
         // Set up UI
+        readWriteControll = new ReadWriteFileControl(getApplicationContext());
         setupUI();
 
         // Get the vibrator
@@ -136,11 +138,13 @@ public class CalcDRIActivity extends AppCompatActivity {
 
         btn_calc = findViewById(R.id.btn_calc);
 
+        Detector values=readWriteControll.getDetectorValues();
+        et_sensorPitch.setText(String.valueOf(values.getDetectorPitch()));
         Util.SetActionBarICon(getSupportActionBar());
     }
 
     private void setResTitles(){
-        readWriteControll = new ReadWriteFileControl(getApplicationContext());
+
         readWriteControll.initReadDataFromFile();
 
         HashMap<TargetType, TargetSize> targetSizes = readWriteControll.getTargetSizesValues();

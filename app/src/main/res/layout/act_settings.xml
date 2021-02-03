@@ -22,10 +22,10 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/ll_input"
                 android:layout_width="match_parent"
-                android:layout_height="787dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"
                 android:background="@color/grey"
-                android:paddingBottom="40dp"
                 tools:ignore="MissingConstraints">
 
 
@@ -37,7 +37,6 @@
                     app:layout_constraintBottom_toTopOf="@+id/ll_linePairDetObj"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_txtLinePair"
                     tools:ignore="MissingConstraints">
@@ -337,7 +336,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -398,6 +396,7 @@
                     android:id="@+id/tv_txtLinePair"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
                     android:text="@string/tv_txtLinePair"
@@ -406,8 +405,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/ll_linePairDet"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_txtTargetSize"
@@ -434,6 +432,138 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_linePairIdent" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="250dp"
+                    android:layout_height="4dp"
+                    android:layout_margin="30dp"
+                    android:background="@color/orange"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.503"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_targetSizeObj"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_DecectorSettings"/>
+
+                <TextView
+                    android:id="@+id/tv_DecectorSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/tv_txtDetectorSettings"
+                    android:textSize="24sp"
+
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_DetectorSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line2"
+                    app:layout_constraintVertical_bias="0.49" />
+
+                <LinearLayout
+                    android:id="@+id/ll_DetectorSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_detectorPitch"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_DecectorSettings"
+                    tools:ignore="MissingConstraints">
+
+
+                    <ImageView
+                        android:id="@+id/img_detectorSize"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:padding="15dp"
+                        app:srcCompat="@drawable/ic_dimension"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/tv_txtDetectorPixelSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="25dp"
+                        android:text="@string/tv_txtDetectorSize"
+                        android:textSize="22sp" />
+
+                    <EditText
+                        android:id="@+id/et_detectorSizeW"
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/et_targetSizeObjW"
+                        android:inputType="numberDecimal"
+                        android:paddingTop="25dp"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_txtX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="25dp"
+                        android:text="@string/tv_x"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/et_detectorSizeH"
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/et_targetSizeObjH"
+                        android:inputType="numberDecimal"
+                        android:paddingTop="25dp"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_detectorPitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_DetectorSize"
+                    tools:ignore="MissingConstraints">
+
+
+                    <ImageView
+                        android:id="@+id/img_detecorPitch"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:padding="15dp"
+                        app:srcCompat="@drawable/ic_sensor_pitch"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/tv_txtDetectorPitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="25dp"
+                        android:text="@string/tv_txtSensorPitch"
+                        android:textSize="22sp" />
+
+                    <EditText
+                        android:id="@+id/et_detectorPitch"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingTop="25dp"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
 
                 <android.support.constraint.Barrier
                     android:id="@+id/barrier"

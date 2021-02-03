@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 
 import com.shirzabolotnyklein.nyquistoptics.Control.ReadWriteFileControl;
+import com.shirzabolotnyklein.nyquistoptics.Model.Detector;
 import com.shirzabolotnyklein.nyquistoptics.Model.LinePair;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetSize;
 import com.shirzabolotnyklein.nyquistoptics.Model.TargetType;
@@ -35,6 +36,8 @@ public class SettingsActivity extends AppCompatActivity {
     EditText et_natoTargetW, et_natoTargetH;
     EditText et_humanTargetW, et_humanTargetH;
     EditText et_objTargetW, et_objTargetH;
+    EditText et_detectorSizeW,et_detectorSizeH;
+    EditText et_detecorPitch;
     Vibrator vibrator;
     ReadWriteFileControl readWriteControll;
 
@@ -77,6 +80,10 @@ public class SettingsActivity extends AppCompatActivity {
                 //function to parse the data in to the tv and
                 Toast.makeText(SettingsActivity.this, "Settings reset to default", Toast.LENGTH_SHORT).show();
 
+                startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+
+                //Close SettingActivity
+                finish();
             }
         });
 
@@ -110,7 +117,7 @@ public class SettingsActivity extends AppCompatActivity {
                     // Set the user settings to settings in SharedPreferences files
                     readWriteControll.SaveNewLinePairSettings(et_lpDet.getText().toString(),et_lpRec.getText().toString(),et_lpIdent.getText().toString(),et_lpDetObj.getText().toString());
                     readWriteControll.SaveNewTargetSizeSettings(et_natoTargetW.getText().toString(),et_natoTargetH.getText().toString(),et_humanTargetW.getText().toString(), et_humanTargetH.getText().toString(),et_objTargetW.getText().toString(), et_objTargetH.getText().toString());
-
+                    readWriteControll.SaveNewDetectorSettings(et_detectorSizeH.getText().toString(),et_detectorSizeW.getText().toString(),et_detecorPitch.getText().toString());
                     Toast.makeText(SettingsActivity.this, "Settings saved", Toast.LENGTH_SHORT).show();
 
                     // Move from this activity (SettingsActivity) to MainActivity
@@ -129,6 +136,7 @@ public class SettingsActivity extends AppCompatActivity {
     private void insertDataToViews(){
         LinePair lp=readWriteControll.getLinePairValues();
         HashMap<TargetType, TargetSize> targetSizes=readWriteControll.getTargetSizesValues();
+        Detector detector=readWriteControll.getDetectorValues();
 
         et_lpDet.setText(String.valueOf(lp.getLpDet()));
         et_lpDetObj.setText(String.valueOf(lp.getLpDetObj()));
@@ -143,6 +151,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         et_objTargetW.setText(String.valueOf((targetSizes.get(TargetType.OBJECT)).getWidth()));
         et_objTargetH.setText(String.valueOf((targetSizes.get(TargetType.OBJECT)).getHeight()));
+
+        et_detectorSizeH.setText(String.valueOf(detector.getDetectorSizeH()));
+        et_detectorSizeW.setText(String.valueOf(detector.getDetectorSizeW()));
+        et_detecorPitch.setText((String.valueOf(detector.getDetectorPitch())));
     }
     //------------------------------------- Setup Methods -------------------------------------
 
@@ -185,6 +197,9 @@ public class SettingsActivity extends AppCompatActivity {
 
         et_objTargetW = findViewById(R.id.et_targetSizeObjW);
         et_objTargetH = findViewById(R.id.et_targetSizeObjH);
+        et_detectorSizeW=findViewById(R.id.et_detectorSizeW);
+        et_detectorSizeH=findViewById(R.id.et_detectorSizeH);
+        et_detecorPitch=findViewById(R.id.et_detectorPitch);
         Util.SetActionBarICon(getSupportActionBar());
     }
 

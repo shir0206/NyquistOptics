@@ -7,6 +7,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
+import kotlin.collections.ArrayList
 
 class ReadWriteFileControl(var context: Context) {
 
@@ -14,11 +15,13 @@ class ReadWriteFileControl(var context: Context) {
     private var cont: Context? = null
     private var targetSizeDefaultSettings: SharedPreferences;
     private var linePairDefaultSettings: SharedPreferences;
+    private var detecorDefaultSettings:SharedPreferences
 
     init {
         this.cont = context;
         linePairDefaultSettings = cont!!.getSharedPreferences(linePairFileName, Context.MODE_PRIVATE)
         targetSizeDefaultSettings = cont!!.getSharedPreferences(targetSizeFileName, Context.MODE_PRIVATE)
+        detecorDefaultSettings=cont!!.getSharedPreferences(detectorSettingsFileName,Context.MODE_PRIVATE)
         DbRefrence = DB
 
     }
@@ -32,11 +35,15 @@ class ReadWriteFileControl(var context: Context) {
 
     }
     public fun getLinePairValues():LinePair{
-        return   this.DbRefrence!!.linePair;
+        return   this.DbRefrence!!.linePair
     }
 
     public fun getTargetSizesValues():HashMap<TargetType,TargetSize>{
-       return  this.DbRefrence!!.targetSizes;
+       return  this.DbRefrence!!.targetSizes
+    }
+
+    public fun getDetectorValues():Detector{
+        return this.DbRefrence!!.detector
     }
     private fun initDataFromFiles() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -50,6 +57,11 @@ class ReadWriteFileControl(var context: Context) {
                 initTargetSizeDefaultSettings();
                 // Toast.makeText(cont,"Target Size init done",Toast.LENGTH_LONG).show();
             }
+
+            launch {
+                initDetectorDefaultSettings();
+                // Toast.makeText(cont,"Target Size init done",Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -61,6 +73,9 @@ class ReadWriteFileControl(var context: Context) {
             }
             launch {
                 GetTargetSizeDefaultSettings();
+            }
+            launch {
+                GetDetectorDefaultSettings();
             }
         }
 
@@ -97,8 +112,28 @@ class ReadWriteFileControl(var context: Context) {
         DbRefrence!!.addTargetSize(TargetSize(ObjectWidth, ObjectHeight), TargetType.OBJECT)
         //Save the changes
         editorTargetSize.apply()
+
+        val detectorDefaultSettings=detecorDefaultSettings.edit()
+        detectorDefaultSettings.putString(detectorSizeH, detSizeHeight.toString())
+        detectorDefaultSettings.putString(detectorSizeW, detSizeWidth.toString())
+        detectorDefaultSettings.putString(detectorPitch, detPitch.toString())
+        DbRefrence!!.initDetector(detSizeHeight, detSizeWidth, detPitch)
+        detectorDefaultSettings.apply()
     }
 
+
+    private  suspend fun initDetectorDefaultSettings(){
+        if(detecorDefaultSettings.getString(detectorSizeH,"").isEmpty()){
+            //Get the editor to edit the file
+            val editor=detecorDefaultSettings.edit()
+            //put default settings
+            editor.putString(detectorSizeH,detSizeHeight.toString())
+            editor.putString(detectorSizeW,detSizeWidth.toString())
+            editor.putString(detectorPitch, detPitch.toString())
+            //save the changes
+            editor.apply()
+        }
+    }
     /**
      * Create SharedPreferences file for Line pairs settings, and set default settings
      */
@@ -112,10 +147,10 @@ class ReadWriteFileControl(var context: Context) {
             val editor = linePairDefaultSettings.edit()
 
             // Put default settings
-            editor.putString(lpDetection, java.lang.String.valueOf(lpDet))
-            editor.putString(lpRecognition, java.lang.String.valueOf(lpRec))
-            editor.putString(lpIdentification, java.lang.String.valueOf(lpIdent))
-            editor.putString(lpDetectionObject, java.lang.String.valueOf(lpDetObj))
+            editor.putString(lpDetection, lpDet.toString())
+            editor.putString(lpRecognition, lpRec.toString())
+            editor.putString(lpIdentification, lpIdent.toString())
+            editor.putString(lpDetectionObject, lpDetObj.toString())
 
             // Save the changes
             editor.apply()
@@ -138,12 +173,12 @@ class ReadWriteFileControl(var context: Context) {
             val editor = targetSizeDefaultSettings.edit()
 
             // Put default settings
-            editor.putString(natoTargetSizeW, java.lang.String.valueOf(NatoWidth))
-            editor.putString(natoTargetSizeH, java.lang.String.valueOf(NatoHeight))
-            editor.putString(humanTargetSizeW, java.lang.String.valueOf(HumanWidth))
-            editor.putString(humanTargetSizeH, java.lang.String.valueOf(HumanHeight))
-            editor.putString(objectTargetSizeW, java.lang.String.valueOf(ObjectWidth))
-            editor.putString(objectTargetSizeH, java.lang.String.valueOf(ObjectHeight))
+            editor.putString(natoTargetSizeW, NatoWidth.toString())
+            editor.putString(natoTargetSizeH, NatoHeight.toString())
+            editor.putString(humanTargetSizeW, HumanWidth.toString())
+            editor.putString(humanTargetSizeH, HumanHeight.toString())
+            editor.putString(objectTargetSizeW, ObjectWidth.toString())
+            editor.putString(objectTargetSizeH, ObjectHeight.toString())
 
             //Save the changes
             editor.apply()
@@ -184,6 +219,15 @@ class ReadWriteFileControl(var context: Context) {
         DbRefrence!!.addTargetSize(TargetSize(objTargetW, objTargetH), TargetType.OBJECT)
     }
 
+    private suspend fun GetDetectorDefaultSettings(){
+
+        val detectorSizeH=detecorDefaultSettings!!.getString(detectorSizeH,"").toInt()
+        val detectorSizeW=detecorDefaultSettings!!.getString(detectorSizeW,"").toInt()
+        val detectorPitch=detecorDefaultSettings!!.getString(detectorPitch,"").toInt()
+        DbRefrence!!.initDetector(detectorSizeH,detectorSizeW,detectorPitch)
+    }
+
+
     fun SaveNewLinePairSettings(vararg Values: String) {
         val newLinepairs = ArrayList<Double>()
         var i = 0
@@ -206,6 +250,18 @@ class ReadWriteFileControl(var context: Context) {
         DbRefrence!!.initLinePair(newLinepairs[0], newLinepairs[1], newLinepairs[2], newLinepairs[3])
     }
 
+    fun SaveNewDetectorSettings( vararg Values:String){
+        val newDetectorSettings=ArrayList<String>()
+        Values.forEach { newDetectorSettings.add(it) }
+        val editor=detecorDefaultSettings.edit()
+
+        editor.putString(detectorSizeH,Values[0])
+        editor.putString(detectorSizeW,Values[1])
+        editor.putString(detectorPitch,Values[2])
+        editor.apply()
+        DbRefrence!!.initDetector(Values[0].toInt(),Values[1].toInt(),Values[2].toInt())
+
+    }
     fun SaveNewTargetSizeSettings(vararg Values: String) {
         val newTargetSizes = ArrayList<Double>()
         var i = 0
