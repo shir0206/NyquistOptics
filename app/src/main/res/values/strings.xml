@@ -83,7 +83,7 @@
     <string name="tv_resVfov"></string>
 
 
-    <string name="tv_txtTargetRange">Target Range (m):</string>
+    <string name="tv_txtTargetRange">Target Distance (m):</string>
     <string name="tv_txtTargetSize">Target Size (m):</string>
     <string name="tv_resTargetSizeW"></string>
     <string name="tv_resTargetSizeH"></string>
