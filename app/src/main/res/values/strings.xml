@@ -96,7 +96,7 @@
 
     <string name="tv_txtLinePair">Line Pairs:</string>
     <string name="tv_txtLinePairDet">Detection</string>
-    <string name="tv_txtLinePairDetObj">Detection (Object)</string>
+    <string name="tv_txtLinePairDetObj">Detection (Obj.)</string>
     <string name="tv_txtLinePairRec">Recognition</string>
     <string name="tv_txtLinePairIdent">Identification</string>
 

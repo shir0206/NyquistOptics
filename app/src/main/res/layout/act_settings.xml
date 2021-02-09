@@ -23,7 +23,6 @@
                 android:id="@+id/ll_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_marginBottom="10dp"
                 android:background="@color/grey"
                 tools:ignore="MissingConstraints">
@@ -32,7 +31,8 @@
                 <LinearLayout
                     android:id="@+id/ll_linePairDet"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_linePairDetObj"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -44,28 +44,29 @@
 
                     <ImageView
                         android:id="@+id/img_linePairDet"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.18"
+                        android:baselineAlignBottom="true"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/tv_txtLinePairDet"
                         app:srcCompat="@drawable/ic_line_pair"
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         android:id="@+id/tv_txtLinePairDet"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
                         android:paddingTop="25dp"
                         android:text="@string/tv_txtLinePairDet"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_linePairDet"
-                        android:layout_width="100dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-
+                        android:layout_weight="0.5"
                         android:gravity="center"
-
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="21sp" />
@@ -74,11 +75,12 @@
                 <LinearLayout
                     android:id="@+id/ll_linePairDetObj"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_linePairRec"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
+                    android:layout_marginEnd="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_linePairDet"
                     tools:ignore="MissingConstraints">
@@ -86,28 +88,29 @@
 
                     <ImageView
                         android:id="@+id/img_linePairDetObj"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.23"
+
+                        android:baselineAlignBottom="true"
                         app:srcCompat="@drawable/ic_line_pair"
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         android:id="@+id/tv_txtLinePairDetObj"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingTop="25dp"
+                        android:layout_weight="0.5"
                         android:text="@string/tv_txtLinePairDetObj"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_linePairDetObj"
-                        android:layout_width="100dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-
+                        android:layout_weight="0.4"
                         android:gravity="center"
-
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="21sp" />
@@ -117,11 +120,12 @@
                 <LinearLayout
                     android:id="@+id/ll_linePairRec"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_linePairIdent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
+                    android:layout_marginEnd="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_linePairDetObj"
                     tools:ignore="MissingConstraints">
@@ -129,16 +133,18 @@
 
                     <ImageView
                         android:id="@+id/img_linePairRec"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:baselineAlignBottom="true"
                         app:srcCompat="@drawable/ic_line_pair"
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         android:id="@+id/tv_txtLinePairRec"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
                         android:paddingTop="25dp"
                         android:text="@string/tv_txtLinePairRec"
                         android:textSize="21sp" />
@@ -147,10 +153,8 @@
                         android:id="@+id/et_linePairRec"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-
+                        android:layout_weight="0.3"
                         android:gravity="center"
-
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="21sp" />
@@ -160,8 +164,9 @@
                 <LinearLayout
                     android:id="@+id/ll_linePairIdent"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:layout_marginEnd="16dp"
                     app:layout_constraintBottom_toTopOf="@+id/line"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -172,28 +177,28 @@
 
                     <ImageView
                         android:id="@+id/img_linePairIdent"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:baselineAlignBottom="true"
+                        android:layout_weight="0.2"
                         app:srcCompat="@drawable/ic_line_pair"
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         android:id="@+id/tv_txtLinePairIdent"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingTop="25dp"
+                        android:layout_weight="0.4"
                         android:text="@string/tv_txtLinePairIdent"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_linePairIdent"
-                        android:layout_width="100dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-
+                        android:layout_weight="0.4"
                         android:gravity="center"
-
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="21sp" />
@@ -205,65 +210,66 @@
                 <LinearLayout
                     android:id="@+id/ll_targetSizeNato"
                     android:layout_width="match_parent"
-                    android:layout_height="71dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/ll_targetSizeHuman"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
+                    android:layout_marginEnd="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_txtTargetSize"
                     tools:ignore="MissingConstraints">
 
                     <ImageView
                         android:id="@+id/img_targetSizeNato"
-                        android:layout_width="85dp"
-                        android:layout_height="80dp"
-                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:baselineAlignBottom="true"
+                        android:layout_marginTop="8dp"
                         app:srcCompat="@drawable/ic_target_size"
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         android:id="@+id/tv_txtTargetSizeNato"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingTop="25dp"
+                        android:layout_weight="0.5"
                         android:text="@string/tv_txtTargetSizeNato"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_targetSizeNatoW"
-                        android:layout_width="85dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-
-                        android:ems="10"
                         android:gravity="center"
-
                         android:hint="@string/et_targetSizeNatoW"
+                        android:layout_weight="0.2"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="21sp" />
 
                     <TextView
                         android:id="@+id/tv_txtTargetSizeNatoX"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingTop="25dp"
                         android:text="@string/tv_x"
+                        android:gravity="center"
+                        android:layout_weight="0.1"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_targetSizeNatoH"
-                        android:layout_width="85dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-
+                        android:layout_weight="0.2"
                         android:gravity="center"
                         android:hint="@string/et_targetSizeNatoH"
                         android:inputType="numberDecimal"
-
                         android:paddingTop="25dp"
                         android:textSize="21sp" />
-
 
                 </LinearLayout>
 
@@ -271,8 +277,9 @@
                 <LinearLayout
                     android:id="@+id/ll_targetSizeHuman"
                     android:layout_width="match_parent"
-                    android:layout_height="83dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:layout_marginEnd="16dp"
                     app:layout_constraintBottom_toTopOf="@+id/ll_targetSizeObj"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -282,46 +289,49 @@
 
                     <ImageView
                         android:id="@+id/img_targetSizeHuman"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.20"
+                        android:baselineAlignBottom="true"
+                        android:layout_marginTop="8dp"
                         app:srcCompat="@drawable/ic_target_size"
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         android:id="@+id/tv_txtTargetSizeHuman"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
                         android:paddingTop="25dp"
                         android:text="@string/tv_txtTargetSizeHuman"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_targetSizeHumanW"
-                        android:layout_width="85dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-
                         android:gravity="center"
                         android:hint="@string/et_targetSizeHumanW"
+                        android:layout_weight="0.2"
                         android:inputType="numberDecimal"
-
                         android:paddingTop="25dp"
                         android:textSize="21sp" />
 
                     <TextView
                         android:id="@+id/tv_txtTargetSizeHumanX"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingTop="25dp"
+                        android:layout_weight="0.1"
                         android:text="@string/tv_x"
+                        android:gravity="center"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_targetSizeHumanH"
-                        android:layout_width="85dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
+                        android:layout_weight="0.2"
                         android:gravity="center"
                         android:hint="@string/et_targetSizeHumanH"
                         android:inputType="numberDecimal"
@@ -334,10 +344,11 @@
                 <LinearLayout
                     android:id="@+id/ll_targetSizeObj"
                     android:layout_width="match_parent"
-                    android:layout_height="68dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
+                    android:layout_marginEnd="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_targetSizeHuman"
                     tools:ignore="MissingConstraints">
@@ -345,25 +356,28 @@
 
                     <ImageView
                         android:id="@+id/img_targetSizeObj"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:baselineAlignBottom="true"
+                        android:layout_marginTop="8dp"
                         app:srcCompat="@drawable/ic_target_size"
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         android:id="@+id/tv_txtTargetSizeObj"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:paddingTop="25dp"
+                        android:layout_weight="0.5"
+                        android:paddingTop="20dp"
                         android:text="@string/tv_txtTargetSizeObj"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_targetSizeObjW"
-                        android:layout_width="85dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
+                        android:layout_weight="0.2"
                         android:gravity="center"
                         android:hint="@string/et_targetSizeObjW"
                         android:inputType="numberDecimal"
@@ -372,17 +386,19 @@
 
                     <TextView
                         android:id="@+id/tv_txtTargetSizeObjX"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingTop="25dp"
+                        android:layout_weight="0.1"
                         android:text="@string/tv_x"
+                        android:gravity="center"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_targetSizeObjH"
-                        android:layout_width="85dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
+                        android:layout_weight="0.2"
                         android:gravity="center"
                         android:hint="@string/et_targetSizeObjH"
                         android:inputType="numberDecimal"
@@ -469,6 +485,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/ll_detectorPitch"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
+                    android:layout_marginEnd="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_DecectorSettings"
                     tools:ignore="MissingConstraints">
@@ -476,25 +493,27 @@
 
                     <ImageView
                         android:id="@+id/img_detectorSize"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
                         android:padding="15dp"
                         app:srcCompat="@drawable/ic_dimension"
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         android:id="@+id/tv_txtDetectorPixelSize"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
                         android:paddingTop="25dp"
                         android:text="@string/tv_txtDetectorSize"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_detectorSizeW"
-                        android:layout_width="85dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
+                        android:layout_weight="0.2"
                         android:gravity="center"
                         android:hint="@string/et_targetSizeObjW"
                         android:inputType="numberDecimal"
@@ -503,17 +522,19 @@
 
                     <TextView
                         android:id="@+id/tv_txtX"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
                         android:paddingTop="25dp"
                         android:text="@string/tv_x"
+                        android:gravity="center"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_detectorSizeH"
-                        android:layout_width="85dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
+                        android:layout_weight="0.2"
                         android:gravity="center"
                         android:hint="@string/et_targetSizeObjH"
                         android:inputType="numberDecimal"
@@ -527,6 +548,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -538,25 +560,27 @@
 
                     <ImageView
                         android:id="@+id/img_detecorPitch"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.18"
                         android:padding="15dp"
                         app:srcCompat="@drawable/ic_sensor_pitch"
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         android:id="@+id/tv_txtDetectorPitch"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
                         android:paddingTop="25dp"
                         android:text="@string/tv_txtSensorPitch"
                         android:textSize="21sp" />
 
                     <EditText
                         android:id="@+id/et_detectorPitch"
-                        android:layout_width="100dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
+                        android:layout_weight="0.2"
                         android:gravity="center"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
@@ -582,38 +606,39 @@
 
                 <Button
                     android:id="@+id/btn_def"
-                    android:layout_width="155dp"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="184dp"
-                    android:layout_marginRight="184dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
                     android:background="@color/black"
                     android:text="@string/btn_txtDef"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
-
-                    android:textSize="24sp"
+                    android:minWidth="120dp"
+                    android:textSize="21sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_save"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/btn_save"
-                    android:layout_width="155dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
                     android:background="@color/orange"
                     android:text="@string/btn_txtSave"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
-
                     android:textSize="21sp"
+                    android:minWidth="120dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.89"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_def"
+                    app:layout_constraintTop_toTopOf="@+id/btn_def" />
             </android.support.constraint.ConstraintLayout>
 
         </LinearLayout>

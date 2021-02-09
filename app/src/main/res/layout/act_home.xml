@@ -10,28 +10,27 @@
         android:id="@+id/btn_dimension"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="60dp"
         android:background="@drawable/ic_frame"
         android:drawableTop="@drawable/ic_dimension"
         android:paddingTop="24dp"
         android:paddingBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_focalLength"
+        app:layout_constraintBottom_toTopOf="@+id/btn_dimension_txt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_focalLength"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_focalLength"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_focalLength"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="140dp"
         android:background="@drawable/ic_frame"
         android:drawableTop="@drawable/ic_focal_length"
         android:paddingTop="24dp"
         android:paddingBottom="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintBottom_toTopOf="@+id/btn_focalLength_txt"
+        app:layout_constraintEnd_toStartOf="@+id/btn_dimension"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,12 +40,15 @@
         android:layout_height="30dp"
         android:paddingTop="0dp"
         android:paddingBottom="8dp"
+        android:singleLine="false"
         android:text="@string/btn_txtFocalLength"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/btn_focalLength"
-        app:layout_constraintStart_toStartOf="@+id/btn_focalLength"
+        app:layout_constraintBottom_toTopOf="@+id/btn_fov"
+        app:layout_constraintEnd_toStartOf="@+id/btn_dimension_txt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_focalLength" />
 
     <TextView
@@ -55,42 +57,43 @@
         android:layout_height="wrap_content"
         android:paddingTop="0dp"
         android:paddingBottom="8dp"
+        android:singleLine="false"
         android:text="@string/btn_txtDimension"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_focalLength_txt"
-        app:layout_constraintEnd_toEndOf="@+id/btn_dimension"
-        app:layout_constraintStart_toStartOf="@+id/btn_dimension"
-        app:layout_constraintTop_toTopOf="@+id/btn_focalLength_txt"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_dri"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_focalLength_txt"
+        app:layout_constraintTop_toBottomOf="@+id/btn_dimension" />
 
     <Button
         android:id="@+id/btn_dri"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="60dp"
         android:background="@drawable/ic_frame"
         android:drawableTop="@drawable/ic_dri"
         android:paddingTop="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_fov"
+        app:layout_constraintBottom_toTopOf="@+id/btn_dri_txt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_fov"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_fov"
+        app:layout_constraintTop_toBottomOf="@+id/btn_dimension_txt" />
 
     <TextView
         android:id="@+id/btn_fov_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="12dp"
+        android:layout_width="173dp"
+        android:layout_height="18dp"
+        android:singleLine="false"
         android:text="@string/btn_txtFOV"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/btn_fov"
-        app:layout_constraintHorizontal_bias="0.557"
-        app:layout_constraintStart_toStartOf="@+id/btn_fov"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_dri_txt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_fov" />
 
     <TextView
@@ -98,33 +101,30 @@
         android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:foregroundGravity="center"
-
-
+        android:singleLine="false"
         android:text="@string/btn_txtDRI"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_fov_txt"
-        app:layout_constraintEnd_toEndOf="@+id/btn_dri"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btn_dri"
-        app:layout_constraintTop_toTopOf="@+id/btn_fov_txt"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_fov_txt"
+        app:layout_constraintTop_toBottomOf="@+id/btn_dri" />
 
     <Button
         android:id="@+id/btn_fov"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="216dp"
         android:background="@drawable/ic_frame"
         android:drawableTop="@drawable/ic_ifov"
         android:paddingTop="32dp"
         android:paddingBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_fov_txt"
         app:layout_constraintEnd_toStartOf="@+id/btn_dri"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_focalLength_txt" />
 
 
 </android.support.constraint.ConstraintLayout>
