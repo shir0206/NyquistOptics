@@ -151,6 +151,7 @@
                 android:textSize="21sp" />
 
             <TextView
+                android:id="@+id/tv_resObjectRec"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -188,7 +189,7 @@
                 android:textSize="21sp" />
 
             <TextView
-                android:id="@+id/tv_resObjectIdent"
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -37,7 +37,7 @@ public class CalcDRIActivity extends AppCompatActivity {
     TextView tv_resHumanRec;
     TextView tv_resHumanIdent;
     TextView tv_resObjectDet;
-    TextView tv_resObjectIdent;
+    TextView tv_resObjectRec;
     Button btn_calc;
     Vibrator vibrator;
     ReadWriteFileControl readWriteControll;
@@ -102,7 +102,7 @@ public class CalcDRIActivity extends AppCompatActivity {
                     tv_resHumanIdent.setText(humanIdent);
 
                     tv_resObjectDet.setText(objectDet);
-                    tv_resObjectIdent.setText(objectIdent);
+                    tv_resObjectRec.setText(objectIdent);
 
                 }
 
@@ -134,7 +134,7 @@ public class CalcDRIActivity extends AppCompatActivity {
         tv_resHumanIdent = findViewById(R.id.tv_resHumanIdent);
 
         tv_resObjectDet = findViewById(R.id.tv_resObjectDet);
-        tv_resObjectIdent = findViewById(R.id.tv_resObjectIdent);
+        tv_resObjectRec = findViewById(R.id.tv_resObjectRec);
 
         btn_calc = findViewById(R.id.btn_calc);
 
