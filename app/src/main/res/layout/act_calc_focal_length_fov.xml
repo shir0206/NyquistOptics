@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,212 +7,221 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="0dp"
-        android:layout_height="350dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/img_hFov"
-            android:layout_width="57dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintBottom_toTopOf="@+id/img_dimnesionFov"
+            app:layout_constraintEnd_toStartOf="@+id/tv_txtHfov"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.126"
-            app:srcCompat="@drawable/ic_hfov"
-            android:contentDescription="TODO" />
+            app:srcCompat="@drawable/ic_hfov" />
 
         <ImageView
             android:id="@+id/img_sensorPitchFov"
-            android:layout_width="38dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_sensorPitch"
+            app:layout_constraintEnd_toEndOf="@+id/img_dimnesionFov"
+            app:layout_constraintEnd_toStartOf="@+id/tv_sensorPitch"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.575"
+            app:layout_constraintTop_toTopOf="@+id/tv_sensorPitch"
             app:srcCompat="@drawable/ic_sensor_pitch" />
 
         <ImageView
             android:id="@+id/img_dimnesionFov"
-            android:layout_width="43dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.345"
+            app:layout_constraintBottom_toTopOf="@+id/img_sensorPitchFov"
+            app:layout_constraintEnd_toEndOf="@+id/img_hFov"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toStartOf="@+id/img_hFov"
+            app:layout_constraintTop_toBottomOf="@+id/img_hFov"
             app:srcCompat="@drawable/ic_dimension" />
 
         <TextView
             android:id="@+id/tv_txtHfov"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:text="@string/tv_txtHfov"
             android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="@+id/img_hFov"
-            app:layout_constraintStart_toEndOf="@+id/img_hFov"
-            app:layout_constraintTop_toTopOf="@+id/img_hFov" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/et_txtHfov"
+            app:layout_constraintEnd_toStartOf="@+id/et_txtHfov"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintStart_toEndOf="@+id/img_hFov" />
 
         <TextView
             android:id="@+id/tv_txtDimension"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:text="@string/tv_txtDimension"
             android:textSize="21sp"
             app:layout_constraintBottom_toBottomOf="@+id/img_dimnesionFov"
+            app:layout_constraintEnd_toStartOf="@+id/et_txtDimensionW"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.5"
             app:layout_constraintStart_toEndOf="@+id/img_dimnesionFov"
             app:layout_constraintTop_toTopOf="@+id/img_dimnesionFov" />
 
-        <TextView
-            android:id="@+id/tv_sensorPitch"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/tv_txtSensorPitch"
-            android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="@+id/img_sensorPitchFov"
-            app:layout_constraintStart_toEndOf="@+id/img_sensorPitchFov"
-            app:layout_constraintTop_toTopOf="@+id/img_sensorPitchFov" />
-
-        <EditText
-            android:id="@+id/et_txtHfov"
-            android:layout_width="0dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="@+id/img_hFov"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_txtHfov"
-            app:layout_constraintTop_toTopOf="@+id/img_hFov" />
-
         <EditText
             android:id="@+id/et_txtDimensionW"
-            android:layout_width="58dp"
-            android:layout_height="46dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="@string/et_txtDimensionW"
             android:inputType="numberDecimal"
             android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="@+id/img_dimnesionFov"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_txtDimension"
+            app:layout_constraintEnd_toStartOf="@+id/tv_txtDimensionX"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.2"
             app:layout_constraintStart_toEndOf="@+id/tv_txtDimension"
-            app:layout_constraintTop_toTopOf="@+id/img_dimnesionFov" />
-
-        <EditText
-            android:id="@+id/et_txtDimensionH"
-            android:layout_width="58dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:gravity="center"
-            android:hint="@string/et_txtDimensionH"
-            android:inputType="numberDecimal"
-            android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="@+id/img_dimnesionFov"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_txtDimensionX"
-            app:layout_constraintTop_toTopOf="@+id/img_dimnesionFov" />
-
-        <EditText
-            android:id="@+id/et_sensorPitch"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="@+id/img_sensorPitchFov"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_sensorPitch"
-            app:layout_constraintTop_toTopOf="@+id/img_sensorPitchFov" />
+            app:layout_constraintTop_toTopOf="@+id/tv_txtDimension" />
 
         <TextView
             android:id="@+id/tv_txtDimensionX"
-            android:layout_width="20dp"
-            android:layout_height="46dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:inputType="textPersonName"
             android:text="@string/tv_x"
             android:textSize="21sp"
             app:layout_constraintBottom_toBottomOf="@+id/et_txtDimensionW"
+            app:layout_constraintEnd_toStartOf="@+id/et_txtDimensionH"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.1"
             app:layout_constraintStart_toEndOf="@+id/et_txtDimensionW"
-            app:layout_constraintTop_toTopOf="@+id/et_txtDimensionW"
-            app:layout_constraintVertical_bias="0" />
-    </android.support.constraint.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="@+id/et_txtDimensionW" />
 
-    <TextView
-        android:id="@+id/tv_resFocalLengthFov"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:focusable="false"
-        android:gravity="center"
-        android:maxWidth="90dp"
-        android:textSize="21sp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_focalLengthFov"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_txtFocalLengthFov"
-        app:layout_constraintTop_toTopOf="@+id/img_focalLengthFov" />
+        <EditText
+            android:id="@+id/et_txtDimensionH"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:hint="@string/et_txtDimensionH"
+            android:inputType="numberDecimal"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_txtDimensionX"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintStart_toEndOf="@+id/tv_txtDimensionX"
+            app:layout_constraintTop_toTopOf="@+id/tv_txtDimensionX" />
+
+        <TextView
+            android:id="@+id/tv_sensorPitch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_txtSensorPitch"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toBottomOf="@+id/et_sensorPitch"
+            app:layout_constraintEnd_toStartOf="@+id/et_sensorPitch"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintStart_toEndOf="@+id/img_sensorPitchFov"
+            app:layout_constraintTop_toTopOf="@+id/et_sensorPitch" />
+
+        <EditText
+            android:id="@+id/et_txtHfov"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="53dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toTopOf="@+id/img_dimnesionFov"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintStart_toEndOf="@+id/tv_txtHfov"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_sensorPitch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="49dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintStart_toEndOf="@+id/tv_sensorPitch" />
+
+    </android.support.constraint.ConstraintLayout>
 
     <Button
         android:id="@+id/btn_calc"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginEnd="24dp"
         android:background="@color/black"
         android:text="@string/btn_txtCalc"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/tv_resFocalLengthFov"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
-    <ImageView
-        android:id="@+id/img_focalLengthFov"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_focal_length" />
-
-    <TextView
-        android:id="@+id/tv_txtFocalLengthFov"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/tv_txtFocalLengthH"
-        android:textColor="@color/black"
-        android:textSize="21sp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_focalLengthFov"
-        app:layout_constraintStart_toEndOf="@+id/img_focalLengthFov"
-        app:layout_constraintTop_toTopOf="@+id/img_focalLengthFov" />
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <ImageView
+            android:id="@+id/img_focalLengthFov"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+
+            app:srcCompat="@drawable/ic_focal_length" />
+
+        <TextView
+            android:id="@+id/tv_txtFocalLengthFov"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:paddingTop="10dp"
+            android:text="@string/tv_txtFocalLengthH"
+            android:textColor="@color/black"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/tv_resFocalLengthFov"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:focusable="false"
+            android:gravity="center"
+            android:maxWidth="90dp"
+            android:textSize="21sp" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

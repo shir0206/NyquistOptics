@@ -75,9 +75,9 @@
 
     <string name="tv_txtFOV">Field of View (FOV):</string>
 
-    <string name="tv_txtHfov">HFOV (deg):</string>
-    <string name="tv_txtIfov">IFOV (rad):</string>
-    <string name="tv_txtVfov">VFOV (deg):</string>
+    <string name="tv_txtHfov">HFOV (deg) :</string>
+    <string name="tv_txtIfov">IFOV (rad) :</string>
+    <string name="tv_txtVfov">VFOV (deg) :</string>
     <string name="tv_resIfov"></string>
     <string name="tv_resHfov"></string>
     <string name="tv_resVfov"></string>
