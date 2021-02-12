@@ -53,11 +53,11 @@
 
     <!--====================================-->
 
-    <string name="btn_txtDimension">Calculate Detector Size</string>
+    <string name="btn_txtDimension">Detector Size Calculator</string>
     <string name="btn_txtTargetSize">Target Size</string>
-    <string name="btn_txtFocalLength">Calculate Required Lens</string>
+    <string name="btn_txtFocalLength">Required Lens Calculator</string>
     <string name="btn_txtFOV">Field of View Calculator</string>
-    <string name="btn_txtDRI">DRI calculator</string>
+    <string name="btn_txtDRI">DRI Calculator</string>
     <string name="btn_txtSettings">Settings</string>
 
     <string name="btn_txtCalc">Calculate</string>
