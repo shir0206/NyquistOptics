@@ -21,8 +21,9 @@
         <LinearLayout
             android:id="@+id/ll_focalLength"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toTopOf="@+id/ll_sensorPitch"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -33,15 +34,17 @@
 
             <ImageView
                 android:id="@+id/img_hFov"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
                 android:padding="15dp"
                 app:srcCompat="@drawable/ic_focal_length"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:id="@+id/tv_focalLength"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtFocalLength"
@@ -49,12 +52,10 @@
 
             <EditText
                 android:id="@+id/et_focalLength"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
                 android:layout_height="wrap_content"
-                android:ems="10"
-
                 android:gravity="center"
-
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
@@ -64,8 +65,9 @@
         <LinearLayout
             android:id="@+id/ll_sensorPitch"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toTopOf="@+id/ll_targetRange"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -76,48 +78,42 @@
 
             <ImageView
                 android:id="@+id/img_sensorPitch"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
                 android:padding="15dp"
                 app:srcCompat="@drawable/ic_sensor_pitch"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:id="@+id/tv_sensorPitch"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
+                android:layout_weight="0.5"
                 android:text="@string/tv_txtSensorPitch"
                 android:textSize="21sp" />
 
             <EditText
                 android:id="@+id/et_sensorPitch"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-
+                android:layout_weight="0.3"
                 android:gravity="center"
-
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
         </LinearLayout>
 
-
-
-
-
-
-
-
         <LinearLayout
             android:id="@+id/ll_targetRange"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/ll_dimension"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ll_sensorPitch"
             tools:ignore="MissingConstraints">
@@ -125,15 +121,17 @@
 
             <ImageView
                 android:id="@+id/img_targetRange"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="wrap_content"
                 android:padding="15dp"
                 app:srcCompat="@drawable/ic_target_range"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:id="@+id/tv_txtTargetRange"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtTargetRange"
@@ -141,12 +139,10 @@
 
             <EditText
                 android:id="@+id/et_targetRange"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
                 android:layout_height="wrap_content"
-                android:ems="10"
-
                 android:gravity="center"
-
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
@@ -161,10 +157,11 @@
         <LinearLayout
             android:id="@+id/ll_dimension"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ll_targetRange"
             tools:ignore="MissingConstraints">
@@ -172,15 +169,17 @@
 
             <ImageView
                 android:id="@+id/img_dimension"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
                 android:padding="15dp"
                 app:srcCompat="@drawable/ic_dimension"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:id="@+id/tv_txtDimension"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.55"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtDimension"
@@ -188,33 +187,31 @@
 
             <EditText
                 android:id="@+id/et_txtDimensionW"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
                 android:layout_height="wrap_content"
-                android:ems="10"
-
                 android:gravity="center"
                 android:hint="@string/et_txtDimensionW"
-
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="24sp" />
             <TextView
                 android:id="@+id/tv_txtDimensionX"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.1"
                 android:paddingTop="25dp"
+                android:gravity="center"
                 android:text="@string/tv_x"
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/et_txtDimensionH"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-
-                android:ems="10"
                 android:gravity="center"
-
                 android:hint="@string/et_txtDimensionH"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
@@ -244,7 +241,8 @@
     <LinearLayout
         android:id="@+id/ll_targetSize"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/ll_vfov"
         app:layout_constraintEnd_toEndOf="parent"
@@ -256,38 +254,44 @@
 
         <ImageView
             android:id="@+id/img_targetSize"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
             android:padding="15dp"
             app:srcCompat="@drawable/ic_target_size"
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
             android:id="@+id/tv_txtTargetSize"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
+            android:layout_weight="0.5"
             android:text="@string/tv_txtTargetSize"
             android:textSize="21sp" />
 
         <TextView
             android:id="@+id/tv_resTargetSizeW"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tv_resTargetSizeX"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="0.1"
             android:paddingTop="25dp"
+            android:gravity="center"
             android:text="@string/tv_resTargetSizeX"
             android:textSize="21sp" />
 
         <TextView
             android:id="@+id/tv_resTargetSizeH"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:textSize="21sp" />
