@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shirzabolotnyklein.nyquistoptics">
+    package="com.denniszabolotny.optarget">
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -10,27 +10,27 @@
         android:label="Op Target"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.CalcFocalLengthFOV" android:label="" ></activity>
-        <activity android:name=".View.CalcFocalLengthTarget" android:label="" />
-        <activity android:name=".View.CalcDimensionActivity"  android:label="" />
-        <activity android:name=".View.CalcTargetSizeActivity"  android:label="" />
-        <activity android:name=".View.CalcDRIActivity"  android:label="" />
+        <activity android:name="com.denniszabolotny.optarget.View.CalcFocalLengthFOV" android:label="" ></activity>
+        <activity android:name="com.denniszabolotny.optarget.View.CalcFocalLengthTarget" android:label="" />
+        <activity android:name="com.denniszabolotny.optarget.View.CalcDimensionActivity"  android:label="" />
+        <activity android:name="com.denniszabolotny.optarget.View.CalcTargetSizeActivity"  android:label="" />
+        <activity android:name="com.denniszabolotny.optarget.View.CalcDRIActivity"  android:label="" />
         <activity
-            android:name=".View.MainActivity"
+            android:name="com.denniszabolotny.optarget.View.MainActivity"
             android:label=""
 
             android:screenOrientation="portrait" />
         <activity
-            android:name=".View.CalcFovActivity"
+            android:name="com.denniszabolotny.optarget.View.CalcFovActivity"
             android:label=""
 
             android:screenOrientation="portrait" />
         <activity
-            android:name=".View.SettingsActivity"
+            android:name="com.denniszabolotny.optarget.View.SettingsActivity"
             android:label=""
 
             android:screenOrientation="portrait" />
-        <activity android:name=".View.WelcomeActivity">
+        <activity android:name="com.denniszabolotny.optarget.View.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
