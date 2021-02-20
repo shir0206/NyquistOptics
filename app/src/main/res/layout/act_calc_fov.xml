@@ -15,7 +15,7 @@
         android:text="@string/btn_txtCalc"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="@dimen/calFovTextSize21dp"
         app:layout_constraintBottom_toBottomOf="@+id/ll_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.83"
