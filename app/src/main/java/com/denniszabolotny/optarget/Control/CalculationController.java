@@ -95,8 +95,8 @@ public class CalculationController {
      */
     public double calcHfov(double sensorPitch, double dimensionW, double focalLength) {
 
-        return Math.atan((sensorPitch * dimensionW) /
-                (ConstantsKt.TwoThousand * focalLength)) * ConstantsKt.Ninety / Math.PI;
+        return 2*Math.atan((sensorPitch * dimensionW) /
+                (ConstantsKt.TwoThousand * focalLength)) * (2*ConstantsKt.Ninety) / Math.PI;
     }
 
     /**
@@ -217,8 +217,8 @@ public class CalculationController {
         // Convert the output from double to String
 
         result.put(TargetDRIType.NatoDet, natoDet);
-        result.put(TargetDRIType.NatoIdent, natoRec);
-        result.put(TargetDRIType.NatoRec, natoIdent);
+        result.put(TargetDRIType.NatoIdent, natoIdent);
+        result.put(TargetDRIType.NatoRec, natoRec);
 
         result.put(TargetDRIType.HumanDet, humnaDet);
         result.put(TargetDRIType.HumanRec, humnaRec);

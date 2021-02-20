@@ -69,13 +69,10 @@ public class CalcFovActivity extends AppCompatActivity {
 
                     HashMap<FovType,String> res=mainAppController.calcFOV(sensorPitch,focalLength,dimensionH,dimensionW);
 
-                    String hfov =Util.formatDouble(Double.parseDouble(res.get(FovType.HFOV)),2);
-                    String vfov = Util.formatDouble(Double.parseDouble(res.get(FovType.VFOV)),2);
-                    String ifov = Util.formatDouble(Double.parseDouble(res.get(FovType.IFOV)),2);
+                    tv_resHfov.setText(res.get(FovType.HFOV));
+                    tv_resVfov.setText(res.get(FovType.VFOV));
+                    tv_resIfov.setText(res.get(FovType.IFOV));
 
-                    tv_resHfov.setText(hfov);
-                    tv_resVfov.setText(vfov);
-                    tv_resIfov.setText(ifov);
                     ll_hfov.setVisibility(View.VISIBLE);
                     ll_vfov.setVisibility(View.VISIBLE);
                     ll_ifov.setVisibility(View.VISIBLE);
