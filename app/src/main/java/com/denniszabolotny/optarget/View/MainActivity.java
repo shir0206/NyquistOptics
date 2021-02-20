@@ -163,6 +163,9 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                 startActivity(new Intent(this, SettingsActivity.class));
                 //finish(); //Closes MainActivity
                 return true;
+            case R.id.action_about:
+                startActivity(new Intent(this,AboutActivity.class));
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

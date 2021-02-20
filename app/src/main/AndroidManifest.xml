@@ -10,28 +10,35 @@
         android:label="Op Target"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.denniszabolotny.optarget.View.CalcFocalLengthFOV" android:label="" ></activity>
-        <activity android:name="com.denniszabolotny.optarget.View.CalcFocalLengthTarget" android:label="" />
-        <activity android:name="com.denniszabolotny.optarget.View.CalcDimensionActivity"  android:label="" />
-        <activity android:name="com.denniszabolotny.optarget.View.CalcDRIActivity"  android:label="" />
+        <activity android:name=".View.AboutActivity"></activity>
         <activity
-            android:name="com.denniszabolotny.optarget.View.MainActivity"
+            android:name=".View.CalcFocalLengthFOV"
+            android:label="" />
+        <activity
+            android:name=".View.CalcFocalLengthTarget"
+            android:label="" />
+        <activity
+            android:name=".View.CalcDimensionActivity"
+            android:label="" />
+        <activity
+            android:name=".View.CalcDRIActivity"
+            android:label="" />
+        <activity
+            android:name=".View.MainActivity"
             android:label=""
-
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.denniszabolotny.optarget.View.CalcFovActivity"
+            android:name=".View.CalcFovActivity"
             android:label=""
-
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.denniszabolotny.optarget.View.SettingsActivity"
+            android:name=".View.SettingsActivity"
             android:label=""
-
             android:screenOrientation="portrait" />
-        <activity android:name="com.denniszabolotny.optarget.View.WelcomeActivity">
+        <activity android:name=".View.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
