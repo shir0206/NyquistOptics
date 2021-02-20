@@ -86,7 +86,7 @@ public class CalcDRIActivity extends AppCompatActivity {
 
                     String humanDet = Util.formatDouble(calculateDRI.get(TargetDRIType.HumanDet),1);
                     String humanRec = Util.formatDouble(calculateDRI.get(TargetDRIType.HumanRec),1);
-                    String humanIdent = Util.formatDouble(calculateDRI.get(TargetDRIType.NatoIdent),1);
+                    String humanIdent = Util.formatDouble(calculateDRI.get(TargetDRIType.HumanIdent),1);
 
                     String objectDet = Util.formatDouble(calculateDRI.get(TargetDRIType.ObjectDet),1);
                     String objectIdent = Util.formatDouble(calculateDRI.get(TargetDRIType.ObjectIdent),1);
@@ -119,8 +119,6 @@ public class CalcDRIActivity extends AppCompatActivity {
         tableLayout=findViewById(R.id.table_tableLayout);
 
         tv_txtHumanTarget = findViewById(R.id.tv_txtHumanTarget);
-
-
         tv_txtObjectTarget = findViewById(R.id.tv_txtObjectTarget);
 
 
