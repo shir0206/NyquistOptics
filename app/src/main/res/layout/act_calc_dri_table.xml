@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/tv_txtNatoTarget"
-                    android:textSize="16dp"/>
+                    android:textSize="@dimen/driTable16dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/tv_txtHumanTarget"
-                    android:textSize="16dp"/>
+                    android:textSize="@dimen/driTable16dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -77,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/tv_txtObjectTarget"
-                    android:textSize="16dp"/>
+                    android:textSize="@dimen/driTable16dp"/>
             </LinearLayout>
 
 
@@ -94,7 +94,7 @@
                 android:layout_weight="1.5"
                 android:gravity="center"
                 android:text="@string/tv_txtDet"
-                android:textSize="16dp"/>
+                android:textSize="@dimen/driTable16dp"/>
 
             <TextView
                 android:id="@+id/tv_resNatoDet"
@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
 
             <TextView
                 android:id="@+id/tv_resHumanDet"
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
 
             <TextView
                 android:id="@+id/tv_resObjectDet"
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
         </TableRow>
 
         <TableRow
@@ -132,7 +132,7 @@
                 android:layout_weight="1.5"
                 android:gravity="center"
                 android:text="@string/tv_txtRec"
-                android:textSize="16dp"/>
+                android:textSize="@dimen/driTable16dp"/>
 
             <TextView
                 android:id="@+id/tv_resNatoRec"
@@ -140,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
 
             <TextView
                 android:id="@+id/tv_resHumanRec"
@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
 
             <TextView
                 android:id="@+id/tv_resObjectRec"
@@ -156,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
         </TableRow>
 
         <TableRow
@@ -170,7 +170,7 @@
                 android:layout_weight="1.5"
                 android:gravity="center"
                 android:text="@string/tv_txtIdent"
-                android:textSize="16dp"/>
+                android:textSize="@dimen/driTable16dp"/>
 
             <TextView
                 android:id="@+id/tv_resNatoIdent"
@@ -178,7 +178,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
 
             <TextView
                 android:id="@+id/tv_resHumanIdent"
@@ -186,7 +186,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
 
             <TextView
 
@@ -194,27 +194,26 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
         </TableRow>
     </TableLayout>
 
     <Button
         android:id="@+id/btn_calc"
-        app:layout_constraintBottom_toBottomOf="@+id/ll_input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_input"
-        app:layout_constraintVertical_bias="0.458"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@color/black"
         android:text="@string/btn_txtCalc"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="121dp" />
+        android:textSize="@dimen/driTable21dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_input"
+        app:layout_constraintVertical_bias="0.458" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ll_input"
@@ -257,7 +256,7 @@
                 android:layout_weight="0.6"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtSensorPitch"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
 
             <EditText
                 android:id="@+id/et_sensorPitch"
@@ -268,7 +267,7 @@
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textAlignment="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -301,7 +300,7 @@
                 android:layout_weight="0.6"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtFocalLength"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
 
             <EditText
                 android:id="@+id/et_focalLength"
@@ -312,7 +311,7 @@
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textAlignment="center"
-                android:textSize="21sp" />
+                android:textSize="@dimen/driTable21dp" />
         </LinearLayout>
 
 

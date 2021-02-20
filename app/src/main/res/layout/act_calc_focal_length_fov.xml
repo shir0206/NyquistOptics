@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/tv_txtHfov"
-            android:textSize="21sp"
+            android:textSize="@dimen/calFocalFovTextSize"
             app:layout_constraintBottom_toBottomOf="@+id/img_hFov"
             app:layout_constraintEnd_toStartOf="@+id/et_txtHfov"
             app:layout_constraintHorizontal_bias="0.5"
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/tv_txtDimension"
-            android:textSize="21sp"
+            android:textSize="@dimen/calFocalFovTextSize"
             app:layout_constraintBottom_toBottomOf="@+id/img_dimnesionFov"
             app:layout_constraintEnd_toStartOf="@+id/et_txtDimensionW"
             app:layout_constraintHorizontal_bias="0.5"
@@ -87,7 +87,7 @@
             android:gravity="center"
             android:hint="@string/et_txtDimensionW"
             android:inputType="numberDecimal"
-            android:textSize="21sp"
+            android:textSize="@dimen/calFocalFovTextSize"
             app:layout_constraintBottom_toBottomOf="@+id/tv_txtDimension"
             app:layout_constraintEnd_toStartOf="@+id/tv_txtDimensionX"
             app:layout_constraintHorizontal_bias="0.5"
@@ -100,9 +100,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:inputType="textPersonName"
             android:text="@string/tv_x"
-            android:textSize="21sp"
+            android:textSize="@dimen/calFocalFovTextSize"
             app:layout_constraintBottom_toBottomOf="@+id/et_txtDimensionW"
             app:layout_constraintEnd_toStartOf="@+id/et_txtDimensionH"
             app:layout_constraintHorizontal_bias="0.5"
@@ -118,7 +117,7 @@
             android:gravity="center"
             android:hint="@string/et_txtDimensionH"
             android:inputType="numberDecimal"
-            android:textSize="21sp"
+            android:textSize="@dimen/calFocalFovTextSize"
             app:layout_constraintBottom_toBottomOf="@+id/tv_txtDimensionX"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -132,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/tv_txtSensorPitch"
-            android:textSize="21sp"
+            android:textSize="@dimen/calFocalFovTextSize"
             app:layout_constraintBottom_toBottomOf="@+id/et_sensorPitch"
             app:layout_constraintEnd_toStartOf="@+id/et_sensorPitch"
             app:layout_constraintHorizontal_bias="0.5"
@@ -149,7 +148,7 @@
             android:layout_marginBottom="53dp"
             android:gravity="center"
             android:inputType="numberDecimal"
-            android:textSize="21sp"
+            android:textSize="@dimen/calFocalFovTextSize"
             app:layout_constraintBottom_toBottomOf="@+id/tv_txtHfov"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -165,7 +164,7 @@
             android:layout_marginBottom="49dp"
             android:gravity="center"
             android:inputType="numberDecimal"
-            android:textSize="21sp"
+            android:textSize="@dimen/calFocalFovTextSize"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -190,7 +189,7 @@
         android:text="@string/btn_txtCalc"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="@dimen/calFocalFovTextSize"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
@@ -223,7 +222,7 @@
             android:paddingTop="10dp"
             android:text="@string/tv_txtFocalLengthH"
             android:textColor="@color/black"
-            android:textSize="21sp" />
+            android:textSize="@dimen/calFocalFovTextSize" />
 
         <TextView
             android:id="@+id/tv_resFocalLengthFov"
@@ -233,7 +232,7 @@
             android:focusable="false"
             android:gravity="center"
             android:maxWidth="90dp"
-            android:textSize="21sp" />
+            android:textSize="@dimen/calFocalFovTextSize" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

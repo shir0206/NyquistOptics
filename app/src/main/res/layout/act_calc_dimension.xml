@@ -48,7 +48,7 @@
                 android:layout_weight="0.6"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtFocalLength"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
 
             <EditText
                 android:id="@+id/et_focalLength"
@@ -58,7 +58,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
         </LinearLayout>
 
 
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtSensorPitch"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
 
             <EditText
                 android:id="@+id/et_sensorPitch"
@@ -102,7 +102,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
         </LinearLayout>
 
 
@@ -142,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtTargetRange"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
 
             <EditText
                 android:id="@+id/et_targetRange"
@@ -152,7 +152,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
         </LinearLayout>
 
 
@@ -187,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtTargetSize"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
 
             <EditText
                 android:id="@+id/et_resTargetSizeW"
@@ -199,7 +199,7 @@
                 android:hint="@string/et_txtDimensionW"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
 
 
             <TextView
@@ -210,7 +210,7 @@
                 android:layout_weight="0.05"
                 android:gravity="center"
                 android:text="@string/tv_x"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
 
             <EditText
                 android:id="@+id/et_resTargetSizeH"
@@ -222,7 +222,7 @@
                 android:hint="@string/et_txtDimensionH"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="21sp" />
+                android:textSize="@dimen/calcDimenSizeTextSize21" />
 
 
         </LinearLayout>
@@ -237,8 +237,9 @@
         android:layout_centerInParent="true"
         android:background="@color/black"
         android:text="@string/btn_txtCalc"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="@dimen/calcDimenSizeTextSize21"
         app:layout_constraintBottom_toBottomOf="@+id/ll_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.83"
@@ -283,14 +284,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textSize="24sp"
+                        android:textSize="@dimen/calcDimenSizeTextSize24"
                         android:text="Width"
                         tools:text="Width" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/calcDimenSizeTextSize16"
                         android:text="(px)"
                         tools:text="(px)" />
                 </LinearLayout>
@@ -307,14 +308,14 @@
                         android:layout_height="wrap_content"
 
                         android:gravity="center"
-                        android:textSize="24sp"
+                        android:textSize="@dimen/calcDimenSizeTextSize24"
                         android:text="Height "
                         tools:text="Height" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/calcDimenSizeTextSize16"
                         android:text="(px)"
                         tools:text="(px)" />
                 </LinearLayout>
@@ -331,14 +332,14 @@
                         android:layout_height="wrap_content"
 
                         android:gravity="center"
-                        android:textSize="24sp"
+                        android:textSize="@dimen/calcDimenSizeTextSize24"
                         android:text="Total"
                         tools:text="Total" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/calcDimenSizeTextSize16"
                         android:text="(px)"
                         tools:text="(px)" />
                 </LinearLayout>
@@ -367,7 +368,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textSize="21sp"
+                    android:textSize="@dimen/calcDimenSizeTextSize21"
                     tools:text="" />
 
                 <TextView
@@ -376,7 +377,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textSize="21sp"
+                    android:textSize="@dimen/calcDimenSizeTextSize21"
                     tools:text="" />
 
                 <TextView
@@ -385,7 +386,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textSize="21sp"
+                    android:textSize="@dimen/calcDimenSizeTextSize21"
                     tools:text="" />
             </TableRow>
         </TableLayout>

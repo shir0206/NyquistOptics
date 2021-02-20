@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtFocalLength"
-                android:textSize="21sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
 
             <EditText
                 android:id="@+id/et_focalLength"
@@ -58,7 +58,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="24sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
         </LinearLayout>
 
 
@@ -92,7 +92,7 @@
                 android:paddingTop="25dp"
                 android:layout_weight="0.5"
                 android:text="@string/tv_txtSensorPitch"
-                android:textSize="21sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
 
             <EditText
                 android:id="@+id/et_sensorPitch"
@@ -102,7 +102,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="24sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -135,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtTargetRange"
-                android:textSize="21sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
 
             <EditText
                 android:id="@+id/et_targetRange"
@@ -145,7 +145,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="24sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
         </LinearLayout>
 
 
@@ -183,7 +183,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtDimension"
-                android:textSize="21sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
 
             <EditText
                 android:id="@+id/et_txtDimensionW"
@@ -194,7 +194,7 @@
                 android:hint="@string/et_txtDimensionW"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="24sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
             <TextView
                 android:id="@+id/tv_txtDimensionX"
                 android:layout_width="0dp"
@@ -203,7 +203,7 @@
                 android:paddingTop="25dp"
                 android:gravity="center"
                 android:text="@string/tv_x"
-                android:textSize="24sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
 
             <EditText
                 android:id="@+id/et_txtDimensionH"
@@ -215,7 +215,7 @@
                 android:hint="@string/et_txtDimensionH"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
-                android:textSize="24sp" />
+                android:textSize="@dimen/actCalcTargetSize21dp" />
         </LinearLayout>
 
 
@@ -228,8 +228,9 @@
         android:layout_centerInParent="true"
         android:background="@color/black"
         android:text="@string/btn_txtCalc"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="@dimen/actCalcTargetSize21dp"
         app:layout_constraintBottom_toBottomOf="@+id/ll_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.83"
@@ -268,7 +269,7 @@
             android:paddingTop="25dp"
             android:layout_weight="0.5"
             android:text="@string/tv_txtTargetSize"
-            android:textSize="21sp" />
+            android:textSize="@dimen/actCalcTargetSize21dp" />
 
         <TextView
             android:id="@+id/tv_resTargetSizeW"
@@ -276,7 +277,7 @@
             android:layout_weight="0.2"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
-            android:textSize="24sp" />
+            android:textSize="@dimen/actCalcTargetSize21dp" />
 
         <TextView
             android:id="@+id/tv_resTargetSizeX"
@@ -286,7 +287,7 @@
             android:paddingTop="25dp"
             android:gravity="center"
             android:text="@string/tv_resTargetSizeX"
-            android:textSize="21sp" />
+            android:textSize="@dimen/actCalcTargetSize21dp" />
 
         <TextView
             android:id="@+id/tv_resTargetSizeH"
@@ -294,7 +295,7 @@
             android:layout_weight="0.2"
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
-            android:textSize="21sp" />
+            android:textSize="@dimen/actCalcTargetSize21dp" />
     </LinearLayout>
 
 

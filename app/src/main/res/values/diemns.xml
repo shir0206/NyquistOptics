@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="settingsTextSize21dp">21dp</dimen>
+    <dimen name="actCalcTargetSize21dp">21dp</dimen>
+    <dimen name="homeTextSize16dp">16dp</dimen>
+    <dimen name="popupTitleTextSize21dp">21dp</dimen>
+    <dimen name="popupTextSize18dp">18dp</dimen>
+    <dimen name="calFovTextSize21dp">21dp</dimen>
+    <dimen name="calFovTextSize18dp">18dp</dimen>
+    <dimen name="calFocalTargetTextSize">21dp</dimen>
+    <dimen name="calFocalFovTextSize">21dp</dimen>
+    <dimen name="driTable21dp">21dp</dimen>
+    <dimen name="driTable16dp">16dp</dimen>
+    <dimen name="calcDimenSizeTextSize21">21dp</dimen>
+    <dimen name="calcDimenSizeTextSize24">24dp</dimen>
+    <dimen name="calcDimenSizeTextSize16">16dp</dimen>
+</resources>
