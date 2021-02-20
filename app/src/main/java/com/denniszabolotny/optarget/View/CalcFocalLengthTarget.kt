@@ -5,11 +5,9 @@ import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import com.denniszabolotny.optarget.Control.MainAppController
 import com.denniszabolotny.optarget.Control.ReadWriteFileControl
 import com.denniszabolotny.optarget.R
@@ -27,6 +25,8 @@ class CalcFocalLengthTarget : AppCompatActivity() {
     var smallestDimensionSize:Double?=0.0
     var tv_resFocalLength: TextView? = null
     var btn_calc: Button? = null
+    var resTextView:TextView?=null
+    var resImage:ImageView?=null
     private var vibrator: Vibrator? = null
 
 
@@ -37,11 +37,14 @@ class CalcFocalLengthTarget : AppCompatActivity() {
         // Set up UI
         setupUI()
 
-
+        resTextView?.visibility=View.GONE
+        resImage?.visibility=View.GONE
         btn_calc?.setOnClickListener {
             phoneVib()
             if (isValid()) {
                 Util.hideKeyboard(this@CalcFocalLengthTarget)
+                resTextView?.visibility=View.VISIBLE
+                resImage?.visibility=View.VISIBLE
                 val mainAppController = MainAppController();
 
                 val dimensionW: Double = et_dimensionW?.text.toString().toDouble()
@@ -81,6 +84,8 @@ class CalcFocalLengthTarget : AppCompatActivity() {
         et_sensorPitch = findViewById(R.id.et_sensorPitch)
         tv_resFocalLength = findViewById(R.id.tv_resFocalLength)
         btn_calc = findViewById(R.id.btn_calc)
+        resImage=findViewById(R.id.img_focalLengthH)
+        resTextView=findViewById(R.id.tv_txtFocalLength)
         vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
         val fileAccess= ReadWriteFileControl(this)

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
     Button btn_calc;
     Vibrator vibrator;
     MainAppController mainAppController;
+    LinearLayout resLinearLayout;
     ReadWriteFileControl readWriteFileControl;
 
     @Override
@@ -40,7 +42,7 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
 
         // Get the vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
+        resLinearLayout.setVisibility(View.INVISIBLE);
         btn_calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,7 +67,7 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
                      sensorPitch),2);
 
                     tv_resFocalLengthFov.setText(focalLengthFov);
-
+                    resLinearLayout.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -81,7 +83,7 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
         et_txtDimensionH = findViewById(R.id.et_txtDimensionH);
         tv_resFocalLengthFov = findViewById(R.id.tv_resFocalLengthFov);
         btn_calc = findViewById(R.id.btn_calc);
-
+        resLinearLayout=findViewById(R.id.linearLayout2);
         readWriteFileControl=new ReadWriteFileControl(this);
 
         Detector values=readWriteFileControl.getDetectorValues();

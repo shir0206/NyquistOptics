@@ -13,7 +13,6 @@
         <activity android:name="com.denniszabolotny.optarget.View.CalcFocalLengthFOV" android:label="" ></activity>
         <activity android:name="com.denniszabolotny.optarget.View.CalcFocalLengthTarget" android:label="" />
         <activity android:name="com.denniszabolotny.optarget.View.CalcDimensionActivity"  android:label="" />
-        <activity android:name="com.denniszabolotny.optarget.View.CalcTargetSizeActivity"  android:label="" />
         <activity android:name="com.denniszabolotny.optarget.View.CalcDRIActivity"  android:label="" />
         <activity
             android:name="com.denniszabolotny.optarget.View.MainActivity"

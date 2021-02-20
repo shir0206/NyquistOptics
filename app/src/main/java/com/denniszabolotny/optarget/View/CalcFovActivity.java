@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class CalcFovActivity extends AppCompatActivity {
     TextView tv_resHfov;
     TextView tv_resVfov;
     TextView tv_resIfov;
+    LinearLayout ll_hfov,ll_vfov,ll_ifov;
     Button btn_calc;
     Vibrator vibrator;
 
@@ -43,7 +45,9 @@ public class CalcFovActivity extends AppCompatActivity {
 
         // Get the vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
+        ll_hfov.setVisibility(View.INVISIBLE);
+        ll_vfov.setVisibility(View.INVISIBLE);
+        ll_ifov.setVisibility(View.INVISIBLE);
         btn_calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +76,9 @@ public class CalcFovActivity extends AppCompatActivity {
                     tv_resHfov.setText(hfov);
                     tv_resVfov.setText(vfov);
                     tv_resIfov.setText(ifov);
+                    ll_hfov.setVisibility(View.VISIBLE);
+                    ll_vfov.setVisibility(View.VISIBLE);
+                    ll_ifov.setVisibility(View.VISIBLE);
 
                 }
 
@@ -90,7 +97,9 @@ public class CalcFovActivity extends AppCompatActivity {
         tv_resVfov = findViewById(R.id.tv_resVfov);
         tv_resIfov = findViewById(R.id.tv_resIfov);
         btn_calc = findViewById(R.id.btn_calc);
-
+        ll_hfov=findViewById(R.id.ll_hfov);
+        ll_vfov=findViewById(R.id.ll_vfov);
+        ll_ifov=findViewById(R.id.ll_ifov);
         ReadWriteFileControl readWriteFileControl=new ReadWriteFileControl(this);
         Detector values=readWriteFileControl.getDetectorValues();
         et_sensorPitch.setText(String.valueOf(values.getDetectorPitch()));
