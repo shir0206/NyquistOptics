@@ -41,6 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/tv_txtNatoTarget"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/driTable16dp"/>
             </LinearLayout>
             <LinearLayout
@@ -59,6 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/tv_txtHumanTarget"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/driTable16dp"/>
             </LinearLayout>
             <LinearLayout
@@ -77,6 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/tv_txtObjectTarget"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/driTable16dp"/>
             </LinearLayout>
 
@@ -93,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:text="@string/tv_txtDet"
                 android:textSize="@dimen/driTable16dp"/>
 
@@ -101,6 +105,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:textSize="@dimen/driTable21dp" />
 
@@ -109,6 +114,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:textSize="@dimen/driTable21dp" />
 
@@ -118,6 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:textSize="@dimen/driTable21dp" />
         </TableRow>
 
@@ -131,6 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:text="@string/tv_txtRec"
                 android:textSize="@dimen/driTable16dp"/>
 
@@ -139,6 +147,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:textSize="@dimen/driTable21dp" />
 
@@ -147,6 +156,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:textSize="@dimen/driTable21dp" />
 
@@ -155,6 +165,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:textSize="@dimen/driTable21dp" />
         </TableRow>
@@ -169,6 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:text="@string/tv_txtIdent"
                 android:textSize="@dimen/driTable16dp"/>
 
@@ -177,6 +189,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:textSize="@dimen/driTable21dp" />
 
@@ -186,6 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:textSize="@dimen/driTable21dp" />
 
             <TextView
@@ -194,6 +208,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:textSize="@dimen/driTable21dp" />
         </TableRow>
     </TableLayout>
@@ -256,6 +271,7 @@
                 android:layout_weight="0.6"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtSensorPitch"
+                android:textColor="@color/black"
                 android:textSize="@dimen/driTable21dp" />
 
             <EditText
@@ -267,6 +283,7 @@
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textAlignment="center"
+                android:textColor="@color/black"
                 android:textSize="@dimen/driTable21dp" />
         </LinearLayout>
 
@@ -300,6 +317,7 @@
                 android:layout_weight="0.6"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtFocalLength"
+                android:textColor="@color/black"
                 android:textSize="@dimen/driTable21dp" />
 
             <EditText
@@ -311,6 +329,7 @@
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textAlignment="center"
+                android:textColor="@color/black"
                 android:textSize="@dimen/driTable21dp" />
         </LinearLayout>
 

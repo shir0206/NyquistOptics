@@ -55,6 +55,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtHfov"
+            android:textColor="@color/black"
             android:textSize="@dimen/calFovTextSize21dp" />
 
         <TextView
@@ -66,6 +67,7 @@
             android:paddingTop="25dp"
             android:text="@string/tv_resHfov"
             android:textSize="@dimen/calFovTextSize21dp"
+            android:textColor="@color/black"
             tools:layout_marginStart="8dp" />
     </LinearLayout>
 
@@ -99,6 +101,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtVfov"
+            android:textColor="@color/black"
             android:textSize="@dimen/calFovTextSize21dp" />
 
         <TextView
@@ -110,6 +113,7 @@
             android:paddingTop="25dp"
             android:text="@string/tv_resVfov"
             android:textSize="@dimen/calFovTextSize21dp"
+            android:textColor="@color/black"
             tools:layout_marginStart="8dp" />
 
 
@@ -145,6 +149,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:text="@string/tv_txtIfov"
+            android:textColor="@color/black"
             android:textSize="@dimen/calFovTextSize21dp" />
 
         <TextView
@@ -154,6 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:paddingTop="25dp"
+            android:textColor="@color/black"
             android:text="@string/tv_resIfov"
             android:textSize="@dimen/calFovTextSize21dp"
             tools:layout_marginStart="8dp" />
@@ -201,6 +207,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
                 android:paddingTop="25dp"
+                android:textColor="@color/black"
                 android:text="@string/tv_txtFocalLength"
                 android:textSize="@dimen/calFovTextSize21dp" />
 
@@ -245,6 +252,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
                 android:paddingTop="25dp"
+                android:textColor="@color/black"
                 android:text="@string/tv_txtSensorPitch"
                 android:textSize="@dimen/calFovTextSize21dp" />
 
@@ -254,6 +262,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="@dimen/calFovTextSize21dp" />
@@ -288,6 +297,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.52"
                 android:paddingTop="25dp"
+                android:textColor="@color/black"
                 android:text="@string/tv_txtDimension"
                 android:textSize="@dimen/calFovTextSize18dp" />
 
@@ -299,6 +309,7 @@
                 android:gravity="center"
                 android:hint="@string/et_txtDimensionW"
                 android:inputType="numberDecimal"
+                android:textColor="@color/black"
                 android:paddingTop="25dp"
                 android:textSize="@dimen/calFovTextSize21dp" />
 
@@ -310,6 +321,7 @@
                 android:gravity="center"
                 android:paddingTop="25dp"
                 android:text="@string/tv_x"
+                android:textColor="@color/black"
                 android:textSize="@dimen/calFovTextSize21dp" />
 
             <EditText

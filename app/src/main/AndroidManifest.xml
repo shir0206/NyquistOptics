@@ -9,7 +9,7 @@
         android:icon="@mipmap/optarget"
         android:label="Op Target"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.SplashScreen">
         <activity android:name=".View.AboutActivity"></activity>
         <activity
             android:name=".View.CalcFocalLengthFOV"
@@ -24,10 +24,6 @@
             android:name=".View.CalcDRIActivity"
             android:label="" />
         <activity
-            android:name=".View.MainActivity"
-            android:label=""
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".View.CalcFovActivity"
             android:label=""
             android:screenOrientation="portrait" />
@@ -35,7 +31,7 @@
             android:name=".View.SettingsActivity"
             android:label=""
             android:screenOrientation="portrait" />
-        <activity android:name=".View.WelcomeActivity">
+        <activity android:name=".View.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

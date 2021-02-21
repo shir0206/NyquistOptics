@@ -66,9 +66,7 @@ public class CalculationController {
                                      double dimensionH,
                                      double hfov,
                                      double sensorPitch) {
-
-        return (sensorPitch * Math.max(dimensionW, dimensionH)) /
-                (ConstantsKt.TwoThousand * Math.atan((hfov * Math.PI) / ConstantsKt.Ninety));
+        return(sensorPitch *Math.min(dimensionH,dimensionW)/(ConstantsKt.TwoThousand*(Math.tan((hfov*Math.PI)/360))));
     }
 
 

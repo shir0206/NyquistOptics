@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#F47D20</color>
+    <color name="colorPrimary">#f46b20</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#F47D20</color>
+    <color name="colorAccent">#f46b20</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
 
-    <color name="orange">#F47D20</color>
+    <color name="orange">#f46b20</color>
     <color name="grey">#EFF2F4</color>
     <color name="lightOrange">#fef2e9</color>
     <color name="darkerOrange">#fde5d2</color>

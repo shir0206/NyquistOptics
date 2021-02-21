@@ -55,6 +55,7 @@
                     <TextView
                         android:id="@+id/tv_txtLinePairDet"
                         android:layout_width="0dp"
+                        android:textColor="@color/black"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"
                         android:paddingTop="25dp"
@@ -64,6 +65,7 @@
                     <EditText
                         android:id="@+id/et_linePairDet"
                         android:layout_width="0dp"
+                        android:textColor="@color/black"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:gravity="center"
@@ -99,6 +101,7 @@
                     <TextView
                         android:id="@+id/tv_txtLinePairDetObj"
                         android:layout_width="0dp"
+                        android:textColor="@color/black"
                         android:layout_height="wrap_content"
                         android:paddingTop="25dp"
                         android:layout_weight="0.5"
@@ -109,6 +112,7 @@
                         android:id="@+id/et_linePairDetObj"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:layout_weight="0.4"
                         android:gravity="center"
                         android:inputType="numberDecimal"
@@ -146,6 +150,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:paddingTop="25dp"
+                        android:textColor="@color/black"
                         android:text="@string/tv_txtLinePairRec"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -155,6 +160,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.3"
                         android:gravity="center"
+                        android:textColor="@color/black"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="@dimen/settingsTextSize21dp" />
@@ -190,6 +196,7 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="25dp"
                         android:layout_weight="0.4"
+                        android:textColor="@color/black"
                         android:text="@string/tv_txtLinePairIdent"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -200,6 +207,7 @@
                         android:layout_weight="0.4"
                         android:gravity="center"
                         android:inputType="numberDecimal"
+                        android:textColor="@color/black"
                         android:paddingTop="25dp"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -236,6 +244,7 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="25dp"
                         android:layout_weight="0.5"
+                        android:textColor="@color/black"
                         android:text="@string/tv_txtTargetSizeNato"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -246,6 +255,7 @@
                         android:gravity="center"
                         android:hint="@string/et_targetSizeNatoW"
                         android:layout_weight="0.2"
+                        android:textColor="@color/black"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="@dimen/settingsTextSize21dp" />
@@ -257,6 +267,7 @@
                         android:paddingTop="25dp"
                         android:text="@string/tv_x"
                         android:gravity="center"
+                        android:textColor="@color/black"
                         android:layout_weight="0.1"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -267,6 +278,7 @@
                         android:layout_weight="0.2"
                         android:gravity="center"
                         android:hint="@string/et_targetSizeNatoH"
+                        android:textColor="@color/black"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
                         android:textSize="@dimen/settingsTextSize21dp" />
@@ -304,6 +316,7 @@
                         android:layout_weight="0.5"
                         android:paddingTop="25dp"
                         android:text="@string/tv_txtTargetSizeHuman"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
                     <EditText
@@ -315,6 +328,7 @@
                         android:layout_weight="0.2"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
                     <TextView
@@ -324,6 +338,7 @@
                         android:paddingTop="25dp"
                         android:layout_weight="0.1"
                         android:text="@string/tv_x"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -336,6 +351,7 @@
                         android:hint="@string/et_targetSizeHumanH"
                         android:inputType="numberDecimal"
                         android:paddingTop="25dp"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
 
@@ -371,6 +387,7 @@
                         android:layout_weight="0.5"
                         android:paddingTop="20dp"
                         android:text="@string/tv_txtTargetSizeObj"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
                     <EditText
@@ -381,6 +398,7 @@
                         android:gravity="center"
                         android:hint="@string/et_targetSizeObjW"
                         android:inputType="numberDecimal"
+                        android:textColor="@color/black"
                         android:paddingTop="25dp"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -391,6 +409,7 @@
                         android:paddingTop="25dp"
                         android:layout_weight="0.1"
                         android:text="@string/tv_x"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -402,6 +421,7 @@
                         android:gravity="center"
                         android:hint="@string/et_targetSizeObjH"
                         android:inputType="numberDecimal"
+                        android:textColor="@color/black"
                         android:paddingTop="25dp"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -416,6 +436,7 @@
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
                     android:text="@string/tv_txtLinePair"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/settingsTextSize21dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/ll_linePairDet"
@@ -430,6 +451,7 @@
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
                     android:text="@string/tv_txtTargetSize"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/settingsTextSize21dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/ll_targetSizeNato"
@@ -470,6 +492,7 @@
                     android:text="@string/tv_txtDetectorSettings"
                     android:textSize="@dimen/settingsTextSize21dp"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     app:layout_constraintBottom_toTopOf="@+id/ll_DetectorSize"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -504,6 +527,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
+                        android:textColor="@color/black"
                         android:paddingTop="25dp"
                         android:text="@string/tv_txtDetectorSize"
                         android:textSize="@dimen/settingsTextSize21dp" />
@@ -516,6 +540,7 @@
                         android:gravity="center"
                         android:hint="@string/et_targetSizeObjW"
                         android:inputType="numberDecimal"
+                        android:textColor="@color/black"
                         android:paddingTop="25dp"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
@@ -525,6 +550,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.1"
                         android:paddingTop="25dp"
+                        android:textColor="@color/black"
                         android:text="@string/tv_x"
                         android:gravity="center"
                         android:textSize="@dimen/settingsTextSize21dp" />
@@ -534,6 +560,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:hint="@string/et_targetSizeObjH"
                         android:inputType="numberDecimal"
@@ -573,6 +600,7 @@
                         android:layout_weight="0.6"
                         android:paddingTop="25dp"
                         android:text="@string/tv_txtSensorPitch"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/settingsTextSize21dp" />
 
                     <EditText
@@ -582,6 +610,7 @@
                         android:layout_weight="0.2"
                         android:gravity="center"
                         android:inputType="numberDecimal"
+                        android:textColor="@color/black"
                         android:paddingTop="25dp"
                         android:textSize="@dimen/settingsTextSize21dp" />
 

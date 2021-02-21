@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.act_home);
 
         focalLenInputType = new Dialog(this);
-
 
         //must init the ... to get latest data from the shared prefrences
         setUp = new ReadWriteFileControl(getApplicationContext());

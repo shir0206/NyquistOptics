@@ -47,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"
                 android:paddingTop="25dp"
+                android:textColor="@color/black"
                 android:text="@string/tv_txtFocalLength"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
 
@@ -58,6 +59,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
+                android:textColor="@color/black"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
         </LinearLayout>
 
@@ -91,6 +93,7 @@
                 android:layout_weight="0.6"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
+                android:textColor="@color/black"
                 android:text="@string/tv_txtSensorPitch"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
 
@@ -100,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
@@ -141,6 +145,7 @@
                 android:layout_weight="0.6"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
+                android:textColor="@color/black"
                 android:text="@string/tv_txtTargetRange"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
 
@@ -150,6 +155,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
@@ -187,6 +193,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
                 android:text="@string/tv_txtTargetSize"
+                android:textColor="@color/black"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
 
             <EditText
@@ -198,6 +205,7 @@
                 android:gravity="center"
                 android:hint="@string/et_txtDimensionW"
                 android:inputType="numberDecimal"
+                android:textColor="@color/black"
                 android:paddingTop="25dp"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
 
@@ -210,6 +218,7 @@
                 android:layout_weight="0.05"
                 android:gravity="center"
                 android:text="@string/tv_x"
+                android:textColor="@color/black"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
 
             <EditText
@@ -222,6 +231,7 @@
                 android:hint="@string/et_txtDimensionH"
                 android:inputType="numberDecimal"
                 android:paddingTop="25dp"
+                android:textColor="@color/black"
                 android:textSize="@dimen/calcDimenSizeTextSize21" />
 
 
@@ -286,6 +296,7 @@
                         android:gravity="center"
                         android:textSize="@dimen/calcDimenSizeTextSize24"
                         android:text="Width"
+                        android:textColor="@color/black"
                         tools:text="Width" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -293,6 +304,7 @@
                         android:gravity="center"
                         android:textSize="@dimen/calcDimenSizeTextSize16"
                         android:text="(px)"
+                        android:textColor="@color/black"
                         tools:text="(px)" />
                 </LinearLayout>
 
@@ -310,6 +322,7 @@
                         android:gravity="center"
                         android:textSize="@dimen/calcDimenSizeTextSize24"
                         android:text="Height "
+                        android:textColor="@color/black"
                         tools:text="Height" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -317,6 +330,7 @@
                         android:gravity="center"
                         android:textSize="@dimen/calcDimenSizeTextSize16"
                         android:text="(px)"
+                        android:textColor="@color/black"
                         tools:text="(px)" />
                 </LinearLayout>
 
@@ -334,13 +348,16 @@
                         android:gravity="center"
                         android:textSize="@dimen/calcDimenSizeTextSize24"
                         android:text="Total"
+                        android:textColor="@color/black"
                         tools:text="Total" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textSize="@dimen/calcDimenSizeTextSize16"
                         android:text="(px)"
+                        android:textSize="@dimen/calcDimenSizeTextSize16"
+                        android:textColor="@color/black"
                         tools:text="(px)" />
                 </LinearLayout>
 
@@ -368,6 +385,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/calcDimenSizeTextSize21"
                     tools:text="" />
 
@@ -378,6 +396,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textSize="@dimen/calcDimenSizeTextSize21"
+                    android:textColor="@color/black"
                     tools:text="" />
 
                 <TextView
@@ -386,6 +405,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/calcDimenSizeTextSize21"
                     tools:text="" />
             </TableRow>
