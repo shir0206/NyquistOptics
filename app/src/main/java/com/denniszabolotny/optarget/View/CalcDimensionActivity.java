@@ -34,6 +34,7 @@ public class CalcDimensionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.act_calc_dimension);
 
         // Set up UI

@@ -44,6 +44,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.act_settings);
         readWriteControll = new ReadWriteFileControl(getApplicationContext());
         readWriteControll.initReadDataFromFile();

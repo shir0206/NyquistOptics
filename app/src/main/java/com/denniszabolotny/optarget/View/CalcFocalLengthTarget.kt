@@ -32,6 +32,7 @@ class CalcFocalLengthTarget : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.AppTheme)
         setContentView(R.layout.act_calc_focal_length_target)
 
         // Set up UI
@@ -54,7 +55,7 @@ class CalcFocalLengthTarget : AppCompatActivity() {
                 val sensorPitch: Double = et_sensorPitch?.text.toString().toDouble()
                 val targetRange: Double = et_targetRange?.text.toString().toDouble()
 
-                val smallestTargetSize= minOf(targetSizeW,targetSizeH);
+                val smallestTargetSize= minOf(targetSizeW, targetSizeH);
 
                 if(smallestTargetSize==targetSizeW){
                     smallestDimensionSize=dimensionW
@@ -68,7 +69,7 @@ class CalcFocalLengthTarget : AppCompatActivity() {
                         targetRange))
 
 
-                tv_resFocalLength?.text = Util.formatDouble(minFocalLength,2);
+                tv_resFocalLength?.text = Util.formatDouble(minFocalLength, 2);
 
             }
         }
