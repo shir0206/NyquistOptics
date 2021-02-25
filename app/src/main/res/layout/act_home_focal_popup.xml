@@ -15,14 +15,12 @@
     <Button
         android:id="@+id/btn_FOVInput"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/ic_frame"
         android:drawableTop="@drawable/ic_ifov"
         android:paddingTop="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline8" />
@@ -35,7 +33,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:paddingTop="0dp"
         android:singleLine="false"
@@ -43,7 +40,6 @@
         android:textColor="@color/black"
         android:textSize="@dimen/popupTextSize18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/btn_FOVInput" />
@@ -51,14 +47,12 @@
     <Button
         android:id="@+id/btn_TargetInput"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/ic_frame"
         android:drawableTop="@drawable/ic_target_size"
         android:paddingTop="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toTopOf="@+id/guideline8" />
@@ -70,7 +64,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:paddingTop="0dp"
         android:singleLine="false"
@@ -78,7 +71,6 @@
         android:textColor="@color/black"
         android:textSize="@dimen/popupTextSize18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/btn_TargetInput" />
