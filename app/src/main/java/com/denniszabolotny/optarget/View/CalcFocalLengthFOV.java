@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Vibrator;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -62,7 +63,7 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
 
 
                     double res=mainAppController.calculateFocalLengthViaHfov(dimensionW, dimensionH, hfov, sensorPitch);
-                    String focalLengthFov = Util.formatDouble(res,2);
+                    String focalLengthFov = Util.formatDouble(res,1);
 
                     tv_resFocalLengthFov.setText(focalLengthFov);
                     resLinearLayout.setVisibility(View.VISIBLE);

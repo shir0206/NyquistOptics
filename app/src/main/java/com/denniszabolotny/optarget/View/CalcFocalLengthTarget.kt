@@ -93,8 +93,6 @@ class CalcFocalLengthTarget : AppCompatActivity() {
 
         val detecorVals=fileAccess.getDetectorValues()
         et_sensorPitch?.setText(detecorVals.detectorPitch.toString())
-        et_dimensionH?.setText(detecorVals.detectorSizeH.toString())
-        et_dimensionW?.setText(detecorVals.detectorSizeW.toString())
         Util.SetActionBarICon(supportActionBar)
     }
 
@@ -114,12 +112,12 @@ class CalcFocalLengthTarget : AppCompatActivity() {
         var value = ""
         when {
             et_targetSizeW?.getText().toString() == "" -> {
-                value = "Target Size width"
+                value = "Target Size Width (m)"
                 Toast.makeText(this@CalcFocalLengthTarget, value + msg, Toast.LENGTH_SHORT).show()
                 return false
             }
             et_targetSizeH?.getText().toString() == "" -> {
-                value = "Target Size height"
+                value = "Target Size Height (m)"
                 Toast.makeText(this@CalcFocalLengthTarget, value + msg, Toast.LENGTH_SHORT).show()
                 return false
             }
@@ -129,12 +127,12 @@ class CalcFocalLengthTarget : AppCompatActivity() {
                 return false
             }
             et_dimensionW?.getText().toString() == "" -> {
-                value = "Dimension width"
+                value = "Target Size Width (px)"
                 Toast.makeText(this@CalcFocalLengthTarget, value + msg, Toast.LENGTH_SHORT).show()
                 return false
             }
             et_dimensionH?.getText().toString() == "" -> {
-                value = "Dimension height"
+                value = "Target Size Height (px)"
                 Toast.makeText(this@CalcFocalLengthTarget, value + msg, Toast.LENGTH_SHORT).show()
                 return false
             }

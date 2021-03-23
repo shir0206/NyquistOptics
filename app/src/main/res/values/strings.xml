@@ -72,7 +72,7 @@
     <string name="et_txtDimensionW">  W</string>
     <string name="et_txtDimensionH">  H</string>
     <string name="tv_x">x</string>
-
+    <string name="tv_txtTargetSizePx">Target Size (px):</string>
     <string name="tv_txtFOV">Field of View (FOV):</string>
 
     <string name="tv_txtHfov">HFOV (deg) :</string>
