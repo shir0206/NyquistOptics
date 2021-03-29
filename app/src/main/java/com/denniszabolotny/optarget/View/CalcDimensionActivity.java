@@ -36,7 +36,7 @@ public class CalcDimensionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme);
         setContentView(R.layout.act_calc_dimension);
-
+        setTitle("Target Size Calculator");
         // Set up UI
         setupUI();
 

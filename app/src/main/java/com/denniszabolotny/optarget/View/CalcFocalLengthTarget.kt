@@ -12,6 +12,7 @@ import com.denniszabolotny.optarget.Control.MainAppController
 import com.denniszabolotny.optarget.Control.ReadWriteFileControl
 import com.denniszabolotny.optarget.R
 import com.denniszabolotny.optarget.Utils.Util
+import com.google.android.material.snackbar.Snackbar
 
 class CalcFocalLengthTarget : AppCompatActivity() {
 
@@ -22,7 +23,6 @@ class CalcFocalLengthTarget : AppCompatActivity() {
     var et_dimensionW: EditText? = null
     var et_dimensionH: EditText? = null
     var et_sensorPitch: EditText? = null
-    var smallestDimensionSize:Double?=0.0
     var tv_resFocalLength: TextView? = null
     var btn_calc: Button? = null
     var resTextView:TextView?=null
@@ -33,6 +33,7 @@ class CalcFocalLengthTarget : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
+        title = "Focal Length Calculator"
         setContentView(R.layout.act_calc_focal_length_target)
 
         // Set up UI
@@ -55,21 +56,18 @@ class CalcFocalLengthTarget : AppCompatActivity() {
                 val sensorPitch: Double = et_sensorPitch?.text.toString().toDouble()
                 val targetRange: Double = et_targetRange?.text.toString().toDouble()
 
-                val smallestTargetSize= minOf(targetSizeW, targetSizeH);
+                val smallestTargetSize= minOf(targetSizeW, targetSizeH)
+                val smallestDimensionSize=minOf(dimensionH,dimensionW)
 
-                if(smallestTargetSize==targetSizeW){
-                    smallestDimensionSize=dimensionW
-                }else{
-                    smallestDimensionSize=dimensionH
-                }
                 val minFocalLength= (mainAppController.calculateFocalLengthViaTarget(
-                        smallestDimensionSize!!,
+                        smallestDimensionSize,
                         smallestTargetSize,
                         sensorPitch,
                         targetRange))
 
 
                 tv_resFocalLength?.text = Util.formatDouble(minFocalLength, 2);
+                Snackbar.make(it,"Minimal Dimensions are taken into account of the Target Sizes.",Snackbar.LENGTH_LONG).show()
 
             }
         }

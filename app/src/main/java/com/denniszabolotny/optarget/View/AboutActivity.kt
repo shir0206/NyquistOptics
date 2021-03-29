@@ -13,7 +13,7 @@ class AboutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_about)
-
+        title= "About"
         setupUI()
         val sb=StringBuilder()
 

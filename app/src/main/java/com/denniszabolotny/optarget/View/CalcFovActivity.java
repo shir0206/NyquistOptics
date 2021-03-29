@@ -40,7 +40,7 @@ public class CalcFovActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme);
         setContentView(R.layout.act_calc_fov);
-
+        setTitle("Field of View Calculator");
         // Set up UI
         setupUI();
 

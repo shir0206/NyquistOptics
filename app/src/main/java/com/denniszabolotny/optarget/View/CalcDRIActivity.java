@@ -47,6 +47,7 @@ public class CalcDRIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme);
         setContentView(R.layout.act_calc_dri_table);
+        setTitle("DRI Calculator");
         // Set up UI
         readWriteControll = new ReadWriteFileControl(getApplicationContext());
         setupUI();

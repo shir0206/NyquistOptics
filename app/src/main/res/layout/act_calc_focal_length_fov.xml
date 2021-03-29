@@ -21,11 +21,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/img_dimnesionFov"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline5"
             app:srcCompat="@drawable/ic_hfov" />
 
         <ImageView
@@ -184,7 +183,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="8dp" />
+            app:layout_constraintGuide_begin="16dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

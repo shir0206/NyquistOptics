@@ -36,6 +36,7 @@ public class CalcFocalLengthFOV extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme);
+        setTitle("Focal Length Calculator");
         setContentView(R.layout.act_calc_focal_length_fov);
         mainAppController=new MainAppController();
         // Set up UI
