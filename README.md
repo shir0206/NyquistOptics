@@ -6,7 +6,7 @@ alt="NyquistOptics" width="250"/>
 > The app is currently in the refractor process, in order to meet additional requirements and additional calculations.
 > The mockups can be viewed [here](https://www.figma.com/file/yNWB81nUhkg9DxWnjy2GE7/OpTarget).
 
-## :globe_with_meridians: About
+## 🥽 About
 
  - This application was designed to calculate DRI (detection/recognition/identification) ranges and other performance data for a variety
 of cameras, by using *Nyquist formulas*.
@@ -21,7 +21,7 @@ or omissions in the contents on the Service.
 
 
 
-## :globe_with_meridians: Screen Shots 
+## 🥽 Screen Shots 
 
 
 <img src="https://lh3.googleusercontent.com/wRnjkgTGZom426l20hKKvjTL1E_aQ55_iMoJb2M_Buldvp6A4uSFsUGsIZcBG0L4wMQU=w1536-h722-rw"
@@ -33,5 +33,8 @@ alt="Settings Screen" width="250"/>
 
 
 
-## :globe_with_meridians: Link to Play Store: 
-https://play.google.com/store/apps/details?id=com.shirzabolotnyklein.nyquistoptics
+## 🥽 Link to Play Store: 
+https://play.google.com/store/apps/details?id=com.denniszabolotny.optarget
+
+*Older Version*: 
+*https://play.google.com/store/apps/details?id=com.shirzabolotnyklein.nyquistoptics*
